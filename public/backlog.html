@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Backlog — Dudu's Kitchen</title>
+<style>
+:root{
+  --bg:#12131C;--text:#EEEFF9;--accent:#5B6CFF;--accent-fg:#FFFFFF;
+  --accent-soft:color-mix(in srgb, var(--accent) 16%, transparent);
+  --surface:color-mix(in srgb, var(--bg) 82%, white 18%);
+  --border:color-mix(in srgb, var(--text) 14%, transparent);
+  --muted:color-mix(in srgb, var(--text) 60%, var(--bg) 40%);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;margin:0 auto;max-width:480px;min-height:100vh;-webkit-font-smoothing:antialiased;padding-bottom:calc(24px + env(safe-area-inset-bottom))}
+@media (min-width:700px){body{max-width:900px}}
+a{color:var(--accent);text-decoration:none}
+.sticky-top{position:sticky;top:0;z-index:5;background:var(--bg)}
+.back-row{display:flex;align-items:center;justify-content:space-between;padding:14px 20px 0}
+.back-row a{font-size:.9rem;font-weight:600}
+.big-title{font-size:2rem;font-weight:800;letter-spacing:-.02em;margin:0;padding:8px 20px 4px}
+.subtitle{margin:0;padding:0 20px 16px;font-size:.85rem;color:var(--muted)}
+.section-label{padding:18px 20px 8px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.backlog-list{margin:0;padding:0 20px 4px;list-style:none;display:flex;flex-direction:column;gap:10px}
+.backlog-item{background:var(--surface);border:1px solid var(--border);border-radius:.875rem;padding:12px 14px}
+.backlog-item strong{display:block;font-size:.92rem}
+.backlog-item span{display:block;margin-top:4px;font-size:.8rem;color:var(--muted)}
+.pill{display:inline-block;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-bottom:6px}
+footer{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:.78rem;padding:20px 20px 10px;border-top:1px solid var(--border);margin-top:20px}
+</style>
+</head>
+<body>
+<div class="sticky-top">
+  <div class="back-row"><a href="./">&larr; Back to Dudu's Kitchen</a></div>
+  <h1 class="big-title">Backlog</h1>
+  <p class="subtitle">Ideas and to-dos for the app — nothing here is built yet unless noted.</p>
+</div>
+
+<div class="section-label">Core</div>
+<ul class="backlog-list">
+  <li class="backlog-item">
+    <span class="pill">Process</span>
+    <strong>Define &amp; build the "My Own" recipe process</strong>
+    <span>Decide how you'll add your own recipes (form, paste-in, or manual edit) and build it.</span>
+    <!--
+      INTERNAL NOTE (not shown to user on page):
+      - Recipe.origin already supports 'mine' end-to-end (filter + badge done).
+      - Simplest MVP: a small "Add Recipe" form screen reusing the Recipe type fields
+        (title, categories, description, image URL, macros, ingredients/steps as
+        textareas split on newlines, source optional), writing into localStorage
+        under a new key e.g. 'duduskitchen-my-recipes', merged with the static
+        recipes[] array at render time in App.tsx.
+      - Longer-term: needs the shared backend (see Deployment note below) so both
+        the user and spouse can add/see the same "My Own" recipes instead of each
+        having a separate localStorage copy.
+    -->
+  </li>
+  <li class="backlog-item">
+    <span class="pill">Deployment</span>
+    <strong>Host the app online</strong>
+    <span>Currently only runs on localhost — deploy it so it's reachable from any device.</span>
+    <!--
+      INTERNAL NOTE (not shown to user on page):
+      - Static Vite build (npm run build) — no server-side logic today, so any
+        static host works: Azure Static Web Apps, Vercel, Netlify, GitHub Pages.
+      - Blocker: localStorage-based state (triage + future "My Own" recipes) is
+        per-browser/per-device. If the user + spouse need a shared view, hosting
+        alone isn't enough — needs the small shared-backend phase already flagged
+        as future work (mentioned in original spec conversation).
+      - No auth/secrets in this app currently, so no special security setup needed
+        beyond standard HTTPS the static hosts provide by default.
+    -->
+  </li>
+</ul>
+
+<div class="section-label">Feature Ideas</div>
+<ul class="backlog-list">
+  <li class="backlog-item">
+    <strong>Weekly meal planner</strong>
+    <span>Drag recipes onto a 7-day calendar view.</span>
+    <!-- NOTE: new page + a plannedMeals map keyed by date -> recipe id, localStorage-backed like recipeState. -->
+  </li>
+  <li class="backlog-item">
+    <strong>Auto-generated grocery list</strong>
+    <span>Build a shopping list from a week's planned meals.</span>
+    <!-- NOTE: depends on meal planner above; merge/dedupe ingredient strings, maybe basic unit parsing. -->
+  </li>
+  <li class="backlog-item">
+    <strong>Print-friendly recipe view</strong>
+    <span>A clean, ink-friendly layout for printing a single recipe.</span>
+    <!-- NOTE: @media print stylesheet on the modal content, or a dedicated /print/:id route. -->
+  </li>
+  <li class="backlog-item">
+    <strong>Installable app (PWA)</strong>
+    <span>Add to home screen and use offline.</span>
+    <!-- NOTE: vite-plugin-pwa, manifest.json, service worker caching recipes.ts + images. -->
+  </li>
+  <li class="backlog-item">
+    <strong>Photo upload for My Own recipes</strong>
+    <span>Attach your own photo instead of a stock image.</span>
+    <!-- NOTE: store as base64/blob in localStorage (small scale) or object storage once hosted. -->
+  </li>
+  <li class="backlog-item">
+    <strong>Import a recipe from a URL</strong>
+    <span>Paste a link and auto-fill title/ingredients/steps.</span>
+    <!-- NOTE: needs a small backend fetch+parse step (CORS blocks client-side fetch of most recipe sites). -->
+  </li>
+  <li class="backlog-item">
+    <strong>Serving-size scaler</strong>
+    <span>Adjust ingredient quantities for more/fewer servings.</span>
+    <!-- NOTE: requires structured ingredient data (qty/unit/name) instead of free-text strings — bigger schema change. -->
+  </li>
+  <li class="backlog-item">
+    <strong>Ingredient substitution suggestions</strong>
+    <span>Quick swaps for common allergies or missing items.</span>
+    <!-- NOTE: static lookup table of common swaps (e.g. Greek yogurt <-> sour cream) shown in modal. -->
+  </li>
+  <li class="backlog-item">
+    <strong>Leftover / batch-cook tracker</strong>
+    <span>Mark a recipe as "cooked, N portions left".</span>
+    <!-- NOTE: extend RecipeState with portionsLeft; small counter UI in modal. -->
+  </li>
+  <li class="backlog-item">
+    <strong>Weekly nutrition summary</strong>
+    <span>Totals of calories/protein for liked or planned recipes.</span>
+    <!-- NOTE: simple aggregation over recipeState + recipes; a small dashboard card. -->
+  </li>
+  <li class="backlog-item">
+    <strong>Daily protein/calorie goal tracker</strong>
+    <span>Set a target and see progress as you plan meals.</span>
+    <!-- NOTE: user-set goal in localStorage; progress bar component reused from macro-row style. -->
+  </li>
+  <li class="backlog-item">
+    <strong>"Surprise me" random recipe picker</strong>
+    <span>One tap to get a random not-disliked, not-hidden recipe.</span>
+    <!-- NOTE: filter visibleRecipes-equivalent pool, pick random index, open modal directly. -->
+  </li>
+  <li class="backlog-item">
+    <strong>Shared profiles (you + spouse)</strong>
+    <span>Separate like/dislike state per person on shared recipes.</span>
+    <!-- NOTE: needs backend/auth phase; localStorage can't cleanly separate two people on one device. -->
+  </li>
+  <li class="backlog-item">
+    <strong>Freeform recipe notes/comments</strong>
+    <span>Jot your own tweaks or comments on any recipe.</span>
+    <!-- NOTE: add optional userNote string to RecipeState, small textarea in modal. -->
+  </li>
+  <li class="backlog-item">
+    <strong>Tag-based smart filters</strong>
+    <span>Quick filter chips like "quick", "meal-prep", "one-pan".</span>
+    <!-- NOTE: tags[] already exists on Recipe; just needs a chip row deriving unique tags + filter state. -->
+  </li>
+  <li class="backlog-item">
+    <strong>Cooking mode</strong>
+    <span>Full-screen step-by-step view, screen stays awake.</span>
+    <!-- NOTE: Screen Wake Lock API (navigator.wakeLock); simple step-by-step carousel over selectedRecipe.steps. -->
+  </li>
+  <li class="backlog-item">
+    <strong>Built-in step timers</strong>
+    <span>Start a timer directly from a cooking step.</span>
+    <!-- NOTE: needs step-level duration metadata (not currently in Recipe.steps as plain strings) — schema change. -->
+  </li>
+  <li class="backlog-item">
+    <strong>Seasonal recipe highlighting</strong>
+    <span>Surface recipes that fit the current season.</span>
+    <!-- NOTE: add optional season tag; highlight matching recipes based on current month, no hard filter. -->
+  </li>
+  <li class="backlog-item">
+    <strong>Export/share a recipe as image or PDF</strong>
+    <span>Send a recipe to someone without the app.</span>
+    <!-- NOTE: client-side render via html2canvas or a simple print-to-PDF using the print view above. -->
+  </li>
+  <li class="backlog-item">
+    <strong>Recently viewed history</strong>
+    <span>Quick access to the last few recipes you opened.</span>
+    <!-- NOTE: small array of recipe ids in localStorage, capped at ~10, most-recent-first. -->
+  </li>
+</ul>
+
+<footer>
+  <span>Dudu's Kitchen</span>
+  <span>Backlog</span>
+</footer>
+</body>
+</html>

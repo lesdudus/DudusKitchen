@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" data-layout="storytelling">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Circuit Kitchen — Dudu's Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@500;600&family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@500;600&family=Bebas+Neue&family=Zilla+Slab:wght@500;700&family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cp-bg:#0A0C0A;--cp-bg-elevated:color-mix(in srgb, #0A0C0A 85%, white 15%);--cp-surface:color-mix(in srgb, #0A0C0A 78%, white 22%);--cp-surface-soft:color-mix(in srgb, #0A0C0A 82%, white 18%);--cp-border:color-mix(in srgb, #EAEFEA 22%, transparent);--cp-text:#EAEFEA;--cp-text-muted:color-mix(in srgb, #EAEFEA 68%, #0A0C0A 32%);--cp-text-soft:color-mix(in srgb, #EAEFEA 55%, #0A0C0A 45%);--cp-accent:#FF2D55;--cp-accent-hover:color-mix(in srgb, #FF2D55 82%, black 18%);--cp-accent-soft:color-mix(in srgb, #FF2D55 14%, transparent);--cp-accent-fg:#FFFFFF;--cp-link:#FF2D55;--theme-font-display:'IBM Plex Mono', Consolas, monospace}
+
+*{box-sizing:border-box}
+html{background:var(--cp-bg);scroll-behavior:smooth}
+body{background:var(--cp-bg);color:var(--cp-text);font-family:"Segoe UI",Aptos,sans-serif;margin:0;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--cp-link)}
+button{cursor:pointer;font-family:inherit}
+h1,h2,h3,h4{font-family:var(--theme-font-display,inherit)}
+.brand{color:inherit;font-weight:750;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.brand-mark{background:var(--cp-accent);color:var(--cp-accent-fg);border-radius:8px;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;font-size:15px}
+.cat-chip{background:var(--cp-surface);border:1px solid var(--cp-border);border-radius:999px;color:var(--cp-text-muted);font-size:.78rem;font-weight:650;padding:8px 14px}
+.cat-chip.active{background:var(--cp-accent);color:var(--cp-accent-fg);border-color:var(--cp-accent)}
+.rd-ingredients ul,.rd-method ol{margin:0;padding-left:20px;line-height:1.8;font-size:.92rem;color:var(--cp-text-soft)}
+.rd-actions{display:flex;gap:10px;flex-wrap:wrap}
+.rd-actions button{background:transparent;border:1px solid var(--cp-accent);color:var(--cp-accent);padding:10px 18px;border-radius:.625rem;font:inherit;font-size:.85rem}
+.rd-actions button.primary{background:var(--cp-accent);color:var(--cp-accent-fg)}
+.review-bar{position:fixed;bottom:14px;left:14px;z-index:999;background:rgba(20,18,14,.88);color:#efe9df;font:600 11px/1 "Segoe UI",sans-serif;letter-spacing:.02em;padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.14)}
+.review-bar:hover{border-color:#c9a227}
+.review-bar-home{bottom:52px}
+.about-panel{position:fixed;bottom:14px;right:14px;z-index:999;max-width:280px;background:rgba(20,18,14,.92);color:#efe9df;font:12px/1.5 "Segoe UI",sans-serif;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14)}
+.about-panel summary{cursor:pointer;font-weight:700;list-style:none}
+.about-panel summary::-webkit-details-marker{display:none}
+.about-panel summary::before{content:"+ "}
+.about-panel[open] summary::before{content:"\2212 "}
+.about-panel p{margin:8px 0 0;color:#cfc7ba}
+
+
+.st-intro{min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 24px}
+.st-intro h1{font-size:clamp(2.6rem,7vw,5rem);max-width:800px;line-height:1.05;margin:0}
+.st-section{display:grid;grid-template-columns:1fr 1fr;min-height:80vh;align-items:center}
+.st-section.st-rev{direction:rtl}
+.st-section.st-rev>*{direction:ltr}
+.st-img{height:100%;min-height:420px;background-size:cover;background-position:center}
+.st-copy{padding:40px clamp(24px,5vw,64px)}
+.st-kicker{color:var(--cp-accent);text-transform:uppercase;letter-spacing:.2em;font-size:.75rem;font-weight:700}
+.st-copy h2{font-size:3rem;margin:12px 0 24px}
+.st-copy ul{list-style:none;padding:0;margin:0 0 20px}
+.st-copy li{border-top:1px solid var(--cp-border);padding:14px 0;display:flex;justify-content:space-between;font-size:.9rem}
+.st-copy li span{color:var(--cp-text-muted);font-size:.78rem}
+.st-copy a{font-weight:700}
+@media (max-width:800px){.st-section,.st-section.st-rev{grid-template-columns:1fr;direction:ltr}.st-img{min-height:260px}}
+
+</style>
+</head>
+<body>
+<div style="display:flex;justify-content:space-between;padding:20px clamp(20px,4vw,56px)"><a class="brand" href="theme-25-home.html"><span class="brand-mark">&#127859;</span>Dudu's Kitchen</a></div><div class="st-intro"><h1>Eat with purpose.</h1></div><section class="st-section"><div class="st-img" style="background-image:url(https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=1400&q=85)"></div><div class="st-copy"><p class="st-kicker">Chapter 1</p><h2>Breakfast</h2><ul><li><strong>Berry Protein Overnight Oats</strong><span>390 kcal &middot; 33g protein &middot; 10 min</span></li><li><strong>Cinnamon Banana Protein Pancakes</strong><span>410 kcal &middot; 35g protein &middot; 20 min</span></li></ul><a href="theme-25-recipe.html">Explore Berry Protein Overnight Oats &rarr;</a></div></section><section class="st-section st-rev"><div class="st-img" style="background-image:url(https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1400&q=85)"></div><div class="st-copy"><p class="st-kicker">Chapter 2</p><h2>Lunch</h2><ul><li><strong>Spicy Cajun Chicken &amp; Rice Bowl</strong><span>495 kcal &middot; 48g protein &middot; 30 min</span></li><li><strong>Chicken Satay Crunch Bowl</strong><span>470 kcal &middot; 46g protein &middot; 25 min</span></li></ul></div></section><section class="st-section"><div class="st-img" style="background-image:url(https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=1400&q=85)"></div><div class="st-copy"><p class="st-kicker">Chapter 3</p><h2>Snack</h2><ul><li><strong>Chocolate Oat Protein Bites</strong><span>210 kcal &middot; 17g protein &middot; 15 min</span></li><li><strong>Berry Skyr Cheesecake Cups</strong><span>225 kcal &middot; 21g protein &middot; 15 min</span></li></ul></div></section><section class="st-section st-rev"><div class="st-img" style="background-image:url(https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=1400&q=85)"></div><div class="st-copy"><p class="st-kicker">Chapter 4</p><h2>Dinner</h2><ul><li><strong>Chicken Karahi with Basmati Rice</strong><span>520 kcal &middot; 52g protein &middot; 40 min</span></li><li><strong>Lighter Chicken Biryani</strong><span>535 kcal &middot; 45g protein &middot; 45 min</span></li></ul></div></section>
+<a class="review-bar" href="../visions-index.html">&larr; Back to gallery &middot; Theme 25/50 &middot; Circuit Kitchen &middot; layout: storytelling</a>
+<details class="about-panel"><summary>About this theme</summary><p>The body as an engineered system to optimize. (layout: storytelling)</p></details>
+</body>
+</html>

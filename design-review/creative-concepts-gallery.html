@@ -1,0 +1,1345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Creative Concepts Review — Dudu's Kitchen</title>
+<meta name="description" content="50 creative direction concepts for Dudu's Kitchen: review, like, and shortlist." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@500;600&family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@500;600&family=Bebas+Neue&family=Zilla+Slab:wght@500;700&family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --studio-bg: #131211;
+    --studio-bg-elevated: #1b1a18;
+    --studio-surface: #1f1e1c;
+    --studio-border: #322f2b;
+    --studio-text: #efe9df;
+    --studio-text-muted: #a39a8c;
+    --studio-text-soft: #877d6f;
+    --studio-accent: #c9a227;
+    --studio-accent-fg: #14120e;
+    --studio-good: #6fae6c;
+    --studio-bad: #c1544a;
+    --font-serif-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --font-serif-luxury: 'Cormorant Garamond', Georgia, serif;
+    --font-sans-geometric: 'Space Grotesk', 'Segoe UI', sans-serif;
+    --font-mono-tech: 'IBM Plex Mono', Consolas, monospace;
+    --font-display-condensed: 'Bebas Neue', 'Arial Narrow', sans-serif;
+    --font-slab-editorial: 'Zilla Slab', Georgia, serif;
+    --font-serif-literary: 'Libre Baskerville', Georgia, serif;
+    --font-sans-clean: 'DM Sans', 'Segoe UI', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--studio-bg); scroll-behavior: smooth; }
+  body {
+    background: var(--studio-bg);
+    color: var(--studio-text);
+    font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+  }
+  button, textarea, input { font-family: inherit; }
+  button { cursor: pointer; }
+  a { color: var(--studio-accent); }
+  button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visible {
+    outline: 2px solid var(--studio-accent);
+    outline-offset: 2px;
+  }
+
+  .tool-header {
+    border-bottom: 1px solid var(--studio-border);
+    padding: 28px clamp(20px, 4vw, 56px);
+    position: sticky;
+    top: 0;
+    background: rgba(19, 18, 17, 0.94);
+    backdrop-filter: blur(10px);
+    z-index: 20;
+  }
+  .tool-header-row { align-items: center; display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; }
+  .tool-title { margin: 0; }
+  .kicker { color: var(--studio-accent); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; margin: 0 0 6px; text-transform: uppercase; }
+  .tool-title h1 { font-family: var(--font-serif-display); font-size: clamp(1.6rem, 3vw, 2.3rem); margin: 0; }
+  .tool-title p { color: var(--studio-text-muted); margin: 8px 0 0; max-width: 560px; }
+  .stats { display: flex; gap: 22px; }
+  .stats div { display: flex; flex-direction: column; gap: 2px; text-align: right; }
+  .stats strong { font-size: 1.3rem; }
+  .stats span { color: var(--studio-text-soft); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .header-actions { display: flex; gap: 10px; margin-top: 18px; }
+  .header-actions button {
+    background: transparent;
+    border: 1px solid var(--studio-border);
+    border-radius: 0.625rem;
+    color: var(--studio-text);
+    font-size: 0.78rem;
+    font-weight: 650;
+    padding: 9px 14px;
+  }
+  .header-actions button.primary { background: var(--studio-accent); border-color: var(--studio-accent); color: var(--studio-accent-fg); }
+  .header-actions button:hover { border-color: var(--studio-accent); }
+
+  .audit {
+    border-bottom: 1px solid var(--studio-border);
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0 clamp(20px, 4vw, 56px);
+  }
+  .audit summary {
+    color: var(--studio-text);
+    cursor: pointer;
+    font-weight: 700;
+    list-style: none;
+    padding: 20px 0;
+  }
+  .audit summary::-webkit-details-marker { display: none; }
+  .audit summary::before { content: "▸ "; color: var(--studio-accent); }
+  .audit[open] summary::before { content: "▾ "; }
+  .audit-grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); padding-bottom: 26px; }
+  .audit-grid h4 { color: var(--studio-accent); font-size: 0.72rem; letter-spacing: 0.08em; margin: 0 0 8px; text-transform: uppercase; }
+  .audit-grid p { color: var(--studio-text-muted); font-size: 0.85rem; line-height: 1.5; margin: 0; }
+
+  .controls {
+    background: var(--studio-bg-elevated);
+    border-bottom: 1px solid var(--studio-border);
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 18px clamp(20px, 4vw, 56px);
+    position: sticky;
+    top: 116px;
+    z-index: 15;
+  }
+  .search-row { display: flex; gap: 12px; margin-bottom: 14px; }
+  .search-row input {
+    background: var(--studio-surface);
+    border: 1px solid var(--studio-border);
+    border-radius: 0.625rem;
+    color: var(--studio-text);
+    flex: 1;
+    font-size: 0.9rem;
+    height: 42px;
+    padding: 0 14px;
+  }
+  .search-row input::placeholder { color: var(--studio-text-soft); }
+  .chip-rows { display: flex; flex-direction: column; gap: 8px; }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    background: var(--studio-surface);
+    border: 1px solid var(--studio-border);
+    border-radius: 999px;
+    color: var(--studio-text-muted);
+    font-size: 0.78rem;
+    font-weight: 650;
+    padding: 8px 14px;
+  }
+  .chip.active { background: var(--studio-accent); border-color: var(--studio-accent); color: var(--studio-accent-fg); }
+  .chip.fav.active { background: var(--studio-bad); border-color: var(--studio-bad); color: #fff; }
+  .result-count { color: var(--studio-text-soft); font-size: 0.74rem; margin-top: 12px; text-transform: uppercase; }
+
+  main { margin: 0 auto; max-width: 1440px; padding: 32px clamp(20px, 4vw, 56px) 90px; }
+  .grid { display: grid; gap: 26px; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+
+  .concept-card {
+    background: var(--studio-surface);
+    border: 1px solid var(--studio-border);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .concept-card.hidden-card { display: none; }
+
+  .mockup { aspect-ratio: 16 / 11; position: relative; overflow: hidden; }
+  .mockup-bar { display: flex; gap: 5px; left: 12px; position: absolute; top: 10px; z-index: 2; }
+  .mockup-bar span { background: rgba(255,255,255,0.35); border-radius: 50%; display: block; height: 6px; width: 6px; }
+  .mockup-body { height: 100%; position: relative; width: 100%; }
+  .mockup h4, .mockup p { margin: 0; }
+
+  .skin-luxury .mockup-body { align-items: center; background: var(--c1); border-top: 3px solid var(--c3); border-bottom: 3px solid var(--c3); display: flex; flex-direction: column; justify-content: center; padding: 18px; text-align: center; }
+  .skin-luxury h4 { color: var(--c3); font-size: 1.5rem; }
+  .skin-luxury p { color: var(--c4); font-size: 0.62rem; letter-spacing: 0.22em; margin-top: 8px; text-transform: uppercase; }
+
+  .skin-minimal .mockup-body { background: var(--c3); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; }
+  .skin-minimal h4 { color: var(--c1); font-size: 1.75rem; line-height: 0.95; }
+  .skin-minimal p { color: var(--c1); font-size: 0.66rem; letter-spacing: 0.1em; margin-top: 10px; opacity: 0.6; text-transform: uppercase; }
+  .skin-minimal::after { content: ""; background: var(--c2); bottom: 20px; height: 2px; position: absolute; right: 20px; width: 40px; }
+
+  .skin-editorial .mockup-body { background: var(--c3); display: grid; gap: 14px; grid-template-columns: 1.3fr 1fr; padding: 18px; }
+  .skin-editorial h4 { border-right: 1px solid var(--c1); color: var(--c1); font-size: 1.3rem; padding-right: 14px; }
+  .skin-editorial .mockup-lines { display: flex; flex-direction: column; gap: 6px; justify-content: center; }
+  .skin-editorial .mockup-lines span { background: var(--c1); height: 4px; opacity: 0.35; }
+  .skin-editorial .mockup-lines span:nth-child(2) { width: 70%; }
+  .skin-editorial .mockup-lines span:nth-child(3) { width: 45%; }
+
+  .skin-cinematic .mockup-body { align-items: flex-end; background: linear-gradient(135deg, var(--c1), var(--c2)); display: flex; padding: 20px; position: relative; }
+  .skin-cinematic .mockup-body::before { content: ""; background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.14), transparent 60%); inset: 0; position: absolute; }
+  .skin-cinematic h4 { color: #fff; font-size: 1.7rem; position: relative; z-index: 1; }
+
+  .skin-grid .mockup-body { background: var(--c1); display: flex; flex-direction: column; gap: 10px; padding: 18px; }
+  .skin-grid .m-row { display: flex; gap: 8px; }
+  .skin-grid .m-card { background: var(--c2); border-radius: 6px; flex: 1; height: 44px; }
+  .skin-grid .m-card:nth-child(2) { background: var(--c4); }
+  .skin-grid .m-card:nth-child(3) { background: var(--c3); }
+  .skin-grid h4 { color: var(--c4); font-size: 1.05rem; }
+
+  .skin-brutalist .mockup-body { background: var(--c1); overflow: hidden; padding: 16px; position: relative; }
+  .skin-brutalist h4 { color: var(--c2); font-size: 2.1rem; left: 16px; letter-spacing: -0.02em; line-height: 0.85; position: absolute; text-transform: uppercase; top: 30px; }
+  .skin-brutalist h4::after { content: attr(data-text); color: rgba(255,255,255,0.18); left: 3px; position: absolute; top: 3px; z-index: -1; }
+  .skin-brutalist p { background: var(--c2); bottom: 16px; color: var(--c1); font-size: 0.65rem; left: 16px; letter-spacing: 0.1em; padding: 4px 8px; position: absolute; text-transform: uppercase; }
+
+  .skin-playful .mockup-body { background: var(--c3); overflow: hidden; padding: 18px; position: relative; }
+  .skin-playful .blob { background: var(--c2); border-radius: 42% 58% 63% 37% / 45% 41% 59% 55%; height: 130px; opacity: 0.9; position: absolute; right: -20px; top: -20px; width: 130px; }
+  .skin-playful h4 { color: var(--c1); font-size: 1.4rem; position: relative; }
+  .skin-playful .m-row { display: flex; gap: 8px; margin-top: 14px; position: relative; }
+  .skin-playful .m-card { background: #fff; border-radius: 14px; box-shadow: 0 6px 14px rgba(0,0,0,0.12); flex: 1; height: 34px; }
+
+  .concept-meta { padding: 20px; }
+  .meta-top { align-items: center; display: flex; gap: 10px; margin-bottom: 10px; }
+  .concept-index { color: var(--studio-text-soft); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; }
+  .badge { border-radius: 999px; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.06em; padding: 4px 9px; text-transform: uppercase; }
+  .badge.group-a { background: rgba(193, 18, 31, 0.18); color: #e2544a; }
+  .badge.group-b { background: rgba(201, 162, 39, 0.18); color: var(--studio-accent); }
+  .concept-meta h3 { font-size: 1.15rem; margin: 0 0 8px; }
+  .personality { color: var(--studio-text-muted); font-size: 0.86rem; line-height: 1.45; margin: 0 0 14px; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  .tag-row span { background: var(--studio-bg-elevated); border: 1px solid var(--studio-border); border-radius: 999px; color: var(--studio-text-soft); font-size: 0.66rem; padding: 4px 9px; text-transform: capitalize; }
+
+  .brief-quick { border-top: 1px solid var(--studio-border); display: grid; gap: 10px; margin: 0 0 14px; padding-top: 14px; }
+  .brief-quick div { display: flex; gap: 8px; }
+  .brief-quick dt { color: var(--studio-text-soft); flex: 0 0 84px; font-size: 0.68rem; letter-spacing: 0.05em; text-transform: uppercase; }
+  .brief-quick dd { color: var(--studio-text); font-size: 0.8rem; line-height: 1.4; margin: 0; }
+
+  .palette-row { display: flex; gap: 6px; margin-bottom: 16px; }
+  .swatch { border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; flex: 1; height: 26px; padding: 0; }
+
+  .full-brief { border-top: 1px solid var(--studio-border); margin-bottom: 16px; padding-top: 12px; }
+  .full-brief summary { color: var(--studio-accent); cursor: pointer; font-size: 0.78rem; font-weight: 650; list-style: none; }
+  .full-brief summary::-webkit-details-marker { display: none; }
+  .full-brief summary::before { content: "+ "; }
+  .full-brief[open] summary::before { content: "– "; }
+  .full-brief dl { display: grid; gap: 10px; margin: 14px 0 0; }
+  .full-brief dt { color: var(--studio-text-soft); font-size: 0.68rem; letter-spacing: 0.05em; text-transform: uppercase; }
+  .full-brief dd { color: var(--studio-text-muted); font-size: 0.8rem; line-height: 1.5; margin: 3px 0 0; }
+  .refs { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .refs a { background: var(--studio-bg-elevated); border: 1px solid var(--studio-border); border-radius: 999px; font-size: 0.7rem; padding: 5px 10px; text-decoration: none; }
+  .refs a:hover { border-color: var(--studio-accent); }
+
+  .review-controls { border-top: 1px solid var(--studio-border); padding-top: 14px; }
+  .vote-row { display: flex; gap: 8px; margin-bottom: 10px; }
+  .vote-row button {
+    background: var(--studio-bg-elevated);
+    border: 1px solid var(--studio-border);
+    border-radius: 0.625rem;
+    color: var(--studio-text-muted);
+    flex: 1;
+    font-size: 0.78rem;
+    font-weight: 650;
+    padding: 9px 0;
+  }
+  .like-btn[aria-pressed="true"] { background: var(--studio-good); border-color: var(--studio-good); color: #0e1a0d; }
+  .dislike-btn[aria-pressed="true"] { background: var(--studio-bad); border-color: var(--studio-bad); color: #fff; }
+  .notes {
+    background: var(--studio-bg-elevated);
+    border: 1px solid var(--studio-border);
+    border-radius: 0.625rem;
+    color: var(--studio-text);
+    font-size: 0.8rem;
+    min-height: 56px;
+    padding: 10px;
+    resize: vertical;
+    width: 100%;
+  }
+  .notes::placeholder { color: var(--studio-text-soft); }
+
+  .toast {
+    background: var(--studio-accent);
+    border-radius: 0.625rem;
+    color: var(--studio-accent-fg);
+    bottom: 24px;
+    font-size: 0.8rem;
+    font-weight: 650;
+    left: 50%;
+    opacity: 0;
+    padding: 10px 18px;
+    pointer-events: none;
+    position: fixed;
+    transform: translate(-50%, 10px);
+    transition: opacity 200ms ease, transform 200ms ease;
+    z-index: 50;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  footer { border-top: 1px solid var(--studio-border); color: var(--studio-text-soft); font-size: 0.76rem; margin: 0 auto; max-width: 1440px; padding: 24px clamp(20px, 4vw, 56px) 48px; }
+
+  @media (max-width: 720px) {
+    .stats { display: none; }
+    .controls { top: 168px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="tool-header">
+  <div class="tool-header-row">
+    <div class="tool-title">
+      <p class="kicker">Creative Review Workshop</p>
+      <h1>Dudu's Kitchen — 50 Creative Directions</h1>
+      <p>30 black &amp; red reinventions, 20 alternative palettes. Like, pass, and leave notes to build the shortlist.</p>
+    </div>
+    <div class="stats" aria-live="polite">
+      <div><strong id="statTotal">50</strong><span>Concepts</span></div>
+      <div><strong id="statLiked">0</strong><span>Liked</span></div>
+      <div><strong id="statPassed">0</strong><span>Passed</span></div>
+      <div><strong id="statReviewed">0</strong><span>Reviewed</span></div>
+    </div>
+  </div>
+  <div class="header-actions">
+    <button type="button" class="primary" id="copyShortlist">Copy shortlist</button>
+    <button type="button" id="resetReviews">Reset reviews</button>
+  </div>
+</header>
+
+<details class="audit" open>
+  <summary>Creative Audit — brutally honest read on the current site</summary>
+  <div class="audit-grid">
+    <div><h4>What works</h4><p>Black/red is genuinely unclaimed territory in food. The performance-nutrition angle is a real differentiator. The technical foundation is fast and clean.</p></div>
+    <div><h4>Outdated</h4><p>Rounded cards, soft shadows, centered hero, one accent color — reads as 2019 SaaS dashboard, not a food brand.</p></div>
+    <div><h4>Generic</h4><p>Icon+number metadata, single typeface, stock-style photography with no consistent art direction. Nothing here has a point of view.</p></div>
+    <div><h4>Hurts trust</h4><p>Bare macro numbers with no methodology signal. No authorial voice — "Dudu's Kitchen" should feel like someone's kitchen, not a database.</p></div>
+    <div><h4>Hurts engagement</h4><p>Filter → grid → modal is purely transactional. No emotional arc, no shareable moment, no sense of time or season.</p></div>
+    <div><h4>Missed opportunity</h4><p>"Discipline meets appetite" is unclaimed — most healthy-eating brands are soft and pastel. No ritual, no manifesto, no recurring visual signature.</p></div>
+    <div><h4>Path to iconic</h4><p>One disciplined motif repeated everywhere (a red thread, a seal, an enso) plus a real editorial voice and an unmistakable type pairing.</p></div>
+  </div>
+</details>
+
+<div class="controls">
+  <div class="search-row">
+    <input type="search" id="searchInput" placeholder="Search concepts, moods, keywords…" aria-label="Search concepts" />
+  </div>
+  <div class="chip-rows">
+    <div class="chip-row" id="scopeChips">
+      <button class="chip active" data-scope="all" type="button">All 50</button>
+      <button class="chip" data-scope="A" type="button">Black / Red (30)</button>
+      <button class="chip" data-scope="B" type="button">Alternative Palettes (20)</button>
+    </div>
+    <div class="chip-row">
+      <button class="chip fav" id="favChip" type="button">★ Favorites</button>
+    </div>
+    <div class="chip-row" id="styleChips">
+      <button class="chip" data-style="luxury" type="button">Luxury</button>
+      <button class="chip" data-style="minimalist" type="button">Minimalist</button>
+      <button class="chip" data-style="editorial" type="button">Editorial</button>
+      <button class="chip" data-style="modern" type="button">Modern</button>
+      <button class="chip" data-style="experimental" type="button">Experimental</button>
+    </div>
+  </div>
+  <p class="result-count" id="resultCount">Showing 50 of 50 concepts</p>
+</div>
+
+<main>
+  <div class="grid" id="conceptGrid" aria-live="polite"></div>
+</main>
+
+<footer>
+  Dudu's Kitchen Creative Review · Reviews and notes are stored locally in this browser only (localStorage), nothing is sent anywhere.
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const CONCEPTS = [
+{id:"michelin-noir", n:"Michelin Noir", g:"A", skin:"luxury", font:"serif-display", fontRec:"Display: GT Sectra · Body: Söhne",
+  tags:["luxury","editorial"], hero:"Worth The Journey",
+  personality:"Restrained, authoritative, quietly confident — food as craft worth traveling for.",
+  emotion:"Respect and aspiration, the feeling of being handed something earned.",
+  audience:"Ambitious home cooks who treat eating well as a discipline, not a chore.",
+  palette:[["#0B0B0C","Onyx Black"],["#C8102E","Michelin Red"],["#F3EDE4","Warm Cream"],["#8A8580","Ash Grey"]],
+  layout:"Single-column editorial spine, generous margins, a numbered 'star' rating system replacing generic tags.",
+  heroDesc:"Full-bleed black hero with one cream serif headline and a single red pin marking 'today's recipe,' like a guide entry.",
+  card:"Recipe cards styled as guide entries: number, name, one red star row, no photo until opened.",
+  photo:"Single dramatic plate shot per recipe, dark backdrop, restaurant-quality lighting, no lifestyle filler.",
+  motion:"Slow, deliberate fades — nothing bounces, everything arrives with weight.",
+  why:"No recipe site borrows Michelin's restraint and authority instead of its icon library.",
+  love:"Users feel like they're being handed a curated, vetted recommendation, not scrolling an endless feed.",
+  refs:[{name:"Michelin Guide",url:"https://guide.michelin.com"},{name:"Aesop",url:"https://www.aesop.com"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"tokyo-midnight", n:"Tokyo Midnight Kitchen", g:"A", skin:"minimal", font:"sans-clean", fontRec:"Display: Times Now · Body: Neue Haas Grotesk",
+  tags:["minimalist","luxury"], hero:"Ma. Space. Flavor.",
+  personality:"Quiet, precise, deeply intentional — every pixel earns its place.",
+  emotion:"Calm focus; the feeling of a clean countertop before cooking begins.",
+  audience:"Design-literate professionals who want stillness in a noisy digital diet.",
+  palette:[["#101012","Sumi Black"],["#F5F1E8","Washi White"],["#BC002D","Hinomaru Red"],["#6E6A64","Ash Grey"]],
+  layout:"Extreme negative space (ma), single-column vertical rhythm, one red accent per screen maximum.",
+  heroDesc:"Mostly empty washi-white canvas with one small red circle and a single line of copy, nothing else.",
+  card:"Recipes as quiet vertical strips — thin rule, small type, one word of description, no clutter.",
+  photo:"Overhead, minimal-plating shots on raw ceramic, soft natural light, deliberate empty space in-frame.",
+  motion:"Almost none — a gentle 200ms fade only, respecting stillness as a design principle.",
+  why:"Nobody in food design is willing to use this much emptiness with this much confidence.",
+  love:"It feels like a moment of calm in the middle of a busy day, not another feed to scroll.",
+  refs:[{name:"MUJI",url:"https://www.muji.com"},{name:"Notion",url:"https://www.notion.so"},{name:"Monocle",url:"https://www.monocle.com"}]},
+
+{id:"brutalist-broadsheet", n:"Brutalist Broadsheet", g:"A", skin:"brutalist", font:"display-condensed", fontRec:"Display: Founders Grotesk Condensed · Body: Courier",
+  tags:["editorial","experimental"], hero:"EAT LOUD",
+  personality:"Raw, confrontational, unpolished on purpose — anti-slick, pro-substance.",
+  emotion:"Adrenaline and irreverence; food as rebellion against bland wellness content.",
+  audience:"Younger, culturally plugged-in cooks tired of soft-focus recipe blogs.",
+  palette:[["#000000","Ink Black"],["#D8D5CE","Newsprint Grey"],["#B3001B","Blood Red"],["#FFFFFF","White"]],
+  layout:"Oversized cropped type overlapping images, raw HTML-table-like grid, deliberate misalignment.",
+  heroDesc:"Giant black type bleeding off both edges of the screen with a single red rule cutting through it.",
+  card:"Recipe cards look like torn newspaper clippings stapled to a corkboard, rotated slightly off-grid.",
+  photo:"High-contrast, harsh flash photography — unglamorous, direct, almost documentary.",
+  motion:"Snap-cuts, no easing, deliberately jarring transitions that feel like flipping pages fast.",
+  why:"Nothing in food currently looks this aggressive — it would stop a scroll instantly.",
+  love:"It feels alive and confident, the opposite of algorithm-safe design everyone else ships.",
+  refs:[{name:"It's Nice That",url:"https://www.itsnicethat.com"},{name:"Dezeen",url:"https://www.dezeen.com"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"maison-rouge", n:"Maison Rouge", g:"A", skin:"luxury", font:"serif-luxury", fontRec:"Display: Canela · Body: Söhne",
+  tags:["luxury"], hero:"La Maison",
+  personality:"Fashion-house poise — food photographed and typeset like a couture campaign.",
+  emotion:"Desire and prestige, the feeling of opening a beautifully boxed gift.",
+  audience:"Affluent, aesthetically driven users who equate design quality with food quality.",
+  palette:[["#0C0C0D","Onyx Black"],["#A6192E","Rouge"],["#C9A24B","Champagne Gold"],["#F2EDE6","Ivory"]],
+  layout:"Symmetrical, centered, generous margins, hairline gold rules framing every section.",
+  heroDesc:"A single centered product-style plate shot, wordmark above in thin gold-bordered serif letters.",
+  card:"Cards presented like perfume boxes — name centered, thin gold border, image revealed on hover only.",
+  photo:"Studio-lit, single-subject, dark background — treated like luxury product photography, not food blogging.",
+  motion:"Slow reveal fades and gentle gold-line draws, echoing luxury unboxing rituals.",
+  why:"Treating a recipe like a fashion product is a genuine category crossover nobody has done well.",
+  love:"Users feel like they're interacting with a premium object, not a free recipe database.",
+  refs:[{name:"Chanel",url:"https://www.chanel.com"},{name:"Gucci",url:"https://www.gucci.com"},{name:"Vogue",url:"https://www.vogue.com"}]},
+
+{id:"neon-wok", n:"Neon Wok", g:"A", skin:"cinematic", font:"mono-tech", fontRec:"Display: PP Neue Montreal · Body: IBM Plex Mono",
+  tags:["experimental","modern"], hero:"NIGHT MARKET",
+  personality:"Electric, loud, alive after dark — cooking as nightlife energy.",
+  emotion:"Excitement and sensory overload, the rush of a street-food night market.",
+  audience:"Younger urban cooks who want energy and spectacle, not calm minimalism.",
+  palette:[["#08080A","Void Black"],["#FF1F4B","Neon Red"],["#FF3D8F","Magenta Glow"],["#3A3A40","Steel Grey"]],
+  layout:"Layered glowing panels, glitch-edge dividers, dense information treated like a HUD overlay.",
+  heroDesc:"Glowing neon-red headline over a dark gradient, faint scanline texture, VHS-style flicker on load.",
+  card:"Cards glow on hover like illuminated signage, neon-outline borders, motion-blurred image transitions.",
+  photo:"High-saturation night photography, wet-street reflections, steam and neon color spill.",
+  motion:"Glitch-flicker entrances, neon pulse on hover, fast energetic easing curves.",
+  why:"No recipe brand currently owns cyberpunk-night-market energy — it's a completely open lane.",
+  love:"It turns cooking into spectacle — people would screenshot this just because it looks alive.",
+  refs:[{name:"MUBI",url:"https://mubi.com"},{name:"Awwwards",url:"https://www.awwwards.com"},{name:"Tastemade",url:"https://www.tastemade.com"}]},
+
+{id:"nordic-ember", n:"Nordic Ember", g:"A", skin:"minimal", font:"sans-clean", fontRec:"Display: Suisse Int'l · Body: Suisse Int'l",
+  tags:["minimalist","modern"], hero:"Quiet Fire",
+  personality:"Functional, warm-cool balance, understated confidence — Scandinavian calm with one hot accent.",
+  emotion:"Grounded warmth; the comfort of a well-organized, honest kitchen.",
+  audience:"Practical, design-conscious cooks who value function as much as beauty.",
+  palette:[["#16161A","Charcoal"],["#C1440E","Ember Red"],["#EFE7DA","Birch Cream"],["#A9A6A0","Fog Grey"]],
+  layout:"Clean modular grid, generous line-height, one ember-red underline used as the only decorative device.",
+  heroDesc:"Charcoal background, birch-cream headline, a single ember-red horizontal bar beneath the title.",
+  card:"Cards are flat, bordered, no shadow — function-first with a small red corner tab for category.",
+  photo:"Natural window light, wood and ceramic textures, unstyled honest food photography.",
+  motion:"Subtle, functional — micro-transitions only, nothing decorative for its own sake.",
+  why:"Balances the brand's red/black DNA with Scandinavian trust signals, making it feel dependable, not aggressive.",
+  love:"It feels like a tool you can rely on daily, not a flashy site you visit once.",
+  refs:[{name:"Kinfolk",url:"https://kinfolk.com"},{name:"Linear",url:"https://linear.app"},{name:"Cereal",url:"https://www.readcereal.com"}]},
+
+{id:"journal-rouge", n:"Le Journal Rouge", g:"A", skin:"editorial", font:"serif-literary", fontRec:"Display: Tiempos Headline · Body: Tiempos Text",
+  tags:["editorial"], hero:"Édition du Jour",
+  personality:"Literary, journalistic, opinionated — recipes written like front-page stories.",
+  emotion:"Intellectual engagement; the feeling of reading something considered, not scrolling filler.",
+  audience:"Readers who want context and narrative, not just ingredient lists.",
+  palette:[["#111111","Black"],["#F1EAD9","Cream"],["#C1272D","Masthead Red"],["#999288","Rule Grey"]],
+  layout:"Newspaper column grid, red masthead rule, drop-cap first letters on recipe intros.",
+  heroDesc:"A cream 'front page' with a bold red masthead bar and a single lead-story recipe headline.",
+  card:"Recipes formatted as articles: byline, headline, short deck, illustrated diagram instead of hero photo.",
+  photo:"Editorial illustration and diagram-style visuals used alongside sparing, high-quality photography.",
+  motion:"Page-turn style transitions between recipes, echoing physical newspaper interaction.",
+  why:"Treating recipes as journalism gives every dish a story, not just a spec sheet.",
+  love:"Readers feel informed and entertained, not just fed a database entry.",
+  refs:[{name:"The New York Times",url:"https://www.nytimes.com"},{name:"Bon Appétit",url:"https://www.bonappetit.com"},{name:"Le Monde",url:"https://www.lemonde.fr"}]},
+
+{id:"matador", n:"Matador", g:"A", skin:"luxury", font:"serif-display", fontRec:"Display: Reckless · Body: National 2",
+  tags:["luxury","experimental"], hero:"El Momento",
+  personality:"Dramatic, passionate, theatrical — cooking as a performance of nerve and precision.",
+  emotion:"Adrenaline and elegance combined; the tension before a bold move.",
+  audience:"Bold, confident cooks who want drama, not comfort, from their food ritual.",
+  palette:[["#0A0A0A","Black"],["#D0021B","Capote Red"],["#C9A227","Gold"],["#F4EFE6","Ivory"]],
+  layout:"Diagonal cuts and asymmetric red 'cape' shapes sweeping across section dividers.",
+  heroDesc:"A single sweeping diagonal red shape crosses a black canvas behind a bold ivory headline.",
+  card:"Cards use a diagonal red corner flourish, like a cape swept across the top edge.",
+  photo:"High-contrast, dramatic single-light photography with deep shadow, almost theatrical staging.",
+  motion:"Sweeping diagonal reveals on scroll, mimicking a cape movement — bold, confident, fast.",
+  why:"Nobody has translated bullfight drama into food branding — it's unexpected and instantly memorable.",
+  love:"It makes cooking feel heroic and exciting rather than routine.",
+  refs:[{name:"Ferrari",url:"https://www.ferrari.com"},{name:"Awwwards",url:"https://www.awwwards.com"},{name:"Vogue",url:"https://www.vogue.com"}]},
+
+{id:"obsidian-atelier", n:"Obsidian Atelier", g:"A", skin:"minimal", font:"serif-luxury", fontRec:"Display: Domaine Display · Body: Untitled Serif",
+  tags:["minimalist","luxury"], hero:"One Object, One Light",
+  personality:"Gallery-like reverence — every recipe treated as a singular art object.",
+  emotion:"Awe and focus, like standing in front of a single spotlit sculpture.",
+  audience:"Users who want fewer, better recipes rather than infinite choice.",
+  palette:[["#030303","Black"],["#E0102A","Spotlight Red"],["#C9C6C0","Museum Grey"],["#FFFFFF","White"]],
+  layout:"One recipe per screen, museum wall-label typography, extreme restraint in copy.",
+  heroDesc:"Total black void with one recipe lit by a single red spotlight gradient and a wall-label caption.",
+  card:"No grid — recipes browse like gallery rooms, one 'artwork' (dish) at a time, swipe to advance.",
+  photo:"Single dramatic spotlight shot per dish, pure black background, museum-object framing.",
+  motion:"Spotlight fade-ins, slow deliberate pacing, silence between transitions.",
+  why:"Turns 'browsing recipes' into 'visiting an exhibition' — an entirely different mental model.",
+  love:"Every recipe feels important and considered, never like filler content.",
+  refs:[{name:"Aman",url:"https://www.aman.com"},{name:"Awwwards",url:"https://www.awwwards.com"},{name:"Dezeen",url:"https://www.dezeen.com"}]},
+
+{id:"red-thread", n:"Red Thread", g:"A", skin:"editorial", font:"slab-editorial", fontRec:"Display: PP Editorial New · Body: PP Mori",
+  tags:["editorial","modern"], hero:"Follow The Thread",
+  personality:"Narrative and connective — every recipe part of one continuous story.",
+  emotion:"Curiosity and momentum; the pull of following a thread to its end.",
+  audience:"Users who want guided journeys (training day → meal → recovery), not isolated recipes.",
+  palette:[["#0D0D0F","Black"],["#D62839","Thread Red"],["#EFE6D8","Parchment"],["#4C4A47","Graphite"]],
+  layout:"A literal red line runs down the page connecting recipe steps and related dishes.",
+  heroDesc:"A single red thread animates in from the top of the screen, linking headline to first recipe.",
+  card:"Cards are connected by the red line motif, showing 'what this pairs with' visually, not just as text.",
+  photo:"Simple hand-styled shots with the red thread motif literally woven into some compositions.",
+  motion:"The red line draws itself on scroll, connecting sections as the user moves down the page.",
+  love:"It replaces flat grids with an implied logic — 'this leads to that' feels intentional and smart.",
+  why:"A single consistent motif like this is exactly the kind of mark that becomes instantly recognizable.",
+  refs:[{name:"Linear",url:"https://linear.app"},{name:"Notion",url:"https://www.notion.so"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"ferrari-kitchen", n:"Ferrari Kitchen", g:"A", skin:"luxury", font:"sans-geometric", fontRec:"Display: Neue Machina · Body: Founders Grotesk",
+  tags:["luxury","modern"], hero:"Full Throttle",
+  personality:"Italian performance-luxury — precision, speed, and pride in engineering.",
+  emotion:"Confidence and thrill; the feeling of controlled power.",
+  audience:"Performance-minded athletes who see nutrition as a competitive edge.",
+  palette:[["#0A0A0C","Carbon Black"],["#D40000","Rosso Corsa"],["#C7C9CB","Silver"],["#F5F5F5","White"]],
+  layout:"Carbon-fiber texture panels, silver hairlines, metrics displayed like a dashboard readout.",
+  heroDesc:"A carbon-textured black hero with a bold Rosso Corsa headline and silver-lined metric readouts.",
+  card:"Cards styled like spec sheets — macro numbers presented as 'performance stats,' not nutrition labels.",
+  photo:"Crisp, high-gloss studio photography with reflective surfaces, precise and controlled lighting.",
+  motion:"Fast, snappy micro-interactions with a subtle mechanical 'click' feel on state changes.",
+  why:"Reframes nutrition as performance engineering, which matches this audience's real mindset.",
+  love:"Athletes get a brand that respects their discipline instead of talking down to them with soft wellness language.",
+  refs:[{name:"Ferrari",url:"https://www.ferrari.com"},{name:"Nike",url:"https://www.nike.com"},{name:"F1",url:"https://www.f1.com"}]},
+
+{id:"kabuki-stage", n:"Kabuki Stage", g:"A", skin:"cinematic", font:"serif-display", fontRec:"Display: Zodiak · Body: ABC Diatype",
+  tags:["luxury","experimental"], hero:"The Curtain Rises",
+  personality:"Theatrical, ceremonial, dramatic reveal — every recipe an entrance.",
+  emotion:"Anticipation and spectacle, like watching a stage curtain rise.",
+  audience:"Users who want ceremony and drama around cooking, not just utility.",
+  palette:[["#0B0B0D","Black"],["#C41E3A","Kabuki Red"],["#C9A227","Gold"],["#F6F1E7","Rice-Paper White"]],
+  layout:"Vertical 'curtain' panels that part on interaction, revealing content behind them.",
+  heroDesc:"Two red curtain-like panels slide apart to reveal the featured recipe headline beneath.",
+  card:"Recipe cards 'open' like a stage curtain reveal on click rather than a flat modal fade.",
+  photo:"Dramatic single-spotlight staging, deep shadow, theatrical framing reminiscent of stage photography.",
+  motion:"Curtain-parting transitions, deliberate pacing, a real sense of 'reveal' before content appears.",
+  why:"The reveal-as-ceremony interaction pattern is genuinely rare and instantly memorable.",
+  love:"Opening a recipe feels like an event, not a click — that emotional weight is rare online.",
+  refs:[{name:"MUBI",url:"https://mubi.com"},{name:"Awwwards",url:"https://www.awwwards.com"},{name:"Chanel",url:"https://www.chanel.com"}]},
+
+{id:"data-chef", n:"Data Chef", g:"A", skin:"grid", font:"mono-tech", fontRec:"Display: IBM Plex Mono · Body: IBM Plex Sans",
+  tags:["modern","experimental"], hero:"Nutrition, Live",
+  personality:"Precise, technical, transparent — nutrition presented like real engineering data.",
+  emotion:"Trust through transparency; the confidence of seeing the actual numbers, not marketing copy.",
+  audience:"Data-driven athletes who track everything and want proof, not vibes.",
+  palette:[["#08090A","Terminal Black"],["#FF2E44","Signal Red"],["#B9C0BE","Phosphor Grey"],["#E8ECEA","White"]],
+  layout:"Dashboard-style grid, monospace labels, macro bars rendered like live system readouts.",
+  heroDesc:"A terminal-style black screen with blinking-cursor headline and live-looking macro readouts.",
+  card:"Cards resemble data terminals — macro values in monospace, small red 'signal' bars for intensity.",
+  photo:"Minimal photography; food shots framed like scanned specimens on a neutral grid backdrop.",
+  motion:"Typewriter-style text reveals, blinking cursors, subtle scanline flicker on load.",
+  why:"Directly answers the 'how is this calculated' trust gap by making the data itself the design language.",
+  love:"Data-driven users get exactly the transparency and control they're already looking for elsewhere.",
+  refs:[{name:"Linear",url:"https://linear.app"},{name:"Notion",url:"https://www.notion.so"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"velvet-rope", n:"Velvet Rope", g:"A", skin:"cinematic", font:"serif-luxury", fontRec:"Display: Canela · Body: National 2",
+  tags:["luxury","experimental"], hero:"Members Only",
+  personality:"Exclusive, moody, members-club — recipes as invitation, not open access.",
+  emotion:"Desire through scarcity; the thrill of being let in somewhere selective.",
+  audience:"Users drawn to premium, curated experiences over open, generic ones.",
+  palette:[["#0A0708","Black"],["#7A0C1E","Velvet Red"],["#B08D57","Brass"],["#4A4547","Smoke Grey"]],
+  layout:"Dark, moody, low-key lighting throughout; sections gated behind a velvet-curtain reveal motif.",
+  heroDesc:"A dim velvet-textured hero with a single brass-framed headline, like a club entrance sign.",
+  card:"Cards look like reserved-table place cards — name, one detail, brass corner accent, nothing loud.",
+  photo:"Low-key moody lighting, rich shadow detail, intimate close crops evoking a private dinner.",
+  motion:"Slow, hushed transitions; nothing ever feels rushed or public.",
+  why:"Scarcity and exclusivity are powerful psychological levers almost no recipe site uses.",
+  love:"Users feel like insiders with access to something curated, not just another public recipe list.",
+  refs:[{name:"Chanel",url:"https://www.chanel.com"},{name:"Aman",url:"https://www.aman.com"},{name:"Dover Street Market",url:"https://www.doverstreetmarket.com"}]},
+
+{id:"ink-ember", n:"Ink & Ember", g:"A", skin:"minimal", font:"serif-literary", fontRec:"Display: PP Fragment · Body: Tiempos Text",
+  tags:["minimalist","editorial"], hero:"One Stroke, One Dish",
+  personality:"Calligraphic, contemplative, handmade — food as an act of craft and intention.",
+  emotion:"Mindfulness; the quiet focus of a single brushstroke.",
+  audience:"Users who value process and ritual as much as the final result.",
+  palette:[["#0C0C0C","Sumi Black"],["#B22222","Seal Red"],["#7B7873","Ink-Wash Grey"],["#F2ECDD","Rice Paper"]],
+  layout:"Asymmetric ink-wash textures behind minimal type, a red seal-stamp mark used as the brand signature.",
+  heroDesc:"A soft black ink-wash gradient behind a single line of type, sealed with a small red stamp mark.",
+  card:"Each card is 'stamped' with a small red seal instead of a category label — quiet, tactile, consistent.",
+  photo:"Textured, matte photography with visible grain, echoing ink-on-paper warmth rather than gloss.",
+  motion:"Ink-bloom transitions — content fades in like ink spreading softly into paper.",
+  why:"The seal-stamp motif is a genuinely ownable mark that could appear everywhere, from web to packaging.",
+  love:"It feels handmade and considered in a category flooded with sterile stock photography.",
+  refs:[{name:"Kinfolk",url:"https://kinfolk.com"},{name:"Cereal",url:"https://www.readcereal.com"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"race-card", n:"Race Card", g:"A", skin:"grid", font:"sans-geometric", fontRec:"Display: Neue Machina · Body: Space Grotesk",
+  tags:["modern","experimental"], hero:"Lap One",
+  personality:"Competitive, precise, performance-obsessed — meals timed and tracked like race splits.",
+  emotion:"Focus and drive; the satisfaction of beating your own best time.",
+  audience:"Goal-driven athletes who respond to metrics, streaks, and personal bests.",
+  palette:[["#101012","Asphalt Black"],["#D7263D","Checker Red"],["#C9CBCC","Chrome Grey"],["#FAFAFA","White"]],
+  layout:"Grid styled like a race-timing board, cook time shown as a 'lap time,' subtle checkered accents.",
+  heroDesc:"A dark asphalt-textured hero with a bold red 'lap time' style readout as the primary headline device.",
+  card:"Cards show prep time as a stopwatch split, with a thin checkered-flag accent strip along one edge.",
+  photo:"Sharp, high-energy action-adjacent food photography, motion blur on garnish or steam.",
+  motion:"Quick countdown-style reveals, numbers ticking up/down on load like a race clock.",
+  why:"Gamifying cook time through racing metaphors taps directly into the athletic audience's existing mindset.",
+  love:"It turns meal prep into a personal challenge instead of a chore, which resonates with competitive users.",
+  refs:[{name:"F1",url:"https://www.f1.com"},{name:"Nike",url:"https://www.nike.com"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"opera-rouge", n:"Opera Rouge", g:"A", skin:"luxury", font:"serif-luxury", fontRec:"Display: Canela Deck · Body: Söhne",
+  tags:["luxury","editorial"], hero:"Ouverture",
+  personality:"Grand, operatic, romantic — cooking treated as a performing art.",
+  emotion:"Grandeur and romance; the swell of an overture before the curtain rises.",
+  audience:"Users who want an emotionally rich, almost cinematic relationship with food.",
+  palette:[["#0B0708","Black"],["#7C0A02","Curtain Red"],["#C6A15B","Gold Trim"],["#F1E7D8","Cream"]],
+  layout:"Proscenium-arch framing device around hero imagery, gold trim used sparingly as a luxury signal.",
+  heroDesc:"An arched frame (like a theatre proscenium) surrounds the hero image, gold trim lining its edge.",
+  card:"Cards are framed with a thin gold arch motif at the top, echoing a miniature stage.",
+  photo:"Rich, velvety color grading, dramatic single-source lighting, almost portrait-like plate photography.",
+  motion:"Slow curtain-style reveals synced with a sense of rising drama, never abrupt.",
+  why:"Borrows the emotional grandeur of opera, a register no recipe site currently occupies.",
+  love:"It elevates ordinary cooking into something that feels emotionally significant and beautiful.",
+  refs:[{name:"Chanel",url:"https://www.chanel.com"},{name:"Vogue",url:"https://www.vogue.com"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"static-steel", n:"Static & Steel", g:"A", skin:"grid", font:"sans-geometric", fontRec:"Display: Founders Grotesk · Body: ABC Diatype Mono",
+  tags:["modern","experimental"], hero:"Kitchen Line",
+  personality:"Industrial, utilitarian, authentic — the honesty of a real commercial kitchen.",
+  emotion:"Respect for real work; the grounded feeling of a professional back-of-house.",
+  audience:"Serious cooks who want authenticity over polish, substance over styling.",
+  palette:[["#101214","Steel Black"],["#D62828","Warning Red"],["#8D9297","Steel Grey"],["#F1F2F2","White"]],
+  layout:"Utilitarian stencil labels, exposed grid lines, red 'warning tape' accents marking key info.",
+  heroDesc:"A steel-textured hero with stencil-style type and a red hazard-stripe accent bar beneath it.",
+  card:"Cards use stencil numbering and a red corner tab, like equipment tags in a commercial kitchen.",
+  photo:"Unglamorized, direct kitchen photography — steel counters, real steam, no styling tricks.",
+  motion:"Mechanical, click-stop transitions that feel industrial rather than soft or bouncy.",
+  why:"Authentic industrial honesty stands out sharply against the polished, staged look of most food content.",
+  love:"Serious cooks respect a brand that looks like it actually works in a kitchen, not just photographs one.",
+  refs:[{name:"Patagonia",url:"https://www.patagonia.com"},{name:"Awwwards",url:"https://www.awwwards.com"},{name:"Dezeen",url:"https://www.dezeen.com"}]},
+
+{id:"crimson-zen", n:"Crimson Zen", g:"A", skin:"minimal", font:"serif-display", fontRec:"Display: Times Now · Body: Times Now",
+  tags:["minimalist"], hero:"One Circle",
+  personality:"Meditative, disciplined, centered — a single red enso as the whole brand mark.",
+  emotion:"Serenity and focus; the calm of a single deliberate brushstroke.",
+  audience:"Users seeking mindfulness and simplicity in an over-stimulated digital life.",
+  palette:[["#0A0A0A","Black"],["#C1121F","Enso Red"],["#B7B4AE","Stone Grey"],["#F5F2EA","Paper White"]],
+  layout:"A single red circle (enso) motif recurs as the only recurring graphic device across the site.",
+  heroDesc:"An all-black canvas with one hand-drawn red circle and a short, quiet line of copy beside it.",
+  card:"Cards carry no imagery by default — just the enso mark, a name, and one line, image on request only.",
+  photo:"Extremely sparse photography; most 'imagery' is negative space and the recurring red circle.",
+  motion:"The enso draws itself slowly on load, a single continuous stroke, then settles still.",
+  why:"A single, perfectly consistent mark used everywhere is exactly how brands become iconic.",
+  love:"It offers genuine calm rather than competing for attention, which is rare and valuable.",
+  refs:[{name:"Headspace",url:"https://www.headspace.com"},{name:"MUJI",url:"https://www.muji.com"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"death-row-diner", n:"Death Row Diner", g:"A", skin:"cinematic", font:"display-condensed", fontRec:"Display: Bebas Neue · Body: Akzidenz Grotesk",
+  tags:["experimental","modern"], hero:"Open All Night",
+  personality:"Retro-Americana, rebellious, chrome-and-neon nostalgic energy.",
+  emotion:"Nostalgic rebellion; late-night diner comfort with an edge.",
+  audience:"Users who want personality and grit, not a sanitized wellness aesthetic.",
+  palette:[["#0C0C0C","Black"],["#FF073A","Neon Red"],["#C8CDCF","Chrome Silver"],["#F2E9D8","Cream"]],
+  layout:"Diner-menu-board grid, chrome-edge dividers, neon-sign typography for section headers.",
+  heroDesc:"A glowing red neon-sign-style headline against a black night backdrop with chrome accents.",
+  card:"Cards styled like menu-board entries, chrome corner rivets, neon-red price-tag-style macro badges.",
+  photo:"Retro-flash diner photography, warm tungsten highlights against cool black shadow.",
+  motion:"Neon flicker-on entrance, chrome-shine sweep on hover.",
+  why:"Retro-Americana energy with a red/black palette feels fresh precisely because nobody in healthy eating uses it.",
+  love:"It makes 'eating well' feel fun and rebellious instead of virtuous and restrictive.",
+  refs:[{name:"Awwwards",url:"https://www.awwwards.com"},{name:"Tastemade",url:"https://www.tastemade.com"},{name:"Nike",url:"https://www.nike.com"}]},
+
+{id:"red-room", n:"The Red Room", g:"A", skin:"cinematic", font:"serif-display", fontRec:"Display: Canela · Body: National 2",
+  tags:["experimental","luxury"], hero:"Through The Curtain",
+  personality:"Surreal, cinematic, unsettling-elegant — a dreamlike culinary world.",
+  emotion:"Intrigue and mild tension; the pull of stepping somewhere strange and beautiful.",
+  audience:"Users drawn to art-house culture and cinematic, non-literal brand worlds.",
+  palette:[["#050505","Void Black"],["#8A0303","Curtain Red"],["#B8474D","Chevron Rose"],["#EDEDED","White"]],
+  layout:"A chevron-patterned red floor motif anchors the page, curtain-like panels frame content blocks.",
+  heroDesc:"A dark void with a red chevron floor pattern receding into the distance behind the headline.",
+  card:"Cards sit on a subtle chevron-textured background, framed like scenes rather than tiles.",
+  photo:"Cinematic, grainy, deliberately uncanny compositions — beautiful but slightly off-kilter.",
+  motion:"Slow dolly-like zooms and cinematic film-grain overlays on transition.",
+  why:"Borrowing arthouse-cinema mood makes the brand feel authored, not templated.",
+  love:"Users remember it precisely because it feels like nothing else in the category — genuinely surprising.",
+  refs:[{name:"MUBI",url:"https://mubi.com"},{name:"Awwwards",url:"https://www.awwwards.com"},{name:"Dezeen",url:"https://www.dezeen.com"}]},
+
+{id:"sumo-ring", n:"Sumo Ring", g:"A", skin:"minimal", font:"slab-editorial", fontRec:"Display: PP Editorial New · Body: PP Mori",
+  tags:["minimalist","luxury"], hero:"Enter The Ring",
+  personality:"Ceremonial, powerful, ritualistic — strength built through discipline and respect.",
+  emotion:"Focused power; the calm before a deliberate, powerful act.",
+  audience:"Strength-focused athletes who value ritual and discipline over quick fixes.",
+  palette:[["#0A0A0A","Black"],["#C0272D","Shimenawa Red"],["#D8C9A3","Straw Beige"],["#F4F1EA","White"]],
+  layout:"A circular ring motif anchors the hero and category navigation, echoing a dohyo ring.",
+  heroDesc:"A single red rope-textured circle centers the hero, framing the featured recipe like a ring entrance.",
+  card:"Cards are framed in soft circular vignettes rather than rectangles, ceremonial and deliberate.",
+  photo:"Bold, powerful compositions with strong single-source lighting and confident negative space.",
+  motion:"Grounded, weighted transitions — nothing floats, everything settles with intent.",
+  why:"Ritual and ceremony around 'strength food' is an unclaimed emotional register in this category.",
+  love:"It reframes eating for performance as a respected discipline, not just fuel.",
+  refs:[{name:"Patagonia",url:"https://www.patagonia.com"},{name:"Nike",url:"https://www.nike.com"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"rouge-vif", n:"Rouge Vif Editorial", g:"A", skin:"editorial", font:"display-condensed", fontRec:"Display: Anton · Body: Helvetica Now",
+  tags:["editorial","modern"], hero:"VIF.",
+  personality:"Bold Parisian fashion-magazine energy — loud, confident, editorially fearless.",
+  emotion:"Excitement and confidence; the energy of flipping through a bold new magazine issue.",
+  audience:"Fashion-adjacent, trend-forward users who want food content with real editorial swagger.",
+  palette:[["#000000","Black"],["#E2001A","Vif Red"],["#FFFFFF","White"],["#B9B4AC","Warm Grey"]],
+  layout:"Oversized magazine-style type, full-bleed imagery, bold red pull-quotes breaking up sections.",
+  heroDesc:"A huge oversized red word fills most of the hero, with a small caption line beneath it.",
+  card:"Cards use magazine-style oversized numerals and bold pull-quote-style descriptions.",
+  photo:"High-fashion-style food photography — bold color blocking, confident cropping, full-bleed.",
+  motion:"Confident, snappy type reveals, like pages turning in a fashion spread.",
+  why:"Fashion-magazine confidence applied to food is bold, current, and highly shareable.",
+  love:"It feels exciting to browse — closer to reading Vogue than reading a recipe card.",
+  refs:[{name:"Vogue",url:"https://www.vogue.com"},{name:"Awwwards",url:"https://www.awwwards.com"},{name:"Bon Appétit",url:"https://www.bonappetit.com"}]},
+
+{id:"ember-ash", n:"Ember & Ash", g:"A", skin:"editorial", font:"serif-literary", fontRec:"Display: Domaine Display · Body: Tiempos Text",
+  tags:["editorial","minimalist"], hero:"Live Fire",
+  personality:"Rustic, artisanal, primal — cooking with fire and patience.",
+  emotion:"Warmth and groundedness; the comfort of gathering around a real fire.",
+  audience:"Users drawn to slow-food authenticity over convenience-driven eating.",
+  palette:[["#131110","Charcoal"],["#C1440E","Ember Red"],["#A19C93","Ash Grey"],["#EFE6D6","Cream"]],
+  layout:"Warm textured backgrounds resembling charcoal and ash, ember-glow gradients marking key moments.",
+  heroDesc:"A dark charcoal-textured hero with a soft ember-glow gradient rising behind the headline.",
+  card:"Cards carry a faint ember-glow edge, like light from a live fire just out of frame.",
+  photo:"Wood-fired, smoke-filled, warm-toned photography — textured, tactile, artisanal.",
+  motion:"Slow glowing pulses echoing embers, gentle smoke-drift overlay on hero load.",
+  why:"Live-fire cooking has real cultural cachet right now and pairs naturally with the red/black palette.",
+  love:"It feels honest and slow in the best way, a counterpoint to sterile convenience-food branding.",
+  refs:[{name:"Bon Appétit",url:"https://www.bonappetit.com"},{name:"Kinfolk",url:"https://kinfolk.com"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"circuit-kitchen", n:"Circuit Kitchen", g:"A", skin:"grid", font:"mono-tech", fontRec:"Display: PP Neue Montreal · Body: IBM Plex Mono",
+  tags:["modern","experimental"], hero:"Fuel The System",
+  personality:"Futurist, precise, systems-minded — the body treated as an engineered system to optimize.",
+  emotion:"Clarity and control; the satisfaction of a well-designed system running smoothly.",
+  audience:"Biohacker-adjacent, optimization-minded users who think in systems and inputs.",
+  palette:[["#0A0C0A","PCB Black"],["#FF2D55","Trace Red"],["#6F7A70","Circuit Grey"],["#EAEFEA","White"]],
+  layout:"Circuit-board-inspired trace lines visually connect recipe steps and nutrient inputs.",
+  heroDesc:"Thin red circuit-trace lines animate across a black background, converging on the headline.",
+  card:"Cards are connected by faint circuit-trace lines showing how meals feed into daily 'system' totals.",
+  photo:"Clean, precise, almost clinical food photography against neutral backgrounds.",
+  motion:"Traces draw themselves in on load, like current flowing through a board.",
+  why:"Systems-thinking framing appeals directly to an audience that already tracks training like an engineer.",
+  love:"It makes nutrition feel like an optimizable system, matching how this audience already thinks.",
+  refs:[{name:"Linear",url:"https://linear.app"},{name:"Notion",url:"https://www.notion.so"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"blood-orange-noir", n:"Blood Orange Noir", g:"A", skin:"cinematic", font:"serif-display", fontRec:"Display: Reckless · Body: Tiempos Text",
+  tags:["editorial","experimental"], hero:"After Hours",
+  personality:"Film-noir mystery warmed by a blood-orange glow — moody but never cold.",
+  emotion:"Intrigue and warmth in tension; a detective-story mood softened by appetite.",
+  audience:"Users who enjoy atmosphere and mood as much as the food itself.",
+  palette:[["#0A0808","Noir Black"],["#D2401E","Blood Orange Red"],["#524F4C","Shadow Grey"],["#EFE6D8","Cream"]],
+  layout:"Venetian-blind shadow patterns cross hero imagery, pulp-novel-style headline treatment.",
+  heroDesc:"Blinds-style shadow stripes fall across a warm blood-orange-lit hero image and bold headline.",
+  card:"Cards use a subtle shadow-stripe overlay on imagery, evoking noir lighting in miniature.",
+  photo:"Moody spotlight photography with hard shadow patterns, warm practical light sources.",
+  motion:"Shadows sweep slowly across the frame on load, like light through blinds.",
+  why:"Noir mood paired with warm color is an unusual, sophisticated combination nobody else is using here.",
+  love:"It gives the site real atmosphere — users feel like they're in a scene, not on a form.",
+  refs:[{name:"MUBI",url:"https://mubi.com"},{name:"Awwwards",url:"https://www.awwwards.com"},{name:"Bon Appétit",url:"https://www.bonappetit.com"}]},
+
+{id:"scarlet-ledger", n:"Scarlet Ledger", g:"A", skin:"editorial", font:"serif-literary", fontRec:"Display: Ogg · Body: Untitled Serif",
+  tags:["editorial","luxury"], hero:"Entry No. 001",
+  personality:"Old-world apothecary and bookkeeping charm — recipes as treasured ledger entries.",
+  emotion:"Nostalgic trust; the feeling of discovering a well-kept family record.",
+  audience:"Users who value heritage, permanence, and craftsmanship over trend-chasing.",
+  palette:[["#14100D","Leather Black"],["#A32020","Wax-Seal Scarlet"],["#E9DEC4","Aged Parchment"],["#9C7A3C","Brass"]],
+  layout:"Recipes indexed like library ledger cards, each stamped with a red wax-seal category mark.",
+  heroDesc:"A parchment-textured hero styled like an open ledger page, sealed with a scarlet wax stamp.",
+  card:"Cards look like index cards from a recipe box, complete with a small red wax-seal stamp per entry.",
+  photo:"Warm, letterpress-inspired photography treatment with subtle grain and aged paper texture.",
+  motion:"Cards 'stamp' into place with a subtle seal-press animation on load.",
+  why:"The heritage-ledger conceit gives every recipe a sense of permanence and care, rare in digital food content.",
+  love:"It feels like inheriting a trusted family recipe box rather than browsing a random website.",
+  refs:[{name:"Monocle",url:"https://www.monocle.com"},{name:"Aesop",url:"https://www.aesop.com"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"akira-red", n:"Akira Red", g:"A", skin:"cinematic", font:"display-condensed", fontRec:"Display: Neue Machina · Body: Space Grotesk",
+  tags:["experimental","modern"], hero:"OVERDRIVE",
+  personality:"Anime-cyberpunk Tokyo energy — bold, kinetic, unapologetically futurist.",
+  emotion:"Kinetic excitement; the thrill of a neon city at full speed.",
+  audience:"Younger, pop-culture-fluent users who want maximal energy and visual boldness.",
+  palette:[["#08080B","Neon Black"],["#E2001A","Akira Red"],["#FF4D8D","Cyber Pink"],["#6B6D70","Concrete Grey"]],
+  layout:"Bold iconic red circle/pill motifs anchor key sections, kinetic diagonal type treatments.",
+  heroDesc:"A massive red circle glows behind bold condensed type, city-glow gradient bleeding at the edges.",
+  card:"Cards carry a small glowing red circle marker, echoing the hero's iconic shape at micro scale.",
+  photo:"High-energy, neon-lit night photography with motion blur and bold color contrast.",
+  motion:"Fast kinetic type entrances, glow-pulse on the red circle motif, energetic easing.",
+  why:"Pop-culture-coded futurism gives the brand instant visual recognition and cultural resonance.",
+  love:"It feels exciting and current to a younger audience who already speaks this visual language.",
+  refs:[{name:"MUBI",url:"https://mubi.com"},{name:"Awwwards",url:"https://www.awwwards.com"},{name:"Tastemade",url:"https://www.tastemade.com"}]},
+
+{id:"red-thread-tradition", n:"The Red Thread of Tradition", g:"A", skin:"editorial", font:"slab-editorial", fontRec:"Display: Reckless · Body: Tiempos Text",
+  tags:["editorial","minimalist"], hero:"Handed Down",
+  personality:"Nostalgic, familial, warm — recipes treated as inherited treasures, modernized.",
+  emotion:"Warmth and belonging; the comfort of a family recipe box passed down.",
+  audience:"Users who value tradition and story alongside modern nutrition goals.",
+  palette:[["#101010","Chalkboard Black"],["#B3222D","Handwriting Red"],["#F1E6D2","Warm Cream"],["#5B4636","Walnut Brown"]],
+  layout:"Chalkboard-textured backgrounds with handwritten red annotations layered over clean modern type.",
+  heroDesc:"A chalkboard-black hero with a clean modern headline annotated by a handwritten red note.",
+  card:"Cards feature a small handwritten-style red annotation, like a personal note from the recipe's origin.",
+  photo:"Warm, nostalgic, polaroid-framed photography mixed with clean modern shots.",
+  motion:"Handwritten annotations 'write themselves' on scroll, warm and personal.",
+  why:"Balancing nostalgia with modern nutrition information bridges two audiences most brands only pick one of.",
+  love:"It makes performance nutrition feel personal and loved, not clinical.",
+  refs:[{name:"Bon Appétit",url:"https://www.bonappetit.com"},{name:"Kinfolk",url:"https://kinfolk.com"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"monolith", n:"Monolith", g:"A", skin:"minimal", font:"sans-clean", fontRec:"Display: Times Now · Body: Suisse Int'l",
+  tags:["minimalist","luxury"], hero:"—",
+  personality:"Ultra-minimal, monumental, almost sculptural — quiet luxury taken to its extreme.",
+  emotion:"Awe through restraint; the feeling of standing before something monumental and still.",
+  audience:"Users who equate extreme simplicity with the highest form of confidence and taste.",
+  palette:[["#000000","Black"],["#C1121F","Single Accent Red"],["#F5F5F3","Warm White"],["#8C8C8C","Grey"]],
+  layout:"A single massive black block per screen, one word of red type, everything else removed.",
+  heroDesc:"An enormous black rectangle fills the screen with one small red word floating in its lower third.",
+  card:"Cards are almost entirely black with a single red numeral — content revealed only on interaction.",
+  photo:"Almost no photography — implied imagery through color and shadow rather than literal photos.",
+  motion:"Near-total stillness; the one motion that exists (a slow fade) carries enormous weight.",
+  why:"Nobody in food is confident enough to remove this much — that confidence itself becomes the brand.",
+  love:"It feels genuinely rare and luxurious specifically because it refuses to compete for attention loudly.",
+  refs:[{name:"Aman",url:"https://www.aman.com"},{name:"Apple",url:"https://www.apple.com"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"ivory-sage", n:"Ivory & Sage", g:"B", skin:"minimal", font:"serif-literary", fontRec:"Display: Reckless · Body: Söhne",
+  tags:["minimalist","modern"], hero:"Slow Mornings",
+  personality:"Calm, wholesome, unhurried — a Kinfolk-style gentleness applied to daily eating.",
+  emotion:"Ease and wellbeing; the feeling of a slow, sunlit morning.",
+  audience:"Wellness-minded users who want warmth and calm rather than intensity.",
+  palette:[["#F6F3EC","Ivory"],["#8A9A83","Sage"],["#2E2C28","Charcoal Text"],["#C9C2B4","Warm Grey"]],
+  layout:"Airy single-column layout, generous white space, sage-green used only for small functional accents.",
+  heroDesc:"A soft ivory hero with a muted sage underline beneath a calm, quiet headline.",
+  card:"Cards are nearly borderless, separated by whitespace alone, a small sage tag marking category.",
+  photo:"Soft natural light, muted tones, unstyled everyday moments rather than staged perfection.",
+  motion:"Gentle, slow-fade transitions; nothing competes for attention.",
+  why:"Rationale: sage and ivory read as genuinely calming and trustworthy, ideal for a softer entry point into the brand.",
+  love:"It removes intensity for users who want simple wellbeing rather than performance pressure.",
+  refs:[{name:"Kinfolk",url:"https://kinfolk.com"},{name:"Cereal",url:"https://www.readcereal.com"},{name:"Headspace",url:"https://www.headspace.com"}]},
+
+{id:"terracotta-sud", n:"Terracotta Sud", g:"B", skin:"editorial", font:"serif-display", fontRec:"Display: Canela · Body: PP Mori",
+  tags:["editorial","modern"], hero:"Marché du Matin",
+  personality:"Sun-baked Mediterranean warmth — market-day abundance and simple, honest ingredients.",
+  emotion:"Joyful ease; the pleasure of a slow lunch in the sun.",
+  audience:"Users drawn to Mediterranean-diet warmth and generous, shareable food culture.",
+  palette:[["#C1622D","Terracotta"],["#F4E9D8","Cream"],["#6E7150","Olive"],["#3B2E27","Deep Brown"]],
+  layout:"Sun-warmed color blocking, market-stall-inspired grid, generous imagery of shared plates.",
+  heroDesc:"A warm terracotta gradient hero with cream type, evoking early-morning market light.",
+  card:"Cards feature a small olive-green tag and warm cream background, market-label inspired.",
+  photo:"Bright, sun-drenched, textured photography — market produce, shared plates, natural imperfection.",
+  motion:"Warm, gentle cross-fades echoing a lazy sunlit afternoon.",
+  why:"Rationale: terracotta and olive genuinely signal Mediterranean-diet credibility, a strong fit for health-forward positioning.",
+  love:"It feels generous and joyful rather than restrictive, making healthy eating feel like a pleasure.",
+  refs:[{name:"Sweetgreen",url:"https://www.sweetgreen.com"},{name:"Bon Appétit",url:"https://www.bonappetit.com"},{name:"Cereal",url:"https://www.readcereal.com"}]},
+
+{id:"champagne-atelier", n:"Champagne Atelier", g:"B", skin:"luxury", font:"serif-luxury", fontRec:"Display: Canela Text · Body: Söhne",
+  tags:["luxury"], hero:"L'Atelier",
+  personality:"Quiet-luxury patisserie elegance — precise, delicate, expensive-feeling without shouting.",
+  emotion:"Delight and refinement; the pleasure of something delicately crafted.",
+  audience:"Users who want a treat-forward, elegant experience for special or indulgent recipes.",
+  palette:[["#E8D9B5","Champagne"],["#FAF6EE","Warm White"],["#2A2724","Charcoal"],["#C79A6B","Rose Gold"]],
+  layout:"Delicate serif type, thin rose-gold rules, macaron-precise symmetrical grid.",
+  heroDesc:"A champagne-toned hero with a delicate centered serif headline framed by a thin rose-gold rule.",
+  card:"Cards are precise and symmetrical, a thin rose-gold border echoing patisserie packaging.",
+  photo:"Soft-focus, close-up dessert and detail photography, delicate styling, pastel warmth.",
+  motion:"Gentle, precise micro-transitions, nothing overly energetic, always refined.",
+  why:"Rationale: champagne and rose-gold read as premium and indulgent, ideal for treat/dessert-forward content.",
+  love:"It makes indulgent recipes feel elevated and special rather than guilty.",
+  refs:[{name:"Aesop",url:"https://www.aesop.com"},{name:"Chanel",url:"https://www.chanel.com"},{name:"Vogue",url:"https://www.vogue.com"}]},
+
+{id:"emerald-reserve", n:"Emerald Reserve", g:"B", skin:"luxury", font:"serif-luxury", fontRec:"Display: Domaine Display · Body: National 2",
+  tags:["luxury","editorial"], hero:"The Reserve",
+  personality:"Members-club, wine-cellar sophistication — rich, deep, quietly confident.",
+  emotion:"Sophistication and trust; the calm confidence of a well-stocked cellar.",
+  audience:"Mature, discerning users who equate deep color and brass detail with real quality.",
+  palette:[["#14432A","Emerald"],["#B08D57","Brass"],["#F1EADB","Cream"],["#17140F","Ink"]],
+  layout:"Deep emerald backgrounds, engraved-label-style headers, brass hairline dividers.",
+  heroDesc:"A deep emerald hero with an engraved-style brass-bordered headline plate.",
+  card:"Cards resemble engraved wine labels — brass border, small emerald ribbon marking category.",
+  photo:"Rich, deep-toned photography with warm brass highlights, cellar-like ambiance.",
+  motion:"Slow, weighted transitions befitting a considered, mature brand tone.",
+  why:"Rationale: emerald and brass together signal established sophistication distinct from every red/black competitor.",
+  love:"It appeals to users who want to feel like members of something established and trustworthy.",
+  refs:[{name:"Monocle",url:"https://www.monocle.com"},{name:"Aman",url:"https://www.aman.com"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"copper-forge", n:"Copper Forge", g:"B", skin:"editorial", font:"slab-editorial", fontRec:"Display: PP Editorial New · Body: PP Mori",
+  tags:["editorial","modern"], hero:"Hand Forged",
+  personality:"Artisanal, tactile, craftsman-like — the warmth of a well-used copper pot.",
+  emotion:"Warmth and craftsmanship; respect for tools and process.",
+  audience:"Users who value handmade authenticity and visible craft in their food culture.",
+  palette:[["#B5622A","Copper"],["#262220","Charcoal"],["#EFE6D6","Cream"],["#7A3B1E","Rust"]],
+  layout:"Textured copper-toned surfaces, slab-serif labels resembling hand-stamped tool marks.",
+  heroDesc:"A brushed-copper-textured hero with a bold slab-serif headline stamped across it.",
+  card:"Cards carry a subtle hammered-copper texture edge, evoking handcrafted cookware.",
+  photo:"Warm, tactile close-ups of copper pans, wood, and hands at work.",
+  motion:"Slight textured-grain shimmer on hover, evoking light on brushed metal.",
+  why:"Rationale: copper signals craft and warmth without competing with the primary black/red brand, ideal for a 'craft' sub-series.",
+  love:"It appeals to users who care about process and tools, not just the finished plate.",
+  refs:[{name:"Patagonia",url:"https://www.patagonia.com"},{name:"Kinfolk",url:"https://kinfolk.com"},{name:"Dezeen",url:"https://www.dezeen.com"}]},
+
+{id:"navy-nautical", n:"Navy Nautical Table", g:"B", skin:"luxury", font:"serif-luxury", fontRec:"Display: Canela · Body: Suisse Int'l",
+  tags:["luxury","editorial"], hero:"Coastal Table",
+  personality:"Yacht-club elegance — coastal fine-dining confidence with nautical precision.",
+  emotion:"Crisp sophistication; the calm confidence of being at sea on a clear day.",
+  audience:"Users who enjoy coastal, seafood-forward, refined dining experiences.",
+  palette:[["#142238","Navy"],["#B08D57","Brass"],["#F4F4F2","White"],["#9FC1BA","Seafoam"]],
+  layout:"Chart-map-inspired grid lines, brass compass-rose accents marking navigation elements.",
+  heroDesc:"A deep navy hero with a fine brass compass-rose mark and crisp white serif headline.",
+  card:"Cards use thin brass borders and small compass-point icons instead of generic category tags.",
+  photo:"Crisp, bright coastal photography — clean plating against navy or white linen.",
+  motion:"Smooth, gliding transitions evoking calm open water.",
+  why:"Rationale: navy and brass carry established nautical-luxury credibility that pairs well with fresh, clean eating.",
+  love:"It feels crisp, premium, and refreshing, distinct from typical earthy 'healthy food' palettes.",
+  refs:[{name:"Monocle",url:"https://www.monocle.com"},{name:"Wallpaper*",url:"https://www.wallpaper.com"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"sage-linen", n:"Sage & Linen", g:"B", skin:"minimal", font:"sans-clean", fontRec:"Display: Suisse Int'l · Body: Suisse Int'l",
+  tags:["minimalist","modern"], hero:"Breathe In",
+  personality:"Scandinavian wellness calm — soft, functional, quietly reassuring.",
+  emotion:"Ease and restoration; the feeling of a calm, well-lit kitchen.",
+  audience:"Users seeking a gentle, low-pressure relationship with healthy eating.",
+  palette:[["#93A186","Sage"],["#F1ECE1","Linen"],["#8C6E4C","Oak"],["#2E2C28","Charcoal"]],
+  layout:"Soft-shadow modular cards, breathing-room spacing, oak-toned accents for warmth.",
+  heroDesc:"A linen-toned hero with a soft sage underline and generous surrounding whitespace.",
+  card:"Cards use soft rounded corners, gentle shadow, oak-colored category tags.",
+  photo:"Soft, evenly lit, calm photography with natural materials and muted tones.",
+  motion:"Gentle, breathing-paced fades, nothing urgent.",
+  why:"Rationale: sage and linen are proven wellness-trust colors, ideal for onboarding anxious or overwhelmed users gently.",
+  love:"It feels like a supportive, low-pressure companion rather than a demanding tracker.",
+  refs:[{name:"Headspace",url:"https://www.headspace.com"},{name:"Kinfolk",url:"https://kinfolk.com"},{name:"Cereal",url:"https://www.readcereal.com"}]},
+
+{id:"golden-hour", n:"Golden Hour Kitchen", g:"B", skin:"cinematic", font:"serif-display", fontRec:"Display: Reckless · Body: Tiempos Text",
+  tags:["editorial","luxury"], hero:"Last Light",
+  personality:"Warm, cinematic, golden-lit — food photographed like a beautiful memory.",
+  emotion:"Nostalgic warmth; the glow of a perfect evening.",
+  audience:"Users who respond emotionally to beautiful, warm visual storytelling.",
+  palette:[["#C98A2C","Amber"],["#3A2A20","Deep Brown"],["#F3E7D2","Cream"],["#8C3B2A","Rust Red"]],
+  layout:"Full-bleed warm-toned imagery, cinematic golden-hour gradients framing every hero.",
+  heroDesc:"A warm amber-to-brown gradient hero, backlit headline evoking late-afternoon sun.",
+  card:"Cards carry a subtle warm gradient overlay, like light spilling across a table at dusk.",
+  photo:"Backlit, warm-toned, golden-hour photography with soft lens flare and long shadows.",
+  motion:"Slow warm cross-fades, gentle light-sweep effect on hover.",
+  why:"Rationale: golden-hour warmth is emotionally powerful and photographically striking, a strong storytelling anchor.",
+  love:"It makes every meal feel like a captured memory worth savoring, not just fuel.",
+  refs:[{name:"Bon Appétit",url:"https://www.bonappetit.com"},{name:"Tastemade",url:"https://www.tastemade.com"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"deep-purple-nightshade", n:"Deep Purple Nightshade", g:"B", skin:"luxury", font:"serif-luxury", fontRec:"Display: Ogg · Body: National 2",
+  tags:["luxury","experimental"], hero:"After Dark",
+  personality:"Moody, romantic, evening-dinner sophistication with a sensual edge.",
+  emotion:"Romance and indulgence; the mood of a special evening meal.",
+  audience:"Users planning dinners, dates, or evening indulgence rather than daytime fueling.",
+  palette:[["#3A1B33","Aubergine"],["#E8B4BC","Blush"],["#F3EAE4","Cream"],["#1E1720","Charcoal"]],
+  layout:"Deep aubergine backgrounds, blush accent curves, sensual soft-edged shapes throughout.",
+  heroDesc:"A deep purple hero with a soft blush-toned curved shape framing the evening's headline.",
+  card:"Cards use soft curved edges and a blush accent line, evoking candlelight ambiance.",
+  photo:"Low-key, romantic lighting, close intimate crops, warm-cool contrast.",
+  motion:"Slow, sensual fades and soft curve reveals.",
+  why:"Rationale: aubergine and blush together create genuine evening-dinner romance, a distinct daypart from the main brand.",
+  love:"It gives users an evening-specific mode that feels intentionally different from daytime performance content.",
+  refs:[{name:"Vogue",url:"https://www.vogue.com"},{name:"Chanel",url:"https://www.chanel.com"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"charcoal-chalk", n:"Charcoal & Chalk", g:"B", skin:"editorial", font:"slab-editorial", fontRec:"Display: PP Editorial New · Body: Courier",
+  tags:["editorial","modern"], hero:"Today's Specials",
+  personality:"Modern bistro energy — handwritten specials-board charm with clean structure.",
+  emotion:"Approachable warmth; the feeling of a neighborhood bistro you trust.",
+  audience:"Users who want approachable, everyday cooking rather than aspirational fine dining.",
+  palette:[["#2B2B2B","Charcoal"],["#F2F0EA","Chalk White"],["#C99A2E","Mustard"],["#8C4A32","Rust"]],
+  layout:"Chalkboard-textured section headers, handwritten-style mustard accents marking daily picks.",
+  heroDesc:"A charcoal chalkboard-style hero with a handwritten mustard-yellow 'today's pick' callout.",
+  card:"Cards resemble specials-board entries, mustard accent tag, simple chalk-white type.",
+  photo:"Warm, approachable bistro photography — real plates, real tables, unpretentious styling.",
+  motion:"Chalk-write-on reveal for headline text, playful but restrained.",
+  why:"Rationale: chalkboard charm reads as approachable and trustworthy, good for everyday recipes versus special-occasion content.",
+  love:"It feels like a friendly local spot rather than an intimidating fine-dining brand.",
+  refs:[{name:"Sweetgreen",url:"https://www.sweetgreen.com"},{name:"Bon Appétit",url:"https://www.bonappetit.com"},{name:"Tastemade",url:"https://www.tastemade.com"}]},
+
+{id:"olive-grove", n:"Olive Grove", g:"B", skin:"editorial", font:"serif-literary", fontRec:"Display: Canela · Body: PP Mori",
+  tags:["editorial","minimalist"], hero:"Under The Grove",
+  personality:"Sun-drenched Mediterranean wellness, organic and grounded.",
+  emotion:"Grounded contentment; the ease of a slow lunch under olive trees.",
+  audience:"Users drawn to Mediterranean-diet health framing with an organic, natural aesthetic.",
+  palette:[["#6E7150","Olive"],["#E3D5B7","Sand"],["#F6F0E2","Cream"],["#3B2E27","Deep Brown"]],
+  layout:"Organic, slightly irregular shapes, olive-branch line motifs framing section dividers.",
+  heroDesc:"A sand-toned hero with a subtle olive-branch line illustration framing the headline.",
+  card:"Cards feature a small olive-branch corner illustration and sand-colored background.",
+  photo:"Natural, textured, sun-warmed photography — grains, oils, unrefined ingredients.",
+  motion:"Gentle organic easing, nothing mechanical or sharp.",
+  why:"Rationale: olive and sand connect directly to Mediterranean-diet credibility, reinforcing the health positioning naturally.",
+  love:"It feels grounded, natural, and healthy without ever feeling clinical or restrictive.",
+  refs:[{name:"Sweetgreen",url:"https://www.sweetgreen.com"},{name:"Kinfolk",url:"https://kinfolk.com"},{name:"Aesop",url:"https://www.aesop.com"}]},
+
+{id:"warm-beige-studio", n:"Warm Beige Studio", g:"B", skin:"minimal", font:"sans-clean", fontRec:"Display: Suisse Int'l · Body: Söhne",
+  tags:["minimalist","modern"], hero:"The Studio",
+  personality:"Notion/Aesop-style quiet minimalism — calm, considered, almost architectural.",
+  emotion:"Focused calm; the clarity of a well-organized studio space.",
+  audience:"Design-forward productivity users who want a clean daily tool, not a lifestyle spectacle.",
+  palette:[["#E7DFD1","Beige"],["#2A2724","Soft Black"],["#B5622A","Terracotta"],["#B7AE9E","Warm Grey"]],
+  layout:"Extremely quiet grid, single muted terracotta accent used sparingly, huge whitespace.",
+  heroDesc:"A warm beige hero with small, precise type and one thin terracotta rule beneath it.",
+  card:"Cards are flat, borderless, separated by space alone — one terracotta dot marks category.",
+  photo:"Minimal, architectural photography; shadow and light do more work than styling.",
+  motion:"Near-silent transitions, precise and quick, never decorative.",
+  why:"Rationale: beige and single-accent restraint reads as a serious daily tool rather than a lifestyle indulgence.",
+  love:"It feels efficient and calm to use every day without visual fatigue.",
+  refs:[{name:"Notion",url:"https://www.notion.so"},{name:"Aesop",url:"https://www.aesop.com"},{name:"Linear",url:"https://linear.app"}]},
+
+{id:"vibrant-citrus-pop", n:"Vibrant Citrus Pop", g:"B", skin:"playful", font:"sans-geometric", fontRec:"Display: Neue Machina · Body: Space Grotesk",
+  tags:["modern","experimental"], hero:"Zest It Up",
+  personality:"Playful, energetic, youthful — modern app energy in the vein of Sweetgreen.",
+  emotion:"Joy and energy; the feeling of a bright, fun, easy choice.",
+  audience:"Younger, casual users who want healthy eating to feel fun, not serious.",
+  palette:[["#FF7A29","Citrus Orange"],["#C6D82E","Lime"],["#FFFFFF","White"],["#232323","Charcoal"]],
+  layout:"Bright rounded shapes, bouncy card grid, playful blob backgrounds behind key content.",
+  heroDesc:"A bright white hero with a bold citrus-orange blob shape and a bouncy rounded headline.",
+  card:"Cards are rounded, colorful, with playful soft-shadow depth and citrus-accent tags.",
+  photo:"Bright, high-key, colorful photography with bold citrus and produce close-ups.",
+  motion:"Bouncy, springy transitions, playful hover wiggle on interactive elements.",
+  why:"Rationale: citrus brightness makes healthy eating feel fun and approachable rather than disciplined and serious.",
+  love:"It feels lighthearted and easy, a welcome contrast for users intimidated by 'performance' branding.",
+  refs:[{name:"Sweetgreen",url:"https://www.sweetgreen.com"},{name:"Headspace",url:"https://www.headspace.com"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"cocoa-cream", n:"Cocoa & Cream", g:"B", skin:"luxury", font:"serif-luxury", fontRec:"Display: Canela · Body: Söhne",
+  tags:["luxury","editorial"], hero:"Indulge, Precisely",
+  personality:"Chocolatier warmth with precise, luxurious restraint.",
+  emotion:"Indulgent comfort balanced with refined control.",
+  audience:"Users who want dessert and treat recipes framed as elevated indulgence, not guilt.",
+  palette:[["#4A2E22","Cocoa"],["#F3E6D6","Cream"],["#C79A6B","Rose Gold"],["#E8B4BC","Blush"]],
+  layout:"Warm cocoa-toned backgrounds, delicate rose-gold rules, soft-focus dessert framing.",
+  heroDesc:"A rich cocoa-brown hero with a cream serif headline and a thin rose-gold underline.",
+  card:"Cards feature a soft blush corner detail and cream background, patisserie-inspired.",
+  photo:"Soft-focus, warm-toned dessert photography with shallow depth of field.",
+  motion:"Slow, indulgent fades, nothing rushed.",
+  why:"Rationale: cocoa and rose-gold frame indulgent recipes as refined treats rather than cheat-day guilt.",
+  love:"It makes dessert content feel intentional and premium, part of a considered lifestyle, not a lapse.",
+  refs:[{name:"Aesop",url:"https://www.aesop.com"},{name:"Chanel",url:"https://www.chanel.com"},{name:"Bon Appétit",url:"https://www.bonappetit.com"}]},
+
+{id:"slate-sea-glass", n:"Slate & Sea Glass", g:"B", skin:"minimal", font:"sans-clean", fontRec:"Display: Suisse Int'l · Body: Suisse Int'l",
+  tags:["minimalist","modern"], hero:"Clear Water",
+  personality:"Modern coastal wellness calm, closer to a breathing app than a food blog.",
+  emotion:"Restorative calm; the clarity of clean, cool water.",
+  audience:"Wellness-focused users who want a calming, app-like daily experience.",
+  palette:[["#3E4A54","Slate"],["#9FC1BA","Seafoam"],["#F4F6F5","White"],["#D9CFB8","Sand"]],
+  layout:"Soft gradient backgrounds, breathing-room spacing, seafoam accent used for gentle emphasis.",
+  heroDesc:"A slate-to-seafoam gradient hero with calm, evenly weighted type and generous space.",
+  card:"Cards use soft rounded corners and a seafoam accent line, calm and consistent.",
+  photo:"Cool-toned, softly lit photography with clean, uncluttered compositions.",
+  motion:"Slow, wave-like easing curves, echoing calm water movement.",
+  why:"Rationale: slate and seafoam borrow directly from proven wellness-app color psychology (Headspace-adjacent calm).",
+  love:"It gives the brand a genuinely calming daily-use mode distinct from its bold red/black core identity.",
+  refs:[{name:"Headspace",url:"https://www.headspace.com"},{name:"Airbnb",url:"https://www.airbnb.com"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"saffron-souk", n:"Saffron Souk", g:"B", skin:"editorial", font:"serif-display", fontRec:"Display: Reckless · Body: PP Mori",
+  tags:["editorial","experimental"], hero:"Spice Market",
+  personality:"Vibrant Moroccan spice-market energy — rich, layered, sensory.",
+  emotion:"Sensory excitement; the layered richness of a bustling spice market.",
+  audience:"Users who want bold, spiced flavor stories and rich visual texture.",
+  palette:[["#D8A417","Saffron"],["#124A45","Teal"],["#B5622A","Terracotta"],["#F1E6CE","Cream"]],
+  layout:"Ornate pattern accents framing sections, layered rich color blocking, market-stall density.",
+  heroDesc:"A saffron-gold hero with a deep teal ornate border pattern framing the headline.",
+  card:"Cards carry a small ornate pattern corner and saffron-accented category tag.",
+  photo:"Rich, saturated, textured spice and market photography, dense and vibrant.",
+  motion:"Layered pattern reveals, richly textured cross-fades.",
+  why:"Rationale: saffron and teal capture genuine spice-market vibrancy, a strong fit for bold, adventurous recipes.",
+  love:"It makes bold, spiced recipes feel authentic and exciting rather than generically 'ethnic-coded.'",
+  refs:[{name:"Tastemade",url:"https://www.tastemade.com"},{name:"Bon Appétit",url:"https://www.bonappetit.com"},{name:"Awwwards",url:"https://www.awwwards.com"}]},
+
+{id:"blush-bronze", n:"Blush & Bronze", g:"B", skin:"luxury", font:"serif-luxury", fontRec:"Display: Canela Text · Body: Söhne",
+  tags:["luxury","minimalist"], hero:"Soft Power",
+  personality:"Modern feminine luxury — soft curves, warm metallics, quiet confidence.",
+  emotion:"Elegant softness; confident femininity without excess ornamentation.",
+  audience:"Users who want an elegant, softer luxury register distinct from harder black/red drama.",
+  palette:[["#E9C4C4","Blush"],["#A9782F","Bronze"],["#F6F1EA","Ivory"],["#3A2A20","Deep Brown"]],
+  layout:"Soft curved section dividers, bronze hairline accents, generous ivory whitespace.",
+  heroDesc:"A blush-toned hero with a fine bronze rule and a softly curved headline frame.",
+  card:"Cards use soft curved corners and a thin bronze border, elegant and understated.",
+  photo:"Soft, warm, beauty-editorial-adjacent photography with gentle highlights.",
+  motion:"Smooth curved reveals, soft and confident, never abrupt.",
+  why:"Rationale: blush and bronze offer a softer luxury register that broadens appeal without diluting premium positioning.",
+  love:"It gives users who prefer softness over drama a genuinely premium option within the same brand family.",
+  refs:[{name:"Chanel",url:"https://www.chanel.com"},{name:"Vogue",url:"https://www.vogue.com"},{name:"Aesop",url:"https://www.aesop.com"}]},
+
+{id:"forest-table", n:"Forest Table", g:"B", skin:"editorial", font:"serif-literary", fontRec:"Display: Domaine Display · Body: PP Mori",
+  tags:["editorial","minimalist"], hero:"From The Wild",
+  personality:"New-Nordic foraging-chef aesthetic — wild, textured, deeply natural.",
+  emotion:"Grounded wonder; the quiet magic of foraged, seasonal ingredients.",
+  audience:"Users drawn to seasonal, foraged, deeply natural food storytelling.",
+  palette:[["#1F3B2C","Forest Green"],["#EFE7DA","Birch Cream"],["#201D1B","Charcoal"],["#6E7B5E","Moss"]],
+  layout:"Textured paper backgrounds, moss-green accents, wild-ingredient illustrations as section markers.",
+  heroDesc:"A deep forest-green hero with a birch-cream headline and a small moss-toned botanical mark.",
+  card:"Cards feature a small botanical illustration corner mark and birch-cream background.",
+  photo:"Textured, natural, forest-and-forage photography with visible seasonal ingredients.",
+  motion:"Slow, organic fades echoing natural growth rather than mechanical motion.",
+  why:"Rationale: forest green and moss connect to a credible new-Nordic culinary movement, adding depth beyond generic 'healthy.'",
+  love:"It feels connected to real seasons and real ingredients, not a generic wellness aesthetic.",
+  refs:[{name:"Kinfolk",url:"https://kinfolk.com"},{name:"Patagonia",url:"https://www.patagonia.com"},{name:"Cereal",url:"https://www.readcereal.com"}]},
+
+{id:"monochrome-stone", n:"Monochrome Stone", g:"B", skin:"minimal", font:"sans-clean", fontRec:"Display: Suisse Int'l · Body: Suisse Int'l",
+  tags:["minimalist","luxury"], hero:"Material Study",
+  personality:"Architectural minimalism — warm monochrome stone tones, Kinfolk meets Muji.",
+  emotion:"Quiet confidence; the calm of considered materials and light.",
+  audience:"Users who want the calmest possible register with genuine material sophistication.",
+  palette:[["#C9C2B4","Greige"],["#A39C8C","Stone"],["#2A2724","Soft Black"],["#F4F1EA","Warm White"]],
+  layout:"Architectural grid, shadow-and-light photography treated as the primary decorative device.",
+  heroDesc:"A greige-toned hero where shadow and light alone create depth, no color accent at all.",
+  card:"Cards rely entirely on subtle shadow gradients for hierarchy, no color accents used.",
+  photo:"Architectural shadow-and-light photography, materials-focused, almost sculptural.",
+  motion:"Extremely subtle light-shift transitions, nothing decorative.",
+  why:"Rationale: pure warm monochrome is the calmest possible register, ideal as an ultra-premium 'quiet mode' variant.",
+  love:"It feels genuinely serene and sophisticated for users fatigued by color-heavy design everywhere else.",
+  refs:[{name:"MUJI",url:"https://www.muji.com"},{name:"Aesop",url:"https://www.aesop.com"},{name:"Apple",url:"https://www.apple.com"}]},
+
+{id:"electric-indigo-lab", n:"Electric Indigo Lab", g:"B", skin:"grid", font:"mono-tech", fontRec:"Display: PP Neue Montreal · Body: IBM Plex Mono",
+  tags:["modern","experimental"], hero:"The Experiment",
+  personality:"Experimental food-science energy — precise, adventurous, lab-notebook confident.",
+  emotion:"Curiosity and precision; the excitement of a controlled experiment yielding a great result.",
+  audience:"Adventurous, technically minded users interested in the 'why' behind a recipe, not just the 'how.'",
+  palette:[["#2A1E5C","Indigo"],["#3D5AFE","Electric Blue"],["#C6F135","Lime"],["#F4F4F8","White"]],
+  layout:"Lab-notebook grid, precise electric-blue rules, lime-accent 'result' callouts.",
+  heroDesc:"A deep indigo hero with an electric-blue grid overlay and a lime 'result' callout badge.",
+  card:"Cards are annotated like lab notes — indigo border, lime highlight marking the key result/macro.",
+  photo:"Clean, precise, almost scientific food photography against neutral lab-like backgrounds.",
+  motion:"Precise, grid-snapping transitions, quick and confident like a completed experiment.",
+  why:"Rationale: indigo and lime signal genuine technical rigor, appealing to adventurous, detail-oriented cooks.",
+  love:"It rewards curiosity — users who want to understand the science behind a recipe feel truly served.",
+  refs:[{name:"Linear",url:"https://linear.app"},{name:"Notion",url:"https://www.notion.so"},{name:"Awwwards",url:"https://www.awwwards.com"}]}
+];
+
+const STORAGE_KEY = "duduskitchen-creative-review-v1";
+const grid = document.getElementById("conceptGrid");
+const toast = document.getElementById("toast");
+let state = {};
+let scope = "all";
+let favoritesOnly = false;
+let activeStyles = new Set();
+let searchTerm = "";
+let noteTimers = {};
+
+function loadState() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+  catch { return {}; }
+}
+function saveState() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+function getEntry(id) {
+  if (!state[id]) state[id] = { liked: null, notes: "" };
+  return state[id];
+}
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(() => toast.classList.remove("show"), 1800);
+}
+
+function paletteVars(c) {
+  return `--c1:${c[0][0]};--c2:${c[1][0]};--c3:${c[2][0]};--c4:${c[3][0]};`;
+}
+
+function mockupMarkup(concept) {
+  const skin = concept.skin;
+  if (skin === "editorial") {
+    return `<div class="mockup-body"><h4>${concept.hero}</h4><div class="mockup-lines"><span></span><span></span><span></span></div></div>`;
+  }
+  if (skin === "grid") {
+    return `<div class="mockup-body"><h4>${concept.hero}</h4><div class="m-row"><div class="m-card"></div><div class="m-card"></div><div class="m-card"></div></div></div>`;
+  }
+  if (skin === "brutalist") {
+    return `<div class="mockup-body"><h4 data-text="${concept.hero}">${concept.hero}</h4><p>${concept.n}</p></div>`;
+  }
+  if (skin === "playful") {
+    return `<div class="mockup-body"><div class="blob"></div><h4>${concept.hero}</h4><div class="m-row"><div class="m-card"></div><div class="m-card"></div></div></div>`;
+  }
+  if (skin === "minimal") {
+    return `<div class="mockup-body"><h4>${concept.hero}</h4><p>${concept.n}</p></div>`;
+  }
+  if (skin === "cinematic") {
+    return `<div class="mockup-body"><h4>${concept.hero}</h4></div>`;
+  }
+  return `<div class="mockup-body"><h4>${concept.hero}</h4><p>${concept.n}</p></div>`;
+}
+
+function cardMarkup(concept, index) {
+  const entry = getEntry(concept.id);
+  const groupLabel = concept.g === "A" ? "Black / Red" : "Alt Palette";
+  const groupClass = concept.g === "A" ? "group-a" : "group-b";
+  const tagsHtml = concept.tags.map(t => `<span>${t}</span>`).join("");
+  const swatches = concept.palette.map(p => `<button type="button" class="swatch" style="background:${p[0]}" title="${p[1]} · ${p[0]}" data-hex="${p[0]}" data-label="${p[1]}"></button>`).join("");
+  const refs = concept.refs.map(r => `<a href="${r.url}" target="_blank" rel="noreferrer">${r.name}</a>`).join("");
+  return `
+    <article class="concept-card" data-id="${concept.id}" data-group="${concept.g}" data-tags="${concept.tags.join(" ")}" data-search="${(concept.n+" "+concept.personality+" "+concept.tags.join(" ")+" "+concept.emotion).toLowerCase()}">
+      <div class="mockup skin-${concept.skin} font-${concept.font}" style="${paletteVars(concept.palette)}">
+        <div class="mockup-bar"><span></span><span></span><span></span></div>
+        ${mockupMarkup(concept)}
+      </div>
+      <div class="concept-meta">
+        <div class="meta-top">
+          <span class="concept-index">No. ${String(index + 1).padStart(2, "0")}</span>
+          <span class="badge ${groupClass}">${groupLabel}</span>
+        </div>
+        <h3>${concept.n}</h3>
+        <p class="personality">${concept.personality}</p>
+        <div class="tag-row">${tagsHtml}</div>
+        <dl class="brief-quick">
+          <div><dt>Emotion</dt><dd>${concept.emotion}</dd></div>
+          <div><dt>Audience</dt><dd>${concept.audience}</dd></div>
+          <div><dt>Type</dt><dd>${concept.fontRec}</dd></div>
+        </dl>
+        <div class="palette-row">${swatches}</div>
+        <details class="full-brief">
+          <summary>Full creative brief</summary>
+          <dl>
+            <div><dt>Layout</dt><dd>${concept.layout}</dd></div>
+            <div><dt>Hero concept</dt><dd>${concept.heroDesc}</dd></div>
+            <div><dt>Card style</dt><dd>${concept.card}</dd></div>
+            <div><dt>Photography</dt><dd>${concept.photo}</dd></div>
+            <div><dt>Motion</dt><dd>${concept.motion}</dd></div>
+            <div><dt>Why it stands out</dt><dd>${concept.why}</dd></div>
+            <div><dt>Why users would love it</dt><dd>${concept.love}</dd></div>
+          </dl>
+          <div class="refs">${refs}</div>
+        </details>
+        <div class="review-controls">
+          <div class="vote-row">
+            <button type="button" class="like-btn" aria-pressed="${entry.liked === true}">♥ Like</button>
+            <button type="button" class="dislike-btn" aria-pressed="${entry.liked === false}">✕ Pass</button>
+          </div>
+          <textarea class="notes" placeholder="Notes for the team…">${entry.notes || ""}</textarea>
+        </div>
+      </div>
+    </article>`;
+}
+
+function wireCard(card, concept) {
+  const likeBtn = card.querySelector(".like-btn");
+  const dislikeBtn = card.querySelector(".dislike-btn");
+  const notes = card.querySelector(".notes");
+  const swatches = card.querySelectorAll(".swatch");
+
+  likeBtn.addEventListener("click", () => {
+    const entry = getEntry(concept.id);
+    entry.liked = entry.liked === true ? null : true;
+    saveState();
+    likeBtn.setAttribute("aria-pressed", String(entry.liked === true));
+    dislikeBtn.setAttribute("aria-pressed", "false");
+    updateStats();
+    applyFilters();
+  });
+
+  dislikeBtn.addEventListener("click", () => {
+    const entry = getEntry(concept.id);
+    entry.liked = entry.liked === false ? null : false;
+    saveState();
+    dislikeBtn.setAttribute("aria-pressed", String(entry.liked === false));
+    likeBtn.setAttribute("aria-pressed", "false");
+    updateStats();
+    applyFilters();
+  });
+
+  notes.addEventListener("input", () => {
+    const entry = getEntry(concept.id);
+    entry.notes = notes.value;
+    clearTimeout(noteTimers[concept.id]);
+    noteTimers[concept.id] = setTimeout(saveState, 300);
+  });
+
+  swatches.forEach(sw => {
+    sw.addEventListener("click", () => {
+      const hex = sw.getAttribute("data-hex");
+      navigator.clipboard?.writeText(hex).then(() => showToast(`Copied ${hex}`)).catch(() => showToast(hex));
+    });
+  });
+}
+
+function renderGrid() {
+  grid.innerHTML = CONCEPTS.map((c, i) => cardMarkup(c, i)).join("");
+  CONCEPTS.forEach(c => {
+    const card = grid.querySelector(`[data-id="${c.id}"]`);
+    if (card) wireCard(card, c);
+  });
+  applyFilters();
+}
+
+function applyFilters() {
+  const cards = grid.querySelectorAll(".concept-card");
+  let visibleCount = 0;
+  cards.forEach(card => {
+    const id = card.getAttribute("data-id");
+    const group = card.getAttribute("data-group");
+    const tags = card.getAttribute("data-tags").split(" ");
+    const searchText = card.getAttribute("data-search");
+    const entry = getEntry(id);
+
+    let visible = true;
+    if (scope !== "all" && group !== scope) visible = false;
+    if (favoritesOnly && entry.liked !== true) visible = false;
+    if (activeStyles.size > 0 && ![...activeStyles].some(t => tags.includes(t))) visible = false;
+    if (searchTerm && !searchText.includes(searchTerm)) visible = false;
+
+    card.classList.toggle("hidden-card", !visible);
+    if (visible) visibleCount++;
+  });
+  document.getElementById("resultCount").textContent = `Showing ${visibleCount} of ${CONCEPTS.length} concepts`;
+}
+
+function updateStats() {
+  let liked = 0, passed = 0;
+  CONCEPTS.forEach(c => {
+    const entry = getEntry(c.id);
+    if (entry.liked === true) liked++;
+    if (entry.liked === false) passed++;
+  });
+  document.getElementById("statLiked").textContent = liked;
+  document.getElementById("statPassed").textContent = passed;
+  document.getElementById("statReviewed").textContent = liked + passed;
+}
+
+document.getElementById("scopeChips").addEventListener("click", (e) => {
+  const btn = e.target.closest("button[data-scope]");
+  if (!btn) return;
+  scope = btn.getAttribute("data-scope");
+  document.querySelectorAll("#scopeChips .chip").forEach(c => c.classList.toggle("active", c === btn));
+  applyFilters();
+});
+
+document.getElementById("favChip").addEventListener("click", (e) => {
+  favoritesOnly = !favoritesOnly;
+  e.target.classList.toggle("active", favoritesOnly);
+  applyFilters();
+});
+
+document.getElementById("styleChips").addEventListener("click", (e) => {
+  const btn = e.target.closest("button[data-style]");
+  if (!btn) return;
+  const style = btn.getAttribute("data-style");
+  if (activeStyles.has(style)) { activeStyles.delete(style); btn.classList.remove("active"); }
+  else { activeStyles.add(style); btn.classList.add("active"); }
+  applyFilters();
+});
+
+document.getElementById("searchInput").addEventListener("input", (e) => {
+  searchTerm = e.target.value.trim().toLowerCase();
+  applyFilters();
+});
+
+document.getElementById("copyShortlist").addEventListener("click", () => {
+  const liked = CONCEPTS.filter(c => getEntry(c.id).liked === true);
+  if (!liked.length) { showToast("No liked concepts yet"); return; }
+  const lines = liked.map(c => {
+    const notes = getEntry(c.id).notes;
+    return `${c.n} (${c.g === "A" ? "Black/Red" : "Alt Palette"})${notes ? " — " + notes : ""}`;
+  });
+  const text = `Dudu's Kitchen — Shortlist (${liked.length})\n` + lines.join("\n");
+  navigator.clipboard?.writeText(text).then(() => showToast("Shortlist copied to clipboard")).catch(() => showToast("Could not copy — select manually"));
+});
+
+document.getElementById("resetReviews").addEventListener("click", () => {
+  if (!confirm("Clear all likes, passes, and notes? This cannot be undone.")) return;
+  state = {};
+  saveState();
+  renderGrid();
+  updateStats();
+  showToast("All reviews cleared");
+});
+
+state = loadState();
+renderGrid();
+updateStats();
+</script>
+</body>
+</html>

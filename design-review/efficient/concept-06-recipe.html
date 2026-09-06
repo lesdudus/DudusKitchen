@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" data-paradigm="checklist">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Do Noir — Dudu's Kitchen</title>
+<style>
+:root{--bg:#0A0A0A;--surface:color-mix(in srgb, #0A0A0A 82%, white 18%);--surface-2:color-mix(in srgb, #0A0A0A 90%, white 10%);--border:color-mix(in srgb, #EDEAE4 14%, transparent);--text:#EDEAE4;--muted:color-mix(in srgb, #EDEAE4 60%, #0A0A0A 40%);--accent:#FF6961;--accent-fg:#14100D;--accent-soft:color-mix(in srgb, #FF6961 16%, transparent);--desktop-max:640px}
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;margin:0 auto;max-width:480px;min-height:100vh;-webkit-font-smoothing:antialiased;padding-bottom:calc(24px + env(safe-area-inset-bottom));transition:max-width .15s ease}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font:inherit;-webkit-tap-highlight-color:transparent}
+h1,h2,h3,h4{margin:0}
+@media (min-width:700px){body{max-width:var(--desktop-max,480px)}}
+.sticky-top{position:sticky;top:0;z-index:5;background:var(--bg)}
+.big-title{font-size:2rem;font-weight:800;letter-spacing:-.02em;padding:8px 20px 4px}
+.search-pill{margin:6px 20px 14px;background:var(--surface);border:1px solid var(--border);border-radius:12px;height:38px;display:flex;align-items:center;padding:0 12px;color:var(--muted);font-size:.9rem}
+.chip-row{display:flex;gap:8px;overflow-x:auto;padding:0 20px 14px}
+.chip{flex:0 0 auto;background:var(--surface);border:1px solid var(--border);color:var(--muted);font-size:.82rem;font-weight:600;padding:8px 14px;border-radius:999px;white-space:nowrap}
+.chip.active{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.macro-row{display:flex;gap:8px;padding:14px 20px}
+.macro-cell{flex:1;background:var(--surface);border-radius:12px;padding:10px 6px;text-align:center}
+.macro-cell strong{display:block;font-size:1.05rem}
+.macro-cell span{font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.section-label{padding:18px 20px 8px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.plain-list{padding:0 20px}
+.plain-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);min-height:44px}
+.plain-row:last-child{border-bottom:0}
+.ingredients-list,.method-list{margin:0;padding:0 20px 4px;list-style:none}
+.ingredients-list li,.method-list li{padding:10px 0;border-bottom:1px solid var(--border);font-size:.92rem;color:var(--muted);display:flex;gap:10px}
+.ingredients-list li:last-child,.method-list li:last-child{border-bottom:0}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:0 0 auto;margin-top:7px}
+.step-num{flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.action-bar{position:sticky;bottom:0;display:flex;gap:10px;padding:14px 20px calc(14px + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--border)}
+.btn{flex:1;height:46px;border-radius:12px;border:1px solid var(--accent);color:var(--accent);background:transparent;font-weight:700;font-size:.9rem}
+.btn.primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.back-row{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.back-row a{font-size:.9rem;color:var(--accent);font-weight:600}
+.review-bar{position:fixed;bottom:14px;left:14px;z-index:999;background:rgba(20,18,14,.9);color:#efe9df;font:600 11px/1 -apple-system,sans-serif;padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.14)}
+.review-bar-home{bottom:52px}
+.about-panel{position:fixed;bottom:14px;right:14px;z-index:999;max-width:260px;background:rgba(20,18,14,.92);color:#efe9df;font:12px/1.5 -apple-system,sans-serif;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14)}
+.about-panel summary{cursor:pointer;font-weight:700;list-style:none}
+.about-panel summary::-webkit-details-marker{display:none}
+.about-panel summary::before{content:"+ "}
+.about-panel[open] summary::before{content:"\2212 "}
+.about-panel p{margin:8px 0 0;color:#cfc7ba}
+
+.ckx-head{padding:16px 20px 4px}.ckx-head h1{font-size:1.2rem}.ckx-head p{margin:6px 0 0;font-size:.85rem;color:var(--muted)}.ckx-meta{padding:6px 20px 14px;font-size:.8rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="sticky-top"><div class="back-row"><a href="concept-06-home.html">&larr; Recipes</a></div></div><div class="ckx-head"><h1>Berry Protein Overnight Oats</h1><p>Creamy oats with skyr, berries, chia and vanilla protein for a fast post-workout breakfast.</p></div><div class="ckx-meta">390 kcal &middot; 33g protein &middot; 48g carbs &middot; 10 min</div><div class="section-label">Ingredients</div><ul class="ingredients-list"><li><span class="dot"></span>50 g rolled oats</li><li><span class="dot"></span>170 g plain skyr</li><li><span class="dot"></span>100 ml semi-skimmed milk</li><li><span class="dot"></span>20 g vanilla protein powder</li><li><span class="dot"></span>80 g mixed berries</li><li><span class="dot"></span>8 g chia seeds</li><li><span class="dot"></span>Cinnamon to taste</li></ul><div class="section-label">Method</div><ol class="method-list" style="padding-left:20px"><li style="list-style:none"><span class="step-num">1</span>Stir the oats, skyr, milk, protein powder, chia and cinnamon until smooth.</li><li style="list-style:none"><span class="step-num">2</span>Cover and chill overnight, then loosen with a splash of milk if needed.</li><li style="list-style:none"><span class="step-num">3</span>Finish with the berries just before eating.</li></ol><div class="action-bar"><button class="btn primary">&#9825; Save</button><button class="btn">Share</button></div>
+<a class="review-bar review-bar-home" href="concept-06-home.html">&larr; Back to Do Noir home</a><a class="review-bar" href="../efficient-index.html">&larr; Back to gallery &middot; Concept 06/20 &middot; Do Noir &middot; checklist</a>
+<details class="about-panel"><summary>About this concept</summary><p>Efficient, mobile-first checklist pattern, inspired by Todoist / Bear.</p></details>
+</body>
+</html>

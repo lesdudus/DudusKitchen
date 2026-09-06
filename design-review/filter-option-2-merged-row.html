@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Option 2 — Merged Row</title>
+<style>
+:root{
+  --bg:#12131C;--text:#EEEFF9;--accent:#5B6CFF;--accent-fg:#FFFFFF;
+  --accent-soft:color-mix(in srgb, var(--accent) 16%, transparent);
+  --surface:color-mix(in srgb, var(--bg) 82%, white 18%);
+  --border:color-mix(in srgb, var(--text) 14%, transparent);
+  --muted:color-mix(in srgb, var(--text) 60%, var(--bg) 40%);
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;margin:0 auto;max-width:480px;min-height:100vh}
+img{display:block;max-width:100%}
+.label-banner{background:#2a2140;color:#c9b8ff;font-size:.72rem;text-align:center;padding:8px;font-weight:700;letter-spacing:.03em}
+.big-title{font-size:2rem;font-weight:800;letter-spacing:-.02em;margin:0;padding:8px 20px 4px}
+.search-pill{margin:6px 20px 14px;background:var(--surface);border:1px solid var(--border);border-radius:.75rem;height:38px;display:flex;align-items:center;gap:8px;padding:0 12px;color:var(--muted);font-size:.85rem}
+.seg-wrap{display:flex;gap:8px;overflow-x:auto;padding:0 20px 14px}
+.seg{flex:0 0 auto;background:var(--surface);border:1px solid var(--border);color:var(--muted);font-size:.82rem;font-weight:600;padding:8px 14px;border-radius:999px;white-space:nowrap}
+.seg.active{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.seg-wrap-secondary{padding-top:0;padding-bottom:10px;flex-wrap:nowrap}
+.seg-wrap-secondary .seg{font-size:.74rem;padding:6px 12px}
+.divider{flex:0 0 auto;width:1px;background:var(--border);margin:2px 2px}
+.seg.mine.active{background:#22c55e;border-color:#22c55e}
+.result-count{padding:0 20px 10px;font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin:0}
+.st-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;padding:0 20px 20px}
+.st-card{position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:.875rem;overflow:hidden}
+.st-open{display:flex;gap:12px;align-items:center;width:100%}
+.st-open img{width:96px;height:96px;object-fit:cover;flex:0 0 auto}
+.st-open .st-body{padding:8px 12px;min-width:0}
+.st-open strong{font-size:.92rem;display:block}
+.st-open span{display:block;margin-top:4px;font-size:.76rem;color:var(--muted)}
+.badge{position:absolute;top:8px;left:8px;font-size:.62rem;font-weight:700;padding:3px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.03em}
+.badge.ai{background:rgba(91,108,255,.85);color:#fff}
+.badge.mine{background:rgba(34,197,94,.85);color:#fff}
+.triage-row{display:flex;gap:6px;padding:8px 10px;border-top:1px solid var(--border)}
+.triage-row button{flex:1;height:32px;border:1px solid var(--border);border-radius:.5rem;background:var(--bg);color:var(--muted);display:flex;align-items:center;justify-content:center;font-size:.75rem}
+h2.note{padding:0 20px;font-size:.85rem;color:var(--muted);font-weight:400}
+</style>
+</head>
+<body>
+<div class="label-banner">OPTION 2 — Everything folded into the existing review-filter row</div>
+<h1 class="big-title">Dudu's Kitchen</h1>
+<label class="search-pill">🔍 Search recipes</label>
+<div class="seg-wrap">
+  <button class="seg active">All</button><button class="seg">Breakfast</button><button class="seg">Lunch</button><button class="seg">Snack</button><button class="seg">Dinner</button>
+</div>
+<div class="seg-wrap seg-wrap-secondary" style="overflow-x:auto">
+  <button class="seg active">All</button><button class="seg">Liked</button><button class="seg">Disliked</button><button class="seg">Unreviewed</button>
+  <span class="divider"></span>
+  <button class="seg">🌐 AI-Sourced</button><button class="seg mine">👤 My Own</button>
+  <button class="seg" style="margin-left:auto">👁 Hidden (2)</button>
+</div>
+<h2 class="note">↑ One row, no extra header height — but now has 7 chips + divider. On a 375px-wide phone this scrolls horizontally and the "Hidden" toggle may get pushed off-screen.</h2>
+<p class="result-count">Showing 100 of 100 recipes</p>
+<div class="st-grid">
+  <div class="st-card">
+    <span class="badge ai">AI-Sourced</span>
+    <div class="st-open"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=300&q=60"><div class="st-body"><strong>Chicken Teriyaki Donburi</strong><span>420 kcal · 36g protein · 30 min</span></div></div>
+    <div class="triage-row"><button>👍 Like</button><button>👎 Dislike</button><button>🙈 Hide</button></div>
+  </div>
+  <div class="st-card">
+    <span class="badge mine">My Own</span>
+    <div class="st-open"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=300&q=60"><div class="st-body"><strong>Mom's Weeknight Pasta</strong><span>410 kcal · 30g protein · 25 min</span></div></div>
+    <div class="triage-row"><button>👍 Like</button><button>👎 Dislike</button><button>🙈 Hide</button></div>
+  </div>
+</div>
+</body>
+</html>

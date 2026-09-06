@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" data-layout="magazine">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kabuki Stage — Dudu's Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@500;600&family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@500;600&family=Bebas+Neue&family=Zilla+Slab:wght@500;700&family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cp-bg:#0B0B0D;--cp-bg-elevated:color-mix(in srgb, #0B0B0D 85%, white 15%);--cp-surface:color-mix(in srgb, #0B0B0D 78%, white 22%);--cp-surface-soft:color-mix(in srgb, #0B0B0D 82%, white 18%);--cp-border:color-mix(in srgb, #F6F1E7 22%, transparent);--cp-text:#F6F1E7;--cp-text-muted:color-mix(in srgb, #F6F1E7 68%, #0B0B0D 32%);--cp-text-soft:color-mix(in srgb, #F6F1E7 55%, #0B0B0D 45%);--cp-accent:#C41E3A;--cp-accent-hover:color-mix(in srgb, #C41E3A 82%, black 18%);--cp-accent-soft:color-mix(in srgb, #C41E3A 14%, transparent);--cp-accent-fg:#FFFFFF;--cp-link:#C41E3A;--theme-font-display:'Playfair Display', Georgia, 'Times New Roman', serif}
+
+*{box-sizing:border-box}
+html{background:var(--cp-bg);scroll-behavior:smooth}
+body{background:var(--cp-bg);color:var(--cp-text);font-family:"Segoe UI",Aptos,sans-serif;margin:0;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--cp-link)}
+button{cursor:pointer;font-family:inherit}
+h1,h2,h3,h4{font-family:var(--theme-font-display,inherit)}
+.brand{color:inherit;font-weight:750;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.brand-mark{background:var(--cp-accent);color:var(--cp-accent-fg);border-radius:8px;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;font-size:15px}
+.cat-chip{background:var(--cp-surface);border:1px solid var(--cp-border);border-radius:999px;color:var(--cp-text-muted);font-size:.78rem;font-weight:650;padding:8px 14px}
+.cat-chip.active{background:var(--cp-accent);color:var(--cp-accent-fg);border-color:var(--cp-accent)}
+.rd-ingredients ul,.rd-method ol{margin:0;padding-left:20px;line-height:1.8;font-size:.92rem;color:var(--cp-text-soft)}
+.rd-actions{display:flex;gap:10px;flex-wrap:wrap}
+.rd-actions button{background:transparent;border:1px solid var(--cp-accent);color:var(--cp-accent);padding:10px 18px;border-radius:.625rem;font:inherit;font-size:.85rem}
+.rd-actions button.primary{background:var(--cp-accent);color:var(--cp-accent-fg)}
+.review-bar{position:fixed;bottom:14px;left:14px;z-index:999;background:rgba(20,18,14,.88);color:#efe9df;font:600 11px/1 "Segoe UI",sans-serif;letter-spacing:.02em;padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.14)}
+.review-bar:hover{border-color:#c9a227}
+.review-bar-home{bottom:52px}
+.about-panel{position:fixed;bottom:14px;right:14px;z-index:999;max-width:280px;background:rgba(20,18,14,.92);color:#efe9df;font:12px/1.5 "Segoe UI",sans-serif;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14)}
+.about-panel summary{cursor:pointer;font-weight:700;list-style:none}
+.about-panel summary::-webkit-details-marker{display:none}
+.about-panel summary::before{content:"+ "}
+.about-panel[open] summary::before{content:"\2212 "}
+.about-panel p{margin:8px 0 0;color:#cfc7ba}
+
+
+.mg-masthead{text-align:center;padding:20px;border-bottom:3px solid var(--cp-text);font-size:.8rem}
+.mg-masthead a{color:var(--cp-text)}
+.mg-article{max-width:760px;margin:0 auto;padding:40px 24px 70px}
+.mg-article h1{font-size:2.4rem;margin:0 0 8px}
+.mg-byline{color:var(--cp-text-muted);font-size:.8rem;margin-bottom:24px}
+.mg-article img{width:100%;height:320px;object-fit:cover;margin-bottom:24px}
+.mg-body{display:grid;grid-template-columns:1fr 240px;gap:36px}
+.mg-sidebar{border-left:2px solid var(--cp-accent);padding-left:18px}
+@media (max-width:700px){.mg-body{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<div class="mg-masthead"><a href="theme-12-home.html">&larr; Back to Front Page</a></div><div class="mg-article"><h1>Berry Protein Overnight Oats</h1><p class="mg-byline">Kabuki Stage &middot; <span><strong>390</strong> kcal</span><span><strong>33g</strong> protein</span><span><strong>48g</strong> carbs</span><span><strong>10</strong> min</span><span><strong>1</strong> serving</span></p><img src="https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=1400&q=85" alt=""><div class="mg-body"><div class="rd-method"><h3>Method</h3><ol><li>Stir the oats, skyr, milk, protein powder, chia and cinnamon until smooth.</li><li>Cover and chill overnight, then loosen with a splash of milk if needed.</li><li>Finish with the berries just before eating.</li></ol><div class="rd-actions" style="margin-top:24px"><button class="primary">&#9825; Save recipe</button><button>Share</button></div></div><div class="mg-sidebar rd-ingredients"><h3>Ingredients</h3><ul><li>50 g rolled oats</li><li>170 g plain skyr</li><li>100 ml semi-skimmed milk</li><li>20 g vanilla protein powder</li><li>80 g mixed berries</li><li>8 g chia seeds</li><li>Cinnamon to taste</li></ul></div></div></div>
+<a class="review-bar review-bar-home" href="theme-12-home.html">&larr; Back to Kabuki Stage home</a><a class="review-bar" href="../visions-index.html">&larr; Back to gallery &middot; Theme 12/50 &middot; Kabuki Stage &middot; layout: magazine</a>
+<details class="about-panel"><summary>About this theme</summary><p>Theatrical reveal, every recipe an entrance. (layout: magazine)</p></details>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" data-layout="cardless">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forest Table — Dudu's Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@500;600&family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@500;600&family=Bebas+Neue&family=Zilla+Slab:wght@500;700&family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cp-bg:#1F3B2C;--cp-bg-elevated:color-mix(in srgb, #1F3B2C 85%, white 15%);--cp-surface:color-mix(in srgb, #1F3B2C 78%, white 22%);--cp-surface-soft:color-mix(in srgb, #1F3B2C 82%, white 18%);--cp-border:color-mix(in srgb, #EFE7DA 22%, transparent);--cp-text:#EFE7DA;--cp-text-muted:color-mix(in srgb, #EFE7DA 68%, #1F3B2C 32%);--cp-text-soft:color-mix(in srgb, #EFE7DA 55%, #1F3B2C 45%);--cp-accent:#6E7B5E;--cp-accent-hover:color-mix(in srgb, #6E7B5E 82%, black 18%);--cp-accent-soft:color-mix(in srgb, #6E7B5E 14%, transparent);--cp-accent-fg:#14100D;--cp-link:#6E7B5E;--theme-font-display:'Libre Baskerville', Georgia, serif}
+
+*{box-sizing:border-box}
+html{background:var(--cp-bg);scroll-behavior:smooth}
+body{background:var(--cp-bg);color:var(--cp-text);font-family:"Segoe UI",Aptos,sans-serif;margin:0;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--cp-link)}
+button{cursor:pointer;font-family:inherit}
+h1,h2,h3,h4{font-family:var(--theme-font-display,inherit)}
+.brand{color:inherit;font-weight:750;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.brand-mark{background:var(--cp-accent);color:var(--cp-accent-fg);border-radius:8px;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;font-size:15px}
+.cat-chip{background:var(--cp-surface);border:1px solid var(--cp-border);border-radius:999px;color:var(--cp-text-muted);font-size:.78rem;font-weight:650;padding:8px 14px}
+.cat-chip.active{background:var(--cp-accent);color:var(--cp-accent-fg);border-color:var(--cp-accent)}
+.rd-ingredients ul,.rd-method ol{margin:0;padding-left:20px;line-height:1.8;font-size:.92rem;color:var(--cp-text-soft)}
+.rd-actions{display:flex;gap:10px;flex-wrap:wrap}
+.rd-actions button{background:transparent;border:1px solid var(--cp-accent);color:var(--cp-accent);padding:10px 18px;border-radius:.625rem;font:inherit;font-size:.85rem}
+.rd-actions button.primary{background:var(--cp-accent);color:var(--cp-accent-fg)}
+.review-bar{position:fixed;bottom:14px;left:14px;z-index:999;background:rgba(20,18,14,.88);color:#efe9df;font:600 11px/1 "Segoe UI",sans-serif;letter-spacing:.02em;padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.14)}
+.review-bar:hover{border-color:#c9a227}
+.review-bar-home{bottom:52px}
+.about-panel{position:fixed;bottom:14px;right:14px;z-index:999;max-width:280px;background:rgba(20,18,14,.92);color:#efe9df;font:12px/1.5 "Segoe UI",sans-serif;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14)}
+.about-panel summary{cursor:pointer;font-weight:700;list-style:none}
+.about-panel summary::-webkit-details-marker{display:none}
+.about-panel summary::before{content:"+ "}
+.about-panel[open] summary::before{content:"\2212 "}
+.about-panel p{margin:8px 0 0;color:#cfc7ba}
+
+
+.cx-hero{min-height:80vh;background-size:cover;background-position:center;position:relative;display:flex;align-items:flex-end;background-image:url(https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=1400&q=85)}
+.cx-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),transparent 60%)}
+.cx-hero-text{position:relative;color:#fff;padding:0 clamp(24px,6vw,80px) 60px}
+.cx-hero-text h1{font-size:clamp(2.2rem,5vw,4rem);margin:0 0 12px}
+.cx-body{max-width:720px;margin:0 auto;padding:50px 24px}
+.cx-body h3{font-size:1rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cp-accent);margin:0 0 16px}
+.cx-body ul,.cx-body ol{line-height:2;font-size:1rem}
+.cx-nav{position:absolute;top:0;left:0;right:0;padding:20px clamp(20px,4vw,48px);display:flex;justify-content:space-between;z-index:2}
+.cx-nav a{color:#fff}
+
+</style>
+</head>
+<body>
+<div class="cx-hero"><div class="cx-nav"><a class="brand" href="theme-48-home.html" style="color:#fff"><span class="brand-mark">&#127859;</span>Dudu's Kitchen</a><a href="theme-48-home.html">&larr; Back</a></div><div class="cx-scrim"></div><div class="cx-hero-text"><h1>Berry Protein Overnight Oats</h1><p><span><strong>390</strong> kcal</span><span><strong>33g</strong> protein</span><span><strong>48g</strong> carbs</span><span><strong>10</strong> min</span><span><strong>1</strong> serving</span></p></div></div><div class="cx-body"><h3>Ingredients</h3><ul style="list-style:none;padding:0"><li>50 g rolled oats</li><li>170 g plain skyr</li><li>100 ml semi-skimmed milk</li><li>20 g vanilla protein powder</li><li>80 g mixed berries</li><li>8 g chia seeds</li><li>Cinnamon to taste</li></ul><h3 style="margin-top:40px">Method</h3><ol style="padding-left:20px"><li>Stir the oats, skyr, milk, protein powder, chia and cinnamon until smooth.</li><li>Cover and chill overnight, then loosen with a splash of milk if needed.</li><li>Finish with the berries just before eating.</li></ol><div class="rd-actions" style="margin-top:30px"><button class="primary">&#9825; Save recipe</button><button>Share</button></div></div>
+<a class="review-bar review-bar-home" href="theme-48-home.html">&larr; Back to Forest Table home</a><a class="review-bar" href="../visions-index.html">&larr; Back to gallery &middot; Theme 48/50 &middot; Forest Table &middot; layout: cardless</a>
+<details class="about-panel"><summary>About this theme</summary><p>New-Nordic foraging-chef aesthetic. (layout: cardless)</p></details>
+</body>
+</html>

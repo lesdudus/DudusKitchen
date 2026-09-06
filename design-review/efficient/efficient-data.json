@@ -1,0 +1,222 @@
+[
+  {
+    "id": "settings-noir",
+    "order": 1,
+    "name": "Settings Noir",
+    "group": "black-red",
+    "paradigm": "grouped-list",
+    "accent": "#E0293D",
+    "bg": "#101010",
+    "text": "#F2ECE4",
+    "blurb": "Efficient, mobile-first grouped list pattern, inspired by Apple Settings / Reminders."
+  },
+  {
+    "id": "rooftop-feed",
+    "order": 2,
+    "name": "Rooftop Feed",
+    "group": "black-red",
+    "paradigm": "feed-cards",
+    "accent": "#FF3B4E",
+    "bg": "#0B0B0C",
+    "text": "#F3EEE7",
+    "blurb": "Efficient, mobile-first feed cards pattern, inspired by Airbnb / Google Discover."
+  },
+  {
+    "id": "vinyl-noir-grid",
+    "order": 3,
+    "name": "Vinyl Noir Grid",
+    "group": "black-red",
+    "paradigm": "dark-grid",
+    "accent": "#E8112D",
+    "bg": "#121212",
+    "text": "#F1F1F1",
+    "blurb": "Efficient, mobile-first dark grid pattern, inspired by Spotify / Apple Music."
+  },
+  {
+    "id": "market-chips-rouge",
+    "order": 4,
+    "name": "Market Chips Rouge",
+    "group": "black-red",
+    "paradigm": "chips-feed",
+    "accent": "#FF453A",
+    "bg": "#0E0E0F",
+    "text": "#F1EEE9",
+    "blurb": "Efficient, mobile-first chips feed pattern, inspired by Uber Eats / DoorDash."
+  },
+  {
+    "id": "vitals-noir",
+    "order": 5,
+    "name": "Vitals Noir",
+    "group": "black-red",
+    "paradigm": "dashboard",
+    "accent": "#FF375F",
+    "bg": "#131313",
+    "text": "#F2EFEA",
+    "blurb": "Efficient, mobile-first dashboard pattern, inspired by Apple Health / Robinhood."
+  },
+  {
+    "id": "do-noir",
+    "order": 6,
+    "name": "Do Noir",
+    "group": "black-red",
+    "paradigm": "checklist",
+    "accent": "#FF6961",
+    "bg": "#0A0A0A",
+    "text": "#EDEAE4",
+    "blurb": "Efficient, mobile-first checklist pattern, inspired by Todoist / Bear."
+  },
+  {
+    "id": "library-noir-shelves",
+    "order": 7,
+    "name": "Library Noir Shelves",
+    "group": "black-red",
+    "paradigm": "shelf-grid",
+    "accent": "#D7263D",
+    "bg": "#111111",
+    "text": "#F0EBE2",
+    "blurb": "Efficient, mobile-first shelf grid pattern, inspired by Kindle / Apple TV."
+  },
+  {
+    "id": "today-noir-tabs",
+    "order": 8,
+    "name": "Today Noir Tabs",
+    "group": "black-red",
+    "paradigm": "segmented-tabs",
+    "accent": "#E63946",
+    "bg": "#101012",
+    "text": "#F2EFEA",
+    "blurb": "Efficient, mobile-first segmented tabs pattern, inspired by App Store Today."
+  },
+  {
+    "id": "crimson-paper-settings",
+    "order": 9,
+    "name": "Crimson Paper Settings",
+    "group": "black-red",
+    "paradigm": "grouped-list",
+    "accent": "#B3001B",
+    "bg": "#F6EEEA",
+    "text": "#1A1A1A",
+    "blurb": "Efficient, mobile-first grouped list pattern, inspired by Apple Settings / Reminders."
+  },
+  {
+    "id": "coral-feed-noir",
+    "order": 10,
+    "name": "Coral Feed Noir",
+    "group": "black-red",
+    "paradigm": "feed-cards",
+    "accent": "#FF5A5F",
+    "bg": "#0D0D0D",
+    "text": "#F1ECE6",
+    "blurb": "Efficient, mobile-first feed cards pattern, inspired by Airbnb / Google Discover."
+  },
+  {
+    "id": "ocean-settings",
+    "order": 11,
+    "name": "Ocean Settings",
+    "group": "color",
+    "paradigm": "grouped-list",
+    "accent": "#2D6CDF",
+    "bg": "#F5F8FA",
+    "text": "#14213D",
+    "blurb": "Efficient, mobile-first grouped list pattern, inspired by Apple Settings / Reminders."
+  },
+  {
+    "id": "discover-feed-sage",
+    "order": 12,
+    "name": "Discover Feed Sage",
+    "group": "color",
+    "paradigm": "feed-cards",
+    "accent": "#4C8C4A",
+    "bg": "#F3F6F1",
+    "text": "#213821",
+    "blurb": "Efficient, mobile-first feed cards pattern, inspired by Airbnb / Google Discover."
+  },
+  {
+    "id": "amethyst-grid",
+    "order": 13,
+    "name": "Amethyst Grid",
+    "group": "color",
+    "paradigm": "dark-grid",
+    "accent": "#8B5CF6",
+    "bg": "#17131F",
+    "text": "#EFEAF7",
+    "blurb": "Efficient, mobile-first dark grid pattern, inspired by Spotify / Apple Music."
+  },
+  {
+    "id": "citrus-chips",
+    "order": 14,
+    "name": "Citrus Chips",
+    "group": "color",
+    "paradigm": "chips-feed",
+    "accent": "#FF8A3D",
+    "bg": "#FFFDF7",
+    "text": "#2A2016",
+    "blurb": "Efficient, mobile-first chips feed pattern, inspired by Uber Eats / DoorDash."
+  },
+  {
+    "id": "health-rings-teal",
+    "order": 15,
+    "name": "Health Rings Teal",
+    "group": "color",
+    "paradigm": "dashboard",
+    "accent": "#2DD4BF",
+    "bg": "#0E1B1B",
+    "text": "#E6F5F3",
+    "blurb": "Efficient, mobile-first dashboard pattern, inspired by Apple Health / Robinhood."
+  },
+  {
+    "id": "clarity-checklist",
+    "order": 16,
+    "name": "Clarity Checklist",
+    "group": "color",
+    "paradigm": "checklist",
+    "accent": "#3A86FF",
+    "bg": "#FAFAF8",
+    "text": "#22252A",
+    "blurb": "Efficient, mobile-first checklist pattern, inspired by Todoist / Bear."
+  },
+  {
+    "id": "reading-shelf-amber",
+    "order": 17,
+    "name": "Reading Shelf Amber",
+    "group": "color",
+    "paradigm": "shelf-grid",
+    "accent": "#C08A2E",
+    "bg": "#FBF3E7",
+    "text": "#2E2416",
+    "blurb": "Efficient, mobile-first shelf grid pattern, inspired by Kindle / Apple TV."
+  },
+  {
+    "id": "today-tabs-indigo",
+    "order": 18,
+    "name": "Today Tabs Indigo",
+    "group": "color",
+    "paradigm": "segmented-tabs",
+    "accent": "#5B6CFF",
+    "bg": "#12131C",
+    "text": "#EEEFF9",
+    "blurb": "Efficient, mobile-first segmented tabs pattern, inspired by App Store Today."
+  },
+  {
+    "id": "meadow-settings",
+    "order": 19,
+    "name": "Meadow Settings",
+    "group": "color",
+    "paradigm": "grouped-list",
+    "accent": "#588157",
+    "bg": "#F4F8F2",
+    "text": "#20291F",
+    "blurb": "Efficient, mobile-first grouped list pattern, inspired by Apple Settings / Reminders."
+  },
+  {
+    "id": "sunrise-feed-coral",
+    "order": 20,
+    "name": "Sunrise Feed Coral",
+    "group": "color",
+    "paradigm": "feed-cards",
+    "accent": "#FF7A59",
+    "bg": "#FFF7F0",
+    "text": "#2E2015",
+    "blurb": "Efficient, mobile-first feed cards pattern, inspired by Airbnb / Google Discover."
+  }
+]

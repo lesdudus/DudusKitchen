@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" data-paradigm="grouped-list">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Meadow Settings — Dudu's Kitchen</title>
+<style>
+:root{--bg:#F4F8F2;--surface:color-mix(in srgb, white 92%, #F4F8F2 8%);--surface-2:#FFFFFF;--border:color-mix(in srgb, #20291F 12%, transparent);--text:#20291F;--muted:color-mix(in srgb, #20291F 62%, white 38%);--accent:#588157;--accent-fg:#FFFFFF;--accent-soft:color-mix(in srgb, #588157 16%, transparent);--desktop-max:760px}
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;margin:0 auto;max-width:480px;min-height:100vh;-webkit-font-smoothing:antialiased;padding-bottom:calc(24px + env(safe-area-inset-bottom));transition:max-width .15s ease}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font:inherit;-webkit-tap-highlight-color:transparent}
+h1,h2,h3,h4{margin:0}
+@media (min-width:700px){body{max-width:var(--desktop-max,480px)}}
+.sticky-top{position:sticky;top:0;z-index:5;background:var(--bg)}
+.big-title{font-size:2rem;font-weight:800;letter-spacing:-.02em;padding:8px 20px 4px}
+.search-pill{margin:6px 20px 14px;background:var(--surface);border:1px solid var(--border);border-radius:12px;height:38px;display:flex;align-items:center;padding:0 12px;color:var(--muted);font-size:.9rem}
+.chip-row{display:flex;gap:8px;overflow-x:auto;padding:0 20px 14px}
+.chip{flex:0 0 auto;background:var(--surface);border:1px solid var(--border);color:var(--muted);font-size:.82rem;font-weight:600;padding:8px 14px;border-radius:999px;white-space:nowrap}
+.chip.active{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.macro-row{display:flex;gap:8px;padding:14px 20px}
+.macro-cell{flex:1;background:var(--surface);border-radius:12px;padding:10px 6px;text-align:center}
+.macro-cell strong{display:block;font-size:1.05rem}
+.macro-cell span{font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.section-label{padding:18px 20px 8px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.plain-list{padding:0 20px}
+.plain-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);min-height:44px}
+.plain-row:last-child{border-bottom:0}
+.ingredients-list,.method-list{margin:0;padding:0 20px 4px;list-style:none}
+.ingredients-list li,.method-list li{padding:10px 0;border-bottom:1px solid var(--border);font-size:.92rem;color:var(--muted);display:flex;gap:10px}
+.ingredients-list li:last-child,.method-list li:last-child{border-bottom:0}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:0 0 auto;margin-top:7px}
+.step-num{flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.action-bar{position:sticky;bottom:0;display:flex;gap:10px;padding:14px 20px calc(14px + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--border)}
+.btn{flex:1;height:46px;border-radius:12px;border:1px solid var(--accent);color:var(--accent);background:transparent;font-weight:700;font-size:.9rem}
+.btn.primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.back-row{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.back-row a{font-size:.9rem;color:var(--accent);font-weight:600}
+.review-bar{position:fixed;bottom:14px;left:14px;z-index:999;background:rgba(20,18,14,.9);color:#efe9df;font:600 11px/1 -apple-system,sans-serif;padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.14)}
+.review-bar-home{bottom:52px}
+.about-panel{position:fixed;bottom:14px;right:14px;z-index:999;max-width:260px;background:rgba(20,18,14,.92);color:#efe9df;font:12px/1.5 -apple-system,sans-serif;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14)}
+.about-panel summary{cursor:pointer;font-weight:700;list-style:none}
+.about-panel summary::-webkit-details-marker{display:none}
+.about-panel summary::before{content:"+ "}
+.about-panel[open] summary::before{content:"\2212 "}
+.about-panel p{margin:8px 0 0;color:#cfc7ba}
+
+
+.gl-sections{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:0 20px;padding:0 20px}
+.gl-group{background:var(--surface);border-radius:14px;overflow:hidden;margin-bottom:8px}
+.gl-row{display:flex;align-items:center;gap:12px;padding:10px 14px;min-height:64px;border-bottom:1px solid var(--border)}
+.gl-row:last-child{border-bottom:0}
+.gl-row img{width:44px;height:44px;border-radius:10px;object-fit:cover;flex:0 0 auto}
+.gl-text{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+.gl-text strong{font-size:.94rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gl-text span{font-size:.74rem;color:var(--muted)}
+.gl-chevron{color:var(--muted);opacity:.5;font-size:1.2rem}
+.gl-block .section-label{padding-left:0;padding-right:0}
+
+</style>
+</head>
+<body>
+<div class="sticky-top"><h1 class="big-title">Recipes</h1><div class="search-pill">&#128269; Search recipes</div></div><div class="gl-sections"><section class="gl-block"><div class="section-label">Breakfast</div><div class="gl-group"><a class="gl-row" href="concept-19-recipe.html"><img src="https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=800&q=80" alt=""><div class="gl-text"><strong>Berry Protein Overnight Oats</strong><span>390 kcal &middot; 33g protein</span></div><span class="gl-chevron">&rsaquo;</span></a><a class="gl-row" href="#"><img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80" alt=""><div class="gl-text"><strong>Cinnamon Banana Protein Pancakes</strong><span>410 kcal &middot; 35g protein</span></div><span class="gl-chevron">&rsaquo;</span></a></div></section><section class="gl-block"><div class="section-label">Lunch</div><div class="gl-group"><a class="gl-row" href="#"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80" alt=""><div class="gl-text"><strong>Spicy Cajun Chicken &amp; Rice Bowl</strong><span>495 kcal &middot; 48g protein</span></div><span class="gl-chevron">&rsaquo;</span></a><a class="gl-row" href="#"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt=""><div class="gl-text"><strong>Chicken Satay Crunch Bowl</strong><span>470 kcal &middot; 46g protein</span></div><span class="gl-chevron">&rsaquo;</span></a></div></section><section class="gl-block"><div class="section-label">Snack</div><div class="gl-group"><a class="gl-row" href="#"><img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=800&q=80" alt=""><div class="gl-text"><strong>Chocolate Oat Protein Bites</strong><span>210 kcal &middot; 17g protein</span></div><span class="gl-chevron">&rsaquo;</span></a><a class="gl-row" href="#"><img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80" alt=""><div class="gl-text"><strong>Berry Skyr Cheesecake Cups</strong><span>225 kcal &middot; 21g protein</span></div><span class="gl-chevron">&rsaquo;</span></a></div></section><section class="gl-block"><div class="section-label">Dinner</div><div class="gl-group"><a class="gl-row" href="#"><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80" alt=""><div class="gl-text"><strong>Chicken Karahi with Basmati Rice</strong><span>520 kcal &middot; 52g protein</span></div><span class="gl-chevron">&rsaquo;</span></a><a class="gl-row" href="#"><img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=800&q=80" alt=""><div class="gl-text"><strong>Lighter Chicken Biryani</strong><span>535 kcal &middot; 45g protein</span></div><span class="gl-chevron">&rsaquo;</span></a></div></section></div>
+<a class="review-bar" href="../efficient-index.html">&larr; Back to gallery &middot; Concept 19/20 &middot; Meadow Settings &middot; grouped-list</a>
+<details class="about-panel"><summary>About this concept</summary><p>Efficient, mobile-first grouped list pattern, inspired by Apple Settings / Reminders.</p></details>
+</body>
+</html>

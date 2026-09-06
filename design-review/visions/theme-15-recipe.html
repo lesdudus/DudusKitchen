@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" data-layout="storytelling">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ink &amp; Ember — Dudu's Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@500;600&family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@500;600&family=Bebas+Neue&family=Zilla+Slab:wght@500;700&family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cp-bg:#0C0C0C;--cp-bg-elevated:color-mix(in srgb, #0C0C0C 85%, white 15%);--cp-surface:color-mix(in srgb, #0C0C0C 78%, white 22%);--cp-surface-soft:color-mix(in srgb, #0C0C0C 82%, white 18%);--cp-border:color-mix(in srgb, #F2ECDD 22%, transparent);--cp-text:#F2ECDD;--cp-text-muted:color-mix(in srgb, #F2ECDD 68%, #0C0C0C 32%);--cp-text-soft:color-mix(in srgb, #F2ECDD 55%, #0C0C0C 45%);--cp-accent:#B22222;--cp-accent-hover:color-mix(in srgb, #B22222 82%, black 18%);--cp-accent-soft:color-mix(in srgb, #B22222 14%, transparent);--cp-accent-fg:#FFFFFF;--cp-link:#B22222;--theme-font-display:'Libre Baskerville', Georgia, serif}
+
+*{box-sizing:border-box}
+html{background:var(--cp-bg);scroll-behavior:smooth}
+body{background:var(--cp-bg);color:var(--cp-text);font-family:"Segoe UI",Aptos,sans-serif;margin:0;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--cp-link)}
+button{cursor:pointer;font-family:inherit}
+h1,h2,h3,h4{font-family:var(--theme-font-display,inherit)}
+.brand{color:inherit;font-weight:750;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.brand-mark{background:var(--cp-accent);color:var(--cp-accent-fg);border-radius:8px;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;font-size:15px}
+.cat-chip{background:var(--cp-surface);border:1px solid var(--cp-border);border-radius:999px;color:var(--cp-text-muted);font-size:.78rem;font-weight:650;padding:8px 14px}
+.cat-chip.active{background:var(--cp-accent);color:var(--cp-accent-fg);border-color:var(--cp-accent)}
+.rd-ingredients ul,.rd-method ol{margin:0;padding-left:20px;line-height:1.8;font-size:.92rem;color:var(--cp-text-soft)}
+.rd-actions{display:flex;gap:10px;flex-wrap:wrap}
+.rd-actions button{background:transparent;border:1px solid var(--cp-accent);color:var(--cp-accent);padding:10px 18px;border-radius:.625rem;font:inherit;font-size:.85rem}
+.rd-actions button.primary{background:var(--cp-accent);color:var(--cp-accent-fg)}
+.review-bar{position:fixed;bottom:14px;left:14px;z-index:999;background:rgba(20,18,14,.88);color:#efe9df;font:600 11px/1 "Segoe UI",sans-serif;letter-spacing:.02em;padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.14)}
+.review-bar:hover{border-color:#c9a227}
+.review-bar-home{bottom:52px}
+.about-panel{position:fixed;bottom:14px;right:14px;z-index:999;max-width:280px;background:rgba(20,18,14,.92);color:#efe9df;font:12px/1.5 "Segoe UI",sans-serif;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14)}
+.about-panel summary{cursor:pointer;font-weight:700;list-style:none}
+.about-panel summary::-webkit-details-marker{display:none}
+.about-panel summary::before{content:"+ "}
+.about-panel[open] summary::before{content:"\2212 "}
+.about-panel p{margin:8px 0 0;color:#cfc7ba}
+
+
+.sr-hero{min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 24px}
+.sr-hero h1{font-size:clamp(2.2rem,6vw,4rem);max-width:760px;margin:0 0 16px}
+.sr-section{display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:70vh}
+.sr-section.sr-rev{direction:rtl}
+.sr-section.sr-rev>*{direction:ltr}
+.sr-img{height:100%;min-height:380px;background-size:cover;background-position:center}
+.sr-copy{padding:40px clamp(24px,5vw,64px)}
+.sr-copy h3{font-size:2rem;margin:0 0 20px}
+
+</style>
+</head>
+<body>
+<div style="padding:20px clamp(20px,4vw,56px)"><a class="brand" href="theme-15-home.html"><span class="brand-mark">&#127859;</span>Dudu's Kitchen</a></div><div class="sr-hero"><div><p style="color:var(--cp-accent);text-transform:uppercase;letter-spacing:.2em;font-size:.8rem;font-weight:700"><span><strong>390</strong> kcal</span><span><strong>33g</strong> protein</span><span><strong>48g</strong> carbs</span><span><strong>10</strong> min</span><span><strong>1</strong> serving</span></p><h1>Berry Protein Overnight Oats</h1><p style="color:var(--cp-text-soft);max-width:520px;margin:0 auto">Creamy oats with skyr, berries, chia and vanilla protein for a fast post-workout breakfast.</p></div></div><div class="sr-section"><div class="sr-img" style="background-image:url(https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=1400&q=85)"></div><div class="sr-copy"><h3>Ingredients</h3><ul style="padding-left:20px;line-height:1.9"><li>50 g rolled oats</li><li>170 g plain skyr</li><li>100 ml semi-skimmed milk</li><li>20 g vanilla protein powder</li><li>80 g mixed berries</li><li>8 g chia seeds</li><li>Cinnamon to taste</li></ul></div></div><div class="sr-section sr-rev"><div class="sr-img" style="background-image:url(https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=1400&q=85)"></div><div class="sr-copy"><h3>Method</h3><ol style="padding-left:20px;line-height:1.9"><li>Stir the oats, skyr, milk, protein powder, chia and cinnamon until smooth.</li><li>Cover and chill overnight, then loosen with a splash of milk if needed.</li><li>Finish with the berries just before eating.</li></ol><div class="rd-actions"><button class="primary">&#9825; Save recipe</button><button>Share</button></div></div></div><div style="text-align:center;padding:40px"><a href="theme-15-home.html">&larr; Back to all chapters</a></div>
+<a class="review-bar review-bar-home" href="theme-15-home.html">&larr; Back to Ink &amp; Ember home</a><a class="review-bar" href="../visions-index.html">&larr; Back to gallery &middot; Theme 15/50 &middot; Ink &amp; Ember &middot; layout: storytelling</a>
+<details class="about-panel"><summary>About this theme</summary><p>Calligraphic, contemplative, a red seal as signature. (layout: storytelling)</p></details>
+</body>
+</html>

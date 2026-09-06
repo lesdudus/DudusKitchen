@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>50 Themes × 10 Layouts — Dudu's Kitchen Review Index</title>
+<meta name="description" content="Open each of the 50 themes, each rendered in one of 10 genuinely different landing-page compositions, review, and shortlist favorites." />
+<style>
+  :root {
+    --bg: #131211;
+    --bg-elevated: #1b1a18;
+    --surface: #1f1e1c;
+    --border: #322f2b;
+    --text: #efe9df;
+    --text-muted: #a39a8c;
+    --text-soft: #877d6f;
+    --accent: #c9a227;
+    --accent-fg: #14120e;
+    --good: #6fae6c;
+    --bad: #c1544a;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--bg); }
+  body { background: var(--bg); color: var(--text); font-family: "Segoe UI", Aptos, sans-serif; margin: 0; }
+  a { color: var(--accent); }
+  button { cursor: pointer; font-family: inherit; }
+  button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 26px clamp(20px, 4vw, 56px);
+    position: sticky;
+    top: 0;
+    background: rgba(19, 18, 17, 0.94);
+    backdrop-filter: blur(10px);
+    z-index: 20;
+  }
+  .header-row { align-items: center; display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; }
+  .kicker { color: var(--accent); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; margin: 0 0 6px; text-transform: uppercase; }
+  header h1 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 0; }
+  header p.sub { color: var(--text-muted); margin: 8px 0 0; max-width: 620px; }
+  .stats { display: flex; gap: 20px; }
+  .stats div { display: flex; flex-direction: column; gap: 2px; text-align: right; }
+  .stats strong { font-size: 1.25rem; }
+  .stats span { color: var(--text-soft); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .header-actions { display: flex; gap: 10px; margin-top: 16px; }
+  .header-actions button { background: transparent; border: 1px solid var(--border); border-radius: 0.625rem; color: var(--text); font-size: 0.78rem; font-weight: 650; padding: 9px 14px; }
+  .header-actions button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+  .header-actions button:hover { border-color: var(--accent); }
+
+  .controls {
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--border);
+    padding: 16px clamp(20px, 4vw, 56px);
+    position: sticky;
+    top: 108px;
+    z-index: 15;
+  }
+  .search-row { display: flex; gap: 12px; margin-bottom: 12px; }
+  .search-row input { background: var(--surface); border: 1px solid var(--border); border-radius: 0.625rem; color: var(--text); flex: 1; font-size: 0.88rem; height: 40px; padding: 0 14px; }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { background: var(--surface); border: 1px solid var(--border); border-radius: 999px; color: var(--text-muted); font-size: 0.76rem; font-weight: 650; padding: 7px 13px; }
+  .chip.active { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+  .chip.fav.active { background: var(--bad); border-color: var(--bad); color: #fff; }
+  .result-count { color: var(--text-soft); font-size: 0.72rem; margin-top: 10px; text-transform: uppercase; }
+
+  main { margin: 0 auto; max-width: 1440px; padding: 30px clamp(20px, 4vw, 56px) 90px; }
+  .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+
+  .vision-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+  .vision-card.hidden-card { display: none; }
+  .vision-preview { aspect-ratio: 16/9; position: relative; display: flex; align-items: center; justify-content: center; text-decoration: none; }
+  .vision-preview span.open-label { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.35); color: #fff; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em; padding: 5px 9px; border-radius: 999px; text-transform: uppercase; }
+  .vision-preview strong { font-size: 1.3rem; text-align: center; padding: 0 20px; }
+  .vision-body { padding: 16px 18px 18px; }
+  .vision-top { align-items: center; display: flex; gap: 8px; margin-bottom: 8px; }
+  .vision-index { color: var(--text-soft); font-size: 0.7rem; font-weight: 700; }
+  .engine-badge { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 999px; color: var(--text-muted); font-size: 0.62rem; padding: 3px 8px; text-transform: capitalize; }
+  .vision-body h3 { font-size: 1.02rem; margin: 0 0 6px; }
+  .vision-body p.tagline { color: var(--text-muted); font-size: 0.82rem; line-height: 1.4; margin: 0 0 10px; }
+  .vision-body p.about { color: var(--text-soft); font-size: 0.76rem; line-height: 1.45; margin: 0 0 14px; }
+  .open-link { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-size: 0.8rem; font-weight: 650; text-decoration: none; margin-bottom: 14px; }
+  .open-link:hover { text-decoration: underline; }
+  .vote-row { display: flex; gap: 8px; margin-bottom: 10px; }
+  .vote-row button { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 0.625rem; color: var(--text-muted); flex: 1; font-size: 0.76rem; font-weight: 650; padding: 8px 0; }
+  .like-btn[aria-pressed="true"] { background: var(--good); border-color: var(--good); color: #0e1a0d; }
+  .dislike-btn[aria-pressed="true"] { background: var(--bad); border-color: var(--bad); color: #fff; }
+  .notes { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 0.625rem; color: var(--text); font-size: 0.78rem; min-height: 50px; padding: 8px 10px; resize: vertical; width: 100%; }
+
+  .toast { background: var(--accent); border-radius: 0.625rem; color: var(--accent-fg); bottom: 24px; font-size: 0.8rem; font-weight: 650; left: 50%; opacity: 0; padding: 10px 18px; pointer-events: none; position: fixed; transform: translate(-50%, 10px); transition: opacity 200ms ease, transform 200ms ease; z-index: 50; }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  footer { border-top: 1px solid var(--border); color: var(--text-soft); font-size: 0.74rem; padding: 22px clamp(20px, 4vw, 56px) 46px; }
+
+  @media (max-width: 720px) {
+    .stats { display: none; }
+    .controls { top: 150px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-row">
+    <div>
+      <p class="kicker">Layout &amp; Theme Review</p>
+      <h1>50 Themes &times; 10 Layouts — Dudu's Kitchen</h1>
+      <p class="sub">Same real recipes, categories and browsing journey every time — but each theme renders one of 10 genuinely different landing-page compositions (cinematic rows, magazine, bento, masonry, storytelling, split-screen, filmstrip, cardless, collage-hero, dense-grid). Click into "Berry Protein Overnight Oats" to see the matching recipe-page composition. Open as many tabs as you like, then vote here.</p>
+    </div>
+    <div class="stats" aria-live="polite">
+      <div><strong id="statTotal">50</strong><span>Visions</span></div>
+      <div><strong id="statLiked">0</strong><span>Liked</span></div>
+      <div><strong id="statPassed">0</strong><span>Passed</span></div>
+      <div><strong id="statReviewed">0</strong><span>Reviewed</span></div>
+    </div>
+  </div>
+  <div class="header-actions">
+    <button type="button" class="primary" id="copyShortlist">Copy shortlist</button>
+    <button type="button" id="resetReviews">Reset reviews</button>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="search-row">
+    <input type="search" id="searchInput" placeholder="Search by name, layout, or keyword…" aria-label="Search visions" />
+  </div>
+  <div class="chip-row" id="engineChips">
+    <button class="chip active" data-engine="all" type="button">All layouts</button>
+  </div>
+  <div class="chip-row" style="margin-top:8px">
+    <button class="chip fav" id="favChip" type="button">★ Favorites</button>
+  </div>
+  <p class="result-count" id="resultCount">Showing 50 of 50 visions</p>
+</div>
+
+<main>
+  <div class="grid" id="visionGrid" aria-live="polite"></div>
+</main>
+
+<footer>Dudu's Kitchen Product Vision Review · Reviews and notes are stored locally in this browser only (localStorage). Each vision is a fully separate file under visions/.</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const STORAGE_KEY = "duduskitchen-vision-review-v1";
+const grid = document.getElementById("visionGrid");
+const toast = document.getElementById("toast");
+let VISIONS = [];
+let state = {};
+let engineFilter = "all";
+let favoritesOnly = false;
+let searchTerm = "";
+
+function loadState() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+  catch { return {}; }
+}
+function saveState() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+function getEntry(id) {
+  if (!state[id]) state[id] = { liked: null, notes: "" };
+  return state[id];
+}
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(() => toast.classList.remove("show"), 1800);
+}
+
+function cardMarkup(v) {
+  const entry = getEntry(v.id);
+  const file = "visions/theme-" + String(v.order).padStart(2, "0") + "-home.html";
+  return `
+    <article class="vision-card" data-id="${v.id}" data-engine="${v.engine}" data-search="${(v.name + " " + v.engine + " " + v.tagline + " " + v.about).toLowerCase()}">
+      <a class="vision-preview" href="${file}" target="_blank" rel="noreferrer" style="background:${v.bg};color:${v.text}">
+        <span class="open-label">Opens in new tab</span>
+        <strong style="color:${v.accent}">${v.name}</strong>
+      </a>
+      <div class="vision-body">
+        <div class="vision-top">
+          <span class="vision-index">No. ${String(v.order).padStart(2, "0")}</span>
+          <span class="engine-badge">${v.engine}</span>
+        </div>
+        <h3>${v.name}</h3>
+        <p class="tagline">${v.tagline}</p>
+        <p class="about">${v.about}</p>
+        <a class="open-link" href="${file}" target="_blank" rel="noreferrer">Open full prototype &rarr;</a>
+        <div class="vote-row">
+          <button type="button" class="like-btn" aria-pressed="${entry.liked === true}">&hearts; Like</button>
+          <button type="button" class="dislike-btn" aria-pressed="${entry.liked === false}">&#10005; Pass</button>
+        </div>
+        <textarea class="notes" placeholder="Notes for the team…">${entry.notes || ""}</textarea>
+      </div>
+    </article>`;
+}
+
+function wireCard(card, v) {
+  const likeBtn = card.querySelector(".like-btn");
+  const dislikeBtn = card.querySelector(".dislike-btn");
+  const notes = card.querySelector(".notes");
+  let noteTimer;
+
+  likeBtn.addEventListener("click", () => {
+    const entry = getEntry(v.id);
+    entry.liked = entry.liked === true ? null : true;
+    saveState();
+    likeBtn.setAttribute("aria-pressed", String(entry.liked === true));
+    dislikeBtn.setAttribute("aria-pressed", "false");
+    updateStats();
+    applyFilters();
+  });
+  dislikeBtn.addEventListener("click", () => {
+    const entry = getEntry(v.id);
+    entry.liked = entry.liked === false ? null : false;
+    saveState();
+    dislikeBtn.setAttribute("aria-pressed", String(entry.liked === false));
+    likeBtn.setAttribute("aria-pressed", "false");
+    updateStats();
+    applyFilters();
+  });
+  notes.addEventListener("input", () => {
+    const entry = getEntry(v.id);
+    entry.notes = notes.value;
+    clearTimeout(noteTimer);
+    noteTimer = setTimeout(saveState, 300);
+  });
+}
+
+function renderEngineChips() {
+  const engines = [...new Set(VISIONS.map((v) => v.engine))].sort();
+  const container = document.getElementById("engineChips");
+  engines.forEach((engine) => {
+    const btn = document.createElement("button");
+    btn.className = "chip";
+    btn.type = "button";
+    btn.dataset.engine = engine;
+    btn.textContent = engine;
+    container.appendChild(btn);
+  });
+  container.addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-engine]");
+    if (!btn) return;
+    engineFilter = btn.getAttribute("data-engine");
+    container.querySelectorAll(".chip").forEach((c) => c.classList.toggle("active", c === btn));
+    applyFilters();
+  });
+}
+
+function renderGrid() {
+  grid.innerHTML = VISIONS.map(cardMarkup).join("");
+  VISIONS.forEach((v) => {
+    const card = grid.querySelector(`[data-id="${v.id}"]`);
+    if (card) wireCard(card, v);
+  });
+  applyFilters();
+}
+
+function applyFilters() {
+  const cards = grid.querySelectorAll(".vision-card");
+  let visibleCount = 0;
+  cards.forEach((card) => {
+    const id = card.getAttribute("data-id");
+    const engine = card.getAttribute("data-engine");
+    const searchText = card.getAttribute("data-search");
+    const entry = getEntry(id);
+    let visible = true;
+    if (engineFilter !== "all" && engine !== engineFilter) visible = false;
+    if (favoritesOnly && entry.liked !== true) visible = false;
+    if (searchTerm && !searchText.includes(searchTerm)) visible = false;
+    card.classList.toggle("hidden-card", !visible);
+    if (visible) visibleCount++;
+  });
+  document.getElementById("resultCount").textContent = `Showing ${visibleCount} of ${VISIONS.length} visions`;
+}
+
+function updateStats() {
+  let liked = 0, passed = 0;
+  VISIONS.forEach((v) => {
+    const entry = getEntry(v.id);
+    if (entry.liked === true) liked++;
+    if (entry.liked === false) passed++;
+  });
+  document.getElementById("statLiked").textContent = liked;
+  document.getElementById("statPassed").textContent = passed;
+  document.getElementById("statReviewed").textContent = liked + passed;
+}
+
+document.getElementById("favChip").addEventListener("click", (e) => {
+  favoritesOnly = !favoritesOnly;
+  e.target.classList.toggle("active", favoritesOnly);
+  applyFilters();
+});
+document.getElementById("searchInput").addEventListener("input", (e) => {
+  searchTerm = e.target.value.trim().toLowerCase();
+  applyFilters();
+});
+document.getElementById("copyShortlist").addEventListener("click", () => {
+  const liked = VISIONS.filter((v) => getEntry(v.id).liked === true);
+  if (!liked.length) { showToast("No liked visions yet"); return; }
+  const lines = liked.map((v) => {
+    const notes = getEntry(v.id).notes;
+    return `${v.name} (${v.engine})${notes ? " — " + notes : ""}`;
+  });
+  const text = `Dudu's Kitchen — Vision Shortlist (${liked.length})\n` + lines.join("\n");
+  navigator.clipboard?.writeText(text).then(() => showToast("Shortlist copied to clipboard")).catch(() => showToast("Could not copy — select manually"));
+});
+document.getElementById("resetReviews").addEventListener("click", () => {
+  if (!confirm("Clear all likes, passes, and notes? This cannot be undone.")) return;
+  state = {};
+  saveState();
+  renderGrid();
+  updateStats();
+  showToast("All reviews cleared");
+});
+
+const VISIONS_DATA = [{"id":"michelin-noir","order":1,"name":"Michelin Noir","engine":"cinematic-rows","accent":"#C8102E","bg":"#0B0B0C","text":"#F3EDE4","tagline":"Restrained, authoritative — food worth traveling for.","about":"Restrained, authoritative — food worth traveling for."},{"id":"tokyo-midnight","order":2,"name":"Tokyo Midnight Kitchen","engine":"magazine","accent":"#BC002D","bg":"#101012","text":"#F5F1E8","tagline":"Extreme negative space, one red accent, total calm.","about":"Extreme negative space, one red accent, total calm."},{"id":"brutalist-broadsheet","order":3,"name":"Brutalist Broadsheet","engine":"bento","accent":"#B3001B","bg":"#000000","text":"#FFFFFF","tagline":"Raw, confrontational, newsprint energy.","about":"Raw, confrontational, newsprint energy."},{"id":"maison-rouge","order":4,"name":"Maison Rouge","engine":"masonry","accent":"#A6192E","bg":"#0C0C0D","text":"#F2EDE6","tagline":"Fashion-house poise, gold hairlines, couture pacing.","about":"Fashion-house poise, gold hairlines, couture pacing."},{"id":"neon-wok","order":5,"name":"Neon Wok","engine":"storytelling","accent":"#FF1F4B","bg":"#08080A","text":"#F5F5F7","tagline":"Cyberpunk night-market energy, glowing and alive.","about":"Cyberpunk night-market energy, glowing and alive."},{"id":"nordic-ember","order":6,"name":"Nordic Ember","engine":"split-screen","accent":"#C1440E","bg":"#16161A","text":"#EFE7DA","tagline":"Scandinavian calm with one warm ember accent.","about":"Scandinavian calm with one warm ember accent."},{"id":"journal-rouge","order":7,"name":"Le Journal Rouge","engine":"filmstrip","accent":"#C1272D","bg":"#111111","text":"#F1EAD9","tagline":"Recipes written like front-page news.","about":"Recipes written like front-page news."},{"id":"matador","order":8,"name":"Matador","engine":"cardless","accent":"#D0021B","bg":"#0A0A0A","text":"#F4EFE6","tagline":"Dramatic, theatrical, a sweep of cape-red confidence.","about":"Dramatic, theatrical, a sweep of cape-red confidence."},{"id":"obsidian-atelier","order":9,"name":"Obsidian Atelier","engine":"collage-hero","accent":"#E0102A","bg":"#030303","text":"#FFFFFF","tagline":"Every recipe treated like a spotlit art object.","about":"Every recipe treated like a spotlit art object."},{"id":"red-thread","order":10,"name":"Red Thread","engine":"dense-grid","accent":"#D62839","bg":"#0D0D0F","text":"#EFE6D8","tagline":"A connective narrative thread runs through everything.","about":"A connective narrative thread runs through everything."},{"id":"ferrari-kitchen","order":11,"name":"Ferrari Kitchen","engine":"cinematic-rows","accent":"#D40000","bg":"#0A0A0C","text":"#F5F5F5","tagline":"Italian performance-luxury, nutrition as engineering.","about":"Italian performance-luxury, nutrition as engineering."},{"id":"kabuki-stage","order":12,"name":"Kabuki Stage","engine":"magazine","accent":"#C41E3A","bg":"#0B0B0D","text":"#F6F1E7","tagline":"Theatrical reveal, every recipe an entrance.","about":"Theatrical reveal, every recipe an entrance."},{"id":"data-chef","order":13,"name":"Data Chef","engine":"bento","accent":"#FF2E44","bg":"#08090A","text":"#E8ECEA","tagline":"Nutrition presented like transparent live data.","about":"Nutrition presented like transparent live data."},{"id":"velvet-rope","order":14,"name":"Velvet Rope","engine":"masonry","accent":"#7A0C1E","bg":"#0A0708","text":"#EFE6D8","tagline":"Moody, exclusive, members-only warmth.","about":"Moody, exclusive, members-only warmth."},{"id":"ink-ember","order":15,"name":"Ink & Ember","engine":"storytelling","accent":"#B22222","bg":"#0C0C0C","text":"#F2ECDD","tagline":"Calligraphic, contemplative, a red seal as signature.","about":"Calligraphic, contemplative, a red seal as signature."},{"id":"race-card","order":16,"name":"Race Card","engine":"split-screen","accent":"#D7263D","bg":"#101012","text":"#FAFAFA","tagline":"Cook time as a lap split, performance gamified.","about":"Cook time as a lap split, performance gamified."},{"id":"opera-rouge","order":17,"name":"Opera Rouge","engine":"filmstrip","accent":"#7C0A02","bg":"#0B0708","text":"#F1E7D8","tagline":"Grand, operatic, romantic — cooking as performance.","about":"Grand, operatic, romantic — cooking as performance."},{"id":"static-steel","order":18,"name":"Static & Steel","engine":"cardless","accent":"#D62828","bg":"#101214","text":"#F1F2F2","tagline":"Industrial honesty of a real commercial kitchen.","about":"Industrial honesty of a real commercial kitchen."},{"id":"crimson-zen","order":19,"name":"Crimson Zen","engine":"collage-hero","accent":"#C1121F","bg":"#0A0A0A","text":"#F5F2EA","tagline":"Meditative, disciplined, one red circle as the mark.","about":"Meditative, disciplined, one red circle as the mark."},{"id":"death-row-diner","order":20,"name":"Death Row Diner","engine":"dense-grid","accent":"#FF073A","bg":"#0C0C0C","text":"#F2E9D8","tagline":"Retro-Americana neon-diner rebellion.","about":"Retro-Americana neon-diner rebellion."},{"id":"red-room","order":21,"name":"The Red Room","engine":"cinematic-rows","accent":"#8A0303","bg":"#050505","text":"#EDEDED","tagline":"Surreal, cinematic, unsettling-elegant mood.","about":"Surreal, cinematic, unsettling-elegant mood."},{"id":"sumo-ring","order":22,"name":"Sumo Ring","engine":"magazine","accent":"#C0272D","bg":"#0A0A0A","text":"#F4F1EA","tagline":"Ceremonial strength, ritual and respect.","about":"Ceremonial strength, ritual and respect."},{"id":"rouge-vif","order":23,"name":"Rouge Vif Editorial","engine":"bento","accent":"#E2001A","bg":"#000000","text":"#FFFFFF","tagline":"Parisian fashion-magazine confidence and swagger.","about":"Parisian fashion-magazine confidence and swagger."},{"id":"ember-ash","order":24,"name":"Ember & Ash","engine":"masonry","accent":"#C1440E","bg":"#131110","text":"#EFE6D6","tagline":"Rustic live-fire cooking, slow and honest.","about":"Rustic live-fire cooking, slow and honest."},{"id":"circuit-kitchen","order":25,"name":"Circuit Kitchen","engine":"storytelling","accent":"#FF2D55","bg":"#0A0C0A","text":"#EAEFEA","tagline":"The body as an engineered system to optimize.","about":"The body as an engineered system to optimize."},{"id":"blood-orange-noir","order":26,"name":"Blood Orange Noir","engine":"split-screen","accent":"#D2401E","bg":"#0A0808","text":"#EFE6D8","tagline":"Film-noir mystery warmed by blood-orange glow.","about":"Film-noir mystery warmed by blood-orange glow."},{"id":"scarlet-ledger","order":27,"name":"Scarlet Ledger","engine":"filmstrip","accent":"#A32020","bg":"#14100D","text":"#E9DEC4","tagline":"Old-world ledger charm, wax-seal permanence.","about":"Old-world ledger charm, wax-seal permanence."},{"id":"akira-red","order":28,"name":"Akira Red","engine":"cardless","accent":"#E2001A","bg":"#08080B","text":"#F4F4F8","tagline":"Anime-cyberpunk Tokyo, bold and kinetic.","about":"Anime-cyberpunk Tokyo, bold and kinetic."},{"id":"red-thread-tradition","order":29,"name":"The Red Thread of Tradition","engine":"collage-hero","accent":"#B3222D","bg":"#101010","text":"#F1E6D2","tagline":"Nostalgic family-recipe warmth, modernized.","about":"Nostalgic family-recipe warmth, modernized."},{"id":"monolith","order":30,"name":"Monolith","engine":"dense-grid","accent":"#C1121F","bg":"#000000","text":"#F5F5F3","tagline":"Ultra-minimal, monumental, sculptural restraint.","about":"Ultra-minimal, monumental, sculptural restraint."},{"id":"ivory-sage","order":31,"name":"Ivory & Sage","engine":"cinematic-rows","accent":"#8A9A83","bg":"#F6F3EC","text":"#2E2C28","tagline":"Calm, wholesome, unhurried Kinfolk-style gentleness.","about":"Calm, wholesome, unhurried Kinfolk-style gentleness."},{"id":"terracotta-sud","order":32,"name":"Terracotta Sud","engine":"magazine","accent":"#C1622D","bg":"#F4E9D8","text":"#3B2E27","tagline":"Sun-baked Mediterranean market-day warmth.","about":"Sun-baked Mediterranean market-day warmth."},{"id":"champagne-atelier","order":33,"name":"Champagne Atelier","engine":"bento","accent":"#C79A6B","bg":"#FAF6EE","text":"#2A2724","tagline":"Quiet-luxury patisserie elegance, precise and delicate.","about":"Quiet-luxury patisserie elegance, precise and delicate."},{"id":"emerald-reserve","order":34,"name":"Emerald Reserve","engine":"masonry","accent":"#B08D57","bg":"#14432A","text":"#F1EADB","tagline":"Members-club, wine-cellar sophistication.","about":"Members-club, wine-cellar sophistication."},{"id":"copper-forge","order":35,"name":"Copper Forge","engine":"storytelling","accent":"#B5622A","bg":"#262220","text":"#EFE6D6","tagline":"Artisanal, tactile, hand-forged craft warmth.","about":"Artisanal, tactile, hand-forged craft warmth."},{"id":"navy-nautical","order":36,"name":"Navy Nautical Table","engine":"split-screen","accent":"#B08D57","bg":"#142238","text":"#F4F4F2","tagline":"Coastal fine-dining, yacht-club elegance.","about":"Coastal fine-dining, yacht-club elegance."},{"id":"sage-linen","order":37,"name":"Sage & Linen","engine":"filmstrip","accent":"#93A186","bg":"#F1ECE1","text":"#2E2C28","tagline":"Scandinavian wellness calm, soft and functional.","about":"Scandinavian wellness calm, soft and functional."},{"id":"golden-hour","order":38,"name":"Golden Hour Kitchen","engine":"cardless","accent":"#C98A2C","bg":"#3A2A20","text":"#F3E7D2","tagline":"Warm, cinematic, golden-lit food storytelling.","about":"Warm, cinematic, golden-lit food storytelling."},{"id":"deep-purple-nightshade","order":39,"name":"Deep Purple Nightshade","engine":"collage-hero","accent":"#E8B4BC","bg":"#3A1B33","text":"#F3EAE4","tagline":"Moody, romantic, evening-dinner sophistication.","about":"Moody, romantic, evening-dinner sophistication."},{"id":"charcoal-chalk","order":40,"name":"Charcoal & Chalk","engine":"dense-grid","accent":"#C99A2E","bg":"#2B2B2B","text":"#F2F0EA","tagline":"Modern bistro, handwritten specials-board charm.","about":"Modern bistro, handwritten specials-board charm."},{"id":"olive-grove","order":41,"name":"Olive Grove","engine":"cinematic-rows","accent":"#6E7150","bg":"#F6F0E2","text":"#3B2E27","tagline":"Sun-drenched Mediterranean wellness, organic and grounded.","about":"Sun-drenched Mediterranean wellness, organic and grounded."},{"id":"warm-beige-studio","order":42,"name":"Warm Beige Studio","engine":"magazine","accent":"#B5622A","bg":"#E7DFD1","text":"#2A2724","tagline":"Notion/Aesop-style quiet minimalism.","about":"Notion/Aesop-style quiet minimalism."},{"id":"vibrant-citrus-pop","order":43,"name":"Vibrant Citrus Pop","engine":"bento","accent":"#FF7A29","bg":"#FFFFFF","text":"#232323","tagline":"Playful, energetic, Sweetgreen-style modern app energy.","about":"Playful, energetic, Sweetgreen-style modern app energy."},{"id":"cocoa-cream","order":44,"name":"Cocoa & Cream","engine":"masonry","accent":"#C79A6B","bg":"#F3E6D6","text":"#4A2E22","tagline":"Chocolatier warmth with precise, refined restraint.","about":"Chocolatier warmth with precise, refined restraint."},{"id":"slate-sea-glass","order":45,"name":"Slate & Sea Glass","engine":"storytelling","accent":"#9FC1BA","bg":"#F4F6F5","text":"#3E4A54","tagline":"Modern coastal wellness, breathing-app calm.","about":"Modern coastal wellness, breathing-app calm."},{"id":"saffron-souk","order":46,"name":"Saffron Souk","engine":"split-screen","accent":"#D8A417","bg":"#F1E6CE","text":"#124A45","tagline":"Vibrant Moroccan spice-market energy.","about":"Vibrant Moroccan spice-market energy."},{"id":"blush-bronze","order":47,"name":"Blush & Bronze","engine":"filmstrip","accent":"#A9782F","bg":"#F6F1EA","text":"#3A2A20","tagline":"Modern feminine luxury, soft curves and confidence.","about":"Modern feminine luxury, soft curves and confidence."},{"id":"forest-table","order":48,"name":"Forest Table","engine":"cardless","accent":"#6E7B5E","bg":"#1F3B2C","text":"#EFE7DA","tagline":"New-Nordic foraging-chef aesthetic.","about":"New-Nordic foraging-chef aesthetic."},{"id":"monochrome-stone","order":49,"name":"Monochrome Stone","engine":"collage-hero","accent":"#A39C8C","bg":"#F4F1EA","text":"#2A2724","tagline":"Architectural minimalism, Kinfolk meets Muji.","about":"Architectural minimalism, Kinfolk meets Muji."},{"id":"electric-indigo-lab","order":50,"name":"Electric Indigo Lab","engine":"dense-grid","accent":"#3D5AFE","bg":"#2A1E5C","text":"#F4F4F8","tagline":"Experimental food-science precision.","about":"Experimental food-science precision."}];
+
+VISIONS = VISIONS_DATA;
+state = loadState();
+renderEngineChips();
+renderGrid();
+updateStats();
+</script>
+</body>
+</html>

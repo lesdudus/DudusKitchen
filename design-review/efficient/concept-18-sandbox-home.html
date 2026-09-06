@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en" data-paradigm="segmented-tabs">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Today Tabs Indigo — Sandbox (Page vs Modal)</title>
+<style>
+:root{
+  --bg:#12131C;--text:#EEEFF9;--accent:#5B6CFF;--accent-fg:#FFFFFF;
+  --accent-soft:color-mix(in srgb, var(--accent) 16%, transparent);
+  --surface:color-mix(in srgb, var(--bg) 82%, white 18%);
+  --border:color-mix(in srgb, var(--text) 14%, transparent);
+  --muted:color-mix(in srgb, var(--text) 60%, var(--bg) 40%);
+  --desktop-max:900px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;margin:0 auto;max-width:480px;min-height:100vh;-webkit-font-smoothing:antialiased;padding-bottom:calc(24px + env(safe-area-inset-bottom))}
+@media (min-width:700px){body{max-width:var(--desktop-max)}}
+img{display:block;max-width:100%}
+a,button{color:inherit;text-decoration:none}
+button{cursor:pointer;font:inherit;-webkit-tap-highlight-color:transparent;border:0;background:none}
+h1,h2,h3{margin:0}
+.sticky-top{position:sticky;top:0;z-index:5;background:var(--bg)}
+.big-title{font-size:2rem;font-weight:800;letter-spacing:-.02em;padding:8px 20px 4px}
+.search-pill{margin:6px 20px 14px;background:var(--surface);border:1px solid var(--border);border-radius:12px;height:38px;display:flex;align-items:center;gap:8px;padding:0 12px;color:var(--muted);font-size:.9rem}
+.search-pill input{background:transparent;border:0;color:var(--text);font:inherit;flex:1;min-width:0}
+.search-pill input:focus{outline:none}
+.search-pill input::placeholder{color:var(--muted)}
+.seg-wrap{display:flex;background:var(--surface);border-radius:12px;margin:4px 20px 14px;padding:3px;gap:3px;overflow-x:auto}
+.seg{flex:1;background:transparent;border-radius:9px;padding:8px 4px;font-size:.8rem;font-weight:600;color:var(--muted);white-space:nowrap}
+.seg.active{background:var(--bg);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.st-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;padding:0 20px 20px}
+.st-card{display:flex;gap:12px;background:var(--surface);border-radius:14px;overflow:hidden;align-items:center;text-align:left;width:100%}
+.st-card img{width:96px;height:96px;object-fit:cover;flex:0 0 auto}
+.st-card .st-body{padding:8px 12px;min-width:0}
+.st-card strong{font-size:.92rem;display:block}
+.st-card span{display:block;margin-top:4px;font-size:.76rem;color:var(--muted)}
+.st-card .st-mode{display:inline-block;margin-top:6px;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);background:var(--accent-soft);padding:2px 7px;border-radius:999px}
+.st-card.disabled{opacity:.45;cursor:default}
+.hidden-card{display:none !important}
+.result-count{padding:0 20px 10px;font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+
+/* modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(8,8,14,.7);display:none;align-items:flex-end;justify-content:center;z-index:50}
+.modal-overlay.open{display:flex}
+.modal-sheet{background:var(--bg);width:100%;max-width:480px;max-height:88vh;overflow-y:auto;border-radius:20px 20px 0 0;position:relative}
+@media (min-width:700px){.modal-sheet{max-width:520px;border-radius:20px;margin-bottom:6vh}}
+.modal-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.35);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;z-index:2}
+.modal-hero{aspect-ratio:16/10}
+.modal-hero img{width:100%;height:100%;object-fit:cover;border-radius:20px 20px 0 0}
+.modal-heading{padding:14px 20px 0}
+.modal-heading h2{font-size:1.25rem}
+.modal-heading p{margin:6px 0 0;font-size:.85rem;color:var(--muted)}
+.macro-row{display:flex;gap:8px;padding:14px 20px}
+.macro-cell{flex:1;background:var(--surface);border-radius:12px;padding:10px 6px;text-align:center}
+.macro-cell strong{display:block;font-size:1.05rem}
+.macro-cell span{font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.section-label{padding:18px 20px 8px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.ingredients-list,.method-list{margin:0;padding:0 20px 4px;list-style:none}
+.ingredients-list li,.method-list li{padding:10px 0;border-bottom:1px solid var(--border);font-size:.92rem;color:var(--muted);display:flex;gap:10px}
+.ingredients-list li:last-child,.method-list li:last-child{border-bottom:0}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:0 0 auto;margin-top:7px}
+.step-num{flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.action-bar{display:flex;gap:10px;padding:14px 20px 20px}
+.btn{flex:1;height:46px;border-radius:12px;border:1px solid var(--accent);color:var(--accent);background:transparent;font-weight:700;font-size:.9rem}
+.btn.primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.sandbox-note{margin:14px 20px;padding:12px 14px;background:var(--accent-soft);border:1px solid var(--accent);border-radius:12px;font-size:.78rem;color:var(--text)}
+.review-bar{position:fixed;bottom:14px;left:14px;z-index:999;background:rgba(20,18,14,.9);color:#efe9df;font:600 11px/1 -apple-system,sans-serif;padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.14)}
+</style>
+</head>
+<body>
+
+<div class="sticky-top">
+  <h1 class="big-title">Recipes</h1>
+  <div class="search-pill">🔍 <input type="search" id="searchInput" placeholder="Search recipes" aria-label="Search recipes"></div>
+  <div class="seg-wrap" id="segWrap">
+    <button class="seg active" data-seg="All">All</button>
+    <button class="seg" data-seg="Breakfast">Breakfast</button>
+    <button class="seg" data-seg="Lunch">Lunch</button>
+    <button class="seg" data-seg="Snack">Snack</button>
+    <button class="seg" data-seg="Dinner">Dinner</button>
+  </div>
+</div>
+
+<div class="sandbox-note">Sandbox: tap <strong>Berry Protein Overnight Oats</strong> to open it as a full page. Tap <strong>Cinnamon Banana Protein Pancakes</strong> to open it as a modal overlay, right here. Compare the two before we decide which pattern goes to production.</div>
+
+<p class="result-count" id="resultCount">Showing 8 of 8 recipes</p>
+
+<div class="st-grid" id="grid">
+  <a class="st-card" href="concept-18-sandbox-recipe-page.html" data-cat="Breakfast" data-search="berry protein overnight oats breakfast">
+    <img src="https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=800&q=80" alt="">
+    <div class="st-body"><strong>Berry Protein Overnight Oats</strong><span>390 kcal &middot; 33g protein</span><span class="st-mode">Opens as a page</span></div>
+  </a>
+  <button class="st-card" type="button" data-modal="cinnamon-banana" data-cat="Breakfast" data-search="cinnamon banana protein pancakes breakfast">
+    <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80" alt="">
+    <div class="st-body"><strong>Cinnamon Banana Protein Pancakes</strong><span>410 kcal &middot; 35g protein</span><span class="st-mode">Opens as a modal</span></div>
+  </button>
+  <a class="st-card disabled" href="#" data-cat="Lunch" data-search="spicy cajun chicken rice bowl lunch" onclick="return false"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80" alt=""><div class="st-body"><strong>Spicy Cajun Chicken & Rice Bowl</strong><span>495 kcal &middot; 48g protein</span></div></a>
+  <a class="st-card disabled" href="#" data-cat="Lunch" data-search="chicken satay crunch bowl lunch" onclick="return false"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt=""><div class="st-body"><strong>Chicken Satay Crunch Bowl</strong><span>470 kcal &middot; 46g protein</span></div></a>
+  <a class="st-card disabled" href="#" data-cat="Snack" data-search="chocolate oat protein bites snack" onclick="return false"><img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=800&q=80" alt=""><div class="st-body"><strong>Chocolate Oat Protein Bites</strong><span>210 kcal &middot; 17g protein</span></div></a>
+  <a class="st-card disabled" href="#" data-cat="Snack" data-search="berry skyr cheesecake cups snack" onclick="return false"><img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80" alt=""><div class="st-body"><strong>Berry Skyr Cheesecake Cups</strong><span>225 kcal &middot; 21g protein</span></div></a>
+  <a class="st-card disabled" href="#" data-cat="Dinner" data-search="chicken karahi basmati rice dinner" onclick="return false"><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80" alt=""><div class="st-body"><strong>Chicken Karahi with Basmati Rice</strong><span>520 kcal &middot; 52g protein</span></div></a>
+  <a class="st-card disabled" href="#" data-cat="Dinner" data-search="lighter chicken biryani dinner" onclick="return false"><img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=800&q=80" alt=""><div class="st-body"><strong>Lighter Chicken Biryani</strong><span>535 kcal &middot; 45g protein</span></div></a>
+</div>
+
+<a class="review-bar" href="../efficient-index.html">&larr; Back to gallery &middot; Sandbox: page vs modal</a>
+
+<!-- Modal overlay for Cinnamon Banana Protein Pancakes -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-sheet">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div class="modal-hero"><img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1200&q=85" alt=""></div>
+    <div class="modal-heading">
+      <h2 id="modalTitle">Cinnamon Banana Protein Pancakes</h2>
+      <p>Blended oat pancakes with banana, eggs and whey, served with cool yogurt and berries.</p>
+    </div>
+    <div class="macro-row">
+      <div class="macro-cell"><strong>410</strong><span>kcal</span></div>
+      <div class="macro-cell"><strong>35g</strong><span>protein</span></div>
+      <div class="macro-cell"><strong>42g</strong><span>carbs</span></div>
+      <div class="macro-cell"><strong>20</strong><span>min</span></div>
+    </div>
+    <div class="section-label">Ingredients</div>
+    <ul class="ingredients-list">
+      <li><span class="dot"></span>50 g rolled oats</li>
+      <li><span class="dot"></span>1 small banana</li>
+      <li><span class="dot"></span>2 eggs</li>
+      <li><span class="dot"></span>20 g vanilla protein powder</li>
+      <li><span class="dot"></span>1 tsp baking powder</li>
+      <li><span class="dot"></span>1 tsp cinnamon</li>
+      <li><span class="dot"></span>100 g plain skyr and berries, to serve</li>
+    </ul>
+    <div class="section-label">Method</div>
+    <ol class="method-list" style="padding-left:20px">
+      <li style="list-style:none"><span class="step-num">1</span>Blend the oats, banana, eggs, protein powder, baking powder and cinnamon.</li>
+      <li style="list-style:none"><span class="step-num">2</span>Cook small rounds in a non-stick pan for 1-2 minutes per side.</li>
+      <li style="list-style:none"><span class="step-num">3</span>Stack with skyr and fresh berries.</li>
+    </ol>
+    <div class="action-bar"><button class="btn primary">&#9825; Save</button><button class="btn">Share</button></div>
+  </div>
+</div>
+
+<script>
+const segWrap = document.getElementById('segWrap');
+const searchInput = document.getElementById('searchInput');
+const grid = document.getElementById('grid');
+const resultCount = document.getElementById('resultCount');
+let segFilter = 'All';
+
+function applyFilters() {
+  const term = searchInput.value.trim().toLowerCase();
+  let visible = 0;
+  grid.querySelectorAll('[data-cat]').forEach((card) => {
+    const matchesSeg = segFilter === 'All' || card.dataset.cat === segFilter;
+    const matchesSearch = !term || card.dataset.search.includes(term);
+    const show = matchesSeg && matchesSearch;
+    card.classList.toggle('hidden-card', !show);
+    if (show) visible++;
+  });
+  resultCount.textContent = `Showing ${visible} of 8 recipes`;
+}
+segWrap.addEventListener('click', (e) => {
+  const btn = e.target.closest('.seg');
+  if (!btn) return;
+  segWrap.querySelectorAll('.seg').forEach((b) => b.classList.remove('active'));
+  btn.classList.add('active');
+  segFilter = btn.dataset.seg;
+  applyFilters();
+});
+searchInput.addEventListener('input', applyFilters);
+
+const modalOverlay = document.getElementById('modalOverlay');
+document.querySelectorAll('[data-modal]').forEach((btn) => {
+  btn.addEventListener('click', () => { modalOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; });
+});
+function closeModal() { modalOverlay.classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('modalClose').addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>

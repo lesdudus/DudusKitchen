@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" data-layout="dense-grid">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monolith — Dudu's Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@500;600&family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@500;600&family=Bebas+Neue&family=Zilla+Slab:wght@500;700&family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cp-bg:#000000;--cp-bg-elevated:color-mix(in srgb, #000000 85%, white 15%);--cp-surface:color-mix(in srgb, #000000 78%, white 22%);--cp-surface-soft:color-mix(in srgb, #000000 82%, white 18%);--cp-border:color-mix(in srgb, #F5F5F3 22%, transparent);--cp-text:#F5F5F3;--cp-text-muted:color-mix(in srgb, #F5F5F3 68%, #000000 32%);--cp-text-soft:color-mix(in srgb, #F5F5F3 55%, #000000 45%);--cp-accent:#C1121F;--cp-accent-hover:color-mix(in srgb, #C1121F 82%, black 18%);--cp-accent-soft:color-mix(in srgb, #C1121F 14%, transparent);--cp-accent-fg:#FFFFFF;--cp-link:#C1121F;--theme-font-display:'DM Sans', 'Segoe UI', sans-serif}
+
+*{box-sizing:border-box}
+html{background:var(--cp-bg);scroll-behavior:smooth}
+body{background:var(--cp-bg);color:var(--cp-text);font-family:"Segoe UI",Aptos,sans-serif;margin:0;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--cp-link)}
+button{cursor:pointer;font-family:inherit}
+h1,h2,h3,h4{font-family:var(--theme-font-display,inherit)}
+.brand{color:inherit;font-weight:750;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.brand-mark{background:var(--cp-accent);color:var(--cp-accent-fg);border-radius:8px;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;font-size:15px}
+.cat-chip{background:var(--cp-surface);border:1px solid var(--cp-border);border-radius:999px;color:var(--cp-text-muted);font-size:.78rem;font-weight:650;padding:8px 14px}
+.cat-chip.active{background:var(--cp-accent);color:var(--cp-accent-fg);border-color:var(--cp-accent)}
+.rd-ingredients ul,.rd-method ol{margin:0;padding-left:20px;line-height:1.8;font-size:.92rem;color:var(--cp-text-soft)}
+.rd-actions{display:flex;gap:10px;flex-wrap:wrap}
+.rd-actions button{background:transparent;border:1px solid var(--cp-accent);color:var(--cp-accent);padding:10px 18px;border-radius:.625rem;font:inherit;font-size:.85rem}
+.rd-actions button.primary{background:var(--cp-accent);color:var(--cp-accent-fg)}
+.review-bar{position:fixed;bottom:14px;left:14px;z-index:999;background:rgba(20,18,14,.88);color:#efe9df;font:600 11px/1 "Segoe UI",sans-serif;letter-spacing:.02em;padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.14)}
+.review-bar:hover{border-color:#c9a227}
+.review-bar-home{bottom:52px}
+.about-panel{position:fixed;bottom:14px;right:14px;z-index:999;max-width:280px;background:rgba(20,18,14,.92);color:#efe9df;font:12px/1.5 "Segoe UI",sans-serif;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14)}
+.about-panel summary{cursor:pointer;font-weight:700;list-style:none}
+.about-panel summary::-webkit-details-marker{display:none}
+.about-panel summary::before{content:"+ "}
+.about-panel[open] summary::before{content:"\2212 "}
+.about-panel p{margin:8px 0 0;color:#cfc7ba}
+
+
+.dx-shell{max-width:820px;margin:0 auto;padding:30px 24px 70px}
+.dx-shell a.back{font-size:.82rem;color:var(--cp-text-muted)}
+.dx-head{display:flex;gap:20px;align-items:center;padding:20px 0;border-bottom:1px solid var(--cp-border)}
+.dx-head img{width:120px;height:90px;object-fit:cover;border-radius:8px}
+.dx-head h1{margin:0 0 6px;font-size:1.4rem}
+.dx-specs{display:flex;gap:20px;font-size:.8rem;color:var(--cp-text-muted);flex-wrap:wrap;padding:14px 0;border-bottom:1px solid var(--cp-border)}
+.dx-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;padding:20px 0}
+
+</style>
+</head>
+<body>
+<div class="dx-shell"><a class="back" href="theme-30-home.html">&larr; Back to list</a><div class="dx-head"><img src="https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=1400&q=85" alt=""><div><h1>Berry Protein Overnight Oats</h1><p style="margin:0;color:var(--cp-text-soft);font-size:.85rem">Creamy oats with skyr, berries, chia and vanilla protein for a fast post-workout breakfast.</p></div></div><div class="dx-specs"><span><strong>390</strong> kcal</span><span><strong>33g</strong> protein</span><span><strong>48g</strong> carbs</span><span><strong>10</strong> min</span><span><strong>1</strong> serving</span></div><div class="dx-grid"><div class="rd-ingredients"><h3>Ingredients</h3><ul><li>50 g rolled oats</li><li>170 g plain skyr</li><li>100 ml semi-skimmed milk</li><li>20 g vanilla protein powder</li><li>80 g mixed berries</li><li>8 g chia seeds</li><li>Cinnamon to taste</li></ul></div><div class="rd-method"><h3>Method</h3><ol><li>Stir the oats, skyr, milk, protein powder, chia and cinnamon until smooth.</li><li>Cover and chill overnight, then loosen with a splash of milk if needed.</li><li>Finish with the berries just before eating.</li></ol></div></div><div class="rd-actions"><button class="primary">&#9825; Save recipe</button><button>Share</button></div></div>
+<a class="review-bar review-bar-home" href="theme-30-home.html">&larr; Back to Monolith home</a><a class="review-bar" href="../visions-index.html">&larr; Back to gallery &middot; Theme 30/50 &middot; Monolith &middot; layout: dense-grid</a>
+<details class="about-panel"><summary>About this theme</summary><p>Ultra-minimal, monumental, sculptural restraint. (layout: dense-grid)</p></details>
+</body>
+</html>

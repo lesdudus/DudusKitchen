@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" data-layout="filmstrip">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Journal Rouge — Dudu's Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@500;600&family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@500;600&family=Bebas+Neue&family=Zilla+Slab:wght@500;700&family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cp-bg:#111111;--cp-bg-elevated:color-mix(in srgb, #111111 85%, white 15%);--cp-surface:color-mix(in srgb, #111111 78%, white 22%);--cp-surface-soft:color-mix(in srgb, #111111 82%, white 18%);--cp-border:color-mix(in srgb, #F1EAD9 22%, transparent);--cp-text:#F1EAD9;--cp-text-muted:color-mix(in srgb, #F1EAD9 68%, #111111 32%);--cp-text-soft:color-mix(in srgb, #F1EAD9 55%, #111111 45%);--cp-accent:#C1272D;--cp-accent-hover:color-mix(in srgb, #C1272D 82%, black 18%);--cp-accent-soft:color-mix(in srgb, #C1272D 14%, transparent);--cp-accent-fg:#FFFFFF;--cp-link:#C1272D;--theme-font-display:'Libre Baskerville', Georgia, serif}
+
+*{box-sizing:border-box}
+html{background:var(--cp-bg);scroll-behavior:smooth}
+body{background:var(--cp-bg);color:var(--cp-text);font-family:"Segoe UI",Aptos,sans-serif;margin:0;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--cp-link)}
+button{cursor:pointer;font-family:inherit}
+h1,h2,h3,h4{font-family:var(--theme-font-display,inherit)}
+.brand{color:inherit;font-weight:750;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.brand-mark{background:var(--cp-accent);color:var(--cp-accent-fg);border-radius:8px;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;font-size:15px}
+.cat-chip{background:var(--cp-surface);border:1px solid var(--cp-border);border-radius:999px;color:var(--cp-text-muted);font-size:.78rem;font-weight:650;padding:8px 14px}
+.cat-chip.active{background:var(--cp-accent);color:var(--cp-accent-fg);border-color:var(--cp-accent)}
+.rd-ingredients ul,.rd-method ol{margin:0;padding-left:20px;line-height:1.8;font-size:.92rem;color:var(--cp-text-soft)}
+.rd-actions{display:flex;gap:10px;flex-wrap:wrap}
+.rd-actions button{background:transparent;border:1px solid var(--cp-accent);color:var(--cp-accent);padding:10px 18px;border-radius:.625rem;font:inherit;font-size:.85rem}
+.rd-actions button.primary{background:var(--cp-accent);color:var(--cp-accent-fg)}
+.review-bar{position:fixed;bottom:14px;left:14px;z-index:999;background:rgba(20,18,14,.88);color:#efe9df;font:600 11px/1 "Segoe UI",sans-serif;letter-spacing:.02em;padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.14)}
+.review-bar:hover{border-color:#c9a227}
+.review-bar-home{bottom:52px}
+.about-panel{position:fixed;bottom:14px;right:14px;z-index:999;max-width:280px;background:rgba(20,18,14,.92);color:#efe9df;font:12px/1.5 "Segoe UI",sans-serif;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14)}
+.about-panel summary{cursor:pointer;font-weight:700;list-style:none}
+.about-panel summary::-webkit-details-marker{display:none}
+.about-panel summary::before{content:"+ "}
+.about-panel[open] summary::before{content:"\2212 "}
+.about-panel p{margin:8px 0 0;color:#cfc7ba}
+
+
+.fr-top{display:flex;justify-content:space-between;padding:20px clamp(20px,4vw,48px)}
+.fr-strip{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;height:82vh}
+.fr-panel{flex:0 0 100vw;scroll-snap-align:start;padding:40px clamp(20px,5vw,60px);display:flex;flex-direction:column;justify-content:center}
+.fr-panel.fr-hero{background-size:cover;background-position:center;color:#fff;background-image:url(https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=1400&q=85)}
+.fr-panel h2{font-size:2rem;margin-bottom:20px}
+.fr-dots{display:flex;gap:8px;justify-content:center;padding:16px}
+.fr-dots span{width:8px;height:8px;border-radius:50%;background:var(--cp-border)}
+
+</style>
+</head>
+<body>
+<div class="fr-top"><a class="brand" href="theme-07-home.html"><span class="brand-mark">&#127859;</span>Dudu's Kitchen</a><a href="theme-07-home.html">&larr; Back</a></div><div class="fr-strip"><div class="fr-panel fr-hero"><h2>Berry Protein Overnight Oats</h2><p>Creamy oats with skyr, berries, chia and vanilla protein for a fast post-workout breakfast.</p><div style="margin-top:16px"><span><strong>390</strong> kcal</span><span><strong>33g</strong> protein</span><span><strong>48g</strong> carbs</span><span><strong>10</strong> min</span><span><strong>1</strong> serving</span></div></div><div class="fr-panel"><h2>Ingredients</h2><ul style="padding-left:20px;line-height:1.9"><li>50 g rolled oats</li><li>170 g plain skyr</li><li>100 ml semi-skimmed milk</li><li>20 g vanilla protein powder</li><li>80 g mixed berries</li><li>8 g chia seeds</li><li>Cinnamon to taste</li></ul></div><div class="fr-panel"><h2>Method</h2><ol style="padding-left:20px;line-height:1.9"><li>Stir the oats, skyr, milk, protein powder, chia and cinnamon until smooth.</li><li>Cover and chill overnight, then loosen with a splash of milk if needed.</li><li>Finish with the berries just before eating.</li></ol></div><div class="fr-panel"><h2>Save this recipe</h2><div class="rd-actions"><button class="primary">&#9825; Save recipe</button><button>Share</button></div></div></div><div class="fr-dots"><span></span><span></span><span></span><span></span></div>
+<a class="review-bar review-bar-home" href="theme-07-home.html">&larr; Back to Le Journal Rouge home</a><a class="review-bar" href="../visions-index.html">&larr; Back to gallery &middot; Theme 07/50 &middot; Le Journal Rouge &middot; layout: filmstrip</a>
+<details class="about-panel"><summary>About this theme</summary><p>Recipes written like front-page news. (layout: filmstrip)</p></details>
+</body>
+</html>

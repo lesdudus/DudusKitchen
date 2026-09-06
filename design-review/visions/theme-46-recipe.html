@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-layout="split-screen">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saffron Souk — Dudu's Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@500;600&family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@500;600&family=Bebas+Neue&family=Zilla+Slab:wght@500;700&family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cp-bg:#F1E6CE;--cp-bg-elevated:color-mix(in srgb, white 55%, #F1E6CE 45%);--cp-surface:color-mix(in srgb, white 85%, #F1E6CE 15%);--cp-surface-soft:color-mix(in srgb, white 70%, #F1E6CE 30%);--cp-border:color-mix(in srgb, #124A45 14%, transparent);--cp-text:#124A45;--cp-text-muted:color-mix(in srgb, #124A45 72%, white 28%);--cp-text-soft:color-mix(in srgb, #124A45 55%, white 45%);--cp-accent:#D8A417;--cp-accent-hover:color-mix(in srgb, #D8A417 82%, black 18%);--cp-accent-soft:color-mix(in srgb, #D8A417 14%, transparent);--cp-accent-fg:#14100D;--cp-link:#D8A417;--theme-font-display:'Playfair Display', Georgia, 'Times New Roman', serif}
+
+*{box-sizing:border-box}
+html{background:var(--cp-bg);scroll-behavior:smooth}
+body{background:var(--cp-bg);color:var(--cp-text);font-family:"Segoe UI",Aptos,sans-serif;margin:0;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--cp-link)}
+button{cursor:pointer;font-family:inherit}
+h1,h2,h3,h4{font-family:var(--theme-font-display,inherit)}
+.brand{color:inherit;font-weight:750;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.brand-mark{background:var(--cp-accent);color:var(--cp-accent-fg);border-radius:8px;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;font-size:15px}
+.cat-chip{background:var(--cp-surface);border:1px solid var(--cp-border);border-radius:999px;color:var(--cp-text-muted);font-size:.78rem;font-weight:650;padding:8px 14px}
+.cat-chip.active{background:var(--cp-accent);color:var(--cp-accent-fg);border-color:var(--cp-accent)}
+.rd-ingredients ul,.rd-method ol{margin:0;padding-left:20px;line-height:1.8;font-size:.92rem;color:var(--cp-text-soft)}
+.rd-actions{display:flex;gap:10px;flex-wrap:wrap}
+.rd-actions button{background:transparent;border:1px solid var(--cp-accent);color:var(--cp-accent);padding:10px 18px;border-radius:.625rem;font:inherit;font-size:.85rem}
+.rd-actions button.primary{background:var(--cp-accent);color:var(--cp-accent-fg)}
+.review-bar{position:fixed;bottom:14px;left:14px;z-index:999;background:rgba(20,18,14,.88);color:#efe9df;font:600 11px/1 "Segoe UI",sans-serif;letter-spacing:.02em;padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.14)}
+.review-bar:hover{border-color:#c9a227}
+.review-bar-home{bottom:52px}
+.about-panel{position:fixed;bottom:14px;right:14px;z-index:999;max-width:280px;background:rgba(20,18,14,.92);color:#efe9df;font:12px/1.5 "Segoe UI",sans-serif;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14)}
+.about-panel summary{cursor:pointer;font-weight:700;list-style:none}
+.about-panel summary::-webkit-details-marker{display:none}
+.about-panel summary::before{content:"+ "}
+.about-panel[open] summary::before{content:"\2212 "}
+.about-panel p{margin:8px 0 0;color:#cfc7ba}
+
+
+.sr2-shell{display:grid;grid-template-columns:42% 58%;min-height:100vh}
+.sr2-left{position:sticky;top:0;height:100vh;background:url(https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=1400&q=85);background-size:cover;background-position:center}
+.sr2-right{padding:40px clamp(20px,3vw,48px)}
+.sr2-right a.back{font-size:.85rem;color:var(--cp-text-muted)}
+.sr2-right h1{font-size:2.2rem;margin:16px 0}
+@media (max-width:800px){.sr2-shell{grid-template-columns:1fr}.sr2-left{position:relative;height:40vh}}
+
+</style>
+</head>
+<body>
+<div class="sr2-shell"><div class="sr2-left"></div><div class="sr2-right"><a class="back" href="theme-46-home.html">&larr; Back to all recipes</a><h1>Berry Protein Overnight Oats</h1><p style="color:var(--cp-text-soft)">Creamy oats with skyr, berries, chia and vanilla protein for a fast post-workout breakfast.</p><div style="display:flex;gap:16px;margin:16px 0;font-size:.85rem"><span><strong>390</strong> kcal</span><span><strong>33g</strong> protein</span><span><strong>48g</strong> carbs</span><span><strong>10</strong> min</span><span><strong>1</strong> serving</span></div><div class="rd-ingredients"><h3>Ingredients</h3><ul><li>50 g rolled oats</li><li>170 g plain skyr</li><li>100 ml semi-skimmed milk</li><li>20 g vanilla protein powder</li><li>80 g mixed berries</li><li>8 g chia seeds</li><li>Cinnamon to taste</li></ul></div><div class="rd-method"><h3>Method</h3><ol><li>Stir the oats, skyr, milk, protein powder, chia and cinnamon until smooth.</li><li>Cover and chill overnight, then loosen with a splash of milk if needed.</li><li>Finish with the berries just before eating.</li></ol></div><div class="rd-actions" style="margin-top:20px"><button class="primary">&#9825; Save recipe</button><button>Share</button></div></div></div>
+<a class="review-bar review-bar-home" href="theme-46-home.html">&larr; Back to Saffron Souk home</a><a class="review-bar" href="../visions-index.html">&larr; Back to gallery &middot; Theme 46/50 &middot; Saffron Souk &middot; layout: split-screen</a>
+<details class="about-panel"><summary>About this theme</summary><p>Vibrant Moroccan spice-market energy. (layout: split-screen)</p></details>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" data-paradigm="checklist">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Clarity Checklist — Dudu's Kitchen</title>
+<style>
+:root{--bg:#FAFAF8;--surface:color-mix(in srgb, white 92%, #FAFAF8 8%);--surface-2:#FFFFFF;--border:color-mix(in srgb, #22252A 12%, transparent);--text:#22252A;--muted:color-mix(in srgb, #22252A 62%, white 38%);--accent:#3A86FF;--accent-fg:#FFFFFF;--accent-soft:color-mix(in srgb, #3A86FF 16%, transparent);--desktop-max:640px}
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;margin:0 auto;max-width:480px;min-height:100vh;-webkit-font-smoothing:antialiased;padding-bottom:calc(24px + env(safe-area-inset-bottom));transition:max-width .15s ease}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font:inherit;-webkit-tap-highlight-color:transparent}
+h1,h2,h3,h4{margin:0}
+@media (min-width:700px){body{max-width:var(--desktop-max,480px)}}
+.sticky-top{position:sticky;top:0;z-index:5;background:var(--bg)}
+.big-title{font-size:2rem;font-weight:800;letter-spacing:-.02em;padding:8px 20px 4px}
+.search-pill{margin:6px 20px 14px;background:var(--surface);border:1px solid var(--border);border-radius:12px;height:38px;display:flex;align-items:center;padding:0 12px;color:var(--muted);font-size:.9rem}
+.chip-row{display:flex;gap:8px;overflow-x:auto;padding:0 20px 14px}
+.chip{flex:0 0 auto;background:var(--surface);border:1px solid var(--border);color:var(--muted);font-size:.82rem;font-weight:600;padding:8px 14px;border-radius:999px;white-space:nowrap}
+.chip.active{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.macro-row{display:flex;gap:8px;padding:14px 20px}
+.macro-cell{flex:1;background:var(--surface);border-radius:12px;padding:10px 6px;text-align:center}
+.macro-cell strong{display:block;font-size:1.05rem}
+.macro-cell span{font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.section-label{padding:18px 20px 8px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.plain-list{padding:0 20px}
+.plain-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);min-height:44px}
+.plain-row:last-child{border-bottom:0}
+.ingredients-list,.method-list{margin:0;padding:0 20px 4px;list-style:none}
+.ingredients-list li,.method-list li{padding:10px 0;border-bottom:1px solid var(--border);font-size:.92rem;color:var(--muted);display:flex;gap:10px}
+.ingredients-list li:last-child,.method-list li:last-child{border-bottom:0}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:0 0 auto;margin-top:7px}
+.step-num{flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.action-bar{position:sticky;bottom:0;display:flex;gap:10px;padding:14px 20px calc(14px + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--border)}
+.btn{flex:1;height:46px;border-radius:12px;border:1px solid var(--accent);color:var(--accent);background:transparent;font-weight:700;font-size:.9rem}
+.btn.primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.back-row{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.back-row a{font-size:.9rem;color:var(--accent);font-weight:600}
+.review-bar{position:fixed;bottom:14px;left:14px;z-index:999;background:rgba(20,18,14,.9);color:#efe9df;font:600 11px/1 -apple-system,sans-serif;padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.14)}
+.review-bar-home{bottom:52px}
+.about-panel{position:fixed;bottom:14px;right:14px;z-index:999;max-width:260px;background:rgba(20,18,14,.92);color:#efe9df;font:12px/1.5 -apple-system,sans-serif;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14)}
+.about-panel summary{cursor:pointer;font-weight:700;list-style:none}
+.about-panel summary::-webkit-details-marker{display:none}
+.about-panel summary::before{content:"+ "}
+.about-panel[open] summary::before{content:"\2212 "}
+.about-panel p{margin:8px 0 0;color:#cfc7ba}
+
+
+.ck-tabs{display:flex;gap:18px;padding:6px 20px 10px;border-bottom:1px solid var(--border)}
+.ck-tab{background:none;border:0;color:var(--muted);font-size:.86rem;font-weight:600;padding:6px 0}
+.ck-tab.active{color:var(--text);box-shadow:inset 0 -2px 0 var(--accent)}
+.ck-row{display:flex;align-items:center;gap:10px;padding:13px 20px;border-bottom:1px solid var(--border)}
+.ck-title{flex:1;font-size:.92rem}
+.ck-meta{font-size:.76rem;color:var(--muted)}
+
+</style>
+</head>
+<body>
+<div class="sticky-top"><h1 class="big-title">Recipes</h1><div class="ck-tabs"><button class="ck-tab active" data-filter="All">All</button><button class="ck-tab " data-filter="Breakfast">Breakfast</button><button class="ck-tab " data-filter="Lunch">Lunch</button><button class="ck-tab " data-filter="Snack">Snack</button><button class="ck-tab " data-filter="Dinner">Dinner</button></div></div><div><a class="ck-row" href="concept-16-recipe.html" data-cat="Breakfast"><span class="dot"></span><span class="ck-title">Berry Protein Overnight Oats</span><span class="ck-meta">390 kcal</span></a><a class="ck-row" href="#" data-cat="Breakfast"><span class="dot"></span><span class="ck-title">Cinnamon Banana Protein Pancakes</span><span class="ck-meta">410 kcal</span></a><a class="ck-row" href="#" data-cat="Lunch"><span class="dot"></span><span class="ck-title">Spicy Cajun Chicken &amp; Rice Bowl</span><span class="ck-meta">495 kcal</span></a><a class="ck-row" href="#" data-cat="Lunch"><span class="dot"></span><span class="ck-title">Chicken Satay Crunch Bowl</span><span class="ck-meta">470 kcal</span></a><a class="ck-row" href="#" data-cat="Snack"><span class="dot"></span><span class="ck-title">Chocolate Oat Protein Bites</span><span class="ck-meta">210 kcal</span></a><a class="ck-row" href="#" data-cat="Snack"><span class="dot"></span><span class="ck-title">Berry Skyr Cheesecake Cups</span><span class="ck-meta">225 kcal</span></a><a class="ck-row" href="#" data-cat="Dinner"><span class="dot"></span><span class="ck-title">Chicken Karahi with Basmati Rice</span><span class="ck-meta">520 kcal</span></a><a class="ck-row" href="#" data-cat="Dinner"><span class="dot"></span><span class="ck-title">Lighter Chicken Biryani</span><span class="ck-meta">535 kcal</span></a></div><script>
+document.querySelectorAll('.ck-tab').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.ck-tab').forEach((b) => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('[data-cat]').forEach((el) => { el.style.display = (f === 'All' || el.dataset.cat === f) ? '' : 'none'; });
+  });
+});
+</script>
+<a class="review-bar" href="../efficient-index.html">&larr; Back to gallery &middot; Concept 16/20 &middot; Clarity Checklist &middot; checklist</a>
+<details class="about-panel"><summary>About this concept</summary><p>Efficient, mobile-first checklist pattern, inspired by Todoist / Bear.</p></details>
+</body>
+</html>

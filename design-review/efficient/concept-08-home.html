@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" data-paradigm="segmented-tabs">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Today Noir Tabs — Dudu's Kitchen</title>
+<style>
+:root{--bg:#101012;--surface:color-mix(in srgb, #101012 82%, white 18%);--surface-2:color-mix(in srgb, #101012 90%, white 10%);--border:color-mix(in srgb, #F2EFEA 14%, transparent);--text:#F2EFEA;--muted:color-mix(in srgb, #F2EFEA 60%, #101012 40%);--accent:#E63946;--accent-fg:#FFFFFF;--accent-soft:color-mix(in srgb, #E63946 16%, transparent);--desktop-max:900px}
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;margin:0 auto;max-width:480px;min-height:100vh;-webkit-font-smoothing:antialiased;padding-bottom:calc(24px + env(safe-area-inset-bottom));transition:max-width .15s ease}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font:inherit;-webkit-tap-highlight-color:transparent}
+h1,h2,h3,h4{margin:0}
+@media (min-width:700px){body{max-width:var(--desktop-max,480px)}}
+.sticky-top{position:sticky;top:0;z-index:5;background:var(--bg)}
+.big-title{font-size:2rem;font-weight:800;letter-spacing:-.02em;padding:8px 20px 4px}
+.search-pill{margin:6px 20px 14px;background:var(--surface);border:1px solid var(--border);border-radius:12px;height:38px;display:flex;align-items:center;padding:0 12px;color:var(--muted);font-size:.9rem}
+.chip-row{display:flex;gap:8px;overflow-x:auto;padding:0 20px 14px}
+.chip{flex:0 0 auto;background:var(--surface);border:1px solid var(--border);color:var(--muted);font-size:.82rem;font-weight:600;padding:8px 14px;border-radius:999px;white-space:nowrap}
+.chip.active{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.macro-row{display:flex;gap:8px;padding:14px 20px}
+.macro-cell{flex:1;background:var(--surface);border-radius:12px;padding:10px 6px;text-align:center}
+.macro-cell strong{display:block;font-size:1.05rem}
+.macro-cell span{font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.section-label{padding:18px 20px 8px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.plain-list{padding:0 20px}
+.plain-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);min-height:44px}
+.plain-row:last-child{border-bottom:0}
+.ingredients-list,.method-list{margin:0;padding:0 20px 4px;list-style:none}
+.ingredients-list li,.method-list li{padding:10px 0;border-bottom:1px solid var(--border);font-size:.92rem;color:var(--muted);display:flex;gap:10px}
+.ingredients-list li:last-child,.method-list li:last-child{border-bottom:0}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:0 0 auto;margin-top:7px}
+.step-num{flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.action-bar{position:sticky;bottom:0;display:flex;gap:10px;padding:14px 20px calc(14px + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--border)}
+.btn{flex:1;height:46px;border-radius:12px;border:1px solid var(--accent);color:var(--accent);background:transparent;font-weight:700;font-size:.9rem}
+.btn.primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.back-row{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.back-row a{font-size:.9rem;color:var(--accent);font-weight:600}
+.review-bar{position:fixed;bottom:14px;left:14px;z-index:999;background:rgba(20,18,14,.9);color:#efe9df;font:600 11px/1 -apple-system,sans-serif;padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.14)}
+.review-bar-home{bottom:52px}
+.about-panel{position:fixed;bottom:14px;right:14px;z-index:999;max-width:260px;background:rgba(20,18,14,.92);color:#efe9df;font:12px/1.5 -apple-system,sans-serif;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14)}
+.about-panel summary{cursor:pointer;font-weight:700;list-style:none}
+.about-panel summary::-webkit-details-marker{display:none}
+.about-panel summary::before{content:"+ "}
+.about-panel[open] summary::before{content:"\2212 "}
+.about-panel p{margin:8px 0 0;color:#cfc7ba}
+
+
+.seg-wrap{display:flex;background:var(--surface);border-radius:12px;margin:4px 20px 14px;padding:3px;gap:3px}
+.seg{flex:1;background:transparent;border:0;border-radius:9px;padding:8px 4px;font-size:.8rem;font-weight:600;color:var(--muted)}
+.seg.active{background:var(--bg);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.st-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;padding:0 20px}
+.st-card{display:flex;gap:12px;background:var(--surface);border-radius:14px;overflow:hidden;align-items:center}
+.st-card img{width:96px;height:96px;object-fit:cover}
+.st-card div{padding:8px 12px}
+.st-card strong{font-size:.92rem}
+.st-card span{display:block;margin-top:4px;font-size:.76rem;color:var(--muted)}
+
+</style>
+</head>
+<body>
+<div class="sticky-top"><h1 class="big-title">Today</h1><div class="seg-wrap"><button class="seg active" data-seg="Breakfast">Breakfast</button><button class="seg " data-seg="Lunch">Lunch</button><button class="seg " data-seg="Snack">Snack</button><button class="seg " data-seg="Dinner">Dinner</button></div></div><div class="st-panel st-grid" data-segpanel="Breakfast" style=""><a class="st-card" href="concept-08-recipe.html"><img src="https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=800&q=80" alt=""><div><strong>Berry Protein Overnight Oats</strong><span>390 kcal &middot; 33g protein</span></div></a><a class="st-card" href="#"><img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80" alt=""><div><strong>Cinnamon Banana Protein Pancakes</strong><span>410 kcal &middot; 35g protein</span></div></a></div><div class="st-panel st-grid" data-segpanel="Lunch" style="display:none"><a class="st-card" href="#"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80" alt=""><div><strong>Spicy Cajun Chicken &amp; Rice Bowl</strong><span>495 kcal &middot; 48g protein</span></div></a><a class="st-card" href="#"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt=""><div><strong>Chicken Satay Crunch Bowl</strong><span>470 kcal &middot; 46g protein</span></div></a></div><div class="st-panel st-grid" data-segpanel="Snack" style="display:none"><a class="st-card" href="#"><img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=800&q=80" alt=""><div><strong>Chocolate Oat Protein Bites</strong><span>210 kcal &middot; 17g protein</span></div></a><a class="st-card" href="#"><img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80" alt=""><div><strong>Berry Skyr Cheesecake Cups</strong><span>225 kcal &middot; 21g protein</span></div></a></div><div class="st-panel st-grid" data-segpanel="Dinner" style="display:none"><a class="st-card" href="#"><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80" alt=""><div><strong>Chicken Karahi with Basmati Rice</strong><span>520 kcal &middot; 52g protein</span></div></a><a class="st-card" href="#"><img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=800&q=80" alt=""><div><strong>Lighter Chicken Biryani</strong><span>535 kcal &middot; 45g protein</span></div></a></div><script>
+document.querySelectorAll('[data-seg]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-seg]').forEach((b) => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('[data-segpanel]').forEach((p) => { p.style.display = p.dataset.segpanel === btn.dataset.seg ? '' : 'none'; });
+  });
+});
+</script>
+<a class="review-bar" href="../efficient-index.html">&larr; Back to gallery &middot; Concept 08/20 &middot; Today Noir Tabs &middot; segmented-tabs</a>
+<details class="about-panel"><summary>About this concept</summary><p>Efficient, mobile-first segmented tabs pattern, inspired by App Store Today.</p></details>
+</body>
+</html>

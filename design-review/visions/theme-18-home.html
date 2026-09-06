@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" data-layout="cardless">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Static &amp; Steel — Dudu's Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@500;600&family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@500;600&family=Bebas+Neue&family=Zilla+Slab:wght@500;700&family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cp-bg:#101214;--cp-bg-elevated:color-mix(in srgb, #101214 85%, white 15%);--cp-surface:color-mix(in srgb, #101214 78%, white 22%);--cp-surface-soft:color-mix(in srgb, #101214 82%, white 18%);--cp-border:color-mix(in srgb, #F1F2F2 22%, transparent);--cp-text:#F1F2F2;--cp-text-muted:color-mix(in srgb, #F1F2F2 68%, #101214 32%);--cp-text-soft:color-mix(in srgb, #F1F2F2 55%, #101214 45%);--cp-accent:#D62828;--cp-accent-hover:color-mix(in srgb, #D62828 82%, black 18%);--cp-accent-soft:color-mix(in srgb, #D62828 14%, transparent);--cp-accent-fg:#FFFFFF;--cp-link:#D62828;--theme-font-display:'Space Grotesk', 'Segoe UI', sans-serif}
+
+*{box-sizing:border-box}
+html{background:var(--cp-bg);scroll-behavior:smooth}
+body{background:var(--cp-bg);color:var(--cp-text);font-family:"Segoe UI",Aptos,sans-serif;margin:0;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--cp-link)}
+button{cursor:pointer;font-family:inherit}
+h1,h2,h3,h4{font-family:var(--theme-font-display,inherit)}
+.brand{color:inherit;font-weight:750;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.brand-mark{background:var(--cp-accent);color:var(--cp-accent-fg);border-radius:8px;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;font-size:15px}
+.cat-chip{background:var(--cp-surface);border:1px solid var(--cp-border);border-radius:999px;color:var(--cp-text-muted);font-size:.78rem;font-weight:650;padding:8px 14px}
+.cat-chip.active{background:var(--cp-accent);color:var(--cp-accent-fg);border-color:var(--cp-accent)}
+.rd-ingredients ul,.rd-method ol{margin:0;padding-left:20px;line-height:1.8;font-size:.92rem;color:var(--cp-text-soft)}
+.rd-actions{display:flex;gap:10px;flex-wrap:wrap}
+.rd-actions button{background:transparent;border:1px solid var(--cp-accent);color:var(--cp-accent);padding:10px 18px;border-radius:.625rem;font:inherit;font-size:.85rem}
+.rd-actions button.primary{background:var(--cp-accent);color:var(--cp-accent-fg)}
+.review-bar{position:fixed;bottom:14px;left:14px;z-index:999;background:rgba(20,18,14,.88);color:#efe9df;font:600 11px/1 "Segoe UI",sans-serif;letter-spacing:.02em;padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.14)}
+.review-bar:hover{border-color:#c9a227}
+.review-bar-home{bottom:52px}
+.about-panel{position:fixed;bottom:14px;right:14px;z-index:999;max-width:280px;background:rgba(20,18,14,.92);color:#efe9df;font:12px/1.5 "Segoe UI",sans-serif;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14)}
+.about-panel summary{cursor:pointer;font-weight:700;list-style:none}
+.about-panel summary::-webkit-details-marker{display:none}
+.about-panel summary::before{content:"+ "}
+.about-panel[open] summary::before{content:"\2212 "}
+.about-panel p{margin:8px 0 0;color:#cfc7ba}
+
+
+.cl-nav{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;padding:18px clamp(20px,4vw,48px);background:var(--cp-overlay,rgba(0,0,0,.4));backdrop-filter:blur(6px);color:#fff}
+.cl-nav a{color:#fff;margin-left:16px;font-size:.85rem;text-decoration:none}
+.cl-band{min-height:88vh;background-size:cover;background-position:center;position:relative;display:flex;align-items:center}
+.cl-scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.6),transparent 60%)}
+.cl-text{position:relative;color:#fff;max-width:520px;padding:0 clamp(24px,6vw,80px)}
+.cl-text.cl-right{margin-left:auto;text-align:right}
+.cl-text span{color:var(--cp-accent);text-transform:uppercase;font-size:.75rem;font-weight:700;letter-spacing:.15em}
+.cl-text h2{font-size:clamp(2rem,4vw,3rem);margin:12px 0}
+.cl-meta{font-size:.85rem;opacity:.85;margin:14px 0}
+.cl-text a{color:#fff;font-weight:700}
+
+</style>
+</head>
+<body>
+<div class="cl-nav"><a class="brand" href="theme-18-home.html" style="color:#fff"><span class="brand-mark">&#127859;</span>Dudu's Kitchen</a><div><a href="#cat-Breakfast">Breakfast</a><a href="#cat-Lunch">Lunch</a><a href="#cat-Snack">Snack</a><a href="#cat-Dinner">Dinner</a></div></div><section class="cl-band" id="cat-Breakfast" style="background-image:url(https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=1400&q=85)"><div class="cl-scrim"></div><div class="cl-text "><span>Breakfast</span><h2>Berry Protein Overnight Oats</h2><p>Creamy oats with skyr, berries, chia and vanilla protein for a fast post-workout breakfast.</p><div class="cl-meta">390 kcal &middot; 33g protein &middot; 10 min</div><a href="theme-18-recipe.html">Read recipe &rarr;</a></div></section><section class="cl-band"  style="background-image:url(https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1400&q=85)"><div class="cl-scrim"></div><div class="cl-text cl-right"><span>Breakfast</span><h2>Cinnamon Banana Protein Pancakes</h2><p>Blended oat pancakes with banana, eggs and whey, served with cool yogurt and berries.</p><div class="cl-meta">410 kcal &middot; 35g protein &middot; 20 min</div></div></section><section class="cl-band" id="cat-Lunch" style="background-image:url(https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1400&q=85)"><div class="cl-scrim"></div><div class="cl-text "><span>Lunch</span><h2>Spicy Cajun Chicken &amp; Rice Bowl</h2><p>Smoky chicken breast, basmati rice and charred peppers with a bright lime yogurt drizzle.</p><div class="cl-meta">495 kcal &middot; 48g protein &middot; 30 min</div></div></section><section class="cl-band"  style="background-image:url(https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1400&q=85)"><div class="cl-scrim"></div><div class="cl-text cl-right"><span>Lunch</span><h2>Chicken Satay Crunch Bowl</h2><p>Ginger chicken, crisp vegetables and rice with a lighter chilli-peanut dressing.</p><div class="cl-meta">470 kcal &middot; 46g protein &middot; 25 min</div></div></section><section class="cl-band" id="cat-Snack" style="background-image:url(https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=1400&q=85)"><div class="cl-scrim"></div><div class="cl-text "><span>Snack</span><h2>Chocolate Oat Protein Bites</h2><p>No-bake cocoa oat bites with whey and peanut butter for a portable training-day snack.</p><div class="cl-meta">210 kcal &middot; 17g protein &middot; 15 min</div></div></section><section class="cl-band"  style="background-image:url(https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1400&q=85)"><div class="cl-scrim"></div><div class="cl-text cl-right"><span>Snack</span><h2>Berry Skyr Cheesecake Cups</h2><p>A light cheesecake-style cup with skyr, soft cheese, berries and a crisp oat base.</p><div class="cl-meta">225 kcal &middot; 21g protein &middot; 15 min</div></div></section><section class="cl-band" id="cat-Dinner" style="background-image:url(https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=1400&q=85)"><div class="cl-scrim"></div><div class="cl-text "><span>Dinner</span><h2>Chicken Karahi with Basmati Rice</h2><p>A punchy tomato, ginger and green chilli chicken skillet with a measured serving of rice.</p><div class="cl-meta">520 kcal &middot; 52g protein &middot; 40 min</div></div></section><section class="cl-band"  style="background-image:url(https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=1400&q=85)"><div class="cl-scrim"></div><div class="cl-text cl-right"><span>Dinner</span><h2>Lighter Chicken Biryani</h2><p>Fragrant chicken and rice layered with warm spices, peas, herbs and cooling yogurt.</p><div class="cl-meta">535 kcal &middot; 45g protein &middot; 45 min</div></div></section>
+<a class="review-bar" href="../visions-index.html">&larr; Back to gallery &middot; Theme 18/50 &middot; Static &amp; Steel &middot; layout: cardless</a>
+<details class="about-panel"><summary>About this theme</summary><p>Industrial honesty of a real commercial kitchen. (layout: cardless)</p></details>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>20 Efficient Concepts — Dudu's Kitchen (Mobile, Personal Use)</title>
+<meta name="description" content="Mobile-first, low-decoration concepts for daily personal use — not marketing. Review and shortlist favorites." />
+<style>
+  :root {
+    --bg: #131211;
+    --bg-elevated: #1b1a18;
+    --surface: #1f1e1c;
+    --border: #322f2b;
+    --text: #efe9df;
+    --text-muted: #a39a8c;
+    --text-soft: #877d6f;
+    --accent: #c9a227;
+    --accent-fg: #14120e;
+    --good: #6fae6c;
+    --bad: #c1544a;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--bg); }
+  body { background: var(--bg); color: var(--text); font-family: "Segoe UI", Aptos, sans-serif; margin: 0; }
+  a { color: var(--accent); }
+  button { cursor: pointer; font-family: inherit; }
+  button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 26px clamp(20px, 4vw, 56px);
+    position: sticky;
+    top: 0;
+    background: rgba(19, 18, 17, 0.94);
+    backdrop-filter: blur(10px);
+    z-index: 20;
+  }
+  .header-row { align-items: center; display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; }
+  .kicker { color: var(--accent); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; margin: 0 0 6px; text-transform: uppercase; }
+  header h1 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin: 0; }
+  header p.sub { color: var(--text-muted); margin: 8px 0 0; max-width: 640px; }
+  .stats { display: flex; gap: 20px; }
+  .stats div { display: flex; flex-direction: column; gap: 2px; text-align: right; }
+  .stats strong { font-size: 1.25rem; }
+  .stats span { color: var(--text-soft); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .header-actions { display: flex; gap: 10px; margin-top: 16px; }
+  .header-actions button { background: transparent; border: 1px solid var(--border); border-radius: 0.625rem; color: var(--text); font-size: 0.78rem; font-weight: 650; padding: 9px 14px; }
+  .header-actions button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+  .header-actions button:hover { border-color: var(--accent); }
+
+  .controls {
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--border);
+    padding: 16px clamp(20px, 4vw, 56px);
+    position: sticky;
+    top: 118px;
+    z-index: 15;
+  }
+  .search-row { display: flex; gap: 12px; margin-bottom: 12px; }
+  .search-row input { background: var(--surface); border: 1px solid var(--border); border-radius: 0.625rem; color: var(--text); flex: 1; font-size: 0.88rem; height: 40px; padding: 0 14px; }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { background: var(--surface); border: 1px solid var(--border); border-radius: 999px; color: var(--text-muted); font-size: 0.76rem; font-weight: 650; padding: 7px 13px; }
+  .chip.active { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+  .chip.fav.active { background: var(--bad); border-color: var(--bad); color: #fff; }
+  .result-count { color: var(--text-soft); font-size: 0.72rem; margin-top: 10px; text-transform: uppercase; }
+
+  main { margin: 0 auto; max-width: 1440px; padding: 30px clamp(20px, 4vw, 56px) 90px; }
+  .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+
+  .vision-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+  .vision-card.hidden-card { display: none; }
+  .vision-preview { aspect-ratio: 10/13; position: relative; display: flex; align-items: center; justify-content: center; text-decoration: none; }
+  .vision-preview span.open-label { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.35); color: #fff; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em; padding: 5px 9px; border-radius: 999px; text-transform: uppercase; }
+  .vision-preview strong { font-size: 1.1rem; text-align: center; padding: 0 20px; }
+  .vision-body { padding: 14px 16px 16px; }
+  .vision-top { align-items: center; display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+  .vision-index { color: var(--text-soft); font-size: 0.7rem; font-weight: 700; }
+  .engine-badge { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 999px; color: var(--text-muted); font-size: 0.6rem; padding: 3px 8px; text-transform: capitalize; }
+  .group-badge { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 999px; color: var(--text-muted); font-size: 0.6rem; padding: 3px 8px; }
+  .vision-body h3 { font-size: 0.98rem; margin: 0 0 6px; }
+  .vision-body p.about { color: var(--text-soft); font-size: 0.76rem; line-height: 1.45; margin: 0 0 14px; }
+  .open-link { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-size: 0.8rem; font-weight: 650; text-decoration: none; margin-bottom: 14px; }
+  .open-link:hover { text-decoration: underline; }
+  .vote-row { display: flex; gap: 8px; margin-bottom: 10px; }
+  .vote-row button { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 0.625rem; color: var(--text-muted); flex: 1; font-size: 0.76rem; font-weight: 650; padding: 8px 0; }
+  .like-btn[aria-pressed="true"] { background: var(--good); border-color: var(--good); color: #0e1a0d; }
+  .dislike-btn[aria-pressed="true"] { background: var(--bad); border-color: var(--bad); color: #fff; }
+  .notes { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 0.625rem; color: var(--text); font-size: 0.78rem; min-height: 50px; padding: 8px 10px; resize: vertical; width: 100%; }
+
+  .toast { background: var(--accent); border-radius: 0.625rem; color: var(--accent-fg); bottom: 24px; font-size: 0.8rem; font-weight: 650; left: 50%; opacity: 0; padding: 10px 18px; pointer-events: none; position: fixed; transform: translate(-50%, 10px); transition: opacity 200ms ease, transform 200ms ease; z-index: 50; }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  footer { border-top: 1px solid var(--border); color: var(--text-soft); font-size: 0.74rem; padding: 22px clamp(20px, 4vw, 56px) 46px; }
+
+  @media (max-width: 720px) {
+    .stats { display: none; }
+    .controls { top: 138px; }
+    .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-row">
+    <div>
+      <p class="kicker">Efficient &middot; Personal Use &middot; Mobile-First</p>
+      <h1>20 Efficient Concepts — Dudu's Kitchen</h1>
+      <p class="sub">Separate from the 50-theme/10-layout marketing exploration. These are mobile-first, low-decoration, native-app-style concepts meant for daily personal use on your phone — 10 in black/red, 10 in other palettes, each built on one of 8 real mobile UI patterns (Apple Settings, Airbnb, Spotify, Uber Eats, Apple Health, Todoist, Kindle, App Store Today). Each card opens a real, working preview (home + the Berry Protein Overnight Oats recipe page) at phone width.</p>
+    </div>
+    <div class="stats" aria-live="polite">
+      <div><strong id="statTotal">20</strong><span>Concepts</span></div>
+      <div><strong id="statLiked">0</strong><span>Liked</span></div>
+      <div><strong id="statPassed">0</strong><span>Passed</span></div>
+      <div><strong id="statReviewed">0</strong><span>Reviewed</span></div>
+    </div>
+  </div>
+  <div class="header-actions">
+    <button type="button" class="primary" id="copyShortlist">Copy shortlist</button>
+    <button type="button" id="resetReviews">Reset reviews</button>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="search-row">
+    <input type="search" id="searchInput" placeholder="Search by name, pattern, or keyword…" aria-label="Search concepts" />
+  </div>
+  <div class="chip-row" id="groupChips">
+    <button class="chip active" data-group="all" type="button">All palettes</button>
+    <button class="chip" data-group="black-red" type="button">Black/Red</button>
+    <button class="chip" data-group="color" type="button">Other colors</button>
+  </div>
+  <div class="chip-row" id="engineChips" style="margin-top:8px">
+    <button class="chip active" data-engine="all" type="button">All patterns</button>
+  </div>
+  <div class="chip-row" style="margin-top:8px">
+    <button class="chip fav" id="favChip" type="button">★ Favorites</button>
+  </div>
+  <p class="result-count" id="resultCount">Showing 20 of 20 concepts</p>
+</div>
+
+<main>
+  <div class="grid" id="visionGrid"></div>
+</main>
+
+<footer>Dudu's Kitchen Efficient Concept Review · Reviews and notes are stored locally in this browser only (localStorage). Each concept is a fully separate file under efficient/.</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const STORAGE_KEY = "duduskitchen-efficient-review-v1";
+const grid = document.getElementById("visionGrid");
+const toast = document.getElementById("toast");
+let VISIONS = [];
+let state = {};
+let engineFilter = "all";
+let groupFilter = "all";
+let favoritesOnly = false;
+let searchTerm = "";
+
+function loadState() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+  catch { return {}; }
+}
+function saveState() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+function getEntry(id) {
+  if (!state[id]) state[id] = { liked: null, notes: "" };
+  return state[id];
+}
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(() => toast.classList.remove("show"), 1800);
+}
+
+function cardMarkup(v) {
+  const entry = getEntry(v.id);
+  const file = "efficient/concept-" + String(v.order).padStart(2, "0") + "-home.html";
+  return `
+    <article class="vision-card" data-id="${v.id}" data-engine="${v.paradigm}" data-group="${v.group}" data-search="${(v.name + " " + v.paradigm + " " + v.group + " " + v.blurb).toLowerCase()}">
+      <a class="vision-preview" href="${file}" target="_blank" rel="noreferrer" style="background:${v.bg};color:${v.text}">
+        <span class="open-label">Opens in new tab</span>
+        <strong style="color:${v.accent}">${v.name}</strong>
+      </a>
+      <div class="vision-body">
+        <div class="vision-top">
+          <span class="vision-index">No. ${String(v.order).padStart(2, "0")}</span>
+          <span class="engine-badge">${v.paradigm}</span>
+          <span class="group-badge">${v.group === "black-red" ? "Black/Red" : "Color"}</span>
+        </div>
+        <h3>${v.name}</h3>
+        <p class="about">${v.blurb}</p>
+        <a class="open-link" href="${file}" target="_blank" rel="noreferrer">Open full prototype &rarr;</a>
+        <div class="vote-row">
+          <button type="button" class="like-btn" aria-pressed="${entry.liked === true}">&hearts; Like</button>
+          <button type="button" class="dislike-btn" aria-pressed="${entry.liked === false}">&#10005; Pass</button>
+        </div>
+        <textarea class="notes" placeholder="Notes for the team…">${entry.notes || ""}</textarea>
+      </div>
+    </article>`;
+}
+
+function wireCard(card, v) {
+  const likeBtn = card.querySelector(".like-btn");
+  const dislikeBtn = card.querySelector(".dislike-btn");
+  const notes = card.querySelector(".notes");
+  let noteTimer;
+
+  likeBtn.addEventListener("click", () => {
+    const entry = getEntry(v.id);
+    entry.liked = entry.liked === true ? null : true;
+    saveState();
+    likeBtn.setAttribute("aria-pressed", String(entry.liked === true));
+    dislikeBtn.setAttribute("aria-pressed", "false");
+    updateStats();
+    applyFilters();
+  });
+  dislikeBtn.addEventListener("click", () => {
+    const entry = getEntry(v.id);
+    entry.liked = entry.liked === false ? null : false;
+    saveState();
+    dislikeBtn.setAttribute("aria-pressed", String(entry.liked === false));
+    likeBtn.setAttribute("aria-pressed", "false");
+    updateStats();
+    applyFilters();
+  });
+  notes.addEventListener("input", () => {
+    const entry = getEntry(v.id);
+    entry.notes = notes.value;
+    clearTimeout(noteTimer);
+    noteTimer = setTimeout(saveState, 300);
+  });
+}
+
+function renderEngineChips() {
+  const engines = [...new Set(VISIONS.map((v) => v.paradigm))].sort();
+  const container = document.getElementById("engineChips");
+  engines.forEach((engine) => {
+    const btn = document.createElement("button");
+    btn.className = "chip";
+    btn.type = "button";
+    btn.dataset.engine = engine;
+    btn.textContent = engine;
+    container.appendChild(btn);
+  });
+  container.addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-engine]");
+    if (!btn) return;
+    engineFilter = btn.getAttribute("data-engine");
+    container.querySelectorAll(".chip").forEach((c) => c.classList.toggle("active", c === btn));
+    applyFilters();
+  });
+}
+
+function renderGroupChips() {
+  const container = document.getElementById("groupChips");
+  container.addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-group]");
+    if (!btn) return;
+    groupFilter = btn.getAttribute("data-group");
+    container.querySelectorAll(".chip").forEach((c) => c.classList.toggle("active", c === btn));
+    applyFilters();
+  });
+}
+
+function renderGrid() {
+  grid.innerHTML = VISIONS.map(cardMarkup).join("");
+  VISIONS.forEach((v) => {
+    const card = grid.querySelector(`[data-id="${v.id}"]`);
+    if (card) wireCard(card, v);
+  });
+  applyFilters();
+}
+
+function applyFilters() {
+  const cards = grid.querySelectorAll(".vision-card");
+  let visibleCount = 0;
+  cards.forEach((card) => {
+    const id = card.getAttribute("data-id");
+    const engine = card.getAttribute("data-engine");
+    const group = card.getAttribute("data-group");
+    const searchText = card.getAttribute("data-search");
+    const entry = getEntry(id);
+    let visible = true;
+    if (engineFilter !== "all" && engine !== engineFilter) visible = false;
+    if (groupFilter !== "all" && group !== groupFilter) visible = false;
+    if (favoritesOnly && entry.liked !== true) visible = false;
+    if (searchTerm && !searchText.includes(searchTerm)) visible = false;
+    card.classList.toggle("hidden-card", !visible);
+    if (visible) visibleCount++;
+  });
+  document.getElementById("resultCount").textContent = `Showing ${visibleCount} of ${VISIONS.length} concepts`;
+}
+
+function updateStats() {
+  let liked = 0, passed = 0;
+  VISIONS.forEach((v) => {
+    const entry = getEntry(v.id);
+    if (entry.liked === true) liked++;
+    if (entry.liked === false) passed++;
+  });
+  document.getElementById("statLiked").textContent = liked;
+  document.getElementById("statPassed").textContent = passed;
+  document.getElementById("statReviewed").textContent = liked + passed;
+}
+
+document.getElementById("favChip").addEventListener("click", (e) => {
+  favoritesOnly = !favoritesOnly;
+  e.target.classList.toggle("active", favoritesOnly);
+  applyFilters();
+});
+document.getElementById("searchInput").addEventListener("input", (e) => {
+  searchTerm = e.target.value.trim().toLowerCase();
+  applyFilters();
+});
+document.getElementById("copyShortlist").addEventListener("click", () => {
+  const liked = VISIONS.filter((v) => getEntry(v.id).liked === true);
+  if (!liked.length) { showToast("No liked concepts yet"); return; }
+  const lines = liked.map((v) => {
+    const notes = getEntry(v.id).notes;
+    return `${v.name} (${v.paradigm})${notes ? " — " + notes : ""}`;
+  });
+  const text = `Dudu's Kitchen — Efficient Concept Shortlist (${liked.length})\n` + lines.join("\n");
+  navigator.clipboard?.writeText(text).then(() => showToast("Shortlist copied to clipboard")).catch(() => showToast("Could not copy — select manually"));
+});
+document.getElementById("resetReviews").addEventListener("click", () => {
+  if (!confirm("Clear all likes, passes, and notes? This cannot be undone.")) return;
+  state = {};
+  saveState();
+  renderGrid();
+  updateStats();
+  showToast("All reviews cleared");
+});
+
+const VISIONS_DATA = [{"id":"settings-noir","order":1,"name":"Settings Noir","group":"black-red","paradigm":"grouped-list","accent":"#E0293D","bg":"#101010","text":"#F2ECE4","blurb":"Efficient, mobile-first grouped list pattern, inspired by Apple Settings / Reminders."},{"id":"rooftop-feed","order":2,"name":"Rooftop Feed","group":"black-red","paradigm":"feed-cards","accent":"#FF3B4E","bg":"#0B0B0C","text":"#F3EEE7","blurb":"Efficient, mobile-first feed cards pattern, inspired by Airbnb / Google Discover."},{"id":"vinyl-noir-grid","order":3,"name":"Vinyl Noir Grid","group":"black-red","paradigm":"dark-grid","accent":"#E8112D","bg":"#121212","text":"#F1F1F1","blurb":"Efficient, mobile-first dark grid pattern, inspired by Spotify / Apple Music."},{"id":"market-chips-rouge","order":4,"name":"Market Chips Rouge","group":"black-red","paradigm":"chips-feed","accent":"#FF453A","bg":"#0E0E0F","text":"#F1EEE9","blurb":"Efficient, mobile-first chips feed pattern, inspired by Uber Eats / DoorDash."},{"id":"vitals-noir","order":5,"name":"Vitals Noir","group":"black-red","paradigm":"dashboard","accent":"#FF375F","bg":"#131313","text":"#F2EFEA","blurb":"Efficient, mobile-first dashboard pattern, inspired by Apple Health / Robinhood."},{"id":"do-noir","order":6,"name":"Do Noir","group":"black-red","paradigm":"checklist","accent":"#FF6961","bg":"#0A0A0A","text":"#EDEAE4","blurb":"Efficient, mobile-first checklist pattern, inspired by Todoist / Bear."},{"id":"library-noir-shelves","order":7,"name":"Library Noir Shelves","group":"black-red","paradigm":"shelf-grid","accent":"#D7263D","bg":"#111111","text":"#F0EBE2","blurb":"Efficient, mobile-first shelf grid pattern, inspired by Kindle / Apple TV."},{"id":"today-noir-tabs","order":8,"name":"Today Noir Tabs","group":"black-red","paradigm":"segmented-tabs","accent":"#E63946","bg":"#101012","text":"#F2EFEA","blurb":"Efficient, mobile-first segmented tabs pattern, inspired by App Store Today."},{"id":"crimson-paper-settings","order":9,"name":"Crimson Paper Settings","group":"black-red","paradigm":"grouped-list","accent":"#B3001B","bg":"#F6EEEA","text":"#1A1A1A","blurb":"Efficient, mobile-first grouped list pattern, inspired by Apple Settings / Reminders."},{"id":"coral-feed-noir","order":10,"name":"Coral Feed Noir","group":"black-red","paradigm":"feed-cards","accent":"#FF5A5F","bg":"#0D0D0D","text":"#F1ECE6","blurb":"Efficient, mobile-first feed cards pattern, inspired by Airbnb / Google Discover."},{"id":"ocean-settings","order":11,"name":"Ocean Settings","group":"color","paradigm":"grouped-list","accent":"#2D6CDF","bg":"#F5F8FA","text":"#14213D","blurb":"Efficient, mobile-first grouped list pattern, inspired by Apple Settings / Reminders."},{"id":"discover-feed-sage","order":12,"name":"Discover Feed Sage","group":"color","paradigm":"feed-cards","accent":"#4C8C4A","bg":"#F3F6F1","text":"#213821","blurb":"Efficient, mobile-first feed cards pattern, inspired by Airbnb / Google Discover."},{"id":"amethyst-grid","order":13,"name":"Amethyst Grid","group":"color","paradigm":"dark-grid","accent":"#8B5CF6","bg":"#17131F","text":"#EFEAF7","blurb":"Efficient, mobile-first dark grid pattern, inspired by Spotify / Apple Music."},{"id":"citrus-chips","order":14,"name":"Citrus Chips","group":"color","paradigm":"chips-feed","accent":"#FF8A3D","bg":"#FFFDF7","text":"#2A2016","blurb":"Efficient, mobile-first chips feed pattern, inspired by Uber Eats / DoorDash."},{"id":"health-rings-teal","order":15,"name":"Health Rings Teal","group":"color","paradigm":"dashboard","accent":"#2DD4BF","bg":"#0E1B1B","text":"#E6F5F3","blurb":"Efficient, mobile-first dashboard pattern, inspired by Apple Health / Robinhood."},{"id":"clarity-checklist","order":16,"name":"Clarity Checklist","group":"color","paradigm":"checklist","accent":"#3A86FF","bg":"#FAFAF8","text":"#22252A","blurb":"Efficient, mobile-first checklist pattern, inspired by Todoist / Bear."},{"id":"reading-shelf-amber","order":17,"name":"Reading Shelf Amber","group":"color","paradigm":"shelf-grid","accent":"#C08A2E","bg":"#FBF3E7","text":"#2E2416","blurb":"Efficient, mobile-first shelf grid pattern, inspired by Kindle / Apple TV."},{"id":"today-tabs-indigo","order":18,"name":"Today Tabs Indigo","group":"color","paradigm":"segmented-tabs","accent":"#5B6CFF","bg":"#12131C","text":"#EEEFF9","blurb":"Efficient, mobile-first segmented tabs pattern, inspired by App Store Today."},{"id":"meadow-settings","order":19,"name":"Meadow Settings","group":"color","paradigm":"grouped-list","accent":"#588157","bg":"#F4F8F2","text":"#20291F","blurb":"Efficient, mobile-first grouped list pattern, inspired by Apple Settings / Reminders."},{"id":"sunrise-feed-coral","order":20,"name":"Sunrise Feed Coral","group":"color","paradigm":"feed-cards","accent":"#FF7A59","bg":"#FFF7F0","text":"#2E2015","blurb":"Efficient, mobile-first feed cards pattern, inspired by Airbnb / Google Discover."}];
+
+VISIONS = VISIONS_DATA;
+state = loadState();
+renderGroupChips();
+renderEngineChips();
+renderGrid();
+updateStats();
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" data-layout="dense-grid">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Red Thread — Dudu's Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@500;600&family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@500;600&family=Bebas+Neue&family=Zilla+Slab:wght@500;700&family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cp-bg:#0D0D0F;--cp-bg-elevated:color-mix(in srgb, #0D0D0F 85%, white 15%);--cp-surface:color-mix(in srgb, #0D0D0F 78%, white 22%);--cp-surface-soft:color-mix(in srgb, #0D0D0F 82%, white 18%);--cp-border:color-mix(in srgb, #EFE6D8 22%, transparent);--cp-text:#EFE6D8;--cp-text-muted:color-mix(in srgb, #EFE6D8 68%, #0D0D0F 32%);--cp-text-soft:color-mix(in srgb, #EFE6D8 55%, #0D0D0F 45%);--cp-accent:#D62839;--cp-accent-hover:color-mix(in srgb, #D62839 82%, black 18%);--cp-accent-soft:color-mix(in srgb, #D62839 14%, transparent);--cp-accent-fg:#FFFFFF;--cp-link:#D62839;--theme-font-display:'Zilla Slab', Georgia, serif}
+
+*{box-sizing:border-box}
+html{background:var(--cp-bg);scroll-behavior:smooth}
+body{background:var(--cp-bg);color:var(--cp-text);font-family:"Segoe UI",Aptos,sans-serif;margin:0;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--cp-link)}
+button{cursor:pointer;font-family:inherit}
+h1,h2,h3,h4{font-family:var(--theme-font-display,inherit)}
+.brand{color:inherit;font-weight:750;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.brand-mark{background:var(--cp-accent);color:var(--cp-accent-fg);border-radius:8px;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;font-size:15px}
+.cat-chip{background:var(--cp-surface);border:1px solid var(--cp-border);border-radius:999px;color:var(--cp-text-muted);font-size:.78rem;font-weight:650;padding:8px 14px}
+.cat-chip.active{background:var(--cp-accent);color:var(--cp-accent-fg);border-color:var(--cp-accent)}
+.rd-ingredients ul,.rd-method ol{margin:0;padding-left:20px;line-height:1.8;font-size:.92rem;color:var(--cp-text-soft)}
+.rd-actions{display:flex;gap:10px;flex-wrap:wrap}
+.rd-actions button{background:transparent;border:1px solid var(--cp-accent);color:var(--cp-accent);padding:10px 18px;border-radius:.625rem;font:inherit;font-size:.85rem}
+.rd-actions button.primary{background:var(--cp-accent);color:var(--cp-accent-fg)}
+.review-bar{position:fixed;bottom:14px;left:14px;z-index:999;background:rgba(20,18,14,.88);color:#efe9df;font:600 11px/1 "Segoe UI",sans-serif;letter-spacing:.02em;padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.14)}
+.review-bar:hover{border-color:#c9a227}
+.review-bar-home{bottom:52px}
+.about-panel{position:fixed;bottom:14px;right:14px;z-index:999;max-width:280px;background:rgba(20,18,14,.92);color:#efe9df;font:12px/1.5 "Segoe UI",sans-serif;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14)}
+.about-panel summary{cursor:pointer;font-weight:700;list-style:none}
+.about-panel summary::-webkit-details-marker{display:none}
+.about-panel summary::before{content:"+ "}
+.about-panel[open] summary::before{content:"\2212 "}
+.about-panel p{margin:8px 0 0;color:#cfc7ba}
+
+
+.dg-shell{display:grid;grid-template-columns:220px 1fr;min-height:100vh}
+.dg-side{border-right:1px solid var(--cp-border);padding:24px 16px}
+.dg-link{display:flex;justify-content:space-between;width:100%;background:transparent;border:0;color:var(--cp-text-muted);padding:10px 8px;font-size:.85rem;border-radius:6px}
+.dg-link.active{background:var(--cp-accent-soft);color:var(--cp-accent);font-weight:700}
+.dg-main{padding:30px clamp(20px,3vw,40px)}
+.dg-main h1{font-size:1.6rem;margin:0 0 4px}
+.dg-main p{color:var(--cp-text-muted);font-size:.85rem;margin:0 0 20px}
+.dg-header-row,.dg-row{display:grid;grid-template-columns:56px 2fr 100px 90px 90px 90px 70px;gap:14px;align-items:center;padding:10px 8px;border-bottom:1px solid var(--cp-border);text-decoration:none;color:inherit;font-size:.82rem}
+.dg-header-row{color:var(--cp-text-muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em}
+.dg-row img{width:56px;height:40px;object-fit:cover;border-radius:6px}
+.dg-name{font-weight:650}
+.dg-cat{color:var(--cp-accent);font-size:.72rem}
+@media (max-width:800px){.dg-shell{grid-template-columns:1fr}.dg-side{display:flex;overflow-x:auto;border-right:0;border-bottom:1px solid var(--cp-border)}.dg-header-row{display:none}.dg-row{grid-template-columns:44px 1fr;grid-template-areas:"img name" "img cat" "img meta"}}
+
+</style>
+</head>
+<body>
+<div class="dg-shell"><div class="dg-side"><a class="brand" href="theme-10-home.html" style="margin-bottom:20px;display:flex"><span class="brand-mark">&#127859;</span>Dudu's Kitchen</a><button data-filter="All" class="dg-link active">All<span>8</span></button><button data-filter="Breakfast" class="dg-link ">Breakfast<span>2</span></button><button data-filter="Lunch" class="dg-link ">Lunch<span>2</span></button><button data-filter="Snack" class="dg-link ">Snack<span>2</span></button><button data-filter="Dinner" class="dg-link ">Dinner<span>2</span></button></div><div class="dg-main"><h1>The collection</h1><p>8 recipes &middot; 37g avg protein</p><div class="dg-header-row"><span></span><span>Recipe</span><span>Category</span><span>Calories</span><span>Protein</span><span>Carbs</span><span>Time</span></div><a class="dg-row" href="theme-10-recipe.html" data-cat="Breakfast"><img src="https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=1400&q=85" alt=""><span class="dg-name">Berry Protein Overnight Oats</span><span class="dg-cat">Breakfast</span><span>390 kcal</span><span>33g protein</span><span>48g carbs</span><span>10 min</span></a><a class="dg-row" href="#" data-cat="Breakfast"><img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1400&q=85" alt=""><span class="dg-name">Cinnamon Banana Protein Pancakes</span><span class="dg-cat">Breakfast</span><span>410 kcal</span><span>35g protein</span><span>42g carbs</span><span>20 min</span></a><a class="dg-row" href="#" data-cat="Lunch"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1400&q=85" alt=""><span class="dg-name">Spicy Cajun Chicken &amp; Rice Bowl</span><span class="dg-cat">Lunch</span><span>495 kcal</span><span>48g protein</span><span>55g carbs</span><span>30 min</span></a><a class="dg-row" href="#" data-cat="Lunch"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1400&q=85" alt=""><span class="dg-name">Chicken Satay Crunch Bowl</span><span class="dg-cat">Lunch</span><span>470 kcal</span><span>46g protein</span><span>44g carbs</span><span>25 min</span></a><a class="dg-row" href="#" data-cat="Snack"><img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=1400&q=85" alt=""><span class="dg-name">Chocolate Oat Protein Bites</span><span class="dg-cat">Snack</span><span>210 kcal</span><span>17g protein</span><span>22g carbs</span><span>15 min</span></a><a class="dg-row" href="#" data-cat="Snack"><img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1400&q=85" alt=""><span class="dg-name">Berry Skyr Cheesecake Cups</span><span class="dg-cat">Snack</span><span>225 kcal</span><span>21g protein</span><span>25g carbs</span><span>15 min</span></a><a class="dg-row" href="#" data-cat="Dinner"><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=1400&q=85" alt=""><span class="dg-name">Chicken Karahi with Basmati Rice</span><span class="dg-cat">Dinner</span><span>520 kcal</span><span>52g protein</span><span>53g carbs</span><span>40 min</span></a><a class="dg-row" href="#" data-cat="Dinner"><img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=1400&q=85" alt=""><span class="dg-name">Lighter Chicken Biryani</span><span class="dg-cat">Dinner</span><span>535 kcal</span><span>45g protein</span><span>62g carbs</span><span>45 min</span></a></div></div><script>
+document.querySelectorAll('[data-filter]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-filter]').forEach((b) => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('[data-cat]').forEach((el) => { el.style.display = (f === 'All' || el.dataset.cat === f) ? '' : 'none'; });
+  });
+});
+</script>
+<a class="review-bar" href="../visions-index.html">&larr; Back to gallery &middot; Theme 10/50 &middot; Red Thread &middot; layout: dense-grid</a>
+<details class="about-panel"><summary>About this theme</summary><p>A connective narrative thread runs through everything. (layout: dense-grid)</p></details>
+</body>
+</html>
