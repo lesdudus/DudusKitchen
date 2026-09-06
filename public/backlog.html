@@ -58,17 +58,19 @@ footer{display:flex;justify-content:space-between;gap:12px;color:var(--muted);fo
     -->
   </li>
   <li class="backlog-item">
-    <span class="pill">Deployment</span>
+    <span class="pill" style="background:rgba(34,197,94,.16);color:#22c55e">Done</span>
     <strong>Host the app online</strong>
-    <span>Currently only runs on localhost — deploy it so it's reachable from any device.</span>
+    <span>Deployed via GitHub Pages: lesdudus.github.io/DudusKitchen/</span>
     <!--
       INTERNAL NOTE (not shown to user on page):
       - Static Vite build (npm run build) — no server-side logic today, so any
         static host works: Azure Static Web Apps, Vercel, Netlify, GitHub Pages.
-      - Blocker: localStorage-based state (triage + future "My Own" recipes) is
-        per-browser/per-device. If the user + spouse need a shared view, hosting
-        alone isn't enough — needs the small shared-backend phase already flagged
-        as future work (mentioned in original spec conversation).
+      - DONE 2026-09-06: deployed via GitHub Pages (public repo lesdudus/DudusKitchen,
+        GitHub Actions workflow .github/workflows/deploy.yml, vite base='/DudusKitchen/').
+      - Blocker for shared use: localStorage-based state (triage + future "My Own"
+        recipes) is per-browser/per-device. If the user + spouse need a shared view,
+        hosting alone isn't enough — needs the small shared-backend phase already
+        flagged as future work (mentioned in original spec conversation).
       - No auth/secrets in this app currently, so no special security setup needed
         beyond standard HTTPS the static hosts provide by default.
     -->
