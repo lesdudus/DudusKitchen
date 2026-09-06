@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 import {
+  Check,
   ClipboardList,
   Eye,
   EyeOff,
   Globe,
+  Languages,
   Search,
   ThumbsDown,
   ThumbsUp,
@@ -12,6 +14,7 @@ import {
 } from 'lucide-react'
 import './App.css'
 import { supabase } from './lib/supabaseClient'
+import { getStrings, type UiLanguage } from './i18n'
 import { categories, recipes, type MealCategory, type Recipe, type RecipeOrigin } from './data/recipes'
 
 type CategoryFilter = 'All' | MealCategory
@@ -20,6 +23,19 @@ type ReviewStatus = 'liked' | 'disliked' | null
 type ReviewFilter = 'All' | 'Liked' | 'Disliked' | 'Unreviewed'
 type RecipeState = { review: ReviewStatus; hidden: boolean }
 type RecipeStateMap = Record<string, RecipeState>
+
+const LANG_KEY = 'duduskitchen-lang'
+
+function loadLanguage(): UiLanguage {
+  return localStorage.getItem(LANG_KEY) === 'fr' ? 'fr' : 'en'
+}
+
+const CATEGORY_LABELS: Record<MealCategory, { en: string; fr: string }> = {
+  Breakfast: { en: 'Breakfast', fr: 'Petit-déj' },
+  Lunch: { en: 'Lunch', fr: 'Déjeuner' },
+  Snack: { en: 'Snack', fr: 'Collation' },
+  Dinner: { en: 'Dinner', fr: 'Dîner' },
+}
 
 // Maps this app's simple tri-state review onto the richer recipe_status.status
 // enum in Supabase (never_again/dislike/neutral/like/love) — only like/dislike/
@@ -49,6 +65,10 @@ function rowsToStateMap(rows: RecipeStatusRow[]): RecipeStateMap {
   return map
 }
 
+type TranslationStatus = 'pending' | 'done'
+type TranslationRow = { recipe_id: string; status: TranslationStatus }
+type TranslationMap = Record<string, TranslationStatus>
+
 function App() {
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>('All')
   const [originFilter, setOriginFilter] = useState<OriginFilter>('All')
@@ -57,6 +77,13 @@ function App() {
   const [query, setQuery] = useState('')
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null)
   const [recipeState, setRecipeState] = useState<RecipeStateMap>({})
+  const [translationRequests, setTranslationRequests] = useState<TranslationMap>({})
+  const [lang, setLang] = useState<UiLanguage>(() => loadLanguage())
+  const t = getStrings(lang)
+
+  useEffect(() => {
+    localStorage.setItem(LANG_KEY, lang)
+  }, [lang])
 
   useEffect(() => {
     let cancelled = false
@@ -94,6 +121,69 @@ function App() {
       supabase.removeChannel(channel)
     }
   }, [])
+
+  useEffect(() => {
+    let cancelled = false
+
+    supabase
+      .from('translation_requests')
+      .select('recipe_id, status')
+      .then(({ data, error }) => {
+        if (cancelled) return
+        if (error) {
+          console.error('Failed to load translation_requests', error)
+          return
+        }
+        const map: TranslationMap = {}
+        for (const row of (data ?? []) as TranslationRow[]) map[row.recipe_id] = row.status
+        setTranslationRequests(map)
+      })
+
+    const channel = supabase
+      .channel('translation_requests_changes')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'translation_requests' },
+        (payload) => {
+          const row = (payload.new ?? payload.old) as TranslationRow | undefined
+          if (!row) return
+          setTranslationRequests((prev) => ({ ...prev, [row.recipe_id]: row.status }))
+        }
+      )
+      .subscribe()
+
+    return () => {
+      cancelled = true
+      supabase.removeChannel(channel)
+    }
+  }, [])
+
+  const toggleTranslationRequest = (id: string) => {
+    const current = translationRequests[id]
+    if (current === 'done') return // already translated by the time this would show
+    if (current === 'pending') {
+      setTranslationRequests((prev) => {
+        const next = { ...prev }
+        delete next[id]
+        return next
+      })
+      supabase
+        .from('translation_requests')
+        .delete()
+        .eq('recipe_id', id)
+        .then(({ error }) => {
+          if (error) console.error('Failed to cancel translation request', error)
+        })
+      return
+    }
+    setTranslationRequests((prev) => ({ ...prev, [id]: 'pending' }))
+    supabase
+      .from('translation_requests')
+      .upsert({ recipe_id: id, status: 'pending' }, { onConflict: 'recipe_id', ignoreDuplicates: true })
+      .then(({ error }) => {
+        if (error) console.error('Failed to save translation request', error)
+      })
+  }
 
   const getState = (id: string): RecipeState => recipeState[id] ?? DEFAULT_STATE
 
@@ -176,8 +266,8 @@ function App() {
           type="button"
           className={state.review === 'liked' ? 'active-like' : ''}
           aria-pressed={state.review === 'liked'}
-          aria-label="Like recipe"
-          title="Like"
+          aria-label={t.likeRecipe}
+          title={t.like}
           onClick={withStop(() => toggleReview(recipe.id, 'liked'))}
         >
           <ThumbsUp size={16} />
@@ -186,8 +276,8 @@ function App() {
           type="button"
           className={state.review === 'disliked' ? 'active-dislike' : ''}
           aria-pressed={state.review === 'disliked'}
-          aria-label="Dislike recipe"
-          title="Dislike"
+          aria-label={t.dislikeRecipe}
+          title={t.dislike}
           onClick={withStop(() => toggleReview(recipe.id, 'disliked'))}
         >
           <ThumbsDown size={16} />
@@ -196,8 +286,8 @@ function App() {
           type="button"
           className={state.hidden ? 'active-hide' : ''}
           aria-pressed={state.hidden}
-          aria-label={state.hidden ? 'Unhide recipe' : 'Hide recipe'}
-          title={state.hidden ? 'Unhide' : 'Hide'}
+          aria-label={state.hidden ? t.unhideRecipe : t.hideRecipe}
+          title={state.hidden ? t.unhide : t.hide}
           onClick={withStop(() => toggleHidden(recipe.id))}
         >
           {state.hidden ? <Eye size={16} /> : <EyeOff size={16} />}
@@ -210,23 +300,35 @@ function App() {
     <div className="app-shell">
       <div className="sticky-top">
         <div className="title-row">
-          <h1 className="big-title">Dudu's Kitchen</h1>
-          <a className="backlog-btn" href="./backlog.html" target="_blank" rel="noreferrer" aria-label="Backlog" title="Backlog">
-            <ClipboardList size={18} />
-          </a>
+          <h1 className="big-title">{t.title}</h1>
+          <div className="title-actions">
+            <button
+              type="button"
+              className="backlog-btn"
+              aria-label={t.language}
+              title={t.language}
+              onClick={() => setLang((value) => (value === 'en' ? 'fr' : 'en'))}
+            >
+              <Languages size={18} />
+              <span className="lang-code">{lang.toUpperCase()}</span>
+            </button>
+            <a className="backlog-btn" href="./backlog.html" target="_blank" rel="noreferrer" aria-label={t.backlog} title={t.backlog}>
+              <ClipboardList size={18} />
+            </a>
+          </div>
         </div>
         <div className="search-row">
           <label className="search-pill">
             <Search size={16} aria-hidden="true" />
-            <span className="sr-only">Search recipes</span>
+            <span className="sr-only">{t.searchPlaceholder}</span>
             <input
               type="search"
-              placeholder="Search recipes"
+              placeholder={t.searchPlaceholder}
               value={query}
               onChange={(event) => setQuery(event.target.value)}
             />
             {query && (
-              <button type="button" onClick={() => setQuery('')} aria-label="Clear search" title="Clear search">
+              <button type="button" onClick={() => setQuery('')} aria-label={t.clearSearch} title={t.clearSearch}>
                 <X size={15} />
               </button>
             )}
@@ -237,18 +339,18 @@ function App() {
               role="tab"
               aria-selected={originFilter === 'All'}
               className={originFilter === 'All' ? 'active' : ''}
-              title="All recipes"
+              title={t.sourceAll}
               onClick={() => setOriginFilter('All')}
             >
-              All
+              {t.sourceAll}
             </button>
             <button
               type="button"
               role="tab"
               aria-selected={originFilter === 'curated'}
               className={originFilter === 'curated' ? 'active' : ''}
-              title="AI-Sourced"
-              aria-label="AI-Sourced"
+              title={t.sourceCurated}
+              aria-label={t.sourceCurated}
               onClick={() => setOriginFilter('curated')}
             >
               <Globe size={14} />
@@ -258,8 +360,8 @@ function App() {
               role="tab"
               aria-selected={originFilter === 'mine'}
               className={originFilter === 'mine' ? 'active mine' : ''}
-              title="My Own"
-              aria-label="My Own"
+              title={t.sourceMine}
+              aria-label={t.sourceMine}
               onClick={() => setOriginFilter('mine')}
             >
               <User size={14} />
@@ -276,7 +378,7 @@ function App() {
               className={`seg ${activeCategory === category ? 'active' : ''}`}
               onClick={() => setActiveCategory(category)}
             >
-              {category}
+              {category === 'All' ? t.categoryAll : CATEGORY_LABELS[category][lang]}
             </button>
           ))}
         </div>
@@ -290,7 +392,13 @@ function App() {
               className={`seg ${reviewFilter === filter ? 'active' : ''}`}
               onClick={() => setReviewFilter(filter)}
             >
-              {filter}
+              {filter === 'All'
+                ? t.reviewAll
+                : filter === 'Liked'
+                  ? t.reviewLiked
+                  : filter === 'Disliked'
+                    ? t.reviewDisliked
+                    : t.reviewUnreviewed}
             </button>
           ))}
           <button
@@ -299,27 +407,37 @@ function App() {
             aria-pressed={showHidden}
             onClick={() => setShowHidden((value) => !value)}
           >
-            {showHidden ? <Eye size={14} /> : <EyeOff size={14} />} Hidden ({hiddenCount})
+            {showHidden ? <Eye size={14} /> : <EyeOff size={14} />} {t.hidden} ({hiddenCount})
           </button>
         </div>
       </div>
 
       <p className="result-count" aria-live="polite">
-        Showing {visibleRecipes.length} of {recipes.length} recipes
+        {t.resultCount(visibleRecipes.length, recipes.length)}
       </p>
 
       {visibleRecipes.length ? (
         <div className="st-grid">
           {visibleRecipes.map((recipe) => (
             <div className="st-card" key={recipe.id}>
-              <span className={`origin-badge ${recipe.origin}`}>
-                {recipe.origin === 'mine' ? 'My Own' : 'AI-Sourced'}
-              </span>
+              {lang === 'fr' && recipe.language === 'en' && (
+                <button
+                  type="button"
+                  className={`lang-dot ${translationRequests[recipe.id] ? 'requested' : ''}`}
+                  title={translationRequests[recipe.id] ? t.translateRequestedHint : `${t.notTranslatedBadge} — ${t.translateThis}`}
+                  onClick={(event) => {
+                    event.stopPropagation()
+                    toggleTranslationRequest(recipe.id)
+                  }}
+                >
+                  {translationRequests[recipe.id] ? <Check size={12} /> : 'EN'}
+                </button>
+              )}
               <button type="button" className="st-open" onClick={() => setSelectedRecipe(recipe)}>
                 <img src={recipe.image} alt="" />
                 <div className="st-body">
                   <strong>{recipe.title}</strong>
-                  <span>{recipe.calories} kcal &middot; {recipe.protein}g protein &middot; {recipe.time} min</span>
+                  <span>{recipe.calories} {t.kcal} &middot; {recipe.protein}g {t.protein} &middot; {recipe.time} {t.min}</span>
                 </div>
               </button>
               {renderTriageButtons(recipe, true)}
@@ -329,15 +447,15 @@ function App() {
       ) : (
         <div className="empty-state">
           <Search size={26} aria-hidden="true" />
-          <h3>No recipes found</h3>
-          <p>Try another search, meal category, or review filter.</p>
-          <button type="button" onClick={resetFilters}>Reset filters</button>
+          <h3>{t.emptyTitle}</h3>
+          <p>{t.emptyBody}</p>
+          <button type="button" onClick={resetFilters}>{t.resetFilters}</button>
         </div>
       )}
 
       <footer>
-        <span>Dudu's Kitchen</span>
-        <span>{recipes.length} recipes &middot; {avgProtein}g avg protein</span>
+        <span>{t.title}</span>
+        <span>{t.footerRecipeCount(recipes.length, avgProtein)}</span>
       </footer>
 
       {selectedRecipe && (
@@ -353,16 +471,23 @@ function App() {
               type="button"
               className="modal-close"
               onClick={() => setSelectedRecipe(null)}
-              aria-label="Close recipe"
+              aria-label={t.closeRecipe}
               autoFocus
             >
               <X size={18} />
             </button>
             <div className="modal-hero">
               <img src={selectedRecipe.image} alt="" />
-              <span className={`origin-badge ${selectedRecipe.origin}`}>
-                {selectedRecipe.origin === 'mine' ? 'My Own' : 'AI-Sourced'}
-              </span>
+              {lang === 'fr' && selectedRecipe.language === 'en' && (
+                <button
+                  type="button"
+                  className={`lang-dot modal-lang-dot ${translationRequests[selectedRecipe.id] ? 'requested' : ''}`}
+                  title={translationRequests[selectedRecipe.id] ? t.translateRequestedHint : `${t.notTranslatedBadge} — ${t.translateThis}`}
+                  onClick={() => toggleTranslationRequest(selectedRecipe.id)}
+                >
+                  {translationRequests[selectedRecipe.id] ? <Check size={14} /> : 'EN'}
+                </button>
+              )}
             </div>
             <div className="modal-heading">
               <h2 id="modal-title">{selectedRecipe.title}</h2>
@@ -370,21 +495,21 @@ function App() {
             </div>
             {renderTriageButtons(selectedRecipe, false)}
             <div className="macro-row">
-              <div className="macro-cell"><strong>{selectedRecipe.calories}</strong><span>kcal</span></div>
-              <div className="macro-cell"><strong>{selectedRecipe.protein}g</strong><span>protein</span></div>
-              <div className="macro-cell"><strong>{selectedRecipe.carbs}g</strong><span>carbs</span></div>
-              <div className="macro-cell"><strong>{selectedRecipe.time}</strong><span>min</span></div>
+              <div className="macro-cell"><strong>{selectedRecipe.calories}</strong><span>{t.kcal}</span></div>
+              <div className="macro-cell"><strong>{selectedRecipe.protein}g</strong><span>{t.protein}</span></div>
+              <div className="macro-cell"><strong>{selectedRecipe.carbs}g</strong><span>{t.carbs}</span></div>
+              <div className="macro-cell"><strong>{selectedRecipe.time}</strong><span>{t.min}</span></div>
             </div>
             {selectedRecipe.notes && (
-              <p className="coach-note"><strong>Coach's note:</strong> {selectedRecipe.notes}</p>
+              <p className="coach-note"><strong>{t.coachNote}</strong> {selectedRecipe.notes}</p>
             )}
-            <div className="section-label">Ingredients</div>
+            <div className="section-label">{t.ingredients}</div>
             <ul className="ingredients-list">
               {selectedRecipe.ingredients.map((ingredient) => (
                 <li key={ingredient}><span className="dot" />{ingredient}</li>
               ))}
             </ul>
-            <div className="section-label">Method</div>
+            <div className="section-label">{t.method}</div>
             <ol className="method-list">
               {selectedRecipe.steps.map((step, index) => (
                 <li key={step}><span className="step-num">{index + 1}</span>{step}</li>

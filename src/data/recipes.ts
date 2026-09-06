@@ -2,11 +2,13 @@ import categoriesData from './categories.json'
 
 export type MealCategory = 'Breakfast' | 'Lunch' | 'Snack' | 'Dinner'
 export type RecipeOrigin = 'curated' | 'mine'
+export type RecipeLanguage = 'en' | 'fr'
 
 export type Recipe = {
   id: string
   categories: MealCategory[]
   origin: RecipeOrigin
+  language: RecipeLanguage
   title: string
   description: string
   image: string

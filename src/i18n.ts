@@ -1,0 +1,98 @@
+export type UiLanguage = 'en' | 'fr'
+
+const strings = {
+  en: {
+    title: "Dudu's Kitchen",
+    searchPlaceholder: 'Search recipes',
+    clearSearch: 'Clear search',
+    backlog: 'Backlog',
+    language: 'Language',
+    sourceAll: 'All',
+    sourceCurated: 'AI-Sourced',
+    sourceMine: 'My Own',
+    categoryAll: 'All',
+    reviewAll: 'All',
+    reviewLiked: 'Liked',
+    reviewDisliked: 'Disliked',
+    reviewUnreviewed: 'Unreviewed',
+    hidden: 'Hidden',
+    resultCount: (shown: number, total: number) => `Showing ${shown} of ${total} recipes`,
+    emptyTitle: 'No recipes found',
+    emptyBody: 'Try another search, meal category, or review filter.',
+    resetFilters: 'Reset filters',
+    like: 'Like',
+    dislike: 'Dislike',
+    hide: 'Hide',
+    unhide: 'Unhide',
+    likeRecipe: 'Like recipe',
+    dislikeRecipe: 'Dislike recipe',
+    hideRecipe: 'Hide recipe',
+    unhideRecipe: 'Unhide recipe',
+    closeRecipe: 'Close recipe',
+    kcal: 'kcal',
+    protein: 'protein',
+    carbs: 'carbs',
+    min: 'min',
+    coachNote: "Coach's note:",
+    ingredients: 'Ingredients',
+    method: 'Method',
+    footerRecipeCount: (count: number, avgProtein: number) => `${count} recipes \u00b7 ${avgProtein}g avg protein`,
+
+    notTranslatedBadge: 'EN only',
+    translateThis: 'Translate this',
+    translateRequested: 'Requested',
+    translateRequestedHint: 'Requested — tap to cancel',
+  },
+  fr: {
+    title: "Dudu's Kitchen",
+    searchPlaceholder: 'Rechercher une recette',
+    clearSearch: 'Effacer la recherche',
+    backlog: 'Idées',
+    language: 'Langue',
+    sourceAll: 'Toutes',
+    sourceCurated: 'Trouvées par IA',
+    sourceMine: 'Mes recettes',
+    categoryAll: 'Toutes',
+    reviewAll: 'Toutes',
+    reviewLiked: "J'aime",
+    reviewDisliked: "J'aime pas",
+    reviewUnreviewed: 'Non notées',
+    hidden: 'Masquées',
+    resultCount: (shown: number, total: number) => `${shown} sur ${total} recettes affichées`,
+    emptyTitle: 'Aucune recette trouvée',
+    emptyBody: 'Essayez une autre recherche, catégorie de repas ou filtre.',
+    resetFilters: 'Réinitialiser les filtres',
+    like: "J'aime",
+    dislike: "J'aime pas",
+    hide: 'Masquer',
+    unhide: 'Afficher',
+    likeRecipe: "J'aime cette recette",
+    dislikeRecipe: "Je n'aime pas cette recette",
+    hideRecipe: 'Masquer la recette',
+    unhideRecipe: 'Afficher la recette',
+    closeRecipe: 'Fermer la recette',
+    kcal: 'kcal',
+    protein: 'protéines',
+    carbs: 'glucides',
+    min: 'min',
+    coachNote: 'Astuce du coach :',
+    ingredients: 'Ingrédients',
+    method: 'Préparation',
+    footerRecipeCount: (count: number, avgProtein: number) => `${count} recettes \u00b7 ${avgProtein}g protéines en moyenne`,
+
+    notTranslatedBadge: 'Anglais uniquement',
+    translateThis: 'Traduire',
+    translateRequested: 'Demandé',
+    translateRequestedHint: 'Demandé — appuyez pour annuler',
+  },
+} as const
+
+export type UiStrings = {
+  [K in keyof (typeof strings)['en']]: (typeof strings)['en'][K] extends (...args: infer A) => infer R
+    ? (...args: A) => R
+    : string
+}
+
+export function getStrings(lang: UiLanguage): UiStrings {
+  return strings[lang]
+}

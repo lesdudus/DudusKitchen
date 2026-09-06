@@ -7,6 +7,7 @@ const recipesDir = join(__dirname, '..', 'src', 'data', 'recipes-json')
 
 const VALID_CATEGORIES = new Set(['Breakfast', 'Lunch', 'Snack', 'Dinner'])
 const VALID_ORIGINS = new Set(['curated', 'mine'])
+const VALID_LANGUAGES = new Set(['en', 'fr'])
 const PORK_PATTERN = /\bpork\b|\bbacon\b|\bham\b/i
 const REQUIRED_STRING_FIELDS = ['id', 'title', 'description', 'image']
 const REQUIRED_ARRAY_FIELDS = ['categories', 'tags', 'ingredients', 'steps']
@@ -55,6 +56,9 @@ for (const file of files) {
 
   if (!VALID_ORIGINS.has(recipe.origin)) {
     fail(file, `invalid origin "${recipe.origin}"`)
+  }
+  if (!VALID_LANGUAGES.has(recipe.language)) {
+    fail(file, `invalid or missing language "${recipe.language}"`)
   }
   if (Array.isArray(recipe.categories)) {
     for (const category of recipe.categories) {

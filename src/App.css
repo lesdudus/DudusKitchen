@@ -11,11 +11,13 @@
 .sticky-top { position: sticky; top: 0; z-index: 5; background: var(--cp-bg); }
 .title-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 20px 4px; }
 .big-title { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin: 0; color: var(--cp-text); }
+.title-actions { display: flex; gap: 8px; flex: 0 0 auto; }
 .backlog-btn {
   flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   width: 38px;
   height: 38px;
   border: 1px solid var(--cp-border);
@@ -23,6 +25,8 @@
   background: var(--cp-surface);
   color: var(--cp-text-muted);
 }
+.lang-code { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.02em; }
+.backlog-btn:has(.lang-code) { width: auto; padding: 0 10px; }
 
 .search-pill {
   margin: 0;
@@ -138,21 +142,28 @@
 .st-open span { display: block; margin-top: 4px; font-size: 0.76rem; color: var(--cp-text-muted); }
 
 .triage-row { display: flex; gap: 6px; padding: 8px 10px; border-top: 1px solid var(--cp-border); }
-.origin-badge {
+.lang-dot {
   position: absolute;
-  top: 8px;
-  left: 8px;
+  top: 6px;
+  left: 66px;
   z-index: 1;
-  font-size: 0.62rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 0;
+  font-size: 0.58rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  padding: 3px 8px;
-  border-radius: 999px;
   color: #fff;
+  background: rgba(20, 20, 26, 0.6);
+  backdrop-filter: blur(3px);
+  transition: transform 0.15s ease, background 0.15s ease;
 }
-.origin-badge.curated { background: color-mix(in srgb, var(--cp-accent) 85%, transparent); }
-.origin-badge.mine { background: rgba(34, 197, 94, 0.85); }
+.lang-dot:hover { transform: scale(1.08); background: rgba(20, 20, 26, 0.8); }
+.lang-dot.requested { background: rgba(34, 197, 94, 0.75); }
+.modal-lang-dot { top: 14px; left: 14px; width: 30px; height: 30px; font-size: 0.62rem; }
 .triage-row button {
   flex: 1;
   display: flex;
@@ -256,7 +267,6 @@ footer {
 }
 .modal-hero { position: relative; aspect-ratio: 16 / 10; }
 .modal-hero img { width: 100%; height: 100%; object-fit: cover; border-radius: 20px 20px 0 0; }
-.modal-hero .origin-badge { top: 14px; left: 14px; }
 .modal-heading { padding: 14px 20px 0; }
 .modal-heading h2 { font-size: 1.25rem; margin: 0; color: var(--cp-text); }
 .modal-heading p { margin: 6px 0 0; font-size: 0.85rem; color: var(--cp-text-muted); }
