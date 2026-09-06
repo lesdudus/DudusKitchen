@@ -1,0 +1,39 @@
+{
+  "id": "bibimbap-bowl",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Bibimbap",
+  "description": "A Korean rice bowl with sautéed vegetables, a fried egg and gochujang sauce.",
+  "image": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=1200&q=85",
+  "time": 50,
+  "calories": 430,
+  "protein": 20,
+  "carbs": 52,
+  "tags": [
+    "Korean",
+    "Rice bowl"
+  ],
+  "ingredients": [
+    "50 ml gochujang sauce",
+    "150 g shiitake mushrooms, sliced",
+    "1 carrot, matchstick cut",
+    "1 courgette, matchstick cut",
+    "150 g beansprouts",
+    "300 g cooked rice",
+    "100 g spinach",
+    "2 eggs"
+  ],
+  "steps": [
+    "Sauté the beansprouts, mushrooms and courgette separately until just tender, then wilt the spinach.",
+    "Fry the rice briefly, stirring in a little gochujang.",
+    "Fry the eggs, then divide the rice into bowls, arrange the vegetables around the egg and drizzle with more gochujang."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food bibimbap",
+    "url": "https://www.bbcgoodfood.com/recipes/bibimbap"
+  },
+  "notes": "Keep each vegetable separate while cooking — the visual contrast is part of what makes bibimbap work."
+}

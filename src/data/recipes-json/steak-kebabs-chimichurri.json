@@ -1,0 +1,37 @@
+{
+  "id": "steak-kebabs-chimichurri",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Steak Kebabs with Chimichurri",
+  "description": "Skewered steak and red onion grilled to a char, finished with a bright parsley-garlic chimichurri.",
+  "image": "https://images.unsplash.com/photo-1767324672655-8e0f5e814897?auto=format&fit=crop&w=1200&q=85",
+  "time": 25,
+  "calories": 219,
+  "protein": 20,
+  "carbs": 6,
+  "tags": [
+    "Beef",
+    "Grilled"
+  ],
+  "ingredients": [
+    "500 g flank or sirloin steak, cubed",
+    "1 red onion, cut into chunks",
+    "12 cherry tomatoes",
+    "30 g fresh parsley",
+    "2 garlic cloves",
+    "2 tbsp red wine vinegar",
+    "Olive oil"
+  ],
+  "steps": [
+    "Thread the steak, onion and tomatoes onto skewers.",
+    "Grill 8-10 minutes, turning, until cooked to your liking.",
+    "Blend the parsley, garlic, vinegar and oil into chimichurri, and spoon over the skewers."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste steak kebabs with chimichurri",
+    "url": "https://www.skinnytaste.com/steak-kebabs-with-chimichurri/"
+  },
+  "notes": "Cutting the steak into even cubes means everything on the skewer cooks at the same rate."
+}

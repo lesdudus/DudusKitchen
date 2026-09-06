@@ -1,0 +1,37 @@
+{
+  "id": "grilled-chicken-kabobs-yogurt",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Grilled Chicken Kabobs with Cucumber Yogurt Sauce",
+  "description": "Za'atar-marinated chicken skewers grilled until charred, served with a cool cucumber-herb yogurt sauce.",
+  "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=85",
+  "time": 180,
+  "calories": 266,
+  "protein": 41,
+  "carbs": 5,
+  "tags": [
+    "Chicken",
+    "Grilled"
+  ],
+  "ingredients": [
+    "600 g chicken breast, cubed",
+    "2 tbsp za'atar",
+    "2 tbsp olive oil",
+    "1 lemon, juiced",
+    "200 g Greek yogurt",
+    "0.5 cucumber, grated",
+    "Fresh dill and mint"
+  ],
+  "steps": [
+    "Marinate the chicken in za'atar, oil and lemon juice for at least 2 hours.",
+    "Thread onto skewers and grill 4-5 minutes per side until cooked through.",
+    "Stir the cucumber and herbs through the yogurt and serve alongside."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste grilled chicken kabobs",
+    "url": "https://www.skinnytaste.com/grilled-chicken-kabobs-with-cucumber-yogurt-sauce/"
+  },
+  "notes": "Longer marinating time here really pays off in tenderness — worth planning ahead the night before."
+}

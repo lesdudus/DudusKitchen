@@ -1,0 +1,40 @@
+{
+  "id": "turkey-miso-glazed-bowl",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Miso-Glazed Turkey Breast with Greens",
+  "description": "Miso-glazed turkey breast sliced thin over wilted spinach and sesame-ginger cauliflower rice.",
+  "image": "https://images.unsplash.com/photo-1708782344490-9026aaa5eec7?auto=format&fit=crop&w=1200&q=85",
+  "time": 35,
+  "calories": 320,
+  "protein": 42,
+  "carbs": 16,
+  "tags": [
+    "Turkey",
+    "Low carb"
+  ],
+  "ingredients": [
+    "400 g turkey breast",
+    "3 tbsp white miso paste",
+    "2 tbsp honey",
+    "1 tbsp soy sauce",
+    "2 tbsp sesame oil",
+    "2 garlic cloves",
+    "1 tbsp ginger, grated",
+    "4 cups fresh spinach",
+    "1 head cauliflower, riced"
+  ],
+  "steps": [
+    "Mix the miso, honey, soy sauce, oil, garlic and ginger into a glaze.",
+    "Sear the turkey, brush with the glaze, then finish in the oven until cooked through.",
+    "Steam the cauliflower rice and wilt the spinach, then plate with the sliced turkey."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste dinner recipes",
+    "url": "https://www.skinnytaste.com/recipes/dinner-recipes/"
+  },
+  "notes": "Miso's live cultures support digestion, and slicing the turkey thin keeps every bite tender."
+}

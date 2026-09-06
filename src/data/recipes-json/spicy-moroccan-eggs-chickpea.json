@@ -1,0 +1,42 @@
+{
+  "id": "spicy-moroccan-eggs-chickpea",
+  "origin": "curated",
+  "categories": [
+    "Breakfast"
+  ],
+  "title": "Spicy Moroccan Eggs with Chickpeas",
+  "description": "Harissa-spiced chickpea and vegetable stew with poached eggs, finished with coriander.",
+  "image": "https://images.unsplash.com/photo-1515182629504-727d7753751f?auto=format&fit=crop&w=1200&q=85",
+  "time": 25,
+  "calories": 280,
+  "protein": 18,
+  "carbs": 32,
+  "tags": [
+    "Spiced",
+    "Vegetarian"
+  ],
+  "ingredients": [
+    "1 tsp rapeseed oil",
+    "1/2 large onion, sliced",
+    "1 garlic clove, sliced",
+    "1/2 tbsp rose harissa",
+    "1/2 tsp ground coriander",
+    "75 ml vegetable stock",
+    "200 g canned chickpeas",
+    "1 can cherry tomatoes",
+    "1 courgette, diced",
+    "100 g baby spinach",
+    "2 tbsp fresh coriander",
+    "2 large eggs"
+  ],
+  "steps": [
+    "Soften the onion and garlic, stir in harissa, ground coriander, stock and chickpeas, then mash a third of the chickpeas.",
+    "Add the tomatoes and courgette, simmer until tender, then fold in the spinach.",
+    "Make hollows in the mixture, crack in the eggs, cover and cook 2 minutes."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food spicy Moroccan eggs",
+    "url": "https://www.bbcgoodfood.com/recipes/spicy-moroccan-eggs"
+  },
+  "notes": "BBC Good Food's own nutritionist notes protein at breakfast keeps you fuller for longer and steadies blood sugar — this one delivers both from a plant-forward base."
+}

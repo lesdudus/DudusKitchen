@@ -1,24 +1,55 @@
 import { useEffect, useState } from 'react'
-import { ClipboardList, Eye, EyeOff, Globe, Search, ThumbsDown, ThumbsUp, User, X } from 'lucide-react'
+import {
+  ClipboardList,
+  Eye,
+  EyeOff,
+  Globe,
+  RefreshCw,
+  Search,
+  ThumbsDown,
+  ThumbsUp,
+  User,
+  X,
+} from 'lucide-react'
 import './App.css'
+import sharedStateData from './data/shared-state.json'
 import { categories, recipes, type MealCategory, type Recipe, type RecipeOrigin } from './data/recipes'
 
 type CategoryFilter = 'All' | MealCategory
 type OriginFilter = 'All' | RecipeOrigin
 type ReviewStatus = 'liked' | 'disliked' | null
 type ReviewFilter = 'All' | 'Liked' | 'Disliked' | 'Unreviewed'
-type RecipeState = { review: ReviewStatus; hidden: boolean }
+type RecipeState = { review: ReviewStatus; hidden: boolean; updatedAt?: string }
 type RecipeStateMap = Record<string, RecipeState>
 
 const STATE_KEY = 'duduskitchen-recipe-state'
 const DEFAULT_STATE: RecipeState = { review: null, hidden: false }
+const SHARED_STATE = sharedStateData as RecipeStateMap
 
-function loadRecipeState(): RecipeStateMap {
+// "Later wins": each entry carries updatedAt so merging shared (bundled) state
+// with this browser's local edits doesn't let a stale side clobber a newer one.
+function mergeStates(base: RecipeStateMap, overlay: RecipeStateMap): RecipeStateMap {
+  const merged: RecipeStateMap = { ...base }
+  for (const id of Object.keys(overlay)) {
+    const baseEntry = base[id]
+    const overlayEntry = overlay[id]
+    if (!baseEntry || (overlayEntry.updatedAt ?? '') >= (baseEntry.updatedAt ?? '')) {
+      merged[id] = overlayEntry
+    }
+  }
+  return merged
+}
+
+function loadLocalState(): RecipeStateMap {
   try {
     return JSON.parse(localStorage.getItem(STATE_KEY) ?? '{}') as RecipeStateMap
   } catch {
     return {}
   }
+}
+
+function loadRecipeState(): RecipeStateMap {
+  return mergeStates(SHARED_STATE, loadLocalState())
 }
 
 function App() {
@@ -29,6 +60,9 @@ function App() {
   const [query, setQuery] = useState('')
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null)
   const [recipeState, setRecipeState] = useState<RecipeStateMap>(() => loadRecipeState())
+  const [syncOpen, setSyncOpen] = useState(false)
+  const [importText, setImportText] = useState('')
+  const [importMessage, setImportMessage] = useState<string | null>(null)
 
   useEffect(() => {
     localStorage.setItem(STATE_KEY, JSON.stringify(recipeState))
@@ -40,15 +74,40 @@ function App() {
     setRecipeState((prev) => {
       const current = prev[id] ?? DEFAULT_STATE
       const nextReview = current.review === value ? null : value
-      return { ...prev, [id]: { ...current, review: nextReview } }
+      return { ...prev, [id]: { ...current, review: nextReview, updatedAt: new Date().toISOString() } }
     })
   }
 
   const toggleHidden = (id: string) => {
     setRecipeState((prev) => {
       const current = prev[id] ?? DEFAULT_STATE
-      return { ...prev, [id]: { ...current, hidden: !current.hidden } }
+      return { ...prev, [id]: { ...current, hidden: !current.hidden, updatedAt: new Date().toISOString() } }
     })
+  }
+
+  const exportCode = JSON.stringify(recipeState)
+
+  const copyExportCode = async () => {
+    try {
+      await navigator.clipboard.writeText(exportCode)
+      setImportMessage('Copied — send this code to sync your likes/hides.')
+    } catch {
+      setImportMessage('Could not copy automatically — select the text above and copy manually.')
+    }
+  }
+
+  const applyImportCode = () => {
+    try {
+      const incoming = JSON.parse(importText) as RecipeStateMap
+      if (typeof incoming !== 'object' || incoming === null || Array.isArray(incoming)) {
+        throw new Error('not an object')
+      }
+      setRecipeState((prev) => mergeStates(prev, incoming))
+      setImportText('')
+      setImportMessage('Synced! The other person\'s likes/hides have been merged in.')
+    } catch {
+      setImportMessage('That code looks invalid — double check you pasted the whole thing.')
+    }
   }
 
   const hiddenCount = recipes.filter((recipe) => getState(recipe.id).hidden).length
@@ -141,9 +200,23 @@ function App() {
       <div className="sticky-top">
         <div className="title-row">
           <h1 className="big-title">Dudu's Kitchen</h1>
-          <a className="backlog-btn" href="./backlog.html" target="_blank" rel="noreferrer" aria-label="Backlog" title="Backlog">
-            <ClipboardList size={18} />
-          </a>
+          <div className="title-actions">
+            <button
+              type="button"
+              className="backlog-btn"
+              aria-label="Sync likes/hides"
+              title="Sync likes/hides"
+              onClick={() => {
+                setImportMessage(null)
+                setSyncOpen(true)
+              }}
+            >
+              <RefreshCw size={18} />
+            </button>
+            <a className="backlog-btn" href="./backlog.html" target="_blank" rel="noreferrer" aria-label="Backlog" title="Backlog">
+              <ClipboardList size={18} />
+            </a>
+          </div>
         </div>
         <div className="search-row">
           <label className="search-pill">
@@ -323,6 +396,47 @@ function App() {
             <a className="source-link" href={selectedRecipe.source.url} target="_blank" rel="noreferrer">
               {selectedRecipe.source.label}
             </a>
+          </section>
+        </div>
+      )}
+
+      {syncOpen && (
+        <div
+          className="modal-overlay open"
+          role="presentation"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) setSyncOpen(false)
+          }}
+        >
+          <section className="modal-sheet sync-sheet" role="dialog" aria-modal="true" aria-labelledby="sync-title">
+            <button
+              type="button"
+              className="modal-close"
+              onClick={() => setSyncOpen(false)}
+              aria-label="Close sync"
+              autoFocus
+            >
+              <X size={18} />
+            </button>
+            <div className="modal-heading">
+              <h2 id="sync-title">Sync likes &amp; hides</h2>
+              <p>Copy your code and send it to sync with the other person's device — no account needed.</p>
+            </div>
+            <div className="section-label">1. Export your code</div>
+            <div className="sync-export">
+              <textarea readOnly value={exportCode} onFocus={(event) => event.target.select()} />
+              <button type="button" onClick={copyExportCode}>Copy code</button>
+            </div>
+            <div className="section-label">2. Paste their code to sync</div>
+            <div className="sync-import">
+              <textarea
+                placeholder="Paste the code they sent you"
+                value={importText}
+                onChange={(event) => setImportText(event.target.value)}
+              />
+              <button type="button" onClick={applyImportCode} disabled={!importText.trim()}>Apply code</button>
+            </div>
+            {importMessage && <p className="sync-message">{importMessage}</p>}
           </section>
         </div>
       )}

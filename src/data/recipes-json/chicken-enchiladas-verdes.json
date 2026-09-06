@@ -1,0 +1,36 @@
+{
+  "id": "chicken-enchiladas-verdes",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Baked Chicken Enchiladas Verdes",
+  "description": "Shredded chicken rolled in corn tortillas with a tangy green salsa and melted cheese.",
+  "image": "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=1200&q=85",
+  "time": 45,
+  "calories": 410,
+  "protein": 32,
+  "carbs": 34,
+  "tags": [
+    "Mexican",
+    "Baked"
+  ],
+  "ingredients": [
+    "400 g cooked shredded chicken breast",
+    "8 corn tortillas",
+    "400 g green salsa (salsa verde)",
+    "150 g shredded cheese",
+    "80 g sour cream",
+    "Cilantro"
+  ],
+  "steps": [
+    "Warm the tortillas, then fill with chicken and roll up, placing seam-side down in a baking dish.",
+    "Pour the salsa verde over the top and scatter with cheese.",
+    "Bake at 190C for 20 minutes until bubbling, then top with sour cream and cilantro."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food Mexican recipe collection",
+    "url": "https://www.bbcgoodfood.com/recipes/category/cuisine-collections"
+  },
+  "notes": "Warming the tortillas first stops them cracking when you roll them."
+}

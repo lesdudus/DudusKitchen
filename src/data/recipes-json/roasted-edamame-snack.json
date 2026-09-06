@@ -1,0 +1,34 @@
+{
+  "id": "roasted-edamame-snack",
+  "origin": "curated",
+  "categories": [
+    "Snack"
+  ],
+  "title": "Roasted Edamame with Sea Salt",
+  "description": "Crispy roasted soybeans seasoned with sea salt and a hint of sesame for a plant-based protein snack.",
+  "image": "https://images.unsplash.com/photo-1535291692377-b7eb2fb22a8b?auto=format&fit=crop&w=1200&q=85",
+  "time": 30,
+  "calories": 95,
+  "protein": 11,
+  "carbs": 7,
+  "tags": [
+    "Baked",
+    "Savory"
+  ],
+  "ingredients": [
+    "200 g frozen shelled edamame, thawed",
+    "1 tbsp sesame oil",
+    "1 tsp sea salt",
+    "1/2 tsp garlic powder"
+  ],
+  "steps": [
+    "Toss the thawed edamame with sesame oil, salt and garlic powder.",
+    "Spread in a single layer on a baking sheet.",
+    "Roast at 200C for 20-25 minutes until golden."
+  ],
+  "source": {
+    "label": "Inspired by Bodybuilding.com high-protein snacks",
+    "url": "https://www.bodybuilding.com/recipes/high-protein-bars"
+  },
+  "notes": "Roasting removes moisture so these keep well for days — good as a shelf-stable, portable protein snack."
+}

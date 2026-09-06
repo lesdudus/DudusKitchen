@@ -1,0 +1,38 @@
+{
+  "id": "spinach-pepper-frittata",
+  "origin": "curated",
+  "categories": [
+    "Breakfast"
+  ],
+  "title": "Spinach & Pepper Frittata with Cottage Cheese",
+  "description": "A baked frittata blending eggs and cottage cheese with roasted peppers, spinach and parmesan.",
+  "image": "https://images.unsplash.com/photo-1718307495601-5231e6290d8a?auto=format&fit=crop&w=1200&q=85",
+  "time": 50,
+  "calories": 220,
+  "protein": 28,
+  "carbs": 12,
+  "tags": [
+    "Meal prep",
+    "Vegetarian"
+  ],
+  "ingredients": [
+    "5 large eggs",
+    "300 g low-fat cottage cheese",
+    "225 g frozen spinach, thawed",
+    "2 roasted red peppers",
+    "100 g cherry tomatoes",
+    "15 g parmesan",
+    "1 garlic clove",
+    "Nutmeg and black pepper"
+  ],
+  "steps": [
+    "Beat the eggs with cottage cheese, garlic, half the parmesan, spinach, peppers, nutmeg and pepper.",
+    "Pour into a lined tin, top with tomatoes and remaining parmesan.",
+    "Bake at 190C for 40 minutes until set and puffed, then cool and cut into wedges."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food spinach & pepper frittata",
+    "url": "https://www.bbcgoodfood.com/recipes/spinach-pepper-frittata"
+  },
+  "notes": "Cottage cheese roughly doubles the protein of a normal frittata for the same calories — slice and keep for 3-4 days."
+}

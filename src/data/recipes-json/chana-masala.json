@@ -1,0 +1,40 @@
+{
+  "id": "chana-masala",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Chana Masala",
+  "description": "A fragrant, spiced chickpea curry simmered with tomatoes, garlic and ginger.",
+  "image": "https://images.unsplash.com/photo-1708782344490-9026aaa5eec7?auto=format&fit=crop&w=1200&q=85",
+  "time": 50,
+  "calories": 310,
+  "protein": 14,
+  "carbs": 42,
+  "tags": [
+    "Indian",
+    "Vegetarian"
+  ],
+  "ingredients": [
+    "800 g canned chickpeas, drained",
+    "3 onions",
+    "3 garlic cloves",
+    "5 cm ginger",
+    "1.5 tsp ground cumin",
+    "1 tsp turmeric",
+    "1 tsp garam masala",
+    "3 tomatoes, chopped",
+    "1 lemon, juiced"
+  ],
+  "steps": [
+    "Blitz the onion, garlic and ginger, then soften in a pan for 8-10 minutes.",
+    "Stir in the spices, then add the tomatoes and cook until softened.",
+    "Add the chickpeas with their liquid, simmer 10 minutes, then finish with lemon juice and coriander."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food chana masala",
+    "url": "https://www.bbcgoodfood.com/recipes/chana-masala"
+  },
+  "notes": "A genuinely satisfying vegetarian curry — the long-simmered onion base is what builds the depth of flavor."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "baked-white-fish-vegetables",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Baked White Fish with Roasted Root Vegetables",
+  "description": "Herb-crusted baked white fish surrounded by caramelized carrots, beets and Brussels sprouts.",
+  "image": "https://images.unsplash.com/photo-1535291692377-b7eb2fb22a8b?auto=format&fit=crop&w=1200&q=85",
+  "time": 40,
+  "calories": 310,
+  "protein": 36,
+  "carbs": 24,
+  "tags": [
+    "Fish",
+    "Baked"
+  ],
+  "ingredients": [
+    "2x150 g white fish fillets (halibut or sole)",
+    "2 cups mixed root vegetables, diced",
+    "200 g Brussels sprouts, halved",
+    "2 tbsp olive oil",
+    "3 garlic cloves",
+    "1 tbsp fresh dill or thyme",
+    "1 lemon, zested and juiced",
+    "2 tbsp panko",
+    "2 tbsp parmesan"
+  ],
+  "steps": [
+    "Roast the root vegetables and Brussels sprouts until starting to caramelize.",
+    "Top the fish with a herb-breadcrumb mix, then add to the pan and roast until it flakes easily.",
+    "Finish with lemon juice and fresh herbs."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food fish recipe collection",
+    "url": "https://www.bbcgoodfood.com/recipes/collection/fish-recipes"
+  },
+  "notes": "Rotate white fish varieties week to week — it is generally the lowest-mercury protein choice available."
+}

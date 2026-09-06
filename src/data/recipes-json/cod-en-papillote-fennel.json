@@ -1,0 +1,36 @@
+{
+  "id": "cod-en-papillote-fennel",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Cod en Papillote with Fennel",
+  "description": "Cod fillets baked in parchment with fennel, cherry tomatoes and white wine for a fragrant, moist dinner.",
+  "image": "https://images.unsplash.com/photo-1535291692377-b7eb2fb22a8b?auto=format&fit=crop&w=1200&q=85",
+  "time": 25,
+  "calories": 270,
+  "protein": 32,
+  "carbs": 10,
+  "tags": [
+    "Fish",
+    "Baked"
+  ],
+  "ingredients": [
+    "2 cod fillets",
+    "1 fennel bulb, thinly sliced",
+    "150 g cherry tomatoes",
+    "2 tbsp white wine",
+    "1 lemon, sliced",
+    "Fresh dill"
+  ],
+  "steps": [
+    "Layer the fennel, tomatoes and fish onto parchment paper.",
+    "Add the wine, lemon slices and dill, then fold and seal into a parcel.",
+    "Bake at 200C for 15-18 minutes until the fish is opaque and flakes easily."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food fish recipe collection",
+    "url": "https://www.bbcgoodfood.com/recipes/collection/fish-recipes"
+  },
+  "notes": "Cooking in parchment traps the steam so the fish stays moist with almost no added fat."
+}

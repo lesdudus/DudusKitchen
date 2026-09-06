@@ -1,0 +1,38 @@
+{
+  "id": "classic-beef-stew",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Classic Beef Stew",
+  "description": "Slow-simmered chuck roast with potatoes, carrots and mushrooms in a rich broth.",
+  "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=1200&q=85",
+  "time": 185,
+  "calories": 439,
+  "protein": 40,
+  "carbs": 21,
+  "tags": [
+    "Beef",
+    "Comfort food"
+  ],
+  "ingredients": [
+    "800 g chuck roast, cubed",
+    "3 potatoes, chunked",
+    "3 carrots, chunked",
+    "200 g mushrooms, halved",
+    "1 liter beef broth",
+    "1 onion, diced",
+    "2 tbsp tomato paste",
+    "Bay leaf and thyme"
+  ],
+  "steps": [
+    "Brown the beef in batches, then set aside.",
+    "Sauté the onion, add the broth, tomato paste and herbs, and return the beef.",
+    "Simmer covered for 2-2.5 hours, adding the potatoes, carrots and mushrooms in the last 45 minutes."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste beef stew",
+    "url": "https://www.skinnytaste.com/beef-stew-recipe/"
+  },
+  "notes": "This freezes and reheats better the next day — a good one to batch-cook on a weekend."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "white-bean-kale-soup",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "White Bean & Kale Soup",
+  "description": "A simple, hearty soup of white beans, kale and garlic in a light tomato-vegetable broth.",
+  "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=1200&q=85",
+  "time": 30,
+  "calories": 260,
+  "protein": 14,
+  "carbs": 36,
+  "tags": [
+    "Vegetarian",
+    "Soup"
+  ],
+  "ingredients": [
+    "1 onion, diced",
+    "3 garlic cloves",
+    "2 cans white beans, drained",
+    "1 liter vegetable broth",
+    "150 g kale, chopped",
+    "1 can diced tomatoes",
+    "Parmesan rind (optional)"
+  ],
+  "steps": [
+    "Sauté the onion and garlic, then add the beans, tomatoes and broth.",
+    "Simmer 15 minutes, mashing some of the beans to thicken the soup.",
+    "Stir in the kale and cook until wilted, about 5 minutes more."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food healthy eating collection",
+    "url": "https://www.bbcgoodfood.com/recipes/category/healthy-eating-collections"
+  },
+  "notes": "Mashing a portion of the beans is what gives this body without needing any cream."
+}

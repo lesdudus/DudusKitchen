@@ -1,0 +1,33 @@
+{
+  "id": "creamy-yogurt-porridge",
+  "origin": "curated",
+  "categories": [
+    "Breakfast"
+  ],
+  "title": "Creamy Yogurt Porridge",
+  "description": "A light, tangy oat porridge made creamy by stirring through probiotic yogurt.",
+  "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=1200&q=85",
+  "time": 4,
+  "calories": 180,
+  "protein": 12,
+  "carbs": 28,
+  "tags": [
+    "No cook",
+    "Probiotic"
+  ],
+  "ingredients": [
+    "25 g rolled oats",
+    "150 g 0% fat probiotic yogurt",
+    "200 ml water"
+  ],
+  "steps": [
+    "Cook the oats in the water over low heat, or microwave 3 minutes, until thick.",
+    "Stir through the yogurt, or swirl half in and top with the rest.",
+    "Serve warm with your preferred toppings."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food creamy yogurt porridge",
+    "url": "https://www.bbcgoodfood.com/recipes/creamy-yogurt-porridge"
+  },
+  "notes": "The fastest recipe in the book — good for mornings when 4 minutes is all you have."
+}

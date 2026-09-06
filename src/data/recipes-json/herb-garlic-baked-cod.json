@@ -1,0 +1,40 @@
+{
+  "id": "herb-garlic-baked-cod",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Herb & Garlic Baked Cod with Romesco Sauce",
+  "description": "Thyme and garlic-rubbed cod with an almond-tomato romesco sauce and wilted spinach.",
+  "image": "https://images.unsplash.com/photo-1535291692377-b7eb2fb22a8b?auto=format&fit=crop&w=1200&q=85",
+  "time": 25,
+  "calories": 260,
+  "protein": 34,
+  "carbs": 12,
+  "tags": [
+    "Fish",
+    "Low calorie"
+  ],
+  "ingredients": [
+    "2x140 g skinless cod fillets",
+    "1 tbsp rapeseed oil",
+    "1 tsp fresh thyme",
+    "1 garlic clove, grated",
+    "0.5 lemon, zested and juiced",
+    "1 red pepper, sliced",
+    "2 leeks, sliced",
+    "2 tbsp flaked almonds",
+    "1 tbsp tomato puree",
+    "100 g baby spinach"
+  ],
+  "steps": [
+    "Bake the fish with oil, thyme, garlic and lemon zest at 220C for 10-12 minutes.",
+    "Fry the pepper and leeks, add the almonds and tomato puree, then blitz into a thick sauce.",
+    "Serve the fish on wilted spinach with the romesco sauce."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food herb & garlic baked cod",
+    "url": "https://www.bbcgoodfood.com/recipes/herb-garlic-baked-cod-romesco-sauce-spinach"
+  },
+  "notes": "Baked cod keeps the fish flaky without added oil — a genuinely light dinner under 260 kcal."
+}

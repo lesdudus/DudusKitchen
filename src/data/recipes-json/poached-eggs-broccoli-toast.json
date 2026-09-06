@@ -1,0 +1,37 @@
+{
+  "id": "poached-eggs-broccoli-toast",
+  "origin": "curated",
+  "categories": [
+    "Breakfast"
+  ],
+  "title": "Poached Eggs with Broccoli & Seeded Toast",
+  "description": "Poached eggs with steamed broccoli and grilled tomatoes on seeded wholemeal flatbread.",
+  "image": "https://images.unsplash.com/photo-1515182629504-727d7753751f?auto=format&fit=crop&w=1200&q=85",
+  "time": 11,
+  "calories": 240,
+  "protein": 18,
+  "carbs": 22,
+  "tags": [
+    "Low calorie",
+    "Quick"
+  ],
+  "ingredients": [
+    "100 g thin-stemmed broccoli",
+    "200 g cherry tomatoes",
+    "2 medium eggs",
+    "1 wholemeal flatbread",
+    "1 tsp mixed seeds",
+    "1 tsp olive oil",
+    "Chilli flakes"
+  ],
+  "steps": [
+    "Blanch the broccoli 2 minutes, add the tomatoes for 30 seconds, then set aside.",
+    "Poach the eggs in gently simmering water for 2.5-3 minutes.",
+    "Pile the vegetables onto the flatbread, top with eggs, seeds, oil and chilli flakes."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food poached eggs with broccoli",
+    "url": "https://www.bbcgoodfood.com/recipes/poached-eggs-broccoli-tomatoes-wholemeal-flatbread"
+  },
+  "notes": "A genuinely light option under 250 kcal that still hits a solid protein number — good on a lower-calorie day."
+}

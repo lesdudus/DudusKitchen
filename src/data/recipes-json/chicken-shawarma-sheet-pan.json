@@ -1,0 +1,43 @@
+{
+  "id": "chicken-shawarma-sheet-pan",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Chicken Shawarma Sheet Pan with Chickpeas",
+  "description": "Warmly spiced chicken thighs and chickpeas roasted golden with Middle Eastern aromatics — tender, fiber-rich and meal-prep ready.",
+  "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=85",
+  "time": 45,
+  "calories": 371,
+  "protein": 40,
+  "carbs": 24,
+  "tags": [
+    "One-pan",
+    "Middle Eastern"
+  ],
+  "ingredients": [
+    "1.5 lbs boneless chicken thighs",
+    "1 can chickpeas, drained",
+    "1 red onion",
+    "1 red bell pepper",
+    "2 carrots",
+    "1 tbsp olive oil",
+    "1.5 tsp smoked paprika",
+    "1.5 tsp cumin",
+    "0.75 tsp each garlic and onion powder",
+    "0.75 tsp dried oregano",
+    "0.5 tsp ground cinnamon",
+    "1.5 tsp kosher salt"
+  ],
+  "steps": [
+    "Toss the chicken, vegetables and chickpeas with oil and spices.",
+    "Spread in an even layer on a sheet pan.",
+    "Roast at 425F for 30-35 minutes until the chicken is cooked through, broiling 2 minutes for char if you like."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste sheet pan chicken shawarma",
+    "url": "https://www.skinnytaste.com/chicken-shawarma-sheet-pan-dinner/"
+  },
+  "notes": "Chickpeas boost fiber to around 7.5g per serving — prep the vegetables the night before for a hands-off weeknight dinner."
+}

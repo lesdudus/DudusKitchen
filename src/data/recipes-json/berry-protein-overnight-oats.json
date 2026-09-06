@@ -1,0 +1,37 @@
+{
+  "id": "berry-protein-overnight-oats",
+  "origin": "curated",
+  "categories": [
+    "Breakfast"
+  ],
+  "title": "Berry Protein Overnight Oats",
+  "description": "Creamy oats with skyr, berries, chia and vanilla protein for a fast post-workout breakfast.",
+  "image": "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=1200&q=85",
+  "time": 10,
+  "calories": 390,
+  "protein": 33,
+  "carbs": 48,
+  "tags": [
+    "Meal prep",
+    "No cook"
+  ],
+  "ingredients": [
+    "50 g rolled oats",
+    "170 g plain skyr",
+    "100 ml semi-skimmed milk",
+    "20 g vanilla protein powder",
+    "80 g mixed berries",
+    "8 g chia seeds",
+    "Cinnamon to taste"
+  ],
+  "steps": [
+    "Stir the oats, skyr, milk, protein powder, chia and cinnamon until smooth.",
+    "Cover and chill overnight, then loosen with a splash of milk if needed.",
+    "Finish with the berries just before eating."
+  ],
+  "source": {
+    "label": "Adapted from Good Food overnight oats",
+    "url": "https://www.bbcgoodfood.com/recipes/overnight-oats"
+  },
+  "notes": "Prep it the night before so there's zero morning decision-making — ideal fuel within an hour of a fasted session."
+}

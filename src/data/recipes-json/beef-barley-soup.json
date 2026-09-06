@@ -1,0 +1,37 @@
+{
+  "id": "beef-barley-soup",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Beef & Barley Soup",
+  "description": "A hearty soup of tender beef, pearl barley and root vegetables in a rich broth.",
+  "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=1200&q=85",
+  "time": 90,
+  "calories": 350,
+  "protein": 26,
+  "carbs": 34,
+  "tags": [
+    "Beef",
+    "Soup"
+  ],
+  "ingredients": [
+    "400 g stewing beef, cubed",
+    "100 g pearl barley",
+    "2 carrots, diced",
+    "2 celery stalks, diced",
+    "1 onion, diced",
+    "1.5 liters beef broth",
+    "Bay leaf and thyme"
+  ],
+  "steps": [
+    "Brown the beef, then set aside.",
+    "Sauté the onion, carrot and celery, then return the beef with the broth, barley and herbs.",
+    "Simmer 1-1.5 hours until the beef and barley are tender."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food soup recipe collection",
+    "url": "https://www.bbcgoodfood.com/recipes/category/soup-collections"
+  },
+  "notes": "Barley thickens the soup naturally as it cooks — no need for flour or cream."
+}

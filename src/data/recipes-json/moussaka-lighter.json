@@ -1,0 +1,41 @@
+{
+  "id": "moussaka-lighter",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Lamb Moussaka",
+  "description": "Layered Greek casserole of aubergine, potato and spiced lamb mince under a light béchamel.",
+  "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=1200&q=85",
+  "time": 165,
+  "calories": 460,
+  "protein": 30,
+  "carbs": 32,
+  "tags": [
+    "Mediterranean",
+    "Casserole"
+  ],
+  "ingredients": [
+    "3 aubergines, sliced",
+    "600 g lamb mince",
+    "1 onion, chopped",
+    "2 garlic cloves",
+    "2 tsp cinnamon",
+    "400 g canned tomatoes",
+    "400 g potatoes, sliced",
+    "30 g butter",
+    "30 g flour",
+    "400 ml milk",
+    "30 g parmesan"
+  ],
+  "steps": [
+    "Fry the aubergine slices until golden, then brown the lamb mince separately.",
+    "Cook the onion and garlic, return the lamb, add cinnamon and tomatoes, and simmer until thick.",
+    "Layer the potato, aubergine and meat sauce in a dish, top with a simple béchamel, and bake at 200C for 50 minutes."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food moussaka",
+    "url": "https://www.bbcgoodfood.com/recipes/moussaka"
+  },
+  "notes": "A weekend project dish — make it a day ahead, as moussaka reheats and slices even better the next day."
+}

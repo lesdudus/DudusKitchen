@@ -1,0 +1,38 @@
+{
+  "id": "spicy-cajun-chicken-rice",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Spicy Cajun Chicken & Rice Bowl",
+  "description": "Smoky chicken breast, basmati rice and charred peppers with a bright lime yogurt drizzle.",
+  "image": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=85",
+  "time": 30,
+  "calories": 495,
+  "protein": 48,
+  "carbs": 55,
+  "tags": [
+    "Spicy",
+    "Meal prep"
+  ],
+  "ingredients": [
+    "160 g chicken breast, sliced",
+    "60 g dry basmati rice",
+    "1 red pepper, sliced",
+    "1 tsp Cajun seasoning",
+    "1 tsp smoked paprika",
+    "80 g plain skyr",
+    "1 lime and fresh coriander"
+  ],
+  "steps": [
+    "Cook the rice until tender and drain well.",
+    "Coat the chicken and pepper in the spices, then sear until cooked and lightly charred.",
+    "Serve over rice with lime-spiked skyr and coriander."
+  ],
+  "source": {
+    "label": "Inspired by Good Food spicy Cajun chicken",
+    "url": "https://www.bbcgoodfood.com/recipes/spicy-cajun-chicken-quinoa"
+  },
+  "notes": "Rice timed around training refills glycogen fast — save the heavier spice for days without a hard session right after."
+}

@@ -1,0 +1,36 @@
+{
+  "id": "chickpea-buddha-bowl",
+  "origin": "curated",
+  "categories": [
+    "Lunch"
+  ],
+  "title": "Smashed Chickpea Buddha Bowl",
+  "description": "Smashed spiced chickpeas over quinoa with roasted sweet potato, avocado and a tahini dressing.",
+  "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=1200&q=85",
+  "time": 20,
+  "calories": 385,
+  "protein": 15,
+  "carbs": 48,
+  "tags": [
+    "Vegetarian",
+    "Bowl"
+  ],
+  "ingredients": [
+    "1 can chickpeas, drained",
+    "200 g cooked quinoa",
+    "1 small sweet potato, roasted and cubed",
+    "0.5 avocado, sliced",
+    "2 tbsp tahini",
+    "1 lemon, juiced"
+  ],
+  "steps": [
+    "Roughly smash the chickpeas with a fork and season well.",
+    "Whisk the tahini with lemon juice and a little water into a dressing.",
+    "Build the bowl with quinoa, sweet potato, chickpeas and avocado, then drizzle with dressing."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste chickpea smash bowls",
+    "url": "https://www.skinnytaste.com/chickpea-smash-bowls/"
+  },
+  "notes": "Smashing rather than blending the chickpeas keeps some texture — more satisfying to eat than a puree."
+}

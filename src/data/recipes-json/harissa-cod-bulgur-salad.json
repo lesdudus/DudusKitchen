@@ -1,0 +1,41 @@
+{
+  "id": "harissa-cod-bulgur-salad",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Harissa Fish with Bulgur Salad",
+  "description": "Spiced pan-fried cod with a herby bulgur wheat salad of cucumber, tomatoes and olives.",
+  "image": "https://images.unsplash.com/photo-1535291692377-b7eb2fb22a8b?auto=format&fit=crop&w=1200&q=85",
+  "time": 25,
+  "calories": 320,
+  "protein": 32,
+  "carbs": 28,
+  "tags": [
+    "Fish",
+    "Mediterranean"
+  ],
+  "ingredients": [
+    "2x120 g skinless white fish fillets (cod or haddock)",
+    "100 g bulgur wheat",
+    "0.5 cucumber, deseeded and chopped",
+    "100 g cherry tomatoes, quartered",
+    "25 g pitted green olives",
+    "2 tbsp rose harissa",
+    "2 tsp honey",
+    "1 garlic clove",
+    "0.5 lemon, juiced",
+    "0.5 red onion, sliced"
+  ],
+  "steps": [
+    "Cook the bulgur, then toss with cucumber, tomatoes, olives and parsley.",
+    "Mix the harissa, honey, garlic, lemon juice and a little oil into a sauce.",
+    "Fry the red onion, season and cook the fish, then pour in the harissa sauce to glaze."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food harissa fish with bulgur salad",
+    "url": "https://www.bbcgoodfood.com/recipes/harissa-fish-with-bulgur-salad"
+  },
+  "notes": "A genuinely quick midweek dinner — the harissa sauce comes together in the same pan as the fish."
+}

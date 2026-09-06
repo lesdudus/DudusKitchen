@@ -1,0 +1,41 @@
+{
+  "id": "black-bean-lentil-soup",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Spiced Black Bean & Lentil Soup",
+  "description": "A hearty two-legume soup with cumin, smoked paprika and tomato — freezer-friendly and budget-easy.",
+  "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=1200&q=85",
+  "time": 30,
+  "calories": 310,
+  "protein": 12,
+  "carbs": 44,
+  "tags": [
+    "Vegetarian",
+    "Soup"
+  ],
+  "ingredients": [
+    "1 onion, diced",
+    "3 garlic cloves",
+    "2 carrots, diced",
+    "1 red bell pepper, diced",
+    "1.5 tsp cumin",
+    "1 tsp smoked paprika",
+    "1 can black beans, drained",
+    "1 cup cooked lentils",
+    "1 can diced tomatoes",
+    "1 liter vegetable broth"
+  ],
+  "steps": [
+    "Sauté the onion, garlic, carrots and pepper until softened.",
+    "Stir in the spices, then add the beans, lentils, tomatoes and broth.",
+    "Simmer 15 minutes, then finish with cilantro and lime juice."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste high-protein recipe collection",
+    "url": "https://www.skinnytaste.com/high-protein/"
+  },
+  "notes": "Two legumes together roughly triple the satiety of a single-bean soup at the same calorie count."
+}

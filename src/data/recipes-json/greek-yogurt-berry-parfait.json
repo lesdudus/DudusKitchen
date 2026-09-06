@@ -1,0 +1,35 @@
+{
+  "id": "greek-yogurt-berry-parfait",
+  "origin": "curated",
+  "categories": [
+    "Breakfast"
+  ],
+  "title": "Greek Yogurt Parfait with Berries & Nuts",
+  "description": "Layered Greek yogurt, berries, mixed nuts and seeds with a drizzle of maple syrup.",
+  "image": "https://images.unsplash.com/photo-1627308594190-a057cd4bfac8?auto=format&fit=crop&w=1200&q=85",
+  "time": 3,
+  "calories": 250,
+  "protein": 30,
+  "carbs": 18,
+  "tags": [
+    "No cook",
+    "Portable"
+  ],
+  "ingredients": [
+    "200 g plain Greek yogurt",
+    "100 g mixed berries",
+    "25 g mixed nuts and seeds",
+    "1 tsp maple syrup",
+    "Pinch of vanilla and sea salt"
+  ],
+  "steps": [
+    "Swirl vanilla and a pinch of salt through the yogurt.",
+    "Layer with berries and nuts and seeds in a glass or container.",
+    "Drizzle with maple syrup just before eating."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food Greek yogurt recipe collection",
+    "url": "https://www.bbcgoodfood.com/recipes/collection/greek-yogurt-recipes"
+  },
+  "notes": "Greek yogurt can carry up to 20g protein per 200g with minimal carbs — build this in a jar the night before for a grab-and-go breakfast."
+}

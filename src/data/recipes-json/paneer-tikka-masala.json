@@ -1,0 +1,40 @@
+{
+  "id": "paneer-tikka-masala",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Paneer Tikka Masala",
+  "description": "Grilled paneer cubes in a creamy, spiced tomato sauce — a vegetarian take on tikka masala.",
+  "image": "https://images.unsplash.com/photo-1708782344490-9026aaa5eec7?auto=format&fit=crop&w=1200&q=85",
+  "time": 40,
+  "calories": 380,
+  "protein": 20,
+  "carbs": 28,
+  "tags": [
+    "Indian",
+    "Vegetarian"
+  ],
+  "ingredients": [
+    "300 g paneer, cubed",
+    "1 onion, diced",
+    "2 garlic cloves",
+    "1 tbsp ginger, grated",
+    "1 tsp garam masala",
+    "1 tsp turmeric",
+    "400 g canned tomatoes",
+    "80 ml plain yogurt",
+    "Coriander"
+  ],
+  "steps": [
+    "Sear the paneer cubes until golden, then set aside.",
+    "Sauté the onion, garlic and ginger, add the spices and tomatoes, and simmer until thickened.",
+    "Stir in the yogurt and paneer, warm through and finish with coriander."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food Indian recipe collection",
+    "url": "https://www.bbcgoodfood.com/recipes/category/cuisine-collections"
+  },
+  "notes": "Paneer holds its shape well when seared first — a solid vegetarian protein source at roughly 18g per 100g."
+}

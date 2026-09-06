@@ -1,0 +1,39 @@
+{
+  "id": "chicken-lettuce-wraps-sesame",
+  "origin": "curated",
+  "categories": [
+    "Lunch"
+  ],
+  "title": "Sesame Chicken Lettuce Wraps",
+  "description": "Ground chicken sautéed with soy, ginger and scallions, served in crisp butter lettuce leaves.",
+  "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=1200&q=85",
+  "time": 20,
+  "calories": 280,
+  "protein": 32,
+  "carbs": 8,
+  "tags": [
+    "Chicken",
+    "Low carb"
+  ],
+  "ingredients": [
+    "400 g ground chicken breast",
+    "3 tbsp soy sauce",
+    "2 tbsp rice vinegar",
+    "1 tbsp honey",
+    "3 garlic cloves",
+    "1 tbsp ginger, grated",
+    "8-10 butter lettuce leaves",
+    "1 cup shredded carrots",
+    "Scallions, cilantro and sesame seeds"
+  ],
+  "steps": [
+    "Whisk the soy sauce, vinegar, honey, garlic and ginger.",
+    "Cook the ground chicken until browned, then pour over the sauce and toss to coat.",
+    "Fill the lettuce leaves with the chicken mixture, carrots, scallions and sesame seeds."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste lunch recipes",
+    "url": "https://www.skinnytaste.com/recipes/lunch/"
+  },
+  "notes": "Butter lettuce cups swap out the calorie-dense wrap while keeping the meal genuinely interactive to eat."
+}

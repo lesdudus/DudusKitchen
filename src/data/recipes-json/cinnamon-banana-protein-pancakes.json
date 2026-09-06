@@ -1,0 +1,37 @@
+{
+  "id": "cinnamon-banana-protein-pancakes",
+  "origin": "curated",
+  "categories": [
+    "Breakfast"
+  ],
+  "title": "Cinnamon Banana Protein Pancakes",
+  "description": "Blended oat pancakes with banana, eggs and whey, served with cool yogurt and berries.",
+  "image": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1200&q=85",
+  "time": 20,
+  "calories": 410,
+  "protein": 35,
+  "carbs": 42,
+  "tags": [
+    "Post-workout",
+    "Oats"
+  ],
+  "ingredients": [
+    "50 g rolled oats",
+    "1 small banana",
+    "2 eggs",
+    "20 g vanilla protein powder",
+    "1 tsp baking powder",
+    "1 tsp cinnamon",
+    "100 g plain skyr and berries, to serve"
+  ],
+  "steps": [
+    "Blend the oats, banana, eggs, protein powder, baking powder and cinnamon.",
+    "Cook small rounds in a non-stick pan for 1-2 minutes per side.",
+    "Stack with skyr and fresh berries."
+  ],
+  "source": {
+    "label": "Adapted from Good Food protein pancakes",
+    "url": "https://www.bbcgoodfood.com/recipes/easy-protein-pancakes"
+  },
+  "notes": "Banana's fast carbs plus whey's fast protein make this a good pre-workout choice if you're training within two hours."
+}

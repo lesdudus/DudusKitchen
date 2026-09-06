@@ -1,0 +1,37 @@
+{
+  "id": "stuffed-bell-peppers-beef-rice",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Stuffed Bell Peppers with Beef & Rice",
+  "description": "Bell peppers stuffed with seasoned ground beef, rice and tomato, baked until tender.",
+  "image": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=1200&q=85",
+  "time": 55,
+  "calories": 380,
+  "protein": 26,
+  "carbs": 34,
+  "tags": [
+    "Beef",
+    "Baked"
+  ],
+  "ingredients": [
+    "4 bell peppers, tops removed and seeded",
+    "400 g ground beef",
+    "200 g cooked rice",
+    "1 onion, diced",
+    "1 can diced tomatoes",
+    "1 tsp cumin",
+    "80 g shredded cheese"
+  ],
+  "steps": [
+    "Brown the beef with onion and cumin, then stir in the rice and half the tomatoes.",
+    "Stuff the mixture into the peppers and stand them in a baking dish with the remaining tomatoes.",
+    "Cover and bake at 190C for 35 minutes, then top with cheese and bake uncovered 10 minutes more."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food dinner idea collection",
+    "url": "https://www.bbcgoodfood.com/recipes/category/dinner-idea-collections"
+  },
+  "notes": "These freeze well before the final bake — a good one to prep in double batches."
+}

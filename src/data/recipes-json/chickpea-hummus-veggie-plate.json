@@ -1,0 +1,36 @@
+{
+  "id": "chickpea-hummus-veggie-plate",
+  "origin": "curated",
+  "categories": [
+    "Snack"
+  ],
+  "title": "Chickpea Hummus & Veggie Plate",
+  "description": "Creamy chickpea hummus served with fresh vegetables for a satisfying, nutrient-dense snack.",
+  "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=85",
+  "time": 20,
+  "calories": 140,
+  "protein": 6,
+  "carbs": 16,
+  "tags": [
+    "Dip",
+    "Prep ahead"
+  ],
+  "ingredients": [
+    "200 g canned chickpeas, drained",
+    "30 g tahini",
+    "1 lemon, juiced",
+    "1 garlic clove",
+    "2 tbsp olive oil",
+    "Carrots, peppers and celery to serve"
+  ],
+  "steps": [
+    "Blend the chickpeas, tahini, lemon juice and garlic until smooth.",
+    "Drizzle with olive oil.",
+    "Serve with cut vegetables for dipping."
+  ],
+  "source": {
+    "label": "Adapted from Minimalist Baker hummus",
+    "url": "https://minimalistbaker.com/green-goddess-hummus/"
+  },
+  "notes": "Pairing hummus with raw veggies instead of crackers keeps this snack high in fiber and slower to digest."
+}

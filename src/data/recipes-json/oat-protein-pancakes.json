@@ -1,0 +1,38 @@
+{
+  "id": "oat-protein-pancakes",
+  "origin": "curated",
+  "categories": [
+    "Breakfast"
+  ],
+  "title": "Oat & Protein Powder Pancakes",
+  "description": "Fluffy blended-oat pancakes with whey protein, served with nut butter and fresh fruit.",
+  "image": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1200&q=85",
+  "time": 25,
+  "calories": 310,
+  "protein": 32,
+  "carbs": 28,
+  "tags": [
+    "Protein powder",
+    "Freezer friendly"
+  ],
+  "ingredients": [
+    "75 g rolled oats",
+    "3 large eggs",
+    "2 tbsp whole milk",
+    "1 tsp baking powder",
+    "Pinch of cinnamon",
+    "2 tbsp whey protein powder",
+    "Coconut oil for frying",
+    "Nut butter and berries to serve"
+  ],
+  "steps": [
+    "Blitz the oats, eggs, milk, baking powder, cinnamon and protein powder until smooth.",
+    "Fry small rounds in a little oil until bubbles appear, then flip and cook through.",
+    "Stack with nut butter and berries."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food easy protein pancakes",
+    "url": "https://www.bbcgoodfood.com/recipes/easy-protein-pancakes"
+  },
+  "notes": "These freeze well — reheat straight from frozen for a 90-second high-protein breakfast on busy mornings."
+}

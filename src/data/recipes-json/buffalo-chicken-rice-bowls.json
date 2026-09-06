@@ -1,0 +1,37 @@
+{
+  "id": "buffalo-chicken-rice-bowls",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Buffalo Chicken Rice Bowls",
+  "description": "Shredded chicken tossed in buffalo sauce over brown rice with crunchy celery and a cooling dressing.",
+  "image": "https://images.unsplash.com/photo-1708782344490-9026aaa5eec7?auto=format&fit=crop&w=1200&q=85",
+  "time": 30,
+  "calories": 380,
+  "protein": 38,
+  "carbs": 35,
+  "tags": [
+    "Chicken",
+    "Spicy"
+  ],
+  "ingredients": [
+    "400 g cooked shredded chicken breast",
+    "60 g buffalo sauce",
+    "300 g cooked brown rice",
+    "2 celery stalks, sliced",
+    "60 g Greek yogurt ranch or blue cheese dressing",
+    "Scallions"
+  ],
+  "steps": [
+    "Toss the shredded chicken with the buffalo sauce.",
+    "Divide the rice into bowls and top with the chicken and celery.",
+    "Drizzle with the dressing and scatter over scallions."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste buffalo chicken rice bowls",
+    "url": "https://www.skinnytaste.com/buffalo-chicken-rice-bowls/"
+  },
+  "notes": "Using rotisserie or pre-cooked chicken makes this a genuine 10-minute assembly meal."
+}

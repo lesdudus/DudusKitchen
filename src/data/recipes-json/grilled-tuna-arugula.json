@@ -1,0 +1,37 @@
+{
+  "id": "grilled-tuna-arugula",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Grilled Tuna over Arugula with Lemon Vinaigrette",
+  "description": "Seared sashimi-grade tuna over peppery arugula with capers and a simple lemon dressing.",
+  "image": "https://images.unsplash.com/photo-1535291692377-b7eb2fb22a8b?auto=format&fit=crop&w=1200&q=85",
+  "time": 10,
+  "calories": 298,
+  "protein": 36,
+  "carbs": 4,
+  "tags": [
+    "Fish",
+    "Quick"
+  ],
+  "ingredients": [
+    "200 g sashimi-grade tuna steak",
+    "80 g baby arugula",
+    "1 tbsp capers",
+    "1 lemon, juiced",
+    "2 tbsp olive oil",
+    "Salt and pepper"
+  ],
+  "steps": [
+    "Sear the tuna 1 minute per side in a very hot pan, leaving the center rare.",
+    "Slice thinly.",
+    "Toss the arugula with lemon juice and oil, top with the tuna and capers."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste grilled tuna over arugula",
+    "url": "https://www.skinnytaste.com/grilled-tuna-over-arugula-with-lemon/"
+  },
+  "notes": "A genuinely 10-minute dinner — just make sure the tuna is truly sashimi-grade before searing it rare."
+}

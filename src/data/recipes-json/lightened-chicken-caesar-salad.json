@@ -1,0 +1,38 @@
+{
+  "id": "lightened-chicken-caesar-salad",
+  "origin": "curated",
+  "categories": [
+    "Lunch"
+  ],
+  "title": "Lightened Chicken Caesar Salad",
+  "description": "Grilled chicken over crisp romaine with a yogurt-based Caesar dressing and parmesan.",
+  "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=85",
+  "time": 20,
+  "calories": 350,
+  "protein": 38,
+  "carbs": 14,
+  "tags": [
+    "Chicken",
+    "Salad"
+  ],
+  "ingredients": [
+    "2 chicken breasts",
+    "2 romaine hearts, chopped",
+    "80 g Greek yogurt",
+    "1 tbsp lemon juice",
+    "1 garlic clove",
+    "1 tsp Dijon mustard",
+    "30 g parmesan, grated",
+    "Wholemeal croutons"
+  ],
+  "steps": [
+    "Season and grill the chicken, then slice.",
+    "Whisk the yogurt, lemon juice, garlic, mustard and half the parmesan into a dressing.",
+    "Toss the romaine with the dressing, top with chicken, remaining parmesan and croutons."
+  ],
+  "source": {
+    "label": "Adapted from EatingWell high-protein snacks",
+    "url": "https://www.eatingwell.com/recipes/high-protein-snacks/"
+  },
+  "notes": "Greek yogurt replaces most of the oil in a classic Caesar dressing without losing the tang."
+}

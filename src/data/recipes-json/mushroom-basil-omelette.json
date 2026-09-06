@@ -1,0 +1,37 @@
+{
+  "id": "mushroom-basil-omelette",
+  "origin": "curated",
+  "categories": [
+    "Breakfast"
+  ],
+  "title": "Mushroom & Basil Omelette with Cream Cheese",
+  "description": "A three-egg omelette filled with sautéed mushrooms, cream cheese and fresh basil.",
+  "image": "https://images.unsplash.com/photo-1535291692377-b7eb2fb22a8b?auto=format&fit=crop&w=1200&q=85",
+  "time": 20,
+  "calories": 280,
+  "protein": 24,
+  "carbs": 8,
+  "tags": [
+    "Vegetarian",
+    "Low carb"
+  ],
+  "ingredients": [
+    "3 medium eggs",
+    "1 tbsp snipped chives",
+    "150 g chestnut mushrooms, sliced",
+    "1 tsp butter",
+    "2 tbsp low-fat cream cheese",
+    "1 tbsp fresh basil",
+    "Salt and pepper"
+  ],
+  "steps": [
+    "Sauté the mushrooms in butter for 5-8 minutes until tender.",
+    "Beat the eggs with chives and seasoning, then cook in a hot non-stick pan, swirling to set.",
+    "Fill with mushrooms, cream cheese and basil, fold in half and serve."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food mushroom & basil omelette",
+    "url": "https://www.bbcgoodfood.com/recipes/mushroom-basil-omelette-smashed-tomato"
+  },
+  "notes": "A genuinely low-carb breakfast option for days you want protein without the extra carbs."
+}

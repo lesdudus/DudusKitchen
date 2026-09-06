@@ -1,0 +1,39 @@
+{
+  "id": "lentil-walnut-bolognese",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Lentil & Walnut Bolognese",
+  "description": "A plant-based Bolognese packed with green lentils, walnuts and mushrooms over whole wheat pasta.",
+  "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=1200&q=85",
+  "time": 40,
+  "calories": 360,
+  "protein": 13,
+  "carbs": 44,
+  "tags": [
+    "Vegetarian",
+    "Pasta"
+  ],
+  "ingredients": [
+    "1 onion, diced",
+    "4 garlic cloves",
+    "2 carrots, diced",
+    "150 g mushrooms, chopped",
+    "1 cup cooked green lentils",
+    "65 g walnuts, chopped",
+    "1 can crushed tomatoes",
+    "2 tbsp tomato paste",
+    "300 g whole wheat pasta"
+  ],
+  "steps": [
+    "Sauté the onion, garlic, carrots and mushrooms.",
+    "Stir in the lentils, walnuts, tomatoes and tomato paste, then simmer 25 minutes.",
+    "Cook the pasta and serve the sauce on top with parmesan."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste vegetarian recipes",
+    "url": "https://www.skinnytaste.com/recipes/vegetarian/"
+  },
+  "notes": "Green lentils hold their shape better than red here, giving a proper Bolognese-like texture."
+}

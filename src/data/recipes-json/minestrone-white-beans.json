@@ -1,0 +1,40 @@
+{
+  "id": "minestrone-white-beans",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Minestrone with White Beans",
+  "description": "A classic Italian vegetable soup bulked up with white beans and small pasta.",
+  "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=1200&q=85",
+  "time": 40,
+  "calories": 290,
+  "protein": 14,
+  "carbs": 44,
+  "tags": [
+    "Vegetarian",
+    "Soup"
+  ],
+  "ingredients": [
+    "1 onion, diced",
+    "2 carrots, diced",
+    "2 celery stalks, diced",
+    "2 garlic cloves",
+    "1 can diced tomatoes",
+    "1 liter vegetable broth",
+    "1 can cannellini beans",
+    "80 g small pasta",
+    "Parmesan and basil to serve"
+  ],
+  "steps": [
+    "Sauté the onion, carrot and celery until softened.",
+    "Add the garlic, tomatoes and broth, and simmer 15 minutes.",
+    "Stir in the beans and pasta, cook until the pasta is tender, and finish with parmesan and basil."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food healthy eating collection",
+    "url": "https://www.bbcgoodfood.com/recipes/category/healthy-eating-collections"
+  },
+  "notes": "The beans make this genuinely filling despite being mostly vegetables — a good make-ahead lunch that reheats well."
+}

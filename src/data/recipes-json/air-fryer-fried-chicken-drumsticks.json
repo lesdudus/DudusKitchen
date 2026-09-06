@@ -1,0 +1,37 @@
+{
+  "id": "air-fryer-fried-chicken-drumsticks",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Air Fryer Fried Chicken Drumsticks",
+  "description": "Crispy bran-flake-crusted chicken drumsticks with a fraction of the oil of deep frying — juicy inside, golden outside.",
+  "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=1200&q=85",
+  "time": 32,
+  "calories": 386,
+  "protein": 55,
+  "carbs": 18,
+  "tags": [
+    "Air fryer",
+    "Quick"
+  ],
+  "ingredients": [
+    "8 bone-in drumsticks, skin removed",
+    "2.5 cups bran flakes, crushed",
+    "1 tbsp kosher salt",
+    "0.5 tsp garlic powder",
+    "0.5 tsp paprika",
+    "1 tsp dried parsley",
+    "3 tbsp light mayonnaise"
+  ],
+  "steps": [
+    "Season the drumsticks with salt.",
+    "Mix the crushed bran flakes with the remaining spices.",
+    "Brush chicken with mayo, coat in the bran mix, then air fry at 370F for 22-24 minutes, turning halfway."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste air fryer fried chicken",
+    "url": "https://www.skinnytaste.com/air-fryer-fried-chicken/"
+  },
+  "notes": "Dark meat has more iron than white meat, and bran flakes add roughly 4g of fiber per serving."
+}

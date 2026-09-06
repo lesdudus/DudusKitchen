@@ -1,0 +1,37 @@
+{
+  "id": "blackened-salmon-bites",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Blackened Air Fryer Salmon Bites",
+  "description": "Cubed salmon coated in a smoky, spiced blackening rub and air-fried until crisp at the edges.",
+  "image": "https://images.unsplash.com/photo-1535291692377-b7eb2fb22a8b?auto=format&fit=crop&w=1200&q=85",
+  "time": 10,
+  "calories": 251,
+  "protein": 34,
+  "carbs": 2,
+  "tags": [
+    "Salmon",
+    "Air fryer"
+  ],
+  "ingredients": [
+    "500 g salmon fillet, cubed",
+    "1 tsp sweet paprika",
+    "0.5 tsp cayenne",
+    "1 garlic clove, minced",
+    "0.5 tsp dried thyme",
+    "1 tbsp olive oil"
+  ],
+  "steps": [
+    "Toss the salmon cubes with the spices, garlic and oil.",
+    "Air fry at 200C for 6-8 minutes, shaking halfway.",
+    "Serve immediately while the edges are crisp."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste blackened air fryer salmon bites",
+    "url": "https://www.skinnytaste.com/blackened-air-fryer-salmon-bites/"
+  },
+  "notes": "A 10-minute dinner with almost no cleanup — great over a quick salad or rice."
+}

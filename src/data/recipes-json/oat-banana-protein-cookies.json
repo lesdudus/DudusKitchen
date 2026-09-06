@@ -1,0 +1,36 @@
+{
+  "id": "oat-banana-protein-cookies",
+  "origin": "curated",
+  "categories": [
+    "Snack"
+  ],
+  "title": "Oat Banana Protein Cookies",
+  "description": "Chewy baked cookies made with mashed banana, oats and whey powder — naturally sweetened.",
+  "image": "https://images.unsplash.com/photo-1598839950984-034f6dc7b495?auto=format&fit=crop&w=1200&q=85",
+  "time": 20,
+  "calories": 95,
+  "protein": 6,
+  "carbs": 14,
+  "tags": [
+    "Baked",
+    "Make ahead"
+  ],
+  "ingredients": [
+    "1 ripe banana, mashed",
+    "80 g rolled oats",
+    "20 g vanilla protein powder",
+    "1 egg",
+    "1 tbsp almond butter",
+    "Pinch of salt"
+  ],
+  "steps": [
+    "Mix the mashed banana with almond butter and egg.",
+    "Fold in the oats, protein powder and salt.",
+    "Drop spoonfuls onto a lined tray and bake at 175C for 15 minutes."
+  ],
+  "source": {
+    "label": "Adapted from Minimalist Baker recipe index",
+    "url": "https://minimalistbaker.com/recipe-index/"
+  },
+  "notes": "Banana's natural sweetness plus oat fiber slows digestion — these hold blood sugar steadier than a shop-bought cookie."
+}

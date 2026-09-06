@@ -1,0 +1,36 @@
+{
+  "id": "fish-taco-foil-packets",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Fish Taco Foil Packets",
+  "description": "Cod fillets steamed in foil with peppers, corn and jalapeño, ready to flake into tacos.",
+  "image": "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=1200&q=85",
+  "time": 30,
+  "calories": 431,
+  "protein": 36,
+  "carbs": 46,
+  "tags": [
+    "Fish",
+    "Mexican"
+  ],
+  "ingredients": [
+    "2 cod fillets",
+    "1 bell pepper, sliced",
+    "150 g corn kernels",
+    "1 jalapeño, sliced",
+    "Cilantro and lime",
+    "Corn tortillas to serve"
+  ],
+  "steps": [
+    "Divide the fish, pepper, corn and jalapeño between foil packets with a squeeze of lime.",
+    "Seal and bake at 200C for 18-20 minutes.",
+    "Flake the fish into warm tortillas with cilantro and extra lime."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste fish taco foil packets",
+    "url": "https://www.skinnytaste.com/fish-taco-foil-packets/"
+  },
+  "notes": "Cooking in sealed foil keeps the fish moist with zero risk of overcooking — great for a first attempt at fish."
+}

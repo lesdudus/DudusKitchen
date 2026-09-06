@@ -1,0 +1,39 @@
+{
+  "id": "greek-salad-grilled-chicken",
+  "origin": "curated",
+  "categories": [
+    "Lunch"
+  ],
+  "title": "Greek Salad with Grilled Chicken & Feta",
+  "description": "Grilled chicken breast over a classic Greek salad of cucumber, tomato, olives and feta.",
+  "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=85",
+  "time": 20,
+  "calories": 380,
+  "protein": 38,
+  "carbs": 12,
+  "tags": [
+    "Chicken",
+    "Mediterranean"
+  ],
+  "ingredients": [
+    "2 chicken breasts",
+    "1 cucumber, chunked",
+    "2 tomatoes, chunked",
+    "0.5 red onion, sliced",
+    "80 g feta, cubed",
+    "60 g kalamata olives",
+    "2 tbsp olive oil",
+    "1 lemon, juiced",
+    "Dried oregano"
+  ],
+  "steps": [
+    "Season and grill the chicken until cooked through, then slice.",
+    "Toss the cucumber, tomato, onion, feta and olives with oil, lemon juice and oregano.",
+    "Top the salad with the sliced chicken."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food Mediterranean recipe collection",
+    "url": "https://www.bbcgoodfood.com/recipes/category/cuisine-collections"
+  },
+  "notes": "Salt the feta and olives already bring is usually enough — go easy on extra salt."
+}

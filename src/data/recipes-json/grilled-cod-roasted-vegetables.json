@@ -1,0 +1,36 @@
+{
+  "id": "grilled-cod-roasted-vegetables",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Grilled Cod with Roasted Vegetables",
+  "description": "Simply grilled cod fillets with lemon alongside roasted zucchini and asparagus.",
+  "image": "https://images.unsplash.com/photo-1535291692377-b7eb2fb22a8b?auto=format&fit=crop&w=1200&q=85",
+  "time": 30,
+  "calories": 285,
+  "protein": 38,
+  "carbs": 18,
+  "tags": [
+    "Fish",
+    "Baked"
+  ],
+  "ingredients": [
+    "4 cod fillets",
+    "2 zucchini, sliced",
+    "1 bunch asparagus, trimmed",
+    "2 tbsp olive oil",
+    "1 lemon",
+    "Salt and pepper"
+  ],
+  "steps": [
+    "Toss the zucchini and asparagus with oil and roast at 200C for 15 minutes.",
+    "Season the cod and grill or pan-sear 3-4 minutes per side.",
+    "Serve the fish over the roasted vegetables with a squeeze of lemon."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste grilled cod",
+    "url": "https://www.skinnytaste.com/grilled-cod/"
+  },
+  "notes": "A genuinely simple, low-effort dinner — good for nights you want something light but still filling."
+}

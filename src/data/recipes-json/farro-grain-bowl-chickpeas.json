@@ -1,0 +1,38 @@
+{
+  "id": "farro-grain-bowl-chickpeas",
+  "origin": "curated",
+  "categories": [
+    "Lunch"
+  ],
+  "title": "Farro Grain Bowl with Roasted Vegetables & Chickpeas",
+  "description": "Nutty farro topped with roasted vegetables, chickpeas and a lemon-tahini dressing.",
+  "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=1200&q=85",
+  "time": 35,
+  "calories": 400,
+  "protein": 16,
+  "carbs": 52,
+  "tags": [
+    "Vegetarian",
+    "Grain bowl"
+  ],
+  "ingredients": [
+    "200 g farro, cooked",
+    "1 can chickpeas, drained",
+    "1 courgette, chunked",
+    "1 red pepper, chunked",
+    "2 tbsp olive oil",
+    "2 tbsp tahini",
+    "1 lemon, juiced",
+    "Parsley"
+  ],
+  "steps": [
+    "Roast the courgette, pepper and chickpeas together with oil until golden.",
+    "Whisk the tahini with lemon juice and a little water into a dressing.",
+    "Build bowls with farro, the roasted vegetables and chickpeas, and drizzle with dressing."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food vegetarian recipe collection",
+    "url": "https://www.bbcgoodfood.com/recipes/category/vegetarian-collections"
+  },
+  "notes": "Farro holds up well for meal prep — cook a big batch and portion it across the week."
+}

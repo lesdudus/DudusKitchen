@@ -1,0 +1,37 @@
+{
+  "id": "edamame-fried-rice-egg",
+  "origin": "curated",
+  "categories": [
+    "Lunch"
+  ],
+  "title": "Edamame Fried Rice with Egg",
+  "description": "Day-old rice fried with edamame, scrambled egg and scallions in a light soy sauce.",
+  "image": "https://images.unsplash.com/photo-1567521464027-f127ff144326?auto=format&fit=crop&w=1200&q=85",
+  "time": 20,
+  "calories": 340,
+  "protein": 18,
+  "carbs": 42,
+  "tags": [
+    "Vegetarian",
+    "Quick"
+  ],
+  "ingredients": [
+    "300 g cooked rice, cold",
+    "150 g shelled edamame",
+    "2 eggs, beaten",
+    "3 scallions, sliced",
+    "2 tbsp soy sauce",
+    "1 tbsp sesame oil",
+    "1 garlic clove"
+  ],
+  "steps": [
+    "Scramble the eggs lightly and set aside.",
+    "Fry the garlic and edamame briefly, then add the cold rice, breaking up any clumps.",
+    "Stir through the soy sauce, scallions and scrambled egg to finish."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food vegetarian recipe collection",
+    "url": "https://www.bbcgoodfood.com/recipes/category/vegetarian-collections"
+  },
+  "notes": "Cold, day-old rice fries up far better than fresh — plan a batch of rice the night before."
+}

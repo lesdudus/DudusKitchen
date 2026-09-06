@@ -1,0 +1,36 @@
+{
+  "id": "yogurt-porridge-pear-walnut",
+  "origin": "curated",
+  "categories": [
+    "Breakfast"
+  ],
+  "title": "Yogurt Porridge with Pear, Walnut & Cinnamon",
+  "description": "Creamy yogurt oat porridge topped with fresh pear, walnuts and warm cinnamon.",
+  "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=1200&q=85",
+  "time": 9,
+  "calories": 210,
+  "protein": 10,
+  "carbs": 26,
+  "tags": [
+    "Nut-based",
+    "Cozy"
+  ],
+  "ingredients": [
+    "25 g rolled oats",
+    "150 g 0% fat probiotic yogurt",
+    "200 ml water",
+    "1/2 ripe pear, sliced",
+    "4 walnut halves",
+    "Pinch of cinnamon"
+  ],
+  "steps": [
+    "Cook the oats in water until thick, then stir through the yogurt.",
+    "Top with pear slices and walnut halves.",
+    "Finish with a generous dusting of cinnamon."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food creamy yogurt porridge (pear & walnut topping)",
+    "url": "https://www.bbcgoodfood.com/recipes/creamy-yogurt-porridge-pear-walnut-cinnamon-topping"
+  },
+  "notes": "Walnuts' omega-3s plus the pear's fiber make this a gentler, slower-release version of the plain porridge."
+}

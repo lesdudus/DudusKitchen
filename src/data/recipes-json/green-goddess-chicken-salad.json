@@ -1,0 +1,38 @@
+{
+  "id": "green-goddess-chicken-salad",
+  "origin": "curated",
+  "categories": [
+    "Lunch"
+  ],
+  "title": "Green Goddess Chicken & Chickpea Salad",
+  "description": "A no-cook lunch of shredded chicken, chickpeas and crunchy slaw tossed in a herby green dressing.",
+  "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=85",
+  "time": 25,
+  "calories": 326,
+  "protein": 30,
+  "carbs": 22,
+  "tags": [
+    "No cook",
+    "High fiber"
+  ],
+  "ingredients": [
+    "340 g shredded cooked chicken breast",
+    "1 cup canned chickpeas, drained",
+    "5 cups veggie slaw mix",
+    "0.5 cup light mayonnaise",
+    "0.5 cup Greek yogurt",
+    "Scallions, cilantro and parsley",
+    "1 lemon, juiced",
+    "1 garlic clove"
+  ],
+  "steps": [
+    "Blend the mayo, herbs, lemon juice and garlic into a dressing, then stir in the yogurt.",
+    "Toss the slaw with the chicken, chickpeas and dressing.",
+    "Top with extra herbs before serving."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste green goddess chicken salad",
+    "url": "https://www.skinnytaste.com/green-goddess-chicken-chickpea-salad/"
+  },
+  "notes": "Chicken plus chickpeas is a double-protein hit that keeps hunger at bay for four-plus hours."
+}

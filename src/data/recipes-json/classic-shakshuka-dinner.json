@@ -1,0 +1,38 @@
+{
+  "id": "classic-shakshuka-dinner",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Classic Shakshuka",
+  "description": "Eggs poached in a spiced tomato and onion sauce, finished with fresh coriander and crusty bread.",
+  "image": "https://images.unsplash.com/photo-1515182629504-727d7753751f?auto=format&fit=crop&w=1200&q=85",
+  "time": 25,
+  "calories": 290,
+  "protein": 18,
+  "carbs": 20,
+  "tags": [
+    "Egg-based",
+    "One-pan"
+  ],
+  "ingredients": [
+    "1 tbsp olive oil",
+    "2 red onions, chopped",
+    "1 red chilli, deseeded",
+    "1 garlic clove, sliced",
+    "Small bunch coriander",
+    "2 cans cherry tomatoes",
+    "1 tsp caster sugar",
+    "4 eggs"
+  ],
+  "steps": [
+    "Soften the onions, chilli, garlic and coriander stalks in oil, then stir in the tomatoes and sugar and simmer 8-10 minutes until thick.",
+    "Make 4 dips in the sauce, crack in the eggs, cover and cook over low heat 6-8 minutes.",
+    "Scatter with coriander leaves and serve with crusty bread."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food shakshuka",
+    "url": "https://www.bbcgoodfood.com/recipes/shakshuka"
+  },
+  "notes": "A dinner-for-breakfast classic — good on a night you want something warm and quick."
+}

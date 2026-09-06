@@ -1,0 +1,39 @@
+{
+  "id": "chimichurri-steak-salad",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Chopped Chimichurri Steak Salad",
+  "description": "Grilled steak chopped over crisp greens and cucumber with a garlicky, herby chimichurri dressing.",
+  "image": "https://images.unsplash.com/photo-1767324672655-8e0f5e814897?auto=format&fit=crop&w=1200&q=85",
+  "time": 30,
+  "calories": 395,
+  "protein": 35,
+  "carbs": 11,
+  "tags": [
+    "Beef",
+    "Salad"
+  ],
+  "ingredients": [
+    "400 g sirloin or strip steak",
+    "30 g fresh parsley",
+    "2 garlic cloves",
+    "2 tbsp red wine vinegar",
+    "1 lemon, juiced",
+    "2 mini cucumbers, diced",
+    "Mixed greens",
+    "Olive oil"
+  ],
+  "steps": [
+    "Blend the parsley, garlic, vinegar, lemon juice and oil into a chimichurri.",
+    "Grill the steak to your preferred doneness, rest, then chop into bite-sized pieces.",
+    "Toss the greens and cucumber with some chimichurri, top with the steak and more chimichurri."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste chopped chimichurri steak salad",
+    "url": "https://www.skinnytaste.com/chopped-chimichurri-steak-salad/"
+  },
+  "notes": "Make extra chimichurri — it keeps a week in the fridge and works on chicken or fish too."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "slow-cooker-chicken-tikka-masala",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Slow Cooker Chicken Tikka Masala",
+  "description": "Chicken thighs slow-cooked in a creamy, spiced tomato sauce until fall-apart tender.",
+  "image": "https://images.unsplash.com/photo-1708782344490-9026aaa5eec7?auto=format&fit=crop&w=1200&q=85",
+  "time": 240,
+  "calories": 400,
+  "protein": 38,
+  "carbs": 24,
+  "tags": [
+    "Indian",
+    "Slow cooker"
+  ],
+  "ingredients": [
+    "700 g boneless chicken thighs",
+    "1 onion, diced",
+    "3 garlic cloves",
+    "1 tbsp ginger, grated",
+    "2 tsp garam masala",
+    "1 tsp turmeric",
+    "400 g canned tomatoes",
+    "100 ml Greek yogurt",
+    "Coriander"
+  ],
+  "steps": [
+    "Add the chicken, onion, garlic, ginger, spices and tomatoes to the slow cooker.",
+    "Cook on low for 4-5 hours until the chicken is tender.",
+    "Stir through the yogurt just before serving, and finish with coriander."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food slow cooker collection",
+    "url": "https://www.bbcgoodfood.com/recipes/category/casserole-slow-cooker-collections"
+  },
+  "notes": "Add the yogurt only at the end — stirring it in earlier can cause it to split under prolonged heat."
+}

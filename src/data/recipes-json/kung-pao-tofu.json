@@ -1,0 +1,37 @@
+{
+  "id": "kung-pao-tofu",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Kung Pao Tofu",
+  "description": "Crispy tofu, zucchini and bell pepper tossed in a sweet-spicy Kung Pao sauce with peanuts.",
+  "image": "https://images.unsplash.com/photo-1535291692377-b7eb2fb22a8b?auto=format&fit=crop&w=1200&q=85",
+  "time": 40,
+  "calories": 244,
+  "protein": 12,
+  "carbs": 21,
+  "tags": [
+    "Vegetarian",
+    "Spicy"
+  ],
+  "ingredients": [
+    "350 g extra-firm tofu, cubed",
+    "1 zucchini, chunked",
+    "1 red bell pepper, chunked",
+    "2 tbsp soy sauce",
+    "1 tbsp rice vinegar",
+    "1 tsp sambal oelek",
+    "40 g roasted peanuts"
+  ],
+  "steps": [
+    "Pan-fry the tofu until crisp on most sides, then set aside.",
+    "Stir-fry the zucchini and pepper until just tender.",
+    "Whisk the sauce ingredients, return the tofu, toss to coat, and finish with peanuts."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste Kung Pao tofu",
+    "url": "https://www.skinnytaste.com/kung-pao-tofu/"
+  },
+  "notes": "Sambal oelek is easy to dial up or down — start with less if you are not sure how much heat you want."
+}

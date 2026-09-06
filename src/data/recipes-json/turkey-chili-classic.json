@@ -1,0 +1,40 @@
+{
+  "id": "turkey-chili-classic",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Classic Turkey Chili",
+  "description": "Hearty ground turkey chili with black beans, kidney beans and warm spices.",
+  "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=1200&q=85",
+  "time": 90,
+  "calories": 297,
+  "protein": 28,
+  "carbs": 26,
+  "tags": [
+    "Turkey",
+    "One-pot"
+  ],
+  "ingredients": [
+    "1 red onion, chopped",
+    "1 bell pepper, chopped",
+    "1 jalapeño, chopped",
+    "4 garlic cloves",
+    "700 g ground turkey",
+    "1 tbsp chilli powder",
+    "2 tsp cumin",
+    "1 can fire-roasted tomatoes",
+    "1 can black beans",
+    "1 can kidney beans"
+  ],
+  "steps": [
+    "Sauté the onion and pepper, then add jalapeño, garlic and tomato paste.",
+    "Brown the turkey, then stir in the spices.",
+    "Add the tomatoes and beans, and simmer 45 minutes, stirring occasionally, until thickened."
+  ],
+  "source": {
+    "label": "Adapted from Delish turkey chili",
+    "url": "https://www.delish.com/cooking/recipe-ideas/recipes/a45576778/turkey-chili-recipe/"
+  },
+  "notes": "This tastes even better the next day — make a double batch and freeze half."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "shrimp-pasta-garlic-lemon",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Garlic Lemon Shrimp Pasta",
+  "description": "Quick-seared shrimp in garlic oil with whole wheat pasta, cherry tomatoes and fresh parsley.",
+  "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=1200&q=85",
+  "time": 25,
+  "calories": 380,
+  "protein": 28,
+  "carbs": 42,
+  "tags": [
+    "Seafood",
+    "Pasta"
+  ],
+  "ingredients": [
+    "350 g large shrimp, peeled and deveined",
+    "280 g whole wheat pasta",
+    "4 tbsp olive oil",
+    "6 garlic cloves, sliced",
+    "1.5 cups cherry tomatoes, halved",
+    "2 lemons, zested and juiced",
+    "Fresh parsley"
+  ],
+  "steps": [
+    "Cook the pasta, reserving some pasta water.",
+    "Sauté the garlic in oil, add the shrimp and cook until pink.",
+    "Add the tomatoes and lemon, toss with the pasta and a splash of pasta water, then finish with parsley."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste seafood recipes",
+    "url": "https://www.skinnytaste.com/recipes/seafood-recipes/"
+  },
+  "notes": "Shrimp's astaxanthin and tomato's lycopene are a genuinely good antioxidant pairing."
+}

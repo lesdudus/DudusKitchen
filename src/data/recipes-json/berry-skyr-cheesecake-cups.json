@@ -1,0 +1,36 @@
+{
+  "id": "berry-skyr-cheesecake-cups",
+  "origin": "curated",
+  "categories": [
+    "Snack"
+  ],
+  "title": "Berry Skyr Cheesecake Cups",
+  "description": "A light cheesecake-style cup with skyr, soft cheese, berries and a crisp oat base.",
+  "image": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1200&q=85",
+  "time": 15,
+  "calories": 225,
+  "protein": 21,
+  "carbs": 25,
+  "tags": [
+    "Cheesecake",
+    "No bake"
+  ],
+  "ingredients": [
+    "120 g plain skyr",
+    "40 g light soft cheese",
+    "10 g vanilla protein powder",
+    "15 g toasted oats",
+    "80 g berries",
+    "Lemon zest and vanilla to taste"
+  ],
+  "steps": [
+    "Mix the skyr, soft cheese, protein powder, lemon zest and vanilla.",
+    "Spoon toasted oats into a glass and top with the cheesecake mixture.",
+    "Add berries and chill until ready to serve."
+  ],
+  "source": {
+    "label": "Inspired by EatingWell mini cheesecakes",
+    "url": "https://www.eatingwell.com/recipe/252458/mini-cheesecakes/"
+  },
+  "notes": "Skyr has nearly double the protein of regular yogurt for the same calories — an easy swap in any dessert-style snack."
+}

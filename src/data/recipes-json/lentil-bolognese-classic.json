@@ -1,0 +1,37 @@
+{
+  "id": "lentil-bolognese-classic",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Lentil Bolognese",
+  "description": "A simple, saucy brown lentil Bolognese over whole wheat pasta — quicker than the walnut version.",
+  "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=1200&q=85",
+  "time": 35,
+  "calories": 320,
+  "protein": 18,
+  "carbs": 42,
+  "tags": [
+    "Vegetarian",
+    "Pasta"
+  ],
+  "ingredients": [
+    "1 cup dried brown lentils",
+    "1 can crushed tomatoes",
+    "1 onion, diced",
+    "3 garlic cloves",
+    "300 g whole wheat pasta",
+    "Basil and parmesan to serve"
+  ],
+  "steps": [
+    "Sauté the onion and garlic, then add the lentils, tomatoes and enough water to cover.",
+    "Simmer 25 minutes until the lentils are tender and the sauce has thickened.",
+    "Serve over the cooked pasta with basil and parmesan."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste lentil Bolognese",
+    "url": "https://www.skinnytaste.com/lentil-bolognese/"
+  },
+  "notes": "This is the faster, weeknight version — swap in the walnut Bolognese when you have more time."
+}

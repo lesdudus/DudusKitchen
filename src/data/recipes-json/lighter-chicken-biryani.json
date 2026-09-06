@@ -1,0 +1,37 @@
+{
+  "id": "lighter-chicken-biryani",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Lighter Chicken Biryani",
+  "description": "Fragrant chicken and rice layered with warm spices, peas, herbs and cooling yogurt.",
+  "image": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=1200&q=85",
+  "time": 45,
+  "calories": 535,
+  "protein": 45,
+  "carbs": 62,
+  "tags": [
+    "Spiced",
+    "Batch cook"
+  ],
+  "ingredients": [
+    "170 g chicken breast, cubed",
+    "65 g dry basmati rice",
+    "80 g frozen peas",
+    "100 g plain yogurt",
+    "1 tsp garam masala and 1/2 tsp turmeric",
+    "Garlic, ginger and chilli to taste",
+    "Mint, coriander and lemon to finish"
+  ],
+  "steps": [
+    "Marinate the chicken in half the yogurt, spices, garlic and ginger.",
+    "Brown the chicken, add rinsed rice and enough water to cook gently under a lid.",
+    "Fold through peas and herbs, then serve with the remaining yogurt and lemon."
+  ],
+  "source": {
+    "label": "Adapted from Good Food chicken biryani",
+    "url": "https://www.bbcgoodfood.com/recipes/chicken-biryani"
+  },
+  "notes": "Batch-cook this one — it reheats well and the flavor actually improves the next day."
+}

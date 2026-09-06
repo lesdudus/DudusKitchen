@@ -1,0 +1,40 @@
+{
+  "id": "beef-steak-salad-thai",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Thai-Marinated Beef Steak Salad",
+  "description": "Thinly sliced grilled beef tossed with fresh herbs, lime dressing and crunchy vegetables.",
+  "image": "https://images.unsplash.com/photo-1767324672655-8e0f5e814897?auto=format&fit=crop&w=1200&q=85",
+  "time": 35,
+  "calories": 380,
+  "protein": 38,
+  "carbs": 16,
+  "tags": [
+    "Beef",
+    "Salad"
+  ],
+  "ingredients": [
+    "400 g sirloin or flank steak",
+    "3 tbsp lime juice",
+    "3 tbsp fish sauce",
+    "2 tbsp soy sauce",
+    "1 tbsp honey",
+    "3 garlic cloves, minced",
+    "4 cups mixed greens",
+    "1 cup shredded cabbage",
+    "1 cup shredded carrots",
+    "Cilantro, mint and roasted peanuts"
+  ],
+  "steps": [
+    "Whisk the lime juice, fish sauce, soy sauce, honey and garlic; marinate the steak 15 minutes.",
+    "Grill the steak 3-4 minutes per side, rest, then slice thin against the grain.",
+    "Toss the greens and vegetables with the remaining dressing, top with the steak, herbs and peanuts."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste Thai-marinated steak salad",
+    "url": "https://www.skinnytaste.com/thai-marinated-steak-salad/"
+  },
+  "notes": "Lime acid helps kick-start digestion, and slicing against the grain keeps the steak tender."
+}

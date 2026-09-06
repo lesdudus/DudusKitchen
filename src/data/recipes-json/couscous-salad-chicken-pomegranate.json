@@ -1,0 +1,36 @@
+{
+  "id": "couscous-salad-chicken-pomegranate",
+  "origin": "curated",
+  "categories": [
+    "Lunch"
+  ],
+  "title": "Couscous Salad with Chicken & Pomegranate",
+  "description": "Fluffy couscous tossed with grilled chicken, pomegranate seeds, mint and a lemon dressing.",
+  "image": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=85",
+  "time": 25,
+  "calories": 390,
+  "protein": 32,
+  "carbs": 40,
+  "tags": [
+    "Mediterranean",
+    "Grain bowl"
+  ],
+  "ingredients": [
+    "2 chicken breasts",
+    "200 g couscous",
+    "80 g pomegranate seeds",
+    "Fresh mint and parsley",
+    "2 tbsp olive oil",
+    "1 lemon, juiced"
+  ],
+  "steps": [
+    "Season and grill the chicken, then slice.",
+    "Prepare the couscous per packet instructions, then fluff with a fork.",
+    "Toss the couscous with oil, lemon juice, herbs and pomegranate seeds, and top with the chicken."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food Mediterranean recipe collection",
+    "url": "https://www.bbcgoodfood.com/recipes/category/cuisine-collections"
+  },
+  "notes": "Pomegranate seeds add a genuine pop of sweetness and crunch without any added sugar."
+}

@@ -1,0 +1,37 @@
+{
+  "id": "shrimp-vegetable-stir-fry-rice",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Shrimp & Vegetables Stir-Fry with Brown Rice",
+  "description": "Quick-cooked shrimp with broccoli and bell peppers in a light soy-ginger sauce over brown rice.",
+  "image": "https://images.unsplash.com/photo-1535291692377-b7eb2fb22a8b?auto=format&fit=crop&w=1200&q=85",
+  "time": 25,
+  "calories": 345,
+  "protein": 28,
+  "carbs": 38,
+  "tags": [
+    "Seafood",
+    "Stir-fry"
+  ],
+  "ingredients": [
+    "400 g medium shrimp, peeled",
+    "2 cups broccoli florets",
+    "1 bell pepper, sliced",
+    "3 tbsp soy sauce",
+    "1 tbsp ginger, grated",
+    "300 g cooked brown rice"
+  ],
+  "steps": [
+    "Stir-fry the broccoli and pepper until just tender, then set aside.",
+    "Cook the shrimp 2-3 minutes until pink.",
+    "Return the vegetables, add the soy sauce and ginger, and serve over rice."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste shrimp stir-fry",
+    "url": "https://www.skinnytaste.com/shrimp-stir-fry/"
+  },
+  "notes": "Shrimp cook in under 3 minutes — have every other ingredient prepped before you start the pan."
+}

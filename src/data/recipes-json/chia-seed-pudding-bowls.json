@@ -1,0 +1,35 @@
+{
+  "id": "chia-seed-pudding-bowls",
+  "origin": "curated",
+  "categories": [
+    "Snack"
+  ],
+  "title": "Chia Seed Pudding",
+  "description": "Overnight-soaked chia seeds in almond milk, creating a thick pudding rich in fiber and omega-3s.",
+  "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=1200&q=85",
+  "time": 10,
+  "calories": 160,
+  "protein": 6,
+  "carbs": 14,
+  "tags": [
+    "Make ahead",
+    "No cook"
+  ],
+  "ingredients": [
+    "40 g chia seeds",
+    "240 ml unsweetened almond milk",
+    "20 g vanilla Greek yogurt",
+    "1 tbsp maple syrup",
+    "Fresh berries to top"
+  ],
+  "steps": [
+    "Combine the chia seeds, almond milk and vanilla in a jar.",
+    "Refrigerate at least 4 hours, or overnight.",
+    "Stir through yogurt and maple syrup, then top with berries."
+  ],
+  "source": {
+    "label": "Adapted from Minimalist Baker chia pudding",
+    "url": "https://minimalistbaker.com/strawberry-chia-pudding/"
+  },
+  "notes": "Chia seeds absorb liquid and expand in the stomach, giving genuinely long-lasting fullness for a small snack."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "chickpea-coriander-burgers",
+  "origin": "curated",
+  "categories": [
+    "Lunch"
+  ],
+  "title": "Chickpea & Coriander Burgers",
+  "description": "Plant-based patties bound with egg and breadcrumbs, bright with lemon zest and cumin.",
+  "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=1200&q=85",
+  "time": 35,
+  "calories": 290,
+  "protein": 12,
+  "carbs": 35,
+  "tags": [
+    "Vegetarian",
+    "Legume"
+  ],
+  "ingredients": [
+    "400 g canned chickpeas, drained",
+    "1 lemon, zested and juiced",
+    "1 tsp cumin",
+    "Coriander",
+    "1 egg",
+    "100 g fresh breadcrumbs",
+    "0.5 red onion, diced",
+    "4 small wholemeal buns",
+    "Tomato, cucumber and chilli sauce to serve"
+  ],
+  "steps": [
+    "Blend the chickpeas, lemon, cumin, half the coriander, egg and seasoning.",
+    "Mix with breadcrumbs and diced onion, then form 4 patties and chill 10 minutes.",
+    "Fry 4 minutes per side, then build the burgers with the remaining toppings."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food chickpea & coriander burgers",
+    "url": "https://www.bbcgoodfood.com/recipes/chickpea-coriander-burgers"
+  },
+  "notes": "Chilling the patties before frying keeps them from falling apart — chickpeas add about 6g of fiber per burger."
+}

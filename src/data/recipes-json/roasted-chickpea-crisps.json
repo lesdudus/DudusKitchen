@@ -1,0 +1,35 @@
+{
+  "id": "roasted-chickpea-crisps",
+  "origin": "curated",
+  "categories": [
+    "Snack"
+  ],
+  "title": "Roasted Chickpea Crisps",
+  "description": "Seasoned, oven-baked chickpeas that turn crispy — a legume-based alternative to chips.",
+  "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=85",
+  "time": 35,
+  "calories": 110,
+  "protein": 6,
+  "carbs": 13,
+  "tags": [
+    "Baked",
+    "Savory"
+  ],
+  "ingredients": [
+    "240 g canned chickpeas, drained and dried",
+    "1 tbsp olive oil",
+    "1/2 tsp smoked paprika",
+    "1/2 tsp cumin",
+    "Salt to taste"
+  ],
+  "steps": [
+    "Pat the chickpeas dry, then toss with oil and spices.",
+    "Spread on a baking sheet.",
+    "Roast at 200C for 30-35 minutes, shaking halfway through."
+  ],
+  "source": {
+    "label": "Adapted from Minimalist Baker recipe index",
+    "url": "https://minimalistbaker.com/recipe-index/"
+  },
+  "notes": "Chickpeas provide resistant starch that acts like a prebiotic — a fiber-rich swap for a bag of crisps."
+}

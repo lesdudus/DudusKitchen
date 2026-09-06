@@ -1,0 +1,36 @@
+{
+  "id": "shrimp-scampi-foil-packets",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Shrimp Scampi Foil Packets",
+  "description": "Jumbo shrimp baked in foil with garlic, white wine, butter and lemon for an easy, fragrant dinner.",
+  "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=1200&q=85",
+  "time": 20,
+  "calories": 224,
+  "protein": 24,
+  "carbs": 6,
+  "tags": [
+    "Seafood",
+    "Quick"
+  ],
+  "ingredients": [
+    "500 g jumbo shrimp, peeled and deveined",
+    "4 garlic cloves, minced",
+    "60 ml white wine",
+    "2 tbsp butter",
+    "1 lemon, sliced",
+    "Fresh parsley"
+  ],
+  "steps": [
+    "Divide the shrimp, garlic, wine, butter and lemon slices between foil packets.",
+    "Seal and bake at 200C for 12-15 minutes.",
+    "Open carefully and finish with parsley."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste shrimp scampi foil packets",
+    "url": "https://www.skinnytaste.com/shrimp-scampi-foil-packets/"
+  },
+  "notes": "Foil packets mean the garlic-butter sauce stays concentrated rather than evaporating in the oven."
+}

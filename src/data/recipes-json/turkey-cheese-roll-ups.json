@@ -1,0 +1,34 @@
+{
+  "id": "turkey-cheese-roll-ups",
+  "origin": "curated",
+  "categories": [
+    "Snack"
+  ],
+  "title": "Turkey & Cheese Roll-Ups",
+  "description": "Sliced turkey breast wrapped around cheese sticks and fresh basil — a zero-prep protein snack.",
+  "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=1200&q=85",
+  "time": 5,
+  "calories": 95,
+  "protein": 16,
+  "carbs": 1,
+  "tags": [
+    "No prep",
+    "Portable"
+  ],
+  "ingredients": [
+    "4 slices turkey breast",
+    "2 string cheese sticks",
+    "4 fresh basil leaves",
+    "1 tsp Dijon mustard"
+  ],
+  "steps": [
+    "Lay out a turkey slice and spread with a little mustard.",
+    "Place a piece of string cheese and a basil leaf in the center.",
+    "Roll tightly, securing with a toothpick if needed."
+  ],
+  "source": {
+    "label": "Adapted from low-carb snacking guides",
+    "url": "https://www.bodybuilding.com/recipes/high-protein-bars"
+  },
+  "notes": "A genuinely zero-cook option for days you have no time — keep string cheese and sliced turkey on hand."
+}

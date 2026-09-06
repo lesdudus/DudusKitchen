@@ -1,0 +1,38 @@
+{
+  "id": "turkey-meatballs-marinara",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Baked Turkey Meatballs in Marinara Sauce",
+  "description": "Lean ground turkey meatballs with herbs and parmesan, simmered in tomato sauce.",
+  "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=1200&q=85",
+  "time": 35,
+  "calories": 290,
+  "protein": 34,
+  "carbs": 14,
+  "tags": [
+    "Turkey",
+    "Italian"
+  ],
+  "ingredients": [
+    "500 g ground turkey breast",
+    "25 g panko breadcrumbs",
+    "30 g grated parmesan",
+    "1 egg",
+    "3 garlic cloves, minced",
+    "Parsley and Italian seasoning",
+    "500 ml marinara sauce",
+    "Fresh basil to serve"
+  ],
+  "steps": [
+    "Mix the turkey with breadcrumbs, parmesan, egg, garlic and herbs, then form 16 meatballs.",
+    "Brown in a skillet, then transfer to a baking dish.",
+    "Pour over the marinara sauce and bake at 200C for 15 minutes until cooked through."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste turkey recipes",
+    "url": "https://www.skinnytaste.com/main-ingredient/turkey-recipes/"
+  },
+  "notes": "Panko keeps the meatballs light rather than dense — freeze extras in the sauce for a fast future dinner."
+}

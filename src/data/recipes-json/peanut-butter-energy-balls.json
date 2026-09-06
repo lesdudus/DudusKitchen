@@ -1,0 +1,35 @@
+{
+  "id": "peanut-butter-energy-balls",
+  "origin": "curated",
+  "categories": [
+    "Snack"
+  ],
+  "title": "Peanut Butter Energy Balls",
+  "description": "No-bake bites combining oats, peanut butter and protein powder for a quick pre-workout energy boost.",
+  "image": "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=1200&q=85",
+  "time": 15,
+  "calories": 85,
+  "protein": 4,
+  "carbs": 8,
+  "tags": [
+    "No bake",
+    "Portable"
+  ],
+  "ingredients": [
+    "50 g rolled oats",
+    "50 g natural peanut butter",
+    "20 g vanilla protein powder",
+    "15 g honey",
+    "Pinch of salt"
+  ],
+  "steps": [
+    "Mix the oats, peanut butter, protein powder and honey into a firm dough.",
+    "Chill 30 minutes, then roll into bite-sized balls.",
+    "Store in an airtight container in the fridge."
+  ],
+  "source": {
+    "label": "Adapted from EatingWell high-protein snacks",
+    "url": "https://www.eatingwell.com/recipes/high-protein-snacks/"
+  },
+  "notes": "Batch these on Sunday and keep refrigerated — grab one before training for steady energy without a sugar spike."
+}

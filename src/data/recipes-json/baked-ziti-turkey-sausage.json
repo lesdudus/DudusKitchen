@@ -1,0 +1,38 @@
+{
+  "id": "baked-ziti-turkey-sausage",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Baked Ziti with Turkey Sausage",
+  "description": "Ziti pasta baked with turkey sausage, marinara and melted mozzarella.",
+  "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=1200&q=85",
+  "time": 45,
+  "calories": 450,
+  "protein": 30,
+  "carbs": 48,
+  "tags": [
+    "Turkey",
+    "Pasta bake"
+  ],
+  "ingredients": [
+    "350 g ziti pasta",
+    "400 g turkey Italian sausage, casings removed",
+    "1 onion, diced",
+    "2 garlic cloves",
+    "700 g marinara sauce",
+    "200 g ricotta",
+    "150 g shredded mozzarella",
+    "Basil"
+  ],
+  "steps": [
+    "Cook the pasta until just shy of al dente.",
+    "Brown the turkey sausage with onion and garlic, then stir in the marinara.",
+    "Combine with the pasta and ricotta, top with mozzarella and bake at 190C for 20 minutes until bubbling."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food pasta bake collection",
+    "url": "https://www.bbcgoodfood.com/recipes/category/dinner-idea-collections"
+  },
+  "notes": "A great freezer meal — assemble and freeze unbaked, then bake from frozen adding 15 extra minutes."
+}

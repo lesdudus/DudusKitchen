@@ -47,14 +47,18 @@ footer{display:flex;justify-content:space-between;gap:12px;color:var(--muted);fo
     <!--
       INTERNAL NOTE (not shown to user on page):
       - Recipe.origin already supports 'mine' end-to-end (filter + badge done).
-      - Simplest MVP: a small "Add Recipe" form screen reusing the Recipe type fields
-        (title, categories, description, image URL, macros, ingredients/steps as
-        textareas split on newlines, source optional), writing into localStorage
-        under a new key e.g. 'duduskitchen-my-recipes', merged with the static
-        recipes[] array at render time in App.tsx.
-      - Longer-term: needs the shared backend (see Deployment note below) so both
-        the user and spouse can add/see the same "My Own" recipes instead of each
-        having a separate localStorage copy.
+      - DONE 2026-09-06 (partial): data layer migrated to GitHub+JSON architecture --
+        src/data/recipes-json/*.json (one file per recipe, glob-imported at build
+        time via recipes.ts), schema/recipe.schema.json + scripts/validate-recipes.mjs
+        (wired into `npm run prebuild`), src/data/shared-state.json (bundled shared
+        triage state) + in-app Sync modal (export/import code, latest-wins merge by
+        updatedAt) replacing pure per-browser localStorage for likes/dislikes/hidden.
+      - Still needed for "My Own" recipes specifically: a small "Add Recipe" form UI
+        that writes a new JSON object matching recipe.schema.json. Since the site is
+        static, the form can't commit to git itself -- options: (a) form generates the
+        JSON + a pre-filled GitHub Issue/PR link for one of us to merge (git-bridge,
+        no new infra), or (b) a tiny serverless function that commits via GitHub API.
+        Given current usage (2 people, low frequency), option (a) is the pragmatic MVP.
     -->
   </li>
   <li class="backlog-item">
@@ -67,10 +71,14 @@ footer{display:flex;justify-content:space-between;gap:12px;color:var(--muted);fo
         static host works: Azure Static Web Apps, Vercel, Netlify, GitHub Pages.
       - DONE 2026-09-06: deployed via GitHub Pages (public repo lesdudus/DudusKitchen,
         GitHub Actions workflow .github/workflows/deploy.yml, vite base='/DudusKitchen/').
-      - Blocker for shared use: localStorage-based state (triage + future "My Own"
-        recipes) is per-browser/per-device. If the user + spouse need a shared view,
-        hosting alone isn't enough — needs the small shared-backend phase already
-        flagged as future work (mentioned in original spec conversation).
+      - DONE 2026-09-06: shared triage state (likes/dislikes/hidden) no longer purely
+        per-browser -- src/data/shared-state.json is bundled at build time as the base
+        state, merged with localStorage via updatedAt "latest wins", plus an in-app
+        Sync modal (Copy/Paste code) lets either person merge the other's changes in
+        without a backend. Chose GitHub+JSON over Firebase per the architecture
+        comparison discussion -- content + state both stay git-versioned and AI-agent
+        friendly; revisit Firebase/Supabase only if instant real-time sync becomes a
+        real pain point (currently accepted: sync requires manually exchanging a code).
       - No auth/secrets in this app currently, so no special security setup needed
         beyond standard HTTPS the static hosts provide by default.
     -->

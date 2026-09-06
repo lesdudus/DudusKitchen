@@ -1,0 +1,39 @@
+{
+  "id": "feta-brined-chicken-bowls",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Feta-Brined Chicken Bowls with Shirazi Salad",
+  "description": "Tender feta-brined chicken breast over basmati rice with a bright, chopped Persian cucumber and tomato salad.",
+  "image": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=85",
+  "time": 75,
+  "calories": 411,
+  "protein": 31,
+  "carbs": 41,
+  "tags": [
+    "Chicken",
+    "Mediterranean"
+  ],
+  "ingredients": [
+    "2 chicken breasts",
+    "100 g feta brine (from a feta tub)",
+    "200 g cooked basmati rice",
+    "2 Persian cucumbers, diced",
+    "2 tomatoes, diced",
+    "0.25 red onion, diced",
+    "1 lemon, juiced",
+    "Olive oil, mint and parsley"
+  ],
+  "steps": [
+    "Brine the chicken in the feta liquid for at least 1 hour.",
+    "Grill or pan-sear the chicken until cooked through, then slice.",
+    "Toss the cucumber, tomato, onion, lemon juice and herbs into a Shirazi salad, and serve over rice with the chicken."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste feta-brined chicken bowls",
+    "url": "https://www.skinnytaste.com/feta-brined-chicken-bowls/"
+  },
+  "notes": "The feta brine tenderizes the chicken through its salt content — do not skip the hour of brining time."
+}

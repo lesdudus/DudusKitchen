@@ -1,0 +1,37 @@
+{
+  "id": "turkey-burgers-avocado",
+  "origin": "curated",
+  "categories": [
+    "Lunch"
+  ],
+  "title": "Turkey Burgers with Avocado",
+  "description": "Juicy ground turkey patties seasoned simply, topped with avocado and served on a wholemeal bun.",
+  "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=85",
+  "time": 25,
+  "calories": 380,
+  "protein": 32,
+  "carbs": 28,
+  "tags": [
+    "Turkey",
+    "Quick"
+  ],
+  "ingredients": [
+    "500 g ground turkey",
+    "1 garlic clove, minced",
+    "1 tsp smoked paprika",
+    "4 wholemeal buns",
+    "0.5 avocado, sliced",
+    "Lettuce and tomato",
+    "Salt and pepper"
+  ],
+  "steps": [
+    "Mix the turkey with garlic, paprika and seasoning, then form 4 patties.",
+    "Grill or pan-fry 5-6 minutes per side until cooked through.",
+    "Build the burgers with lettuce, tomato and avocado."
+  ],
+  "source": {
+    "label": "Adapted from EatingWell high-protein snacks",
+    "url": "https://www.eatingwell.com/recipes/high-protein-snacks/"
+  },
+  "notes": "Turkey burgers dry out easily — do not overwork the meat when forming the patties."
+}

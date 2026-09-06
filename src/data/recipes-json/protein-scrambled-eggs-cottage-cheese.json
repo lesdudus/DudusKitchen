@@ -1,0 +1,34 @@
+{
+  "id": "protein-scrambled-eggs-cottage-cheese",
+  "origin": "curated",
+  "categories": [
+    "Lunch"
+  ],
+  "title": "High-Protein Scrambled Eggs with Cottage Cheese",
+  "description": "Whole eggs blended with cottage cheese for extra-creamy, extra-protein scrambled eggs.",
+  "image": "https://images.unsplash.com/photo-1567521464027-f127ff144326?auto=format&fit=crop&w=1200&q=85",
+  "time": 6,
+  "calories": 310,
+  "protein": 28,
+  "carbs": 8,
+  "tags": [
+    "Eggs",
+    "Quick"
+  ],
+  "ingredients": [
+    "3 whole eggs",
+    "60 g low-fat cottage cheese",
+    "Chopped chives or spinach",
+    "Salt and pepper"
+  ],
+  "steps": [
+    "Whisk the eggs with the cottage cheese until mostly smooth.",
+    "Cook low and slow in a non-stick pan, stirring gently.",
+    "Fold through herbs or spinach just before serving."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste high-protein scrambled eggs",
+    "url": "https://www.skinnytaste.com/high-protein-scrambled-eggs-with-cottage-cheese/"
+  },
+  "notes": "Cottage cheese melts into the eggs as they cook, adding protein without any noticeable texture change."
+}

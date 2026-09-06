@@ -1,0 +1,40 @@
+{
+  "id": "crispy-turkey-chilli-noodles",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Crispy Chilli Turkey Noodles",
+  "description": "Caramelized ground turkey in a honey-sriracha glaze over udon noodles with fresh vegetables.",
+  "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=1200&q=85",
+  "time": 20,
+  "calories": 420,
+  "protein": 36,
+  "carbs": 48,
+  "tags": [
+    "Turkey",
+    "Asian-inspired"
+  ],
+  "ingredients": [
+    "500 g turkey mince",
+    "5 cm ginger, grated",
+    "1 garlic clove, crushed",
+    "3 tbsp honey",
+    "3 tbsp soy sauce",
+    "1 tbsp sriracha",
+    "350 g dried udon noodles",
+    "2 limes, juiced",
+    "2 carrots, cut into matchsticks",
+    "4 spring onions, shredded"
+  ],
+  "steps": [
+    "Fry the turkey mince until golden and crispy, breaking it up as you go.",
+    "Add ginger and garlic, then stir in honey, soy sauce and sriracha.",
+    "Cook the noodles, toss with lime juice, then top with the crispy turkey, carrots and spring onions."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food crispy chilli turkey noodles",
+    "url": "https://www.bbcgoodfood.com/recipes/crispy-chilli-turkey-noodles"
+  },
+  "notes": "Turkey mince is leaner than beef, and the honey helps the sauce properly caramelize onto the meat."
+}

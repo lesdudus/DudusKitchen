@@ -1,0 +1,36 @@
+{
+  "id": "cottage-cheese-fruit-bowl",
+  "origin": "curated",
+  "categories": [
+    "Breakfast"
+  ],
+  "title": "Cottage Cheese Bowl with Granola & Berries",
+  "description": "Cottage cheese layered with toasted granola, mixed berries, honey and cinnamon.",
+  "image": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1200&q=85",
+  "time": 5,
+  "calories": 240,
+  "protein": 28,
+  "carbs": 24,
+  "tags": [
+    "No cook",
+    "Dairy-based"
+  ],
+  "ingredients": [
+    "200 g low-fat cottage cheese",
+    "35 g granola",
+    "80 g mixed berries",
+    "1 tsp honey",
+    "Pinch of cinnamon",
+    "A few sliced almonds"
+  ],
+  "steps": [
+    "Spoon the cottage cheese into a bowl as the base.",
+    "Layer half the granola, all the berries, then the rest of the granola on top.",
+    "Drizzle with honey, dust with cinnamon and scatter over the almonds."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food high-protein breakfast collection",
+    "url": "https://www.bbcgoodfood.com/recipes/collection/high-protein-breakfast-recipes"
+  },
+  "notes": "Cottage cheese's casein protein digests slowly — this holds you longer than a yogurt bowl of the same calories."
+}

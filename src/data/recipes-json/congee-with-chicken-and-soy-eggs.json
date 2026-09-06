@@ -1,0 +1,40 @@
+{
+  "id": "congee-with-chicken-and-soy-eggs",
+  "origin": "curated",
+  "categories": [
+    "Breakfast"
+  ],
+  "title": "Congee with Soy-Marinated Eggs & Chicken",
+  "description": "Savory rice porridge with shredded chicken, ginger and a soy-marinated soft-boiled egg.",
+  "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=85",
+  "time": 35,
+  "calories": 320,
+  "protein": 26,
+  "carbs": 32,
+  "tags": [
+    "Asian-inspired",
+    "Savory"
+  ],
+  "ingredients": [
+    "50 g sushi rice, washed",
+    "250 ml chicken stock",
+    "50 g cooked shredded chicken",
+    "10 g butter",
+    "Thumb of ginger, chopped",
+    "1 spring onion, sliced",
+    "15 g roasted peanuts, crushed",
+    "1 egg",
+    "150 ml soy sauce",
+    "1/2 tbsp sugar"
+  ],
+  "steps": [
+    "Boil the egg 6 minutes, cool, peel, then marinate in the soy sauce and sugar for at least 2 hours.",
+    "Simmer the rice in stock for 25 minutes until soupy, season and stir through the chicken, ginger and butter.",
+    "Top with spring onion, peanuts and the halved marinated egg."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food congee with soy eggs",
+    "url": "https://www.bbcgoodfood.com/recipes/congee-soy-eggs"
+  },
+  "notes": "A savory, warming alternative to sweet breakfasts — great on a cold morning or if you're not a cereal person."
+}

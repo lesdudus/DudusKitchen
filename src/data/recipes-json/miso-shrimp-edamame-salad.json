@@ -1,0 +1,38 @@
+{
+  "id": "miso-shrimp-edamame-salad",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Miso Sesame Shrimp with Edamame Slaw",
+  "description": "Savory-sweet grilled shrimp over crunchy cabbage slaw with edamame and toasted almonds.",
+  "image": "https://images.unsplash.com/photo-1535291692377-b7eb2fb22a8b?auto=format&fit=crop&w=1200&q=85",
+  "time": 30,
+  "calories": 344,
+  "protein": 30,
+  "carbs": 24,
+  "tags": [
+    "Seafood",
+    "Asian-inspired"
+  ],
+  "ingredients": [
+    "500 g jumbo shrimp, peeled and deveined",
+    "2 tbsp white miso paste",
+    "2 cups shredded cabbage",
+    "1 cup shredded carrots",
+    "1 cup frozen edamame, thawed",
+    "1 red bell pepper, sliced",
+    "Scallions and cilantro",
+    "35 g roasted almonds, sliced"
+  ],
+  "steps": [
+    "Whisk the dressing ingredients, blend a portion with the miso, then marinate the shrimp 10 minutes.",
+    "Toss the cabbage, carrots, edamame and pepper with the remaining dressing.",
+    "Grill the shrimp 2-3 minutes per side, then plate over the slaw with almonds and scallions."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste miso shrimp salad",
+    "url": "https://www.skinnytaste.com/miso-shrimp-salad/"
+  },
+  "notes": "The cabbage base stays crisp for 3+ days — keep the dressing separate if prepping ahead."
+}

@@ -1,0 +1,35 @@
+{
+  "id": "maple-soy-salmon",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Air Fryer Salmon with Maple Soy Glaze",
+  "description": "Salmon fillets glazed with maple syrup, soy sauce and a touch of sriracha, air-fried to a sticky finish.",
+  "image": "https://images.unsplash.com/photo-1535291692377-b7eb2fb22a8b?auto=format&fit=crop&w=1200&q=85",
+  "time": 33,
+  "calories": 292,
+  "protein": 35,
+  "carbs": 12,
+  "tags": [
+    "Salmon",
+    "Air fryer"
+  ],
+  "ingredients": [
+    "2 salmon fillets",
+    "2 tbsp maple syrup",
+    "2 tbsp soy sauce",
+    "1 tsp sriracha",
+    "1 garlic clove, minced"
+  ],
+  "steps": [
+    "Marinate the salmon in the maple, soy, sriracha and garlic for 20 minutes.",
+    "Air fry at 200C for 8-10 minutes, brushing with extra glaze halfway.",
+    "Rest 2 minutes before serving."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste air fryer salmon with maple soy glaze",
+    "url": "https://www.skinnytaste.com/air-fryer-salmon-with-maple-soy-glaze/"
+  },
+  "notes": "The sugars in the glaze mean it can burn fast in the air fryer — check it a minute early the first time."
+}

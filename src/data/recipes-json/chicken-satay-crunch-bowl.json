@@ -1,0 +1,37 @@
+{
+  "id": "chicken-satay-crunch-bowl",
+  "origin": "curated",
+  "categories": [
+    "Lunch"
+  ],
+  "title": "Chicken Satay Crunch Bowl",
+  "description": "Ginger chicken, crisp vegetables and rice with a lighter chilli-peanut dressing.",
+  "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=85",
+  "time": 25,
+  "calories": 470,
+  "protein": 46,
+  "carbs": 44,
+  "tags": [
+    "Crunchy",
+    "Chilli"
+  ],
+  "ingredients": [
+    "160 g chicken breast",
+    "50 g dry basmati rice",
+    "100 g shredded cabbage",
+    "1 carrot and 1/2 cucumber, sliced",
+    "10 g smooth peanut butter",
+    "1 tbsp soy sauce",
+    "Lime, ginger and chilli to taste"
+  ],
+  "steps": [
+    "Cook the rice, then spread it out briefly to cool.",
+    "Sear ginger-seasoned chicken until golden and cooked through.",
+    "Whisk the dressing ingredients with warm water and toss through the assembled bowl."
+  ],
+  "source": {
+    "label": "Adapted from Good Food chicken satay salad",
+    "url": "https://www.bbcgoodfood.com/recipes/chicken-satay-salad"
+  },
+  "notes": "Raw, crunchy veg adds volume and micronutrients with almost no extra calories — useful when cutting but still hungry."
+}

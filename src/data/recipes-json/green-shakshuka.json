@@ -1,0 +1,40 @@
+{
+  "id": "green-shakshuka",
+  "origin": "curated",
+  "categories": [
+    "Breakfast"
+  ],
+  "title": "Green Shakshuka with Herbs & Yogurt",
+  "description": "Poached eggs in a bed of wilted spinach, peas and leeks, finished with yogurt and harissa.",
+  "image": "https://images.unsplash.com/photo-1515182629504-727d7753751f?auto=format&fit=crop&w=1200&q=85",
+  "time": 35,
+  "calories": 240,
+  "protein": 20,
+  "carbs": 18,
+  "tags": [
+    "Vegetable heavy",
+    "Spiced"
+  ],
+  "ingredients": [
+    "1 tbsp olive oil",
+    "1 leek, sliced",
+    "100 g fresh spinach",
+    "125 g frozen peas",
+    "1 garlic clove, chopped",
+    "1/2 tsp cumin seeds",
+    "Small bunch each parsley, coriander, mint",
+    "4 medium eggs",
+    "75 g natural yogurt",
+    "1 tsp harissa"
+  ],
+  "steps": [
+    "Soften the leek in oil, then wilt in the spinach and stir through the peas, garlic, cumin and herbs.",
+    "Make four gaps in the mixture and crack in the eggs.",
+    "Cover and cook until the whites set, then top with yogurt and harissa."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food green shakshuka",
+    "url": "https://www.bbcgoodfood.com/recipes/green-shakshuka"
+  },
+  "notes": "A vegetable-heavy way to hit your greens before noon without it feeling like a salad."
+}

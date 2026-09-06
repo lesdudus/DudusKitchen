@@ -1,0 +1,37 @@
+{
+  "id": "turkey-breast-roast-vegetables",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Roast Turkey Breast with Root Vegetables",
+  "description": "A simply seasoned roast turkey breast with caramelized carrots, parsnips and onions.",
+  "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=1200&q=85",
+  "time": 75,
+  "calories": 340,
+  "protein": 45,
+  "carbs": 22,
+  "tags": [
+    "Turkey",
+    "Roasted"
+  ],
+  "ingredients": [
+    "800 g turkey breast joint",
+    "3 carrots, chunked",
+    "3 parsnips, chunked",
+    "2 onions, quartered",
+    "2 tbsp olive oil",
+    "Fresh thyme",
+    "Salt and pepper"
+  ],
+  "steps": [
+    "Toss the vegetables with oil and seasoning around the turkey breast in a roasting tin.",
+    "Roast at 190C for about 50-60 minutes until the turkey is cooked through.",
+    "Rest 10 minutes before slicing and serving with the vegetables."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food poultry collection",
+    "url": "https://www.bbcgoodfood.com/recipes/category/poultry-collections"
+  },
+  "notes": "A great Sunday batch-cook — slice and portion the leftovers for lunches through the week."
+}

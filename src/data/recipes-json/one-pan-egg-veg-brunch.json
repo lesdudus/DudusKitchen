@@ -1,0 +1,39 @@
+{
+  "id": "one-pan-egg-veg-brunch",
+  "origin": "curated",
+  "categories": [
+    "Breakfast"
+  ],
+  "title": "One-Pan Eggs & Vegetable Hash",
+  "description": "Crispy potatoes and peppers cooked with butter and thyme, topped with baked eggs in one pan.",
+  "image": "https://images.unsplash.com/photo-1535291692377-b7eb2fb22a8b?auto=format&fit=crop&w=1200&q=85",
+  "time": 30,
+  "calories": 310,
+  "protein": 20,
+  "carbs": 32,
+  "tags": [
+    "One pan",
+    "Family style"
+  ],
+  "ingredients": [
+    "150 g baby new potatoes, halved",
+    "1/2 tbsp rapeseed oil",
+    "Knob of butter",
+    "1/2 courgette, chunked",
+    "1/2 each yellow and red pepper, chunked",
+    "1 spring onion, sliced",
+    "1 garlic clove, crushed",
+    "Thyme leaves",
+    "2 eggs"
+  ],
+  "steps": [
+    "Boil the potatoes 8 minutes, then drain.",
+    "Fry the vegetables and potatoes in oil and butter until browning, then add spring onion, garlic and thyme.",
+    "Make gaps in the pan, crack in the eggs, cover and cook 4 minutes."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food one-pan egg & veg brunch",
+    "url": "https://www.bbcgoodfood.com/recipes/one-pan-egg-veg-brunch"
+  },
+  "notes": "One pan, minimal cleanup — a good weekend option when you want a bigger cooked breakfast without the effort."
+}

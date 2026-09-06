@@ -1,0 +1,39 @@
+{
+  "id": "chicken-gyro-plate",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Chicken Gyro with Tzatziki",
+  "description": "Marinated chicken thighs in warm pita with a cooling cucumber-yogurt tzatziki.",
+  "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=1200&q=85",
+  "time": 65,
+  "calories": 365,
+  "protein": 54,
+  "carbs": 8,
+  "tags": [
+    "Chicken",
+    "Greek"
+  ],
+  "ingredients": [
+    "500 g boneless chicken thighs",
+    "150 g Greek yogurt",
+    "1 tbsp za'atar",
+    "2 garlic cloves",
+    "1 lemon, juiced",
+    "0.5 cucumber, grated",
+    "2 pitas",
+    "Tomato and red onion to serve"
+  ],
+  "steps": [
+    "Marinate the chicken in half the yogurt, za'atar, garlic and lemon juice for at least 1 hour.",
+    "Grill the chicken until charred and cooked through, then slice.",
+    "Mix the remaining yogurt with grated cucumber for tzatziki, and build the gyros in warm pita."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste chicken gyro",
+    "url": "https://www.skinnytaste.com/chicken-gyro/"
+  },
+  "notes": "Thigh meat stays juicier than breast here and handles the high-heat grilling better."
+}

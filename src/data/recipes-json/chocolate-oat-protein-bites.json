@@ -1,0 +1,36 @@
+{
+  "id": "chocolate-oat-protein-bites",
+  "origin": "curated",
+  "categories": [
+    "Snack"
+  ],
+  "title": "Chocolate Oat Protein Bites",
+  "description": "No-bake cocoa oat bites with whey and peanut butter for a portable training-day snack.",
+  "image": "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=1200&q=85",
+  "time": 15,
+  "calories": 210,
+  "protein": 17,
+  "carbs": 22,
+  "tags": [
+    "No bake",
+    "Portable"
+  ],
+  "ingredients": [
+    "30 g rolled oats",
+    "20 g chocolate protein powder",
+    "10 g cocoa powder",
+    "15 g smooth peanut butter",
+    "25 g plain skyr",
+    "A little water and a pinch of salt"
+  ],
+  "steps": [
+    "Mix all ingredients into a firm, slightly sticky dough.",
+    "Roll into four equal bites with damp hands.",
+    "Chill for at least 30 minutes before eating."
+  ],
+  "source": {
+    "label": "Inspired by Good Food protein balls",
+    "url": "https://www.bbcgoodfood.com/recipes/protein-balls"
+  },
+  "notes": "Batch these for the fridge — a protein-forward snack beats a sugar-only one for the 3pm slump."
+}

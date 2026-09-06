@@ -1,0 +1,35 @@
+{
+  "id": "berry-protein-smoothie",
+  "origin": "curated",
+  "categories": [
+    "Snack"
+  ],
+  "title": "Berry Protein Smoothie",
+  "description": "Blended Greek yogurt, berries, protein powder and almond milk for a drinkable, protein-rich snack.",
+  "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=1200&q=85",
+  "time": 10,
+  "calories": 170,
+  "protein": 20,
+  "carbs": 18,
+  "tags": [
+    "Drinkable",
+    "Portable"
+  ],
+  "ingredients": [
+    "100 g Greek yogurt",
+    "60 g mixed frozen berries",
+    "20 g vanilla whey protein powder",
+    "240 ml unsweetened almond milk",
+    "1 tbsp ground flaxseed"
+  ],
+  "steps": [
+    "Add the almond milk and frozen berries to a blender.",
+    "Add the yogurt and protein powder, then blend until smooth.",
+    "Sprinkle flaxseed on top before drinking."
+  ],
+  "source": {
+    "label": "Adapted from Epicurious protein smoothie",
+    "url": "https://www.epicurious.com/recipes/food/views/ba-syn-berry-protein-cottage-cheese-smoothie"
+  },
+  "notes": "Frozen berries add thickness without diluting the protein — a roughly 1:1 carb-to-protein ratio works well right after training."
+}

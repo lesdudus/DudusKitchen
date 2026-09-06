@@ -1,0 +1,36 @@
+{
+  "id": "trout-with-almonds",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Pan-Fried Trout with Almonds",
+  "description": "Crisp-skinned trout fillets in a simple brown butter and toasted almond sauce.",
+  "image": "https://images.unsplash.com/photo-1535291692377-b7eb2fb22a8b?auto=format&fit=crop&w=1200&q=85",
+  "time": 20,
+  "calories": 340,
+  "protein": 34,
+  "carbs": 6,
+  "tags": [
+    "Fish",
+    "Quick"
+  ],
+  "ingredients": [
+    "2 trout fillets",
+    "2 tbsp butter",
+    "30 g flaked almonds",
+    "1 lemon, juiced",
+    "Parsley",
+    "Salt and pepper"
+  ],
+  "steps": [
+    "Pan-fry the trout skin-side down until crisp, then flip briefly to finish.",
+    "Remove the fish, then toast the almonds in the same pan with the butter until golden.",
+    "Add the lemon juice, pour over the fish and finish with parsley."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food fish recipe collection",
+    "url": "https://www.bbcgoodfood.com/recipes/collection/fish-recipes"
+  },
+  "notes": "Trout is milder than salmon and cooks even faster — watch it closely so it does not overcook."
+}

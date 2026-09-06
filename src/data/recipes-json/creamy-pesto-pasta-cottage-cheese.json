@@ -1,0 +1,38 @@
+{
+  "id": "creamy-pesto-pasta-cottage-cheese",
+  "origin": "curated",
+  "categories": [
+    "Dinner"
+  ],
+  "title": "Creamy Pesto Pasta with Cottage Cheese",
+  "description": "A silky herb pasta sauce powered by blended cottage cheese instead of cream, ready in under 30 minutes.",
+  "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=1200&q=85",
+  "time": 29,
+  "calories": 340,
+  "protein": 15,
+  "carbs": 54,
+  "tags": [
+    "Vegetarian",
+    "Pasta"
+  ],
+  "ingredients": [
+    "340 g rigatoni",
+    "160 g low-fat cottage cheese",
+    "2 garlic cloves",
+    "2 cups fresh basil",
+    "5 tbsp parmesan",
+    "1.5 tbsp olive oil",
+    "2 tbsp lemon juice",
+    "Salt and pepper"
+  ],
+  "steps": [
+    "Blend the cottage cheese with a splash of water until smooth.",
+    "Blitz the garlic, basil, parmesan, oil, lemon juice and seasoning into a pesto.",
+    "Cook the pasta, then stir through the pesto and cottage cheese off the heat."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste creamy pesto pasta with cottage cheese",
+    "url": "https://www.skinnytaste.com/creamy-pesto-pasta-with-cottage-cheese/"
+  },
+  "notes": "Cottage cheese saves roughly 200 calories versus a cream-based sauce while keeping the protein where it needs to be."
+}

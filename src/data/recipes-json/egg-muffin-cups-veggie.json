@@ -1,0 +1,36 @@
+{
+  "id": "egg-muffin-cups-veggie",
+  "origin": "curated",
+  "categories": [
+    "Snack"
+  ],
+  "title": "Vegetable Egg Muffin Cups",
+  "description": "Baked egg cups loaded with spinach, cheese and bell peppers — portable and easy to reheat.",
+  "image": "https://images.unsplash.com/photo-1718307495601-5231e6290d8a?auto=format&fit=crop&w=1200&q=85",
+  "time": 25,
+  "calories": 85,
+  "protein": 8,
+  "carbs": 2,
+  "tags": [
+    "Baked",
+    "Make ahead"
+  ],
+  "ingredients": [
+    "3 large eggs",
+    "30 g shredded cheddar",
+    "40 g chopped fresh spinach",
+    "30 g diced bell pepper",
+    "20 ml milk",
+    "Salt and pepper"
+  ],
+  "steps": [
+    "Whisk the eggs with milk and seasoning.",
+    "Divide the spinach, cheese and pepper among 6 muffin cups, then pour over the egg mixture.",
+    "Bake at 190C for 20 minutes until set."
+  ],
+  "source": {
+    "label": "Inspired by EatingWell breakfast recipes",
+    "url": "https://www.eatingwell.com/recipes/high-protein-snacks/"
+  },
+  "notes": "Bake a batch and keep refrigerated for 5 days — reheats in 20 seconds for a near-instant protein snack."
+}

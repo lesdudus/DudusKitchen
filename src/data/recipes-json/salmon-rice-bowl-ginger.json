@@ -1,0 +1,41 @@
+{
+  "id": "salmon-rice-bowl-ginger",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Steamed Salmon & Vegetable Rice Bowl",
+  "description": "Flaked salmon over jasmine rice with steamed broccoli, snap peas and a ginger-soy glaze.",
+  "image": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=85",
+  "time": 30,
+  "calories": 420,
+  "protein": 35,
+  "carbs": 42,
+  "tags": [
+    "Salmon",
+    "Rice bowl"
+  ],
+  "ingredients": [
+    "2x150 g salmon fillets",
+    "2 cups cooked jasmine rice",
+    "3 cups broccoli florets",
+    "1.5 cups snap peas",
+    "2 tbsp soy sauce",
+    "1 tbsp honey",
+    "2 tsp ginger, grated",
+    "2 garlic cloves",
+    "1 tbsp sesame oil",
+    "Sesame seeds and scallions"
+  ],
+  "steps": [
+    "Steam the salmon until it flakes easily, then flake into large pieces.",
+    "Steam the broccoli and snap peas until tender-crisp.",
+    "Divide the rice into bowls, top with vegetables and salmon, then drizzle with the ginger-soy glaze."
+  ],
+  "source": {
+    "label": "Adapted from Skinnytaste steamed salmon rice bowl",
+    "url": "https://www.skinnytaste.com/steamed-salmon-veg-rice-bowl/"
+  },
+  "notes": "Steaming preserves the salmon's omega-3s better than high-heat cooking methods."
+}

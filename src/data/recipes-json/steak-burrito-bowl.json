@@ -1,0 +1,39 @@
+{
+  "id": "steak-burrito-bowl",
+  "origin": "curated",
+  "categories": [
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "Spiced Steak Burrito Bowl",
+  "description": "Fajita-seasoned steak over Mexican-style rice with roasted peppers, yogurt and fresh cilantro.",
+  "image": "https://images.unsplash.com/photo-1767324672655-8e0f5e814897?auto=format&fit=crop&w=1200&q=85",
+  "time": 10,
+  "calories": 480,
+  "protein": 38,
+  "carbs": 42,
+  "tags": [
+    "Beef",
+    "Quick"
+  ],
+  "ingredients": [
+    "250 g sirloin steak",
+    "1 sachet fajita seasoning",
+    "2 tbsp olive oil",
+    "250 g Mexican-style rice",
+    "2 roasted red peppers, sliced",
+    "0.5 lemon, juiced",
+    "Parsley",
+    "0.5 cup plain yogurt"
+  ],
+  "steps": [
+    "Coat the steak in half the seasoning and sear 2 minutes per side for medium-rare, then rest.",
+    "Warm the rice and peppers with the rest of the seasoning.",
+    "Slice the steak, then divide the rice into bowls and top with steak, yogurt and parsley."
+  ],
+  "source": {
+    "label": "Adapted from BBC Good Food steak burrito bowl",
+    "url": "https://www.bbcgoodfood.com/recipes/steak-burrito-bowl"
+  },
+  "notes": "Sliced steak cools faster in meal-prep containers, and the vitamin C in peppers helps iron absorption."
+}
