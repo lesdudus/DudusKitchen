@@ -4,7 +4,6 @@ import {
   Eye,
   EyeOff,
   Globe,
-  RefreshCw,
   Search,
   ThumbsDown,
   ThumbsUp,
@@ -12,44 +11,42 @@ import {
   X,
 } from 'lucide-react'
 import './App.css'
-import sharedStateData from './data/shared-state.json'
+import { supabase } from './lib/supabaseClient'
 import { categories, recipes, type MealCategory, type Recipe, type RecipeOrigin } from './data/recipes'
 
 type CategoryFilter = 'All' | MealCategory
 type OriginFilter = 'All' | RecipeOrigin
 type ReviewStatus = 'liked' | 'disliked' | null
 type ReviewFilter = 'All' | 'Liked' | 'Disliked' | 'Unreviewed'
-type RecipeState = { review: ReviewStatus; hidden: boolean; updatedAt?: string }
+type RecipeState = { review: ReviewStatus; hidden: boolean }
 type RecipeStateMap = Record<string, RecipeState>
 
-const STATE_KEY = 'duduskitchen-recipe-state'
+// Maps this app's simple tri-state review onto the richer recipe_status.status
+// enum in Supabase (never_again/dislike/neutral/like/love) — only like/dislike/
+// neutral are used today; love/never_again are reserved for a future UI upgrade.
+type DbReaction = 'never_again' | 'dislike' | 'neutral' | 'like' | 'love'
+type RecipeStatusRow = { recipe_id: string; status: DbReaction; hidden: boolean }
+
 const DEFAULT_STATE: RecipeState = { review: null, hidden: false }
-const SHARED_STATE = sharedStateData as RecipeStateMap
 
-// "Later wins": each entry carries updatedAt so merging shared (bundled) state
-// with this browser's local edits doesn't let a stale side clobber a newer one.
-function mergeStates(base: RecipeStateMap, overlay: RecipeStateMap): RecipeStateMap {
-  const merged: RecipeStateMap = { ...base }
-  for (const id of Object.keys(overlay)) {
-    const baseEntry = base[id]
-    const overlayEntry = overlay[id]
-    if (!baseEntry || (overlayEntry.updatedAt ?? '') >= (baseEntry.updatedAt ?? '')) {
-      merged[id] = overlayEntry
-    }
-  }
-  return merged
+function reactionToReview(status: DbReaction): ReviewStatus {
+  if (status === 'like' || status === 'love') return 'liked'
+  if (status === 'dislike' || status === 'never_again') return 'disliked'
+  return null
 }
 
-function loadLocalState(): RecipeStateMap {
-  try {
-    return JSON.parse(localStorage.getItem(STATE_KEY) ?? '{}') as RecipeStateMap
-  } catch {
-    return {}
-  }
+function reviewToReaction(review: ReviewStatus): DbReaction {
+  if (review === 'liked') return 'like'
+  if (review === 'disliked') return 'dislike'
+  return 'neutral'
 }
 
-function loadRecipeState(): RecipeStateMap {
-  return mergeStates(SHARED_STATE, loadLocalState())
+function rowsToStateMap(rows: RecipeStatusRow[]): RecipeStateMap {
+  const map: RecipeStateMap = {}
+  for (const row of rows) {
+    map[row.recipe_id] = { review: reactionToReview(row.status), hidden: row.hidden }
+  }
+  return map
 }
 
 function App() {
@@ -59,55 +56,69 @@ function App() {
   const [showHidden, setShowHidden] = useState(false)
   const [query, setQuery] = useState('')
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null)
-  const [recipeState, setRecipeState] = useState<RecipeStateMap>(() => loadRecipeState())
-  const [syncOpen, setSyncOpen] = useState(false)
-  const [importText, setImportText] = useState('')
-  const [importMessage, setImportMessage] = useState<string | null>(null)
+  const [recipeState, setRecipeState] = useState<RecipeStateMap>({})
 
   useEffect(() => {
-    localStorage.setItem(STATE_KEY, JSON.stringify(recipeState))
-  }, [recipeState])
+    let cancelled = false
+
+    supabase
+      .from('recipe_status')
+      .select('recipe_id, status, hidden')
+      .then(({ data, error }) => {
+        if (cancelled) return
+        if (error) {
+          console.error('Failed to load recipe_status', error)
+          return
+        }
+        setRecipeState(rowsToStateMap((data ?? []) as RecipeStatusRow[]))
+      })
+
+    const channel = supabase
+      .channel('recipe_status_changes')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'recipe_status' },
+        (payload) => {
+          const row = (payload.new ?? payload.old) as RecipeStatusRow | undefined
+          if (!row) return
+          setRecipeState((prev) => ({
+            ...prev,
+            [row.recipe_id]: { review: reactionToReview(row.status), hidden: row.hidden },
+          }))
+        }
+      )
+      .subscribe()
+
+    return () => {
+      cancelled = true
+      supabase.removeChannel(channel)
+    }
+  }, [])
 
   const getState = (id: string): RecipeState => recipeState[id] ?? DEFAULT_STATE
 
+  const writeRecipeStatus = (id: string, next: RecipeState) => {
+    setRecipeState((prev) => ({ ...prev, [id]: next }))
+    supabase
+      .from('recipe_status')
+      .upsert(
+        { recipe_id: id, status: reviewToReaction(next.review), hidden: next.hidden, updated_at: new Date().toISOString() },
+        { onConflict: 'recipe_id' }
+      )
+      .then(({ error }) => {
+        if (error) console.error('Failed to save recipe_status', error)
+      })
+  }
+
   const toggleReview = (id: string, value: 'liked' | 'disliked') => {
-    setRecipeState((prev) => {
-      const current = prev[id] ?? DEFAULT_STATE
-      const nextReview = current.review === value ? null : value
-      return { ...prev, [id]: { ...current, review: nextReview, updatedAt: new Date().toISOString() } }
-    })
+    const current = getState(id)
+    const nextReview = current.review === value ? null : value
+    writeRecipeStatus(id, { ...current, review: nextReview })
   }
 
   const toggleHidden = (id: string) => {
-    setRecipeState((prev) => {
-      const current = prev[id] ?? DEFAULT_STATE
-      return { ...prev, [id]: { ...current, hidden: !current.hidden, updatedAt: new Date().toISOString() } }
-    })
-  }
-
-  const exportCode = JSON.stringify(recipeState)
-
-  const copyExportCode = async () => {
-    try {
-      await navigator.clipboard.writeText(exportCode)
-      setImportMessage('Copied — send this code to sync your likes/hides.')
-    } catch {
-      setImportMessage('Could not copy automatically — select the text above and copy manually.')
-    }
-  }
-
-  const applyImportCode = () => {
-    try {
-      const incoming = JSON.parse(importText) as RecipeStateMap
-      if (typeof incoming !== 'object' || incoming === null || Array.isArray(incoming)) {
-        throw new Error('not an object')
-      }
-      setRecipeState((prev) => mergeStates(prev, incoming))
-      setImportText('')
-      setImportMessage('Synced! The other person\'s likes/hides have been merged in.')
-    } catch {
-      setImportMessage('That code looks invalid — double check you pasted the whole thing.')
-    }
+    const current = getState(id)
+    writeRecipeStatus(id, { ...current, hidden: !current.hidden })
   }
 
   const hiddenCount = recipes.filter((recipe) => getState(recipe.id).hidden).length
@@ -200,23 +211,9 @@ function App() {
       <div className="sticky-top">
         <div className="title-row">
           <h1 className="big-title">Dudu's Kitchen</h1>
-          <div className="title-actions">
-            <button
-              type="button"
-              className="backlog-btn"
-              aria-label="Sync likes/hides"
-              title="Sync likes/hides"
-              onClick={() => {
-                setImportMessage(null)
-                setSyncOpen(true)
-              }}
-            >
-              <RefreshCw size={18} />
-            </button>
-            <a className="backlog-btn" href="./backlog.html" target="_blank" rel="noreferrer" aria-label="Backlog" title="Backlog">
-              <ClipboardList size={18} />
-            </a>
-          </div>
+          <a className="backlog-btn" href="./backlog.html" target="_blank" rel="noreferrer" aria-label="Backlog" title="Backlog">
+            <ClipboardList size={18} />
+          </a>
         </div>
         <div className="search-row">
           <label className="search-pill">
@@ -396,47 +393,6 @@ function App() {
             <a className="source-link" href={selectedRecipe.source.url} target="_blank" rel="noreferrer">
               {selectedRecipe.source.label}
             </a>
-          </section>
-        </div>
-      )}
-
-      {syncOpen && (
-        <div
-          className="modal-overlay open"
-          role="presentation"
-          onMouseDown={(event) => {
-            if (event.target === event.currentTarget) setSyncOpen(false)
-          }}
-        >
-          <section className="modal-sheet sync-sheet" role="dialog" aria-modal="true" aria-labelledby="sync-title">
-            <button
-              type="button"
-              className="modal-close"
-              onClick={() => setSyncOpen(false)}
-              aria-label="Close sync"
-              autoFocus
-            >
-              <X size={18} />
-            </button>
-            <div className="modal-heading">
-              <h2 id="sync-title">Sync likes &amp; hides</h2>
-              <p>Copy your code and send it to sync with the other person's device — no account needed.</p>
-            </div>
-            <div className="section-label">1. Export your code</div>
-            <div className="sync-export">
-              <textarea readOnly value={exportCode} onFocus={(event) => event.target.select()} />
-              <button type="button" onClick={copyExportCode}>Copy code</button>
-            </div>
-            <div className="section-label">2. Paste their code to sync</div>
-            <div className="sync-import">
-              <textarea
-                placeholder="Paste the code they sent you"
-                value={importText}
-                onChange={(event) => setImportText(event.target.value)}
-              />
-              <button type="button" onClick={applyImportCode} disabled={!importText.trim()}>Apply code</button>
-            </div>
-            {importMessage && <p className="sync-message">{importMessage}</p>}
           </section>
         </div>
       )}

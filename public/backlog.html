@@ -150,12 +150,17 @@ footer{display:flex;justify-content:space-between;gap:12px;color:var(--muted);fo
   <li class="backlog-item">
     <strong>Shared profiles (you + spouse)</strong>
     <span>Separate like/dislike state per person on shared recipes.</span>
-    <!-- NOTE: needs backend/auth phase; localStorage can't cleanly separate two people on one device. -->
+    <!-- NOTE: superseded by the 2026-09-06 Supabase migration -- preferences are
+      explicitly shared/global by design (not per-user), so this idea no longer
+      applies unless the household model changes (e.g. opens up beyond 2 people). -->
   </li>
   <li class="backlog-item">
     <strong>Freeform recipe notes/comments</strong>
     <span>Jot your own tweaks or comments on any recipe.</span>
-    <!-- NOTE: add optional userNote string to RecipeState, small textarea in modal. -->
+    <!-- NOTE: DB is ready -- supabase/migrations/20260906170000_init.sql already
+      creates recipe_comments (id, recipe_id, author, body, created_at) with
+      realtime enabled. Just needs UI: a comment list + textarea in the modal,
+      reading/writing via supabase.from('recipe_comments'). -->
   </li>
   <li class="backlog-item">
     <strong>Tag-based smart filters</strong>

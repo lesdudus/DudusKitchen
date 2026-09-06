@@ -11,7 +11,6 @@
 .sticky-top { position: sticky; top: 0; z-index: 5; background: var(--cp-bg); }
 .title-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 20px 4px; }
 .big-title { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin: 0; color: var(--cp-text); }
-.title-actions { display: flex; gap: 8px; flex: 0 0 auto; }
 .backlog-btn {
   flex: 0 0 auto;
   display: inline-flex;
@@ -263,32 +262,6 @@ footer {
 .modal-heading p { margin: 6px 0 0; font-size: 0.85rem; color: var(--cp-text-muted); }
 .modal-sheet .triage-row { margin: 12px 20px 0; padding: 0; border-top: 0; gap: 10px; }
 .modal-sheet .triage-row button { height: 40px; }
-
-.sync-sheet { padding-bottom: 20px; }
-.sync-export, .sync-import { margin: 0 20px; display: flex; flex-direction: column; gap: 8px; }
-.sync-export textarea, .sync-import textarea {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.72rem;
-  color: var(--cp-text);
-  background: var(--cp-surface);
-  border: 1px solid var(--cp-border);
-  border-radius: 0.625rem;
-  padding: 10px;
-  resize: vertical;
-  min-height: 70px;
-}
-.sync-export button, .sync-import button {
-  align-self: flex-start;
-  background: var(--cp-accent);
-  color: var(--cp-accent-fg);
-  border: 0;
-  border-radius: 0.625rem;
-  font: inherit;
-  font-weight: 700;
-  padding: 8px 16px;
-}
-.sync-export button:disabled, .sync-import button:disabled { opacity: 0.5; cursor: not-allowed; }
-.sync-message { margin: 14px 20px 0; font-size: 0.82rem; color: var(--cp-accent); }
 
 .macro-row { display: flex; gap: 8px; padding: 14px 20px; }
 .macro-cell { flex: 1; background: var(--cp-surface); border-radius: 0.75rem; padding: 10px 6px; text-align: center; }
