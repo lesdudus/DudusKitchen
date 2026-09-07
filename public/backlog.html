@@ -41,24 +41,55 @@ footer{display:flex;justify-content:space-between;gap:12px;color:var(--muted);fo
 <div class="section-label">Core</div>
 <ul class="backlog-list">
   <li class="backlog-item">
-    <span class="pill">Process</span>
+    <span class="pill" style="background:rgba(34,197,94,.16);color:#22c55e">Mostly done</span>
     <strong>Define &amp; build the "My Own" recipe process</strong>
-    <span>Decide how you'll add your own recipes (form, paste-in, or manual edit) and build it.</span>
+    <span>Decide how you'll add your own recipes and build it.</span>
     <!--
       INTERNAL NOTE (not shown to user on page):
       - Recipe.origin already supports 'mine' end-to-end (filter + badge done).
-      - DONE 2026-09-06 (partial): data layer migrated to GitHub+JSON architecture --
-        src/data/recipes-json/*.json (one file per recipe, glob-imported at build
-        time via recipes.ts), schema/recipe.schema.json + scripts/validate-recipes.mjs
-        (wired into `npm run prebuild`), src/data/shared-state.json (bundled shared
-        triage state) + in-app Sync modal (export/import code, latest-wins merge by
-        updatedAt) replacing pure per-browser localStorage for likes/dislikes/hidden.
-      - Still needed for "My Own" recipes specifically: a small "Add Recipe" form UI
-        that writes a new JSON object matching recipe.schema.json. Since the site is
-        static, the form can't commit to git itself -- options: (a) form generates the
-        JSON + a pre-filled GitHub Issue/PR link for one of us to merge (git-bridge,
-        no new infra), or (b) a tiny serverless function that commits via GitHub API.
-        Given current usage (2 people, low frequency), option (a) is the pragmatic MVP.
+      - DONE 2026-09-07: the process is now simply "send it to the AI agent" --
+        any recipe supplied via image, video, audio, or a URL is ingested by the
+        agent (screenshots read directly, video/audio transcribed via a local
+        Whisper pipeline, URLs fetched/browsed) and always tagged origin:'mine',
+        regardless of whether the agent did the technical extraction -- 'mine'
+        means "the user supplied this material", not "the user typed it in".
+        'curated' is reserved ONLY for the original ~100 recipes the agent
+        independently researched via subagents at project start.
+      - Real photos (not stock) get copied into public/recipe-photos/ and
+        referenced as a relative path when the user provides one (e.g. a video
+        frame grab or a source blog's real photo), instead of reusing the
+        stock Unsplash pool.
+      - Intake source files (Recipes-intake/) are gitignored -- never committed,
+        archived locally per-recipe under Recipes-intake/ingested/<slug>/.
+      - NOT YET DONE: a proper in-app "Add Recipe" form UI for typing a recipe
+        directly without going through the agent -- still agent-mediated only.
+    -->
+  </li>
+  <li class="backlog-item">
+    <strong>Recipe review migration (remove the AI-Sourced/My Own split)</strong>
+    <span>Once you've reviewed all AI-sourced recipes, delete the ones you disliked/hid and drop the origin filter.</span>
+    <!--
+      INTERNAL NOTE (not shown to user on page):
+      - Plan (not started): once the user has liked/disliked/hidden most or all
+        of the ~100 'curated' (AI-Sourced) recipes, run a one-time migration:
+        1. Query Supabase recipe_status for rows where status IN
+           ('dislike','never_again') OR hidden = true, joined against recipes
+           with origin='curated'.
+        2. Confirm the exact list with the user before deleting anything
+           (destructive, irreversible for content -- git history keeps a copy
+           regardless, but always confirm first).
+        3. Delete the corresponding src/data/recipes-json/<id>.json files for
+           recipes the user doesn't want to keep.
+        4. Re-run npm run validate + npm run build to confirm nothing broke.
+        5. Remove the origin filter UI (source-toggle: All/AI-Sourced/My Own)
+           from App.tsx + i18n strings, since after migration there's no
+           meaningful distinction left worth filtering on -- everything
+           remaining is content the user has actively kept.
+        6. Decide whether to also drop the `origin` field from the schema
+           entirely at that point, or just stop surfacing it in the UI.
+      - Until this runs, origin:'mine' vs 'curated' stays exactly as-is: every
+        recipe the user supplies (image/video/audio/link) is 'mine'; only the
+        original AI-researched batch is 'curated'.
     -->
   </li>
   <li class="backlog-item">
