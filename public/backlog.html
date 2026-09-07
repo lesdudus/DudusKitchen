@@ -234,6 +234,29 @@ footer{display:flex;justify-content:space-between;gap:12px;color:var(--muted);fo
         built, uploaded photos would naturally be tagged imagePhotoType: 'real'.
     -->
   </li>
+  <li class="backlog-item">
+    <strong>Batch cooking filter</strong>
+    <span>A dedicated filter for recipes suited to cooking in bulk and eating over several days.</span>
+    <!--
+      INTERNAL NOTE (not shown to user on page):
+      - DONE (data only, 2026-09-07): added optional `batchCooking: boolean` to
+        recipe.schema.json + Recipe type + validate-recipes.mjs. Set to true on
+        "One Pot Quiche Protéinée" (first case, explicitly meal-prep-friendly:
+        6 portions, keeps well, good for breakfast/lunch/dinner).
+      - NOT YET DONE: any UI. User explicitly asked to hold off on surfacing
+        this in the interface for now -- data flag only, revisit later.
+      - When built: should work like the existing category filter (a filter
+        chip/tab similar to Breakfast/Lunch/Snack/Dinner), not a plain tag,
+        since the user wants it structured/filterable the same way meal
+        categories are, not just a free-text tag string (the "Meal prep" tag
+        already on some recipes is related but distinct -- this is meant to be
+        a first-class filterable dimension).
+      - Will need to backfill `batchCooking: true` on other existing recipes
+        that qualify (e.g. soups, casseroles, bulk-friendly bowls) once the
+        filter UI is actually built -- most of the 102 recipes don't have this
+        field set yet, so the filter would only surface 1 recipe today.
+    -->
+  </li>
 </ul>
 
 <footer>

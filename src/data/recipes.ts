@@ -4,6 +4,13 @@ export type MealCategory = 'Breakfast' | 'Lunch' | 'Snack' | 'Dinner'
 export type RecipeOrigin = 'curated' | 'mine'
 export type RecipeLanguage = 'en' | 'fr'
 export type ScalableIngredient = { quantity: number; unit: string; name: string }
+export type TranslatedContent = {
+  title: string
+  description: string
+  ingredients: string[]
+  steps: string[]
+  notes?: string
+}
 
 export type Recipe = {
   id: string
@@ -23,11 +30,18 @@ export type Recipe = {
   source: { label: string; url: string }
   /** Short coach's tip — why this recipe works, or how/when to use it. */
   notes?: string
+  /** Data-only for now — reserved for a future "Batch cooking" filter, not
+   * yet surfaced in the UI (see backlog). */
+  batchCooking?: boolean
   /** Default serving count this recipe's macros/ingredients are written for. */
   servings?: number
   /** Structured ingredients enabling the servings scaler; falls back to the
    * static `ingredients` list when absent (most recipes, for now). */
   scalableIngredients?: ScalableIngredient[]
+  /** Optional full-content overrides per language, keyed by UI language code.
+   * When the active UI language differs from `language` and a matching entry
+   * exists here, the app displays this instead of the primary content. */
+  translations?: Partial<Record<RecipeLanguage, TranslatedContent>>
 }
 
 // Each recipe lives in its own JSON file under ./recipes-json — one file per

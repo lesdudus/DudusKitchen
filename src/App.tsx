@@ -17,6 +17,19 @@ import { supabase } from './lib/supabaseClient'
 import { getStrings, type UiLanguage } from './i18n'
 import { categories, recipes, type MealCategory, type Recipe, type RecipeOrigin } from './data/recipes'
 
+// Localization: an "en" recipe with a matching translations.fr entry displays
+// that translation while browsing in French, instead of the untranslated badge.
+function hasTranslation(recipe: Recipe, lang: UiLanguage) {
+  return recipe.language === lang || (lang === 'fr' && !!recipe.translations?.fr)
+}
+
+function getDisplayContent(recipe: Recipe, lang: UiLanguage) {
+  if (lang === 'fr' && recipe.language === 'en' && recipe.translations?.fr) {
+    return recipe.translations.fr
+  }
+  return recipe
+}
+
 type CategoryFilter = 'All' | MealCategory
 type OriginFilter = 'All' | RecipeOrigin
 type ReviewStatus = 'liked' | 'disliked' | null
@@ -422,9 +435,11 @@ function App() {
 
       {visibleRecipes.length ? (
         <div className="st-grid">
-          {visibleRecipes.map((recipe) => (
+          {visibleRecipes.map((recipe) => {
+            const display = getDisplayContent(recipe, lang)
+            return (
             <div className="st-card" key={recipe.id}>
-              {lang === 'fr' && recipe.language === 'en' && (
+              {!hasTranslation(recipe, lang) && (
                 <button
                   type="button"
                   className={`lang-dot ${translationRequests[recipe.id] ? 'requested' : ''}`}
@@ -440,13 +455,14 @@ function App() {
               <button type="button" className="st-open" onClick={() => setSelectedRecipe(recipe)}>
                 <img src={recipe.image} alt="" />
                 <div className="st-body">
-                  <strong>{recipe.title}</strong>
+                  <strong>{display.title}</strong>
                   <span>{recipe.calories} {t.kcal} &middot; {recipe.protein}g {t.protein} &middot; {recipe.time} {t.min}</span>
                 </div>
               </button>
               {renderTriageButtons(recipe, true)}
             </div>
-          ))}
+            )
+          })}
         </div>
       ) : (
         <div className="empty-state">
@@ -462,7 +478,9 @@ function App() {
         <span>{t.footerRecipeCount(recipes.length, avgProtein)}</span>
       </footer>
 
-      {selectedRecipe && (
+      {selectedRecipe && (() => {
+        const selectedDisplay = getDisplayContent(selectedRecipe, lang)
+        return (
         <div
           className="modal-overlay open"
           role="presentation"
@@ -482,7 +500,7 @@ function App() {
             </button>
             <div className="modal-hero">
               <img src={selectedRecipe.image} alt="" />
-              {lang === 'fr' && selectedRecipe.language === 'en' && (
+              {!hasTranslation(selectedRecipe, lang) && (
                 <button
                   type="button"
                   className={`lang-dot modal-lang-dot ${translationRequests[selectedRecipe.id] ? 'requested' : ''}`}
@@ -494,8 +512,8 @@ function App() {
               )}
             </div>
             <div className="modal-heading">
-              <h2 id="modal-title">{selectedRecipe.title}</h2>
-              <p>{selectedRecipe.description}</p>
+              <h2 id="modal-title">{selectedDisplay.title}</h2>
+              <p>{selectedDisplay.description}</p>
             </div>
             {renderTriageButtons(selectedRecipe, false)}
             <div className="macro-row">
@@ -504,8 +522,8 @@ function App() {
               <div className="macro-cell"><strong>{selectedRecipe.carbs}g</strong><span>{t.carbs}</span></div>
               <div className="macro-cell"><strong>{selectedRecipe.time}</strong><span>{t.min}</span></div>
             </div>
-            {selectedRecipe.notes && (
-              <p className="coach-note"><strong>{t.coachNote}</strong> {selectedRecipe.notes}</p>
+            {selectedDisplay.notes && (
+              <p className="coach-note"><strong>{t.coachNote}</strong> {selectedDisplay.notes}</p>
             )}
             <div className="section-label">{t.ingredients}</div>
             {selectedRecipe.servings && selectedRecipe.scalableIngredients ? (
@@ -535,14 +553,14 @@ function App() {
               </>
             ) : (
               <ul className="ingredients-list">
-                {selectedRecipe.ingredients.map((ingredient) => (
+                {selectedDisplay.ingredients.map((ingredient) => (
                   <li key={ingredient}><span className="dot" />{ingredient}</li>
                 ))}
               </ul>
             )}
             <div className="section-label">{t.method}</div>
             <ol className="method-list">
-              {selectedRecipe.steps.map((step, index) => (
+              {selectedDisplay.steps.map((step, index) => (
                 <li key={step}><span className="step-num">{index + 1}</span>{step}</li>
               ))}
             </ol>
@@ -551,7 +569,8 @@ function App() {
             </a>
           </section>
         </div>
-      )}
+        )
+      })()}
     </div>
   )
 }

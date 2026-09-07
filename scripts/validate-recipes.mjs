@@ -79,6 +79,11 @@ for (const file of files) {
     fail(file, 'missing or malformed "source" object')
   }
 
+  // Optional batch-cooking flag — data-only for now, reserved for a future filter (backlog item).
+  if (recipe.batchCooking !== undefined && typeof recipe.batchCooking !== 'boolean') {
+    fail(file, 'field "batchCooking" must be a boolean when present')
+  }
+
   // Optional servings scaler — only present on recipes testing this feature so far.
   if (recipe.servings !== undefined && (!Number.isInteger(recipe.servings) || recipe.servings < 1)) {
     fail(file, 'field "servings" must be a positive integer when present')
@@ -92,6 +97,24 @@ for (const file of files) {
         if (typeof item.quantity !== 'number' || item.quantity < 0 || typeof item.unit !== 'string' || typeof item.name !== 'string') {
           fail(file, 'scalableIngredients item must have {quantity: number, unit: string, name: string}')
         }
+      }
+    }
+  }
+
+  // Optional bilingual overrides — only 'en'/'fr' keys, each a full translated content block.
+  if (recipe.translations !== undefined) {
+    for (const [langKey, content] of Object.entries(recipe.translations)) {
+      if (!['en', 'fr'].includes(langKey)) {
+        fail(file, `translations key "${langKey}" must be "en" or "fr"`)
+        continue
+      }
+      if (
+        typeof content.title !== 'string' ||
+        typeof content.description !== 'string' ||
+        !Array.isArray(content.ingredients) || content.ingredients.length === 0 ||
+        !Array.isArray(content.steps) || content.steps.length === 0
+      ) {
+        fail(file, `translations.${langKey} must have {title, description, ingredients[], steps[]}`)
       }
     }
   }

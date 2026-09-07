@@ -1,0 +1,72 @@
+{
+  "id": "peach-crumble-pie-oat-crust",
+  "origin": "curated",
+  "language": "en",
+  "categories": [
+    "Breakfast",
+    "Snack"
+  ],
+  "title": "Peach Crumble Pie With Oat Crust",
+  "description": "A flourless peach crumble pie with a wholesome oat crust — small-batch, simple to make, and just as good for breakfast as for dessert.",
+  "image": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1200&q=85",
+  "time": 35,
+  "calories": 264,
+  "protein": 3,
+  "carbs": 20,
+  "tags": [
+    "No flour",
+    "Small batch"
+  ],
+  "ingredients": [
+    "1 1/2 cups + 2 tbsp rolled oats",
+    "1/2 cup walnuts",
+    "3 tbsp (40 g) butter or coconut oil",
+    "1 tsp cinnamon",
+    "2 1/2 tbsp maple syrup",
+    "1 tbsp water",
+    "1 1/2 medium sweet peaches"
+  ],
+  "steps": [
+    "Blend the oats, walnuts and cinnamon into a coarse flour.",
+    "Melt the butter and mix it with the maple syrup.",
+    "Add the oat flour to the melted butter and syrup, mixing to a crumbly dough, then add the water and mix again.",
+    "Preheat the oven to 180°C/350°F and line a small baking pan with parchment paper.",
+    "Press two-thirds of the dough into the pan to form the crust, reserving the rest for the topping.",
+    "Wash and slice the peaches, then arrange them over the crust.",
+    "Crumble the reserved dough over the peaches to cover them (a few gaps are fine).",
+    "Bake 20-25 minutes until the crumble is golden brown.",
+    "Let cool completely before slicing — refrigerating first makes it easier to cut cleanly."
+  ],
+  "source": {
+    "label": "Her Highness, Hungry Me — Peach Crumble Pie With Oat Crust",
+    "url": "https://hh-hm.com/peach-crumble-pie-with-oat-crust/"
+  },
+  "notes": "Small-batch recipe (yields 4) — double the ingredients for a full-size pie. Keeps in the fridge up to 3 days; many say it tastes even better the next day.",
+  "translations": {
+    "fr": {
+      "title": "Tarte Crumble aux Pêches, Croûte à l'Avoine",
+      "description": "Une tarte crumble aux pêches sans farine, avec une croûte à base d'avoine — gourmande, simple à préparer et parfaite au petit-déjeuner comme au dessert.",
+      "ingredients": [
+        "1 1/2 tasse + 2 c. à soupe de flocons d'avoine",
+        "1/2 tasse de noix de Grenoble",
+        "3 c. à soupe (40 g) de beurre ou d'huile de coco",
+        "1 c. à café de cannelle",
+        "2 1/2 c. à soupe de sirop d'érable",
+        "1 c. à soupe d'eau",
+        "1 1/2 pêche mûre de taille moyenne"
+      ],
+      "steps": [
+        "Mixer les flocons d'avoine, les noix et la cannelle pour obtenir une farine grossière.",
+        "Faire fondre le beurre et le mélanger avec le sirop d'érable.",
+        "Ajouter la farine d'avoine au mélange beurre-sirop pour obtenir une pâte sableuse, puis ajouter l'eau et mélanger à nouveau.",
+        "Préchauffer le four à 180°C et chemiser un petit moule de papier cuisson.",
+        "Presser les deux tiers de la pâte dans le moule pour former la croûte, en réservant le reste pour le crumble.",
+        "Laver et couper les pêches en tranches, puis les disposer sur la croûte.",
+        "Émietter la pâte restante sur les pêches pour les recouvrir (quelques trous ne sont pas graves).",
+        "Cuire 20 à 25 minutes jusqu'à ce que le crumble soit bien doré.",
+        "Laisser refroidir complètement avant de découper — un passage au réfrigérateur facilite la découpe."
+      ],
+      "notes": "Recette pour petite quantité (4 portions) — doublez les proportions pour une tarte taille normale. Se conserve au réfrigérateur jusqu'à 3 jours ; encore meilleure le lendemain."
+    }
+  }
+}
