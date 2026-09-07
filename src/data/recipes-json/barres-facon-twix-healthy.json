@@ -1,0 +1,43 @@
+{
+  "id": "barres-facon-twix-healthy",
+  "origin": "mine",
+  "language": "fr",
+  "categories": [
+    "Snack"
+  ],
+  "title": "Barres Façon Twix Healthy",
+  "description": "Des barres façon Twix maison, avec une base à l'amande, un cœur crémeux au beurre de cacahuète et une couverture de chocolat noir — sans cuisson, à conserver au frais.",
+  "image": "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=1200&q=85",
+  "time": 60,
+  "calories": 453,
+  "protein": 10,
+  "carbs": 29,
+  "tags": [
+    "Sans cuisson",
+    "Fait maison"
+  ],
+  "ingredients": [
+    "150 g de poudre d'amande",
+    "3 c. à soupe de sirop d'agave",
+    "3 c. à soupe d'huile de coco",
+    "1 c. à soupe d'extrait de vanille",
+    "125 g de beurre de cacahuète (environ 6 c. à soupe)",
+    "4 c. à soupe de sirop d'érable ou d'agave",
+    "1 c. à soupe d'huile de coco (optionnel)",
+    "1 pincée de sel (optionnel)",
+    "1 tablette de chocolat noir dessert",
+    "1 c. à soupe d'huile de coco",
+    "Gros sel, pour saupoudrer (optionnel)"
+  ],
+  "steps": [
+    "Mélanger tous les ingrédients de la base jusqu'à obtenir une pâte homogène. Tasser fermement au fond d'un moule chemisé, puis placer 10 minutes au congélateur.",
+    "Mélanger le beurre de cacahuète avec le sirop d'érable ou d'agave, l'huile de coco et la pincée de sel (optionnels). Étaler cette couche sur la base et remettre au congélateur.",
+    "Faire fondre le chocolat noir avec l'huile de coco, puis verser sur le dessus en étalant bien. Remettre au congélateur environ 30 minutes, ou jusqu'à ce que le chocolat soit bien figé.",
+    "Saupoudrer de gros sel (optionnel), découper en 7 barres et déguster."
+  ],
+  "source": {
+    "label": "Recette personnelle (vidéo Instagram)",
+    "url": ""
+  },
+  "notes": "Pour 7 barres — à conserver au réfrigérateur ou au congélateur. Macros estimées à partir des ingrédients (pas d'étiquette nutritionnelle officielle)."
+}
