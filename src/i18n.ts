@@ -35,6 +35,7 @@ const strings = {
     min: 'min',
     coachNote: "Coach's note:",
     ingredients: 'Ingredients',
+    servingsLabel: 'Servings',
     method: 'Method',
     footerRecipeCount: (count: number, avgProtein: number) => `${count} recipes \u00b7 ${avgProtein}g avg protein`,
 
@@ -77,6 +78,7 @@ const strings = {
     min: 'min',
     coachNote: 'Astuce du coach :',
     ingredients: 'Ingrédients',
+    servingsLabel: 'Portions',
     method: 'Préparation',
     footerRecipeCount: (count: number, avgProtein: number) => `${count} recettes \u00b7 ${avgProtein}g protéines en moyenne`,
 

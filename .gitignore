@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Personal recipe intake photos (phone screenshots) — never publish to the
+# now-public repo; only the extracted recipe JSON gets committed.
+Recipes-intake/

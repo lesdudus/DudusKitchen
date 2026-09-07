@@ -3,6 +3,7 @@ import categoriesData from './categories.json'
 export type MealCategory = 'Breakfast' | 'Lunch' | 'Snack' | 'Dinner'
 export type RecipeOrigin = 'curated' | 'mine'
 export type RecipeLanguage = 'en' | 'fr'
+export type ScalableIngredient = { quantity: number; unit: string; name: string }
 
 export type Recipe = {
   id: string
@@ -22,6 +23,11 @@ export type Recipe = {
   source: { label: string; url: string }
   /** Short coach's tip — why this recipe works, or how/when to use it. */
   notes?: string
+  /** Default serving count this recipe's macros/ingredients are written for. */
+  servings?: number
+  /** Structured ingredients enabling the servings scaler; falls back to the
+   * static `ingredients` list when absent (most recipes, for now). */
+  scalableIngredients?: ScalableIngredient[]
 }
 
 // Each recipe lives in its own JSON file under ./recipes-json — one file per

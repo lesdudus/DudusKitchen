@@ -211,6 +211,29 @@ footer{display:flex;justify-content:space-between;gap:12px;color:var(--muted);fo
     <span>Quick access to the last few recipes you opened.</span>
     <!-- NOTE: small array of recipe ids in localStorage, capped at ~10, most-recent-first. -->
   </li>
+  <li class="backlog-item">
+    <strong>Real photo vs. sample photo marker</strong>
+    <span>Show whether a recipe's picture is the actual dish or a generic stock photo.</span>
+    <!--
+      INTERNAL NOTE (not shown to user on page):
+      - Real need: most of the 100 curated recipes reuse a small pool of ~20
+        verified-real Unsplash photos across many different dishes (documented
+        during initial recipe generation) -- these are NOT photos of that
+        specific recipe's actual result, just a matching stock image.
+      - Proposed field: add `imagePhotoType: 'real' | 'sample'` to recipe.schema.json
+        + all recipes-json/*.json (default 'sample' for all 100 existing curated
+        recipes, since none are true photos of that exact dish; 'real' once a
+        recipe gets its own genuine photo -- e.g. user-uploaded photo for a
+        "My Own" recipe, or once cooked and photographed).
+      - UI: small badge similar to the existing lang-dot pattern (discreet, corner
+        of image, e.g. a small camera icon for 'real' vs. no badge or a faint
+        icon for 'sample' -- avoid repeating the earlier "too many badges"
+        mistake; likely only show ONE indicator, defaulting to silent unless
+        'real', so sample photos (the current majority) don't add visual noise).
+      - Ties into the "Photo upload for My Own recipes" idea above -- once that's
+        built, uploaded photos would naturally be tagged imagePhotoType: 'real'.
+    -->
+  </li>
 </ul>
 
 <footer>

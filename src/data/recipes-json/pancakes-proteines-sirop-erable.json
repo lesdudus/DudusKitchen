@@ -1,0 +1,49 @@
+{
+  "id": "pancakes-proteines-sirop-erable",
+  "origin": "mine",
+  "language": "fr",
+  "categories": [
+    "Breakfast",
+    "Snack"
+  ],
+  "title": "Pancakes protéinés au sirop d'érable",
+  "description": "Une recette de petit déjeuner simple, protéinée et plaisir.",
+  "image": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1200&q=85",
+  "time": 10,
+  "calories": 316,
+  "protein": 13,
+  "carbs": 39,
+  "tags": [
+    "Facile",
+    "Petit-déjeuner rapide"
+  ],
+  "ingredients": [
+    "20 g (1) Farine de blé tendre ou froment T80",
+    "60 g (1) Œuf cru",
+    "20 g (1) Flocons d'avoine crus",
+    "60 ml (1) Boisson à l'avoine",
+    "5 g (1) Levure chimique ou poudre à lever",
+    "4 ml (1) Huile d'olive vierge",
+    "10 ml Sirop d'érable"
+  ],
+  "steps": [
+    "Dans un bol, verser la boisson d'avoine, l'œuf, la farine, les flocons d'avoine puis la levure chimique. Mélanger la préparation.",
+    "Dans une poêle légèrement huilée, verser une louche de pâte. Cuire le pancake 1 à 2 minutes environ d'un côté, puis de l'autre.",
+    "Verser le sirop d'érable sur vos pancakes."
+  ],
+  "source": {
+    "label": "Recette personnelle (app MyFitRace)",
+    "url": ""
+  },
+  "notes": "Pour 1 personne — 12 g de lipides pour 316 kcal, un bon ratio protéines/glucides pour un petit-déjeuner ou une collation rapide.",
+  "servings": 1,
+  "scalableIngredients": [
+    { "quantity": 20, "unit": "g", "name": "Farine de blé tendre ou froment T80" },
+    { "quantity": 60, "unit": "g", "name": "Œuf cru" },
+    { "quantity": 20, "unit": "g", "name": "Flocons d'avoine crus" },
+    { "quantity": 60, "unit": "ml", "name": "Boisson à l'avoine" },
+    { "quantity": 5, "unit": "g", "name": "Levure chimique ou poudre à lever" },
+    { "quantity": 4, "unit": "ml", "name": "Huile d'olive vierge" },
+    { "quantity": 10, "unit": "ml", "name": "Sirop d'érable" }
+  ]
+}

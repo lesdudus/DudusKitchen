@@ -286,6 +286,26 @@ footer {
   letter-spacing: 0.06em;
   color: var(--cp-text-muted);
 }
+.servings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 20px;
+  padding: 8px 12px;
+  background: var(--cp-surface);
+  border: 1px solid var(--cp-border);
+  border-radius: 0.625rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--cp-text);
+}
+.servings-row select {
+  font: inherit;
+  font-weight: 700;
+  color: var(--cp-accent);
+  background: transparent;
+  border: 0;
+}
 .ingredients-list, .method-list {
   margin: 0;
   padding: 0 20px 4px;

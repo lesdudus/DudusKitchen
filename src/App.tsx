@@ -76,6 +76,7 @@ function App() {
   const [showHidden, setShowHidden] = useState(false)
   const [query, setQuery] = useState('')
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null)
+  const [servingsSelection, setServingsSelection] = useState(1)
   const [recipeState, setRecipeState] = useState<RecipeStateMap>({})
   const [translationRequests, setTranslationRequests] = useState<TranslationMap>({})
   const [lang, setLang] = useState<UiLanguage>(() => loadLanguage())
@@ -235,6 +236,7 @@ function App() {
 
   useEffect(() => {
     if (!selectedRecipe) return
+    setServingsSelection(selectedRecipe.servings ?? 1)
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setSelectedRecipe(null)
     }
@@ -245,6 +247,8 @@ function App() {
       window.removeEventListener('keydown', closeOnEscape)
     }
   }, [selectedRecipe])
+
+  const formatScaledQuantity = (n: number) => (Number.isInteger(n) ? String(n) : n.toFixed(1))
 
   const resetFilters = () => {
     setQuery('')
@@ -504,11 +508,38 @@ function App() {
               <p className="coach-note"><strong>{t.coachNote}</strong> {selectedRecipe.notes}</p>
             )}
             <div className="section-label">{t.ingredients}</div>
-            <ul className="ingredients-list">
-              {selectedRecipe.ingredients.map((ingredient) => (
-                <li key={ingredient}><span className="dot" />{ingredient}</li>
-              ))}
-            </ul>
+            {selectedRecipe.servings && selectedRecipe.scalableIngredients ? (
+              <>
+                <label className="servings-row">
+                  {t.servingsLabel}
+                  <select
+                    value={servingsSelection}
+                    onChange={(event) => setServingsSelection(Number(event.target.value))}
+                  >
+                    {[1, 2, 3, 4, 5, 6].map((n) => (
+                      <option key={n} value={n}>{n}</option>
+                    ))}
+                  </select>
+                </label>
+                <ul className="ingredients-list">
+                  {selectedRecipe.scalableIngredients.map((item) => {
+                    const scaled = (item.quantity * servingsSelection) / selectedRecipe.servings!
+                    return (
+                      <li key={item.name}>
+                        <span className="dot" />
+                        {formatScaledQuantity(scaled)} {item.unit} {item.name}
+                      </li>
+                    )
+                  })}
+                </ul>
+              </>
+            ) : (
+              <ul className="ingredients-list">
+                {selectedRecipe.ingredients.map((ingredient) => (
+                  <li key={ingredient}><span className="dot" />{ingredient}</li>
+                ))}
+              </ul>
+            )}
             <div className="section-label">{t.method}</div>
             <ol className="method-list">
               {selectedRecipe.steps.map((step, index) => (

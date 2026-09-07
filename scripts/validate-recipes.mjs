@@ -79,6 +79,23 @@ for (const file of files) {
     fail(file, 'missing or malformed "source" object')
   }
 
+  // Optional servings scaler — only present on recipes testing this feature so far.
+  if (recipe.servings !== undefined && (!Number.isInteger(recipe.servings) || recipe.servings < 1)) {
+    fail(file, 'field "servings" must be a positive integer when present')
+  }
+  if (recipe.scalableIngredients !== undefined) {
+    if (recipe.servings === undefined) fail(file, 'scalableIngredients present without "servings"')
+    if (!Array.isArray(recipe.scalableIngredients) || recipe.scalableIngredients.length === 0) {
+      fail(file, 'scalableIngredients must be a non-empty array when present')
+    } else {
+      for (const item of recipe.scalableIngredients) {
+        if (typeof item.quantity !== 'number' || item.quantity < 0 || typeof item.unit !== 'string' || typeof item.name !== 'string') {
+          fail(file, 'scalableIngredients item must have {quantity: number, unit: string, name: string}')
+        }
+      }
+    }
+  }
+
   const haystack = [recipe.title, recipe.description, ...(recipe.ingredients ?? [])].join(' ')
   if (PORK_PATTERN.test(haystack) && !/turkey (?:bacon|ham|sausage)/i.test(haystack)) {
     fail(file, 'possible pork reference detected — verify manually')
