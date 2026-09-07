@@ -1,0 +1,43 @@
+{
+  "id": "one-pot-quiche-proteinee",
+  "origin": "mine",
+  "language": "fr",
+  "categories": [
+    "Breakfast",
+    "Lunch",
+    "Dinner"
+  ],
+  "title": "One Pot Quiche Protéinée",
+  "description": "Une quiche one-pot riche en protéines, cuite au four dans un seul plat — idéale à préparer à l'avance pour plusieurs repas.",
+  "image": "recipe-photos/one-pot-quiche-proteinee.jpeg",
+  "time": 60,
+  "calories": 350,
+  "protein": 45,
+  "carbs": 11,
+  "tags": [
+    "One-pot",
+    "Meal prep"
+  ],
+  "ingredients": [
+    "8 œufs",
+    "Sel, poivre, paprika",
+    "600 g de blanc de poulet",
+    "400 g de brocoli, coupé finement, cru",
+    "100 g d'oignons, hachés",
+    "100 g de feta",
+    "400 g de skyr ou de fromage blanc",
+    "40 g de mozzarella"
+  ],
+  "steps": [
+    "Casser les œufs dans un grand plat, assaisonner avec le sel, le poivre et le paprika, puis bien mélanger.",
+    "Ajouter le blanc de poulet, le brocoli, les oignons, la feta et le skyr (ou fromage blanc). Mélanger à nouveau.",
+    "Ajouter la mozzarella par-dessus.",
+    "Cuire au four 40 minutes à 180°C.",
+    "Laisser bien refroidir avant de démouler et de servir."
+  ],
+  "source": {
+    "label": "Recette personnelle (vidéo Instagram, jb_jumpingggg)",
+    "url": ""
+  },
+  "notes": "Pour 6 portions — 350 kcal et 45 g de protéines par part. Se prépare à l'avance, idéal au petit-déjeuner, déjeuner ou dîner selon les besoins."
+}
