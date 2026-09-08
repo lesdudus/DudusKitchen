@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react'
 import {
   Check,
   ClipboardList,
-  Eye,
-  EyeOff,
+  FlaskConical,
   Globe,
   Languages,
   Search,
@@ -32,9 +31,9 @@ function getDisplayContent(recipe: Recipe, lang: UiLanguage) {
 
 type CategoryFilter = 'All' | MealCategory
 type OriginFilter = 'All' | RecipeOrigin
-type ReviewStatus = 'liked' | 'disliked' | null
-type ReviewFilter = 'All' | 'Liked' | 'Disliked' | 'Unreviewed'
-type RecipeState = { review: ReviewStatus; hidden: boolean }
+type ReviewStatus = 'unreviewed' | 'like' | 'to_test' | 'dislike'
+type ReviewFilter = 'All' | 'Unreviewed' | 'Like' | 'ToTest' | 'Dislike'
+type RecipeState = { status: ReviewStatus }
 type RecipeStateMap = Record<string, RecipeState>
 
 const LANG_KEY = 'duduskitchen-lang'
@@ -50,30 +49,30 @@ const CATEGORY_LABELS: Record<MealCategory, { en: string; fr: string }> = {
   Dinner: { en: 'Dinner', fr: 'Dîner' },
 }
 
-// Maps this app's simple tri-state review onto the richer recipe_status.status
-// enum in Supabase (never_again/dislike/neutral/like/love) — only like/dislike/
-// neutral are used today; love/never_again are reserved for a future UI upgrade.
+// Maps this app's review states onto the richer recipe_status.status enum in
+// Supabase (never_again/dislike/neutral/like/love) — 'to_test' maps to 'neutral';
+// 'unreviewed' has no row at all (deleted on reset); love/never_again reserved for later.
 type DbReaction = 'never_again' | 'dislike' | 'neutral' | 'like' | 'love'
-type RecipeStatusRow = { recipe_id: string; status: DbReaction; hidden: boolean }
+type RecipeStatusRow = { recipe_id: string; status: DbReaction }
 
-const DEFAULT_STATE: RecipeState = { review: null, hidden: false }
+const DEFAULT_STATE: RecipeState = { status: 'unreviewed' }
 
-function reactionToReview(status: DbReaction): ReviewStatus {
-  if (status === 'like' || status === 'love') return 'liked'
-  if (status === 'dislike' || status === 'never_again') return 'disliked'
-  return null
+function dbToUiStatus(status: DbReaction): ReviewStatus {
+  if (status === 'like' || status === 'love') return 'like'
+  if (status === 'dislike' || status === 'never_again') return 'dislike'
+  return 'to_test'
 }
 
-function reviewToReaction(review: ReviewStatus): DbReaction {
-  if (review === 'liked') return 'like'
-  if (review === 'disliked') return 'dislike'
+function uiToDbStatus(status: 'like' | 'to_test' | 'dislike'): DbReaction {
+  if (status === 'like') return 'like'
+  if (status === 'dislike') return 'dislike'
   return 'neutral'
 }
 
 function rowsToStateMap(rows: RecipeStatusRow[]): RecipeStateMap {
   const map: RecipeStateMap = {}
   for (const row of rows) {
-    map[row.recipe_id] = { review: reactionToReview(row.status), hidden: row.hidden }
+    map[row.recipe_id] = { status: dbToUiStatus(row.status) }
   }
   return map
 }
@@ -86,7 +85,6 @@ function App() {
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>('All')
   const [originFilter, setOriginFilter] = useState<OriginFilter>('All')
   const [reviewFilter, setReviewFilter] = useState<ReviewFilter>('All')
-  const [showHidden, setShowHidden] = useState(false)
   const [query, setQuery] = useState('')
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null)
   const [servingsSelection, setServingsSelection] = useState(1)
@@ -104,7 +102,7 @@ function App() {
 
     supabase
       .from('recipe_status')
-      .select('recipe_id, status, hidden')
+      .select('recipe_id, status')
       .then(({ data, error }) => {
         if (cancelled) return
         if (error) {
@@ -124,7 +122,7 @@ function App() {
           if (!row) return
           setRecipeState((prev) => ({
             ...prev,
-            [row.recipe_id]: { review: reactionToReview(row.status), hidden: row.hidden },
+            [row.recipe_id]: { status: dbToUiStatus(row.status) },
           }))
         }
       )
@@ -201,12 +199,22 @@ function App() {
 
   const getState = (id: string): RecipeState => recipeState[id] ?? DEFAULT_STATE
 
-  const writeRecipeStatus = (id: string, next: RecipeState) => {
-    setRecipeState((prev) => ({ ...prev, [id]: next }))
+  const setReviewStatus = (id: string, status: ReviewStatus) => {
+    setRecipeState((prev) => ({ ...prev, [id]: { status } }))
+    if (status === 'unreviewed') {
+      supabase
+        .from('recipe_status')
+        .delete()
+        .eq('recipe_id', id)
+        .then(({ error }) => {
+          if (error) console.error('Failed to reset recipe_status', error)
+        })
+      return
+    }
     supabase
       .from('recipe_status')
       .upsert(
-        { recipe_id: id, status: reviewToReaction(next.review), hidden: next.hidden, updated_at: new Date().toISOString() },
+        { recipe_id: id, status: uiToDbStatus(status), updated_at: new Date().toISOString() },
         { onConflict: 'recipe_id' }
       )
       .then(({ error }) => {
@@ -214,30 +222,23 @@ function App() {
       })
   }
 
-  const toggleReview = (id: string, value: 'liked' | 'disliked') => {
+  const toggleReviewStatus = (id: string, value: 'like' | 'to_test' | 'dislike') => {
     const current = getState(id)
-    const nextReview = current.review === value ? null : value
-    writeRecipeStatus(id, { ...current, review: nextReview })
+    setReviewStatus(id, current.status === value ? 'unreviewed' : value)
   }
 
-  const toggleHidden = (id: string) => {
-    const current = getState(id)
-    writeRecipeStatus(id, { ...current, hidden: !current.hidden })
-  }
-
-  const hiddenCount = recipes.filter((recipe) => getState(recipe.id).hidden).length
   const normalizedQuery = query.trim().toLowerCase()
 
   const visibleRecipes = recipes.filter((recipe) => {
     const state = getState(recipe.id)
-    if (showHidden !== state.hidden) return false
     const matchesCategory = activeCategory === 'All' || recipe.categories.includes(activeCategory)
     const matchesOrigin = originFilter === 'All' || recipe.origin === originFilter
     const matchesReview =
       reviewFilter === 'All' ||
-      (reviewFilter === 'Liked' && state.review === 'liked') ||
-      (reviewFilter === 'Disliked' && state.review === 'disliked') ||
-      (reviewFilter === 'Unreviewed' && state.review === null)
+      (reviewFilter === 'Unreviewed' && state.status === 'unreviewed') ||
+      (reviewFilter === 'Like' && state.status === 'like') ||
+      (reviewFilter === 'Dislike' && state.status === 'dislike') ||
+      (reviewFilter === 'ToTest' && state.status === 'to_test')
     const searchableText = [recipe.title, recipe.description, ...recipe.categories, ...recipe.tags]
       .join(' ')
       .toLowerCase()
@@ -268,7 +269,6 @@ function App() {
     setActiveCategory('All')
     setOriginFilter('All')
     setReviewFilter('All')
-    setShowHidden(false)
   }
 
   const renderTriageButtons = (recipe: Recipe, stopPropagation: boolean) => {
@@ -281,33 +281,33 @@ function App() {
       <div className="triage-row">
         <button
           type="button"
-          className={state.review === 'liked' ? 'active-like' : ''}
-          aria-pressed={state.review === 'liked'}
+          className={state.status === 'like' ? 'active-like' : ''}
+          aria-pressed={state.status === 'like'}
           aria-label={t.likeRecipe}
           title={t.like}
-          onClick={withStop(() => toggleReview(recipe.id, 'liked'))}
+          onClick={withStop(() => toggleReviewStatus(recipe.id, 'like'))}
         >
           <ThumbsUp size={16} />
         </button>
         <button
           type="button"
-          className={state.review === 'disliked' ? 'active-dislike' : ''}
-          aria-pressed={state.review === 'disliked'}
-          aria-label={t.dislikeRecipe}
-          title={t.dislike}
-          onClick={withStop(() => toggleReview(recipe.id, 'disliked'))}
+          className={state.status === 'to_test' ? 'active-test' : ''}
+          aria-pressed={state.status === 'to_test'}
+          aria-label={t.toTestRecipe}
+          title={t.toTest}
+          onClick={withStop(() => toggleReviewStatus(recipe.id, 'to_test'))}
         >
-          <ThumbsDown size={16} />
+          <FlaskConical size={16} />
         </button>
         <button
           type="button"
-          className={state.hidden ? 'active-hide' : ''}
-          aria-pressed={state.hidden}
-          aria-label={state.hidden ? t.unhideRecipe : t.hideRecipe}
-          title={state.hidden ? t.unhide : t.hide}
-          onClick={withStop(() => toggleHidden(recipe.id))}
+          className={state.status === 'dislike' ? 'active-dislike' : ''}
+          aria-pressed={state.status === 'dislike'}
+          aria-label={t.dislikeRecipe}
+          title={t.dislike}
+          onClick={withStop(() => toggleReviewStatus(recipe.id, 'dislike'))}
         >
-          {state.hidden ? <Eye size={16} /> : <EyeOff size={16} />}
+          <ThumbsDown size={16} />
         </button>
       </div>
     )
@@ -400,7 +400,7 @@ function App() {
           ))}
         </div>
         <div className="seg-wrap seg-wrap-secondary" role="tablist" aria-label="Filter recipes by review status">
-          {(['All', 'Liked', 'Disliked', 'Unreviewed'] as ReviewFilter[]).map((filter) => (
+          {(['All', 'Unreviewed', 'Like', 'ToTest', 'Dislike'] as ReviewFilter[]).map((filter) => (
             <button
               type="button"
               key={filter}
@@ -411,21 +411,15 @@ function App() {
             >
               {filter === 'All'
                 ? t.reviewAll
-                : filter === 'Liked'
-                  ? t.reviewLiked
-                  : filter === 'Disliked'
-                    ? t.reviewDisliked
-                    : t.reviewUnreviewed}
+                : filter === 'Unreviewed'
+                  ? t.reviewUnreviewed
+                  : filter === 'Like'
+                    ? t.reviewLiked
+                    : filter === 'ToTest'
+                      ? t.reviewToTest
+                      : t.reviewDisliked}
             </button>
           ))}
-          <button
-            type="button"
-            className={`seg seg-hidden ${showHidden ? 'active' : ''}`}
-            aria-pressed={showHidden}
-            onClick={() => setShowHidden((value) => !value)}
-          >
-            {showHidden ? <Eye size={14} /> : <EyeOff size={14} />} {t.hidden} ({hiddenCount})
-          </button>
         </div>
       </div>
 
