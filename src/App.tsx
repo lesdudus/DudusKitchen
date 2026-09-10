@@ -532,6 +532,7 @@ function App() {
                 min="0"
                 value={coffeeBeans}
                 onChange={(event) => setCoffeeBeans(event.target.value === '' ? 0 : Number(event.target.value))}
+                onFocus={(event) => event.target.select()}
               />
             </label>
             <div className="macro-row">
