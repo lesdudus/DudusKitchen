@@ -26,3 +26,8 @@ dist-ssr
 # Personal recipe intake photos (phone screenshots) — never publish to the
 # now-public repo; only the extracted recipe JSON gets committed.
 Recipes-intake/
+
+# Design review packs prepared for external reviewers (Fable/cowork) — never
+# publish; regenerate on demand instead of tracking in git.
+design-review-pack/
+design-review-pack.zip

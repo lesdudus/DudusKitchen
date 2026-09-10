@@ -36,6 +36,10 @@ const strings = {
     servingsLabel: 'Servings',
     method: 'Method',
     footerRecipeCount: (count: number, avgProtein: number) => `${count} recipes \u00b7 ${avgProtein}g avg protein`,
+    grinderSetting: 'Grinder setting',
+    coffeeDose: 'Coffee dose',
+    coffeeWater: 'Water',
+    coffeePreInfusion: 'Pre-infusion',
 
     notTranslatedBadge: 'EN only',
     translateThis: 'Translate this',
@@ -77,6 +81,10 @@ const strings = {
     servingsLabel: 'Portions',
     method: 'Préparation',
     footerRecipeCount: (count: number, avgProtein: number) => `${count} recettes \u00b7 ${avgProtein}g protéines en moyenne`,
+    grinderSetting: 'Mouture',
+    coffeeDose: 'Dose de café',
+    coffeeWater: 'Eau',
+    coffeePreInfusion: 'Pré-infusion',
 
     notTranslatedBadge: 'Anglais uniquement',
     translateThis: 'Traduire',

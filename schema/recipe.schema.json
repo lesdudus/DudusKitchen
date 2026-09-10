@@ -2,64 +2,10 @@
   "$id": "recipe.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Recipe",
-  "type": "object",
-  "required": [
-    "id", "categories", "origin", "language", "title", "description", "image",
-    "time", "calories", "protein", "carbs", "tags", "ingredients", "steps", "source"
+  "oneOf": [
+    { "$ref": "#/definitions/foodRecipe" },
+    { "$ref": "#/definitions/coffeeRecipe" }
   ],
-  "additionalProperties": false,
-  "properties": {
-    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
-    "categories": {
-      "type": "array",
-      "minItems": 1,
-      "items": { "enum": ["Breakfast", "Lunch", "Snack", "Dinner"] }
-    },
-    "origin": { "enum": ["curated", "mine"] },
-    "language": { "enum": ["en", "fr"] },
-    "title": { "type": "string", "minLength": 1 },
-    "description": { "type": "string", "minLength": 1 },
-    "image": { "type": "string", "pattern": "^(https://|recipe-photos/)" },
-    "time": { "type": "integer", "minimum": 1 },
-    "calories": { "type": "integer", "minimum": 0 },
-    "protein": { "type": "number", "minimum": 0 },
-    "carbs": { "type": "number", "minimum": 0 },
-    "tags": { "type": "array", "items": { "type": "string" } },
-    "ingredients": { "type": "array", "minItems": 1, "items": { "type": "string" } },
-    "steps": { "type": "array", "minItems": 1, "items": { "type": "string" } },
-    "source": {
-      "type": "object",
-      "required": ["label", "url"],
-      "properties": {
-        "label": { "type": "string" },
-        "url": { "type": "string", "pattern": "^(https://|$)" }
-      }
-    },
-    "notes": { "type": "string" },
-    "batchCooking": { "type": "boolean" },
-    "servings": { "type": "integer", "minimum": 1 },
-    "scalableIngredients": {
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "required": ["quantity", "unit", "name"],
-        "properties": {
-          "quantity": { "type": "number", "minimum": 0 },
-          "unit": { "type": "string" },
-          "name": { "type": "string" }
-        }
-      }
-    },
-    "translations": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "en": { "$ref": "#/definitions/translatedContent" },
-        "fr": { "$ref": "#/definitions/translatedContent" }
-      }
-    }
-  },
   "definitions": {
     "translatedContent": {
       "type": "object",
@@ -71,6 +17,104 @@
         "steps": { "type": "array", "minItems": 1, "items": { "type": "string" } },
         "notes": { "type": "string" }
       }
+    },
+    "foodRecipe": {
+      "type": "object",
+      "required": [
+        "id", "categories", "origin", "language", "title", "description", "image",
+        "time", "calories", "protein", "carbs", "tags", "ingredients", "steps", "source"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "categories": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "enum": ["Breakfast", "Lunch", "Snack", "Dinner"] }
+        },
+        "origin": { "enum": ["curated", "mine"] },
+        "language": { "enum": ["en", "fr"] },
+        "title": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "image": { "type": "string", "pattern": "^(https://|recipe-photos/)" },
+        "time": { "type": "integer", "minimum": 1 },
+        "calories": { "type": "integer", "minimum": 0 },
+        "protein": { "type": "number", "minimum": 0 },
+        "carbs": { "type": "number", "minimum": 0 },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "ingredients": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "steps": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "source": {
+          "type": "object",
+          "required": ["label", "url"],
+          "properties": {
+            "label": { "type": "string" },
+            "url": { "type": "string", "pattern": "^(https://|$)" }
+          }
+        },
+        "notes": { "type": "string" },
+        "batchCooking": { "type": "boolean" },
+        "servings": { "type": "integer", "minimum": 1 },
+        "scalableIngredients": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["quantity", "unit", "name"],
+            "properties": {
+              "quantity": { "type": "number", "minimum": 0 },
+              "unit": { "type": "string" },
+              "name": { "type": "string" }
+            }
+          }
+        },
+        "translations": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "en": { "$ref": "#/definitions/translatedContent" },
+            "fr": { "$ref": "#/definitions/translatedContent" }
+          }
+        }
+      }
+    },
+    "coffeeRecipe": {
+      "type": "object",
+      "required": [
+        "id", "categories", "origin", "language", "title", "description", "image",
+        "tags", "source", "beansDefault", "waterDefault", "preInfusionPercent", "grinder", "steps"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "categories": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": { "const": "Coffee" }
+        },
+        "origin": { "enum": ["curated", "mine"] },
+        "language": { "enum": ["en", "fr"] },
+        "title": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "image": { "type": "string", "pattern": "^(https://|recipe-photos/)" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "source": {
+          "type": "object",
+          "required": ["label", "url"],
+          "properties": {
+            "label": { "type": "string" },
+            "url": { "type": "string", "pattern": "^(https://|$)" }
+          }
+        },
+        "notes": { "type": "string" },
+        "beansDefault": { "type": "number", "exclusiveMinimum": 0 },
+        "waterDefault": { "type": "number", "exclusiveMinimum": 0 },
+        "preInfusionPercent": { "type": "number", "minimum": 0, "maximum": 100 },
+        "grinder": { "type": "string", "minLength": 1 },
+        "steps": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
     }
   }
 }
+

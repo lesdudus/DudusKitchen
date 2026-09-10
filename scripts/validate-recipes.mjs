@@ -5,12 +5,14 @@ import { fileURLToPath } from 'node:url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const recipesDir = join(__dirname, '..', 'src', 'data', 'recipes-json')
 
-const VALID_CATEGORIES = new Set(['Breakfast', 'Lunch', 'Snack', 'Dinner'])
+const VALID_CATEGORIES = new Set(['Breakfast', 'Lunch', 'Snack', 'Dinner', 'Coffee'])
 const VALID_ORIGINS = new Set(['curated', 'mine'])
 const VALID_LANGUAGES = new Set(['en', 'fr'])
 const PORK_PATTERN = /\bpork\b|\bbacon\b|\bham\b/i
 const REQUIRED_STRING_FIELDS = ['id', 'title', 'description', 'image']
-const REQUIRED_ARRAY_FIELDS = ['categories', 'tags', 'ingredients', 'steps']
+const REQUIRED_ARRAY_FIELDS = ['categories', 'tags', 'steps']
+const COFFEE_ONLY_FIELDS = ['beansDefault', 'waterDefault', 'preInfusionPercent', 'grinder']
+const FOOD_ONLY_FIELDS = ['time', 'calories', 'protein', 'carbs', 'ingredients', 'servings', 'scalableIngredients', 'translations', 'batchCooking']
 
 let errorCount = 0
 const seenIds = new Set()
@@ -36,6 +38,8 @@ for (const file of files) {
     continue
   }
 
+  const isCoffee = Array.isArray(recipe.categories) && recipe.categories.includes('Coffee')
+
   for (const field of REQUIRED_STRING_FIELDS) {
     if (typeof recipe[field] !== 'string' || recipe[field].length === 0) {
       fail(file, `missing or empty required string field "${field}"`)
@@ -45,6 +49,9 @@ for (const file of files) {
     if (!Array.isArray(recipe[field]) || recipe[field].length === 0) {
       fail(file, `missing or empty required array field "${field}"`)
     }
+  }
+  if (!isCoffee && (!Array.isArray(recipe.ingredients) || recipe.ingredients.length === 0)) {
+    fail(file, 'missing or empty required array field "ingredients"')
   }
   if (`${recipe.id}.json` !== file) {
     fail(file, `filename does not match id "${recipe.id}"`)
@@ -65,14 +72,38 @@ for (const file of files) {
       if (!VALID_CATEGORIES.has(category)) fail(file, `invalid category "${category}"`)
     }
   }
-  for (const field of ['time', 'calories']) {
-    if (!Number.isInteger(recipe[field]) || recipe[field] < 0) {
-      fail(file, `field "${field}" must be a non-negative integer`)
-    }
+  if (isCoffee && !(recipe.categories.length === 1 && recipe.categories[0] === 'Coffee')) {
+    fail(file, 'coffee recipes must have categories exactly ["Coffee"]')
   }
-  for (const field of ['protein', 'carbs']) {
-    if (typeof recipe[field] !== 'number' || recipe[field] < 0) {
-      fail(file, `field "${field}" must be a non-negative number`)
+
+  if (isCoffee) {
+    for (const field of ['beansDefault', 'waterDefault']) {
+      if (typeof recipe[field] !== 'number' || recipe[field] <= 0) {
+        fail(file, `field "${field}" must be a positive number`)
+      }
+    }
+    if (typeof recipe.preInfusionPercent !== 'number' || recipe.preInfusionPercent < 0 || recipe.preInfusionPercent > 100) {
+      fail(file, 'field "preInfusionPercent" must be a number between 0 and 100')
+    }
+    if (typeof recipe.grinder !== 'string' || recipe.grinder.length === 0) {
+      fail(file, 'missing or empty required string field "grinder"')
+    }
+    for (const field of FOOD_ONLY_FIELDS) {
+      if (recipe[field] !== undefined) fail(file, `field "${field}" is not applicable to coffee recipes`)
+    }
+  } else {
+    for (const field of ['time', 'calories']) {
+      if (!Number.isInteger(recipe[field]) || recipe[field] < 0) {
+        fail(file, `field "${field}" must be a non-negative integer`)
+      }
+    }
+    for (const field of ['protein', 'carbs']) {
+      if (typeof recipe[field] !== 'number' || recipe[field] < 0) {
+        fail(file, `field "${field}" must be a non-negative number`)
+      }
+    }
+    for (const field of COFFEE_ONLY_FIELDS) {
+      if (recipe[field] !== undefined) fail(file, `field "${field}" is not applicable to food recipes`)
     }
   }
   if (!recipe.source || typeof recipe.source.label !== 'string' || typeof recipe.source.url !== 'string') {

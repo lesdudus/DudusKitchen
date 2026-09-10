@@ -1,0 +1,26 @@
+{
+  "id": "v60",
+  "categories": ["Coffee"],
+  "origin": "mine",
+  "language": "fr",
+  "title": "V60",
+  "description": "Café filtre en méthode douce : tasse claire et aromatique, préparée dans une verseuse conique Hario V60.",
+  "image": "https://images.pexels.com/photos/8742029/pexels-photo-8742029.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "tags": ["Filtre", "Méthode douce"],
+  "source": {
+    "label": "Technique inspirée de la méthode pour-over classique (Wikipedia, Drip coffee)",
+    "url": "https://en.wikipedia.org/wiki/Drip_coffee"
+  },
+  "notes": "Ratio de référence : 12 g de café pour 200 g d'eau (environ 1:16,7). Change la dose et l'eau ainsi que la pré-infusion se recalculent automatiquement.",
+  "beansDefault": 12,
+  "waterDefault": 200,
+  "preInfusionPercent": 18,
+  "grinder": "24-25",
+  "steps": [
+    "Rincer le filtre en papier à l'eau chaude pour retirer le goût de papier, puis préchauffer la carafe et jeter l'eau de rinçage.",
+    "Verser la mouture dans le V60 et niveler le lit de café. Lancer le chronomètre.",
+    "Verser l'eau de pré-infusion en petits cercles pour bien saturer toute la mouture, puis laisser reposer 30 à 45 secondes le temps que le café dégaze.",
+    "Verser le reste de l'eau en 2 à 3 fois, toujours en cercles du centre vers l'extérieur, en gardant un niveau d'eau stable.",
+    "Laisser l'eau s'écouler complètement (environ 2 min 30 à 3 min au total), puis retirer le V60 et déguster."
+  ]
+}

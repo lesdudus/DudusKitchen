@@ -298,13 +298,16 @@ footer {
   font-weight: 600;
   color: var(--cp-text);
 }
-.servings-row select {
+.servings-row select,
+.servings-row input[type='number'] {
   font: inherit;
   font-weight: 700;
   color: var(--cp-accent);
   background: transparent;
   border: 0;
 }
+.servings-row input[type='number'] { width: 70px; text-align: right; }
+.servings-row input[type='number']:focus { outline: none; }
 .ingredients-list, .method-list {
   margin: 0;
   padding: 0 20px 4px;

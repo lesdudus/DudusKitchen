@@ -14,15 +14,16 @@ import {
 import './App.css'
 import { supabase } from './lib/supabaseClient'
 import { getStrings, type UiLanguage } from './i18n'
-import { categories, recipes, type MealCategory, type Recipe, type RecipeOrigin } from './data/recipes'
+import { categories, recipes, isCoffeeRecipe, type FoodRecipe, type MealCategory, type Recipe, type RecipeOrigin } from './data/recipes'
 
 // Localization: an "en" recipe with a matching translations.fr entry displays
 // that translation while browsing in French, instead of the untranslated badge.
-function hasTranslation(recipe: Recipe, lang: UiLanguage) {
+// Coffee recipes have no bilingual layer — only food recipes use this.
+function hasTranslation(recipe: FoodRecipe, lang: UiLanguage) {
   return recipe.language === lang || (lang === 'fr' && !!recipe.translations?.fr)
 }
 
-function getDisplayContent(recipe: Recipe, lang: UiLanguage) {
+function getDisplayContent(recipe: FoodRecipe, lang: UiLanguage) {
   if (lang === 'fr' && recipe.language === 'en' && recipe.translations?.fr) {
     return recipe.translations.fr
   }
@@ -47,6 +48,7 @@ const CATEGORY_LABELS: Record<MealCategory, { en: string; fr: string }> = {
   Lunch: { en: 'Lunch', fr: 'Déjeuner' },
   Snack: { en: 'Snack', fr: 'Collation' },
   Dinner: { en: 'Dinner', fr: 'Dîner' },
+  Coffee: { en: 'Coffee', fr: 'Café' },
 }
 
 // Maps this app's review states onto the richer recipe_status.status enum in
@@ -88,6 +90,7 @@ function App() {
   const [query, setQuery] = useState('')
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null)
   const [servingsSelection, setServingsSelection] = useState(1)
+  const [coffeeBeans, setCoffeeBeans] = useState(0)
   const [recipeState, setRecipeState] = useState<RecipeStateMap>({})
   const [translationRequests, setTranslationRequests] = useState<TranslationMap>({})
   const [lang, setLang] = useState<UiLanguage>(() => loadLanguage())
@@ -246,11 +249,16 @@ function App() {
       matchesCategory && matchesOrigin && matchesReview && (!normalizedQuery || searchableText.includes(normalizedQuery))
     )
   })
-  const avgProtein = Math.round(recipes.reduce((sum, recipe) => sum + recipe.protein, 0) / recipes.length)
+  const foodRecipes = recipes.filter((recipe): recipe is FoodRecipe => !isCoffeeRecipe(recipe))
+  const avgProtein = Math.round(foodRecipes.reduce((sum, recipe) => sum + recipe.protein, 0) / foodRecipes.length)
 
   useEffect(() => {
     if (!selectedRecipe) return
-    setServingsSelection(selectedRecipe.servings ?? 1)
+    if (isCoffeeRecipe(selectedRecipe)) {
+      setCoffeeBeans(selectedRecipe.beansDefault)
+    } else {
+      setServingsSelection(selectedRecipe.servings ?? 1)
+    }
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setSelectedRecipe(null)
     }
@@ -430,6 +438,19 @@ function App() {
       {visibleRecipes.length ? (
         <div className="st-grid">
           {visibleRecipes.map((recipe) => {
+            if (isCoffeeRecipe(recipe)) {
+              return (
+                <div className="st-card" key={recipe.id}>
+                  <button type="button" className="st-open" onClick={() => setSelectedRecipe(recipe)}>
+                    <img src={recipe.image} alt="" />
+                    <div className="st-body">
+                      <strong>{recipe.title}</strong>
+                      <span>{recipe.beansDefault}g &middot; {recipe.waterDefault}g &middot; {t.grinderSetting} {recipe.grinder}</span>
+                    </div>
+                  </button>
+                </div>
+              )
+            }
             const display = getDisplayContent(recipe, lang)
             return (
             <div className="st-card" key={recipe.id}>
@@ -472,7 +493,70 @@ function App() {
         <span>{t.footerRecipeCount(recipes.length, avgProtein)}</span>
       </footer>
 
-      {selectedRecipe && (() => {
+      {selectedRecipe && isCoffeeRecipe(selectedRecipe) && (() => {
+        const recipe = selectedRecipe
+        const ratio = recipe.waterDefault / recipe.beansDefault
+        const water = coffeeBeans * ratio
+        const preInfusion = water * (recipe.preInfusionPercent / 100)
+        return (
+        <div
+          className="modal-overlay open"
+          role="presentation"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) setSelectedRecipe(null)
+          }}
+        >
+          <section className="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button
+              type="button"
+              className="modal-close"
+              onClick={() => setSelectedRecipe(null)}
+              aria-label={t.closeRecipe}
+              autoFocus
+            >
+              <X size={18} />
+            </button>
+            <div className="modal-hero">
+              <img src={recipe.image} alt="" />
+            </div>
+            <div className="modal-heading">
+              <h2 id="modal-title">{recipe.title}</h2>
+              <p>{recipe.description}</p>
+            </div>
+            <label className="servings-row">
+              {t.coffeeDose}
+              <input
+                type="number"
+                inputMode="decimal"
+                step="0.1"
+                min="0"
+                value={coffeeBeans}
+                onChange={(event) => setCoffeeBeans(event.target.value === '' ? 0 : Number(event.target.value))}
+              />
+            </label>
+            <div className="macro-row">
+              <div className="macro-cell"><strong>{water.toFixed(1)}g</strong><span>{t.coffeeWater}</span></div>
+              <div className="macro-cell"><strong>{preInfusion.toFixed(1)}g</strong><span>{t.coffeePreInfusion}</span></div>
+              <div className="macro-cell"><strong>{recipe.grinder}</strong><span>{t.grinderSetting}</span></div>
+            </div>
+            {recipe.notes && (
+              <p className="coach-note"><strong>{t.coachNote}</strong> {recipe.notes}</p>
+            )}
+            <div className="section-label">{t.method}</div>
+            <ol className="method-list">
+              {recipe.steps.map((step, index) => (
+                <li key={step}><span className="step-num">{index + 1}</span>{step}</li>
+              ))}
+            </ol>
+            <a className="source-link" href={recipe.source.url} target="_blank" rel="noreferrer">
+              {recipe.source.label}
+            </a>
+          </section>
+        </div>
+        )
+      })()}
+
+      {selectedRecipe && !isCoffeeRecipe(selectedRecipe) && (() => {
         const selectedDisplay = getDisplayContent(selectedRecipe, lang)
         return (
         <div

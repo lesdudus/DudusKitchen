@@ -1,6 +1,6 @@
 import categoriesData from './categories.json'
 
-export type MealCategory = 'Breakfast' | 'Lunch' | 'Snack' | 'Dinner'
+export type MealCategory = 'Breakfast' | 'Lunch' | 'Snack' | 'Dinner' | 'Coffee'
 export type RecipeOrigin = 'curated' | 'mine'
 export type RecipeLanguage = 'en' | 'fr'
 export type ScalableIngredient = { quantity: number; unit: string; name: string }
@@ -12,7 +12,7 @@ export type TranslatedContent = {
   notes?: string
 }
 
-export type Recipe = {
+type RecipeBase = {
   id: string
   categories: MealCategory[]
   origin: RecipeOrigin
@@ -20,16 +20,19 @@ export type Recipe = {
   title: string
   description: string
   image: string
+  tags: string[]
+  source: { label: string; url: string }
+  /** Short coach's tip — why this recipe works, or how/when to use it. */
+  notes?: string
+}
+
+export type FoodRecipe = RecipeBase & {
   time: number
   calories: number
   protein: number
   carbs: number
-  tags: string[]
   ingredients: string[]
   steps: string[]
-  source: { label: string; url: string }
-  /** Short coach's tip — why this recipe works, or how/when to use it. */
-  notes?: string
   /** Data-only for now — reserved for a future "Batch cooking" filter, not
    * yet surfaced in the UI (see backlog). */
   batchCooking?: boolean
@@ -42,6 +45,24 @@ export type Recipe = {
    * When the active UI language differs from `language` and a matching entry
    * exists here, the app displays this instead of the primary content. */
   translations?: Partial<Record<RecipeLanguage, TranslatedContent>>
+}
+
+// Coffee brewing recipes use a distinct template: a bean-weight input drives a
+// live-calculated water amount (via the ratio implied by beansDefault/waterDefault)
+// and a pre-infusion volume (preInfusionPercent of that water). Every coffee
+// recipe defines its own numbers — there is no universal formula across recipes.
+export type CoffeeRecipe = RecipeBase & {
+  beansDefault: number
+  waterDefault: number
+  preInfusionPercent: number
+  grinder: string
+  steps: string[]
+}
+
+export type Recipe = FoodRecipe | CoffeeRecipe
+
+export function isCoffeeRecipe(recipe: Recipe): recipe is CoffeeRecipe {
+  return 'beansDefault' in recipe
 }
 
 // Each recipe lives in its own JSON file under ./recipes-json — one file per
