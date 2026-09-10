@@ -1,0 +1,27 @@
+{
+  "id": "aeropress",
+  "categories": ["Coffee"],
+  "origin": "mine",
+  "language": "fr",
+  "title": "Aeropress",
+  "description": "Café rond et propre, extrait par immersion puis pressé à travers un filtre papier à l'Aeropress.",
+  "image": "https://images.pexels.com/photos/7421229/pexels-photo-7421229.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "tags": ["Immersion", "Rapide"],
+  "source": {
+    "label": "James Hoffmann's Ultimate AeroPress Recipe (AeroPrecipe)",
+    "url": "https://aeroprecipe.com/recipes/james-hoffmann-aeropress-recipe"
+  },
+  "notes": "Pas de pré-infusion sur cette recette : on verse toute l'eau d'un coup puis on rebouche directement. Ratio de référence : 11 g de café pour 200 g d'eau. Parfait pour un café solo !",
+  "beansDefault": 11,
+  "waterDefault": 200,
+  "preInfusionPercent": 0,
+  "grinder": "24",
+  "steps": [
+    "Installer l'Aeropress en position standard sur une tasse ou une carafe, puis ajouter la mouture dans la chambre.",
+    "Verser l'eau et s'assurer que tout le café est entièrement immergé.",
+    "Reboucher le bouchon (piston) pour créer une dépression et stopper l'écoulement.",
+    "Attendre 2 minutes (le chronomètre démarre une fois toute l'eau versée).",
+    "Remuer gentiment puis attendre 30 secondes.",
+    "Retirer de la balance et appuyer ; cela doit prendre environ 30 secondes."
+  ]
+}

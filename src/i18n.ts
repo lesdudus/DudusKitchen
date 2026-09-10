@@ -40,6 +40,7 @@ const strings = {
     coffeeDose: 'Coffee dose',
     coffeeWater: 'Water',
     coffeePreInfusion: 'Pre-infusion',
+    coffeeNoPreInfusion: 'No pre-infusion',
 
     notTranslatedBadge: 'EN only',
     translateThis: 'Translate this',
@@ -85,6 +86,7 @@ const strings = {
     coffeeDose: 'Dose de café',
     coffeeWater: 'Eau',
     coffeePreInfusion: 'Pré-infusion',
+    coffeeNoPreInfusion: 'Pas de pré-infusion',
 
     notTranslatedBadge: 'Anglais uniquement',
     translateThis: 'Traduire',

@@ -537,7 +537,10 @@ function App() {
             </label>
             <div className="macro-row">
               <div className="macro-cell"><strong>{water.toFixed(1)}g</strong><span>{t.coffeeWater}</span></div>
-              <div className="macro-cell"><strong>{preInfusion.toFixed(1)}g</strong><span>{t.coffeePreInfusion}</span></div>
+              <div className="macro-cell">
+                <strong>{recipe.preInfusionPercent === 0 ? t.coffeeNoPreInfusion : `${preInfusion.toFixed(1)}g`}</strong>
+                <span>{t.coffeePreInfusion}</span>
+              </div>
               <div className="macro-cell"><strong>{recipe.grinder}</strong><span>{t.grinderSetting}</span></div>
             </div>
             {recipe.notes && (
